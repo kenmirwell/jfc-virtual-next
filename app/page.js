@@ -1,7 +1,7 @@
-import { Worlds } from './Components/Worlds'
+import FirstWorld from './Components/FirstWorld'
 
 export default function Home() {
   return (
-    <Worlds />
+    <FirstWorld />
   )
 }

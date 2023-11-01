@@ -43,8 +43,8 @@ const FirstWorld = () => {
         const onHover = () => {
 
         };
-
-        assetLoader.load("https://saas-subtrak-stage.nyc3.digitaloceanspaces.com/Others/world_war_one.glb", async function(gltf) {
+        
+        assetLoader.load(`${ process.env.NEXT_PUBLIC_WORLD_ASSETS }/world_war_one.glb`, async function(gltf) {
             const model3d = gltf.scene;
             scene.add(model3d);
             window.requestAnimationFrame(animate);
