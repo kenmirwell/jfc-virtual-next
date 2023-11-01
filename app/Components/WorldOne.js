@@ -7,7 +7,8 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function WorldOne(props) {
-  const { nodes, materials } = useGLTF('./assets/world_war_one.glb')
+  const { nodes, materials } = useGLTF('./assets/world1.glb');
+  
   return (
     <group {...props} dispose={null}>
       <group position={[1.66, 2.055, 2.692]} rotation={[0.069, -0.342, -0.029]} scale={[0.559, 1.221, 0.914]}>

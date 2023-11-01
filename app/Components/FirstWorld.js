@@ -1,28 +1,74 @@
+"use client"
+
 import React from "react"
 import * as THREE from "three";
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
-import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader"
-import { useGLTF } from '@react-three/drei'
+import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 
 const FirstWorld = () => {
-    const [model, setModel] = React.useState(null)
-
     React.useEffect(() => {
-        const glbmodel = new URL("../../public/assets/world_war_one.glb", import.meta.url);
-        const assetLoader = new GLTFLoader();
-        assetLoader.load(glbmodel.href, async function(gltf) {
-            const model3d = gltf.scene
-            setModel(model3d)
+        let hovered;
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x57D7FC)
+        
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        
+        const assetLoader  = new GLTFLoader();
+        const scene        = new THREE.Scene();
+        const pointer      = new THREE.Vector2();
+        const raycaster    = new THREE.Raycaster();
+        const axesHelper   = new THREE.AxesHelper(5);
+        const ambientLight = new THREE.AmbientLight(0xffffff);
+        const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+        const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 5)
+        
+        scene.add( dLightHelper );
+        scene.add( directionalLight );
+        scene.add(axesHelper);
+        scene.add(ambientLight);
+        camera.position.set(0, 2, 10);
+        directionalLight.position.set(0, 10, 10);
+
+        const onPointerMove = ( event ) => {
+            pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+            pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        };
+
+        const onHover = () => {
+
+        };
+
+        assetLoader.load("/assets/world1.glb", async function(gltf) {
+            const model3d = gltf.scene;
+            scene.add(model3d);
+            window.requestAnimationFrame(animate);
+            console.log(model3d)
         }, undefined, function(error) {
             console.log(error)
-        })
+        });
+
+        const animate = () => {
+            onHover();
+            renderer.render(scene, camera);
+            window.requestAnimationFrame(animate);   
+        }
+
+        document.body.appendChild( renderer.domElement );
+        document.addEventListener( 'pointermove', onPointerMove );
+        document.addEventListener("click", () => {
+            if( hovered ) {
+                alert(`Year: ${ contents[hovered].year }, Title: ${ contents[hovered].title }, Description: ${ contents[hovered].description }, `);
+            }
+        });
     }, [])
 
-    return (
-        <>
-            {model && <primitive  object={model} name={"world_war_one"}/>}
-        </>
-    )
+    return null;
 }
 
 export default FirstWorld
