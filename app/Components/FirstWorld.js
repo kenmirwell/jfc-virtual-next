@@ -44,7 +44,7 @@ const FirstWorld = () => {
 
         };
 
-        assetLoader.load("https://muonvwkrrtayxmtyxvpm.supabase.co/storage/v1/object/public/swimmingpoolrepublic/randjae/world1.glb?t=2023-11-01T16%3A04%3A24.622Z", async function(gltf) {
+        assetLoader.load("https://saas-subtrak-stage.nyc3.digitaloceanspaces.com/Others/world_war_one.glb", async function(gltf) {
             const model3d = gltf.scene;
             scene.add(model3d);
             window.requestAnimationFrame(animate);
