@@ -12,8 +12,8 @@ export function Worlds() {
                 <meshNormalMaterial/>
             </mesh> */}
             <ambientLight/>
-            <FirstWorld/>
-            {/* <WorldOne/> */}
+            {/* <FirstWorld/> */}
+            <WorldOne/>
         </>
     )
 }
