@@ -2,8 +2,11 @@
 
 import { useEffect, useState } from "react"
 import * as THREE from "three";
-import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { gsap, Bounce, Power3 } from 'gsap';
 
+let hovered = null; 
+let timer = null;
 let contents = {
     "Empty001": {
         year: "1978",
@@ -35,10 +38,11 @@ let contents = {
     }
 };
 
+
 const FirstWorld = () => {
     const [loaded, setLoaded] = useState(false);
-    const [hovered, setHovered] = useState(null);
     const [model3d, setModel3d] = useState(null);
+    
     const [components, setComponents] = useState({
         renderer: null,
         scene: null,
@@ -67,6 +71,7 @@ const FirstWorld = () => {
 
     const animate = () => {
         onHover();
+
         components.renderer.render(components.scene, components.camera);
         window.requestAnimationFrame(animate);
     };
@@ -75,42 +80,40 @@ const FirstWorld = () => {
         if( model3d ) {
             components.raycaster.setFromCamera( components.pointer, components.camera );
             
-            const objects = components.raycaster.intersectObjects(model3d.children, true);
+            const objects = components.raycaster.intersectObjects(model3d.children);
             const raycasted = Object.keys(contents); 
-            console.log(objects);
-            
-            const setTransition = (object) => {
+
+            const setTransition = (object) => { 
+                if( hovered !== null && hovered !== object.name ) {
+                    hovered = null;
+                }
+
                 if( hovered === null ) {
                     let step = .3;
                     let speed = 0.1;
                     step += speed
     
-                    setHovered( object.name );
-                
-                    // const tl = new TimelineMax().delay(.1);
-                    // const scale = object.scale;
-                    // const position = object.position;
-                    // tl.to(scale, 0.2, {x: 2, y: 2, ease: Expo.easeOut})
-                    // .to(scale, 1, {x: scale.x, y: scale.y, ease: Expo.easeOut, delay: 0.2});
-                    // object.scale.x = 2;
-                    // tl.to(position, 0.2, {y: position.y + 2 * Math.abs(Math.sin(step)), ease: Expo.easeOut})
-                    // .to(position, 1, {y: position.y, ease: Expo.easeOut, delay: 0.2});
-    
-                    setTimeout(() => {
-                        setHovered( null );
-                    }, 1200)
+                    hovered = object.name;
+
+                    const position = object.position;
+
+                    gsap.timeline()
+                    .to(object.position, 0.3, {y: position.y + 1, ease: Power3.easeOut })
+                    .to(object.position, 0.6, {y: position.y, ease: Bounce.easeOut });
                 }
             };
-    
-            for ( let i = 0; i < objects.length; i ++ ) {
-                if( raycasted.indexOf(objects[i].object.name) > -1 ) {
-                    setTransition(objects[i].object);
-                } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
-                    setTransition(objects[i].object.parent);
-                } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
-                    setTransition(objects[i].object.parent.parent);
-                } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
-                    setTransition(objects[i].object.parent.parent.parent);
+            
+            if( objects.length < 11 ) {
+                for ( let i = 0; i < objects.length; i ++ ) {
+                    if( raycasted.indexOf(objects[i].object.name) > -1 ) {
+                        setTransition(objects[i].object);
+                    } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
+                        setTransition(objects[i].object.parent);
+                    } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
+                        setTransition(objects[i].object.parent.parent);
+                    } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
+                        setTransition(objects[i].object.parent.parent.parent);
+                    }
                 }
             }
         }
@@ -119,6 +122,27 @@ const FirstWorld = () => {
     const onPointerMove = ( event ) => {
         components.pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
         components.pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+        const from = {
+            x: components.camera.rotation.x,
+            y: components.camera.rotation.y
+        };
+
+        const to = {
+            x: components.camera.rotation.x + components.pointer.y * 0.5,
+            y: components.camera.rotation.y - components.pointer.x * 0.5
+        };
+
+        gsap
+        .timeline()
+        .fromTo(
+            components.camera.rotation, 
+            2,
+            { y: from.y, x: from.x }, 
+            { y: to.y, x: to.x, ease: Power3.easeOut }
+        );
+        // components.camera.rotation.y -= components.pointer.x * 0.001;
+        // components.camera.rotation.x += components.pointer.y * 0.001;
     };
 
     const onWindowResize = () => {
@@ -138,11 +162,15 @@ const FirstWorld = () => {
             const ambientLight     = new THREE.AmbientLight(0xffffff);
             const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
             const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 5);
-            const camera           = new THREE.PerspectiveCamera(
-                75,
-                window.innerWidth / window.innerHeight,
-                0.1,
-                1000
+            const frustumSize = 10;
+            const aspect = window.innerWidth / window.innerHeight;
+            const camera = new THREE.OrthographicCamera( 
+                frustumSize * aspect / - 2, 
+                frustumSize * aspect / 2, 
+                frustumSize / 2, 
+                frustumSize / - 2, 
+                0.1, 
+                100 
             );
 
             setComponents({
@@ -165,13 +193,14 @@ const FirstWorld = () => {
     
     /* Initialize Scene */
     useEffect(() => {
-        if( loaded ) {
+        if( !model3d && loaded ) {
             components.renderer.setSize(window.innerWidth, window.innerHeight);
             components.renderer.setClearColor(0x57D7FC);
             components.scene.add(components.lights.directionalHelper);
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
-            components.camera.position.set(0, 2, 10);
+            components.camera.position.set(0, 3, 10);
+            components.camera.rotation.x = -0.14;
             components.lights.directional.position.set(0, 10, 10);
                 
             onLoad();
@@ -186,7 +215,7 @@ const FirstWorld = () => {
 
             window.addEventListener( 'resize', onWindowResize, false );
         }
-    }, [loaded]);
+    }, [model3d, loaded]);
 
     /* Setup scene */
     useEffect(() => {
