@@ -92,7 +92,7 @@ const FirstWorld = () => {
                     // const position = object.position;
                     // tl.to(scale, 0.2, {x: 2, y: 2, ease: Expo.easeOut})
                     // .to(scale, 1, {x: scale.x, y: scale.y, ease: Expo.easeOut, delay: 0.2});
-                    object.scale.x = 2;
+                    // object.scale.x = 2;
                     // tl.to(position, 0.2, {y: position.y + 2 * Math.abs(Math.sin(step)), ease: Expo.easeOut})
                     // .to(position, 1, {y: position.y, ease: Expo.easeOut, delay: 0.2});
     
@@ -121,6 +121,13 @@ const FirstWorld = () => {
         components.pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     };
 
+    const onWindowResize = () => {
+        components.camera.aspect = window.innerWidth / window.innerHeight;
+        components.camera.updateProjectionMatrix();
+        components.renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+
+    /* Load all components */
     useEffect(() => {
         if( !loaded ) {
             const renderer         = new THREE.WebGLRenderer();
@@ -156,6 +163,7 @@ const FirstWorld = () => {
         }
     }, []);
     
+    /* Initialize Scene */
     useEffect(() => {
         if( loaded ) {
             components.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -175,9 +183,12 @@ const FirstWorld = () => {
                     alert(`Year: ${ contents[hovered].year }, Title: ${ contents[hovered].title }, Description: ${ contents[hovered].description }, `);
                 }
             });
+
+            window.addEventListener( 'resize', onWindowResize, false );
         }
     }, [loaded]);
 
+    /* Setup scene */
     useEffect(() => {
         if( model3d ) {
             window.requestAnimationFrame(animate);
