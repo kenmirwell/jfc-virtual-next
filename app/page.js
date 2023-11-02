@@ -1,8 +1,8 @@
-import FirstWorld from './Components/FirstWorld'
+import World1 from './Components/Worlds/World1/World1'
 import './style/modal.scss'
 
 export default function Home() {
-  return (
-    <FirstWorld />
-  )
+    return (
+        <World1 />
+    )
 }

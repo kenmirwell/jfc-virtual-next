@@ -9,7 +9,6 @@ import Buttons from "./Buttons/Buttons"
 import Clouds from "./Clouds/Clouds"
 
 let hovered = null; 
-let timer = null;
 let contents = {
     "Empty001": {
         year: "1978",
@@ -136,9 +135,22 @@ const FirstWorld = () => {
         if( model3d ) {
             window.requestAnimationFrame(animate);
 
-            for( const obj of model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) ) {
+            const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
+            const trees = model3d.children.filter(obj => obj.name.indexOf("Tree") > -1 || obj.name === "Empty");
+
+            for( const obj of interactables ) {
                 obj.position.y += 5;
                 obj.visible = false;
+            }
+
+            for( const obj of trees ) {
+                const scale = obj.scale.clone();
+                obj.originalScale = scale;
+
+                setTimeout(() => {
+                    obj.scale.x = 0;
+                    obj.scale.y = 0;
+                }, 500);
             }
         }
     }, [model3d]);
@@ -146,24 +158,32 @@ const FirstWorld = () => {
     /* Initial animate */
     useEffect(() => {
         if(initialAnimate) {
+            const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
+            const trees = model3d.children.filter(obj => obj.name.indexOf("Tree") > -1 || obj.name === "Empty");
+
             gsap.timeline().to(components.camera.position, 2, { y: 3, ease: Power3.easeInOut, delay: 2});
+            
+            for( const [i, obj] of trees.entries() ) {
+                gsap.timeline().to(obj.scale, .5, { x: obj.originalScale.x, y: obj.originalScale.y, ease: Power3.easeOut, delay: 4 + (i * 0.03) });
+            }
 
             setTimeout(() => {
                 setFinishAnimate(true);
-            }, 2000);
+            }, 5500);
 
             setTimeout(() => {
-                for( const obj of model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) ) {
+                for( const [i, obj] of interactables.entries() ) {
                     obj.visible = true;
-                    gsap.timeline().to(obj.position, 1, { y: obj.position.y - 5, ease: Bounce.easeOut });
+                    gsap.timeline().to(obj.position, 1, { y: obj.position.y - 5, ease: Bounce.easeOut, delay: i * 0.05 });
                 }
-            }, 4000);
+            }, 4500);
         }
     }, [initialAnimate])
 
     /* Finish animate */
     useEffect(() => {
         if(finishAnimate) {
+            window.requestAnimationFrame(animate);
             document.addEventListener( 'pointermove', onPointerMove );
             document.addEventListener("click", onClickObject);
         }
@@ -195,10 +215,6 @@ const FirstWorld = () => {
             const raycasted = Object.keys(contents); 
 
             const setTransition = (object) => { 
-                if( hovered !== null && hovered !== object.name ) {
-                    hovered = null;
-                }
-
                 if( hovered === null ) {
                     let step = .3;
                     let speed = 0.1;
@@ -211,6 +227,10 @@ const FirstWorld = () => {
                     gsap.timeline()
                     .to(object.position, 0.3, {y: position.y + 1, ease: Power3.easeOut })
                     .to(object.position, 0.6, {y: position.y, ease: Bounce.easeOut });
+
+                    setTimeout(() => {
+                        hovered = null;
+                    }, 1000);
                 }
             };
             
@@ -271,16 +291,16 @@ const FirstWorld = () => {
             to.x = -0.020;
         }
 
-        if( to.x < -0.15 ) {
-            to.x = -0.15;
+        if( to.x < -0.2 ) {
+            to.x = -0.2;
         }
 
-        if( to.y > 0.05 ) {
-            to.y = 0.05;
+        if( to.y > 0.1 ) {
+            to.y = 0.1;
         }
 
-        if( to.y < -0.05 ) {
-            to.y = -0.05;
+        if( to.y < -0.1 ) {
+            to.y = -0.1;
         }
 
         console.log( to.y  )
@@ -289,7 +309,7 @@ const FirstWorld = () => {
         .timeline()
         .fromTo(
             components.camera.rotation, 
-            2,
+            1.5,
             { y: from.y, x: from.x }, 
             { y: to.y, x: to.x, ease: Power3.easeOut }
         );
