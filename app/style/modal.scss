@@ -1,0 +1,32 @@
+.details-modal {
+    background: transparent;
+    width: 100%;
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    max-width: 90%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+
+    video {
+        width: 100%;    
+    }
+}
+
+.details-modal-overlay {
+    pointer-events: none;
+    background: rgba(#0f172a, 0.8);
+    position: fixed;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    pointer-events: all;
+    opacity: 0.5;
+  }
