@@ -132,15 +132,15 @@ const Clouds = (props) => {
     return (
         <div id="welcome-text" className="pointer-events-none fixed top-0 left-0 right-0 bottom-0">
             { clouds.map( c => (
-                <div id={ c.id } style={{ transform: `translate(${ c.position.x }px, ${ c.position.y }px)`}} className={`${ c.className } pointer-events-none clouds absolute flex items-center justify-center flex-wrap text-center`}>
+                <div id={ c.id } key={`cloud_${ c.id }`} style={{ transform: `translate(${ c.position.x }px, ${ c.position.y }px)`}} className={`${ c.className } pointer-events-none clouds absolute flex items-center justify-center flex-wrap text-center`}>
                     { c.svg }
                 </div>
             ))}
             <div id="text" className="pointer-events-none absolute top-0 left-0 right-0 bottom-0 text-center flex items-center justify-center">
                 <h1 className="headline uppercase text-white text-[100px] leading-none font-[700] tracking-[-2.5px]">
                     { headline.split(" ").map((w, wi) => (
-                        <span className="flex justify-center">
-                            {w.split("").map((t,i) => <span className={`block scale-0 lt${i}`}>{t}</span>)}
+                        <span className="flex justify-center" key={`headline_word_${ wi }`}>
+                            {w.split("").map((t,i) => <span key={`word_ltr_${ wi }_${ i }`} className={`block scale-0 lt${i}`}>{t}</span>)}
                         </span>
                     ))}
                 </h1>

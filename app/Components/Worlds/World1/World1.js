@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { gsap, Bounce, Power3 } from 'gsap';
+import { gsap, Bounce, Power3, Expo } from 'gsap';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
 import Buttons from "./Buttons/Buttons"
 import Clouds from "./Clouds/Clouds"
@@ -161,10 +161,37 @@ const FirstWorld = () => {
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
             const trees = model3d.children.filter(obj => obj.name.indexOf("Tree") > -1 || obj.name === "Empty");
 
-            gsap.timeline().to(components.camera.position, 2, { y: 3, ease: Power3.easeInOut, delay: 2});
+            gsap.timeline().to(components.camera.position, 2, { 
+                y: 3, 
+                ease: Power3.easeInOut, 
+                delay: 2
+            });
             
             for( const [i, obj] of trees.entries() ) {
-                gsap.timeline().to(obj.scale, .5, { x: obj.originalScale.x, y: obj.originalScale.y, ease: Power3.easeOut, delay: 4 + (i * 0.03) });
+                if( obj.name === "Empty" ) {
+                    gsap.timeline().to(obj.rotation, 3, { 
+                        x: obj.rotation.x + 0.3, 
+                        ease: Power3.easeInOut, 
+                        delay: 3.5 + (i * 0.5), 
+                        repeat: -1, 
+                        yoyo: true 
+                    });
+                } else {
+                    gsap.timeline().to(obj.children[0].rotation, 3, { 
+                        x: obj.children[0].rotation.x + 0.3, 
+                        ease: Power3.easeInOut, 
+                        delay: 3.5 + (i * 0.5), 
+                        repeat: -1, 
+                        yoyo: true 
+                    });
+                }
+
+                gsap.timeline().to(obj.scale, .5, { 
+                    x: obj.originalScale.x, 
+                    y: obj.originalScale.y, 
+                    ease: Power3.easeOut, 
+                    delay: 4 + (i * 0.03) 
+                });
             }
 
             setTimeout(() => {
@@ -174,7 +201,11 @@ const FirstWorld = () => {
             setTimeout(() => {
                 for( const [i, obj] of interactables.entries() ) {
                     obj.visible = true;
-                    gsap.timeline().to(obj.position, 1, { y: obj.position.y - 5, ease: Bounce.easeOut, delay: i * 0.05 });
+                    gsap.timeline().to(obj.position, 1, { 
+                        y: obj.position.y - 5, 
+                        ease: Bounce.easeOut, 
+                        delay: i * 0.05 
+                    });
                 }
             }, 4500);
         }
