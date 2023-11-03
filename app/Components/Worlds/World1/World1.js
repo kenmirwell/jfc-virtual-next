@@ -54,6 +54,7 @@ const FirstWorld = () => {
     const [selected, setSelected] = useState(null);
     const [initialAnimate, setInitialAnimate] = useState(false);
     const [finishAnimate, setFinishAnimate] = useState(false);
+    const [disableFunctionality, setDisableFunctionality] = useState(false);
     
     const [components, setComponents] = useState({
         renderer: null,
@@ -117,7 +118,6 @@ const FirstWorld = () => {
     useEffect(() => {
         if( !model3d && loaded ) {
             components.renderer.setSize(window.innerWidth, window.innerHeight);
-            // components.renderer.setClearColor(0x57D7FC);
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
             components.camera.position.set(0, 10, 10);
@@ -125,7 +125,7 @@ const FirstWorld = () => {
                 
             onLoad();
 
-            document.body.appendChild( components.renderer.domElement );
+            document.getElementById("world1").appendChild( components.renderer.domElement );
             window.addEventListener( 'resize', onWindowResize, false );
         }
     }, [model3d, loaded]);
@@ -214,11 +214,10 @@ const FirstWorld = () => {
     /* Finish animate */
     useEffect(() => {
         if(finishAnimate) {
-            window.requestAnimationFrame(animate);
-            document.addEventListener( 'pointermove', onPointerMove );
-            document.addEventListener("click", onClickObject);
+            document.addEventListener( 'pointermove', onPointerMove, false );
+            document.addEventListener( 'click', onClickObject, false );
         }
-    }, [finishAnimate])
+    }, [finishAnimate, disableFunctionality])
 
     const onLoad = () => {
         const assetLoader  = new GLTFLoader();
@@ -282,114 +281,147 @@ const FirstWorld = () => {
     }
 
     const onClickObject = () => {
-        if( model3d ) {
-            components.raycaster.setFromCamera( components.pointer, components.camera );
-            
-            const objects = components.raycaster.intersectObjects(model3d.children);
-            const raycasted = Object.keys(contents); 
+        if( !disableFunctionality ) {
+            if( model3d ) {
+                components.raycaster.setFromCamera( components.pointer, components.camera );
+                
+                const objects = components.raycaster.intersectObjects(model3d.children);
+                const raycasted = Object.keys(contents); 
 
-            if( objects.length < 11 ) {
-                for ( let i = 0; i < objects.length; i ++ ) {
-                    if( raycasted.indexOf(objects[i].object.name) > -1 ) {
-                        setSelected(i)
-                    } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
-                        setSelected(i)
-                    } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
-                        setSelected(i)
-                    } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
-                        setSelected(i)
+                const onSelect = (obj, i) => {
+                    setDisableFunctionality(true);
+
+                    gsap.timeline().to(components.camera, 1, { 
+                        zoom: 10, 
+                        onUpdate: function () {
+                            components.camera.updateProjectionMatrix();
+                        }, 
+                        ease: Power3.easeInOut 
+                    });
+
+                    setTimeout(() => {
+                        setSelected(i);
+                    }, 1500);
+                }
+
+                if( objects.length < 11 ) {
+                    for ( let i = 0; i < objects.length; i ++ ) {
+                        if( raycasted.indexOf(objects[i].object.name) > -1 ) {
+                            onSelect(objects[i].object.name, i)
+                        } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
+                            onSelect(objects[i].object.parent.name, i)
+                        } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
+                            onSelect(objects[i].object.parent.parent.name, i)
+                        } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
+                            onSelect(objects[i].object.parent.parent.parent.name, i)
+                        }
                     }
                 }
             }
         }
+    };
+
+    const onDeselect = () => {
+        setDisableFunctionality(false);
+        setSelected(null);
+
+        gsap.timeline().to(components.camera, 0.7, { 
+            zoom: 1, 
+            onUpdate: function () {
+                components.camera.updateProjectionMatrix();
+            }, 
+            ease: Power3.easeInOut
+        });
     }
 
     const onPointerMove = ( event ) => {
-        components.pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-        components.pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        if( !disableFunctionality ) {
+            components.pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+            components.pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
-        const from = {
-            x: model3d.rotation.x,
-            y: model3d.rotation.y
-        };
+            const from = {
+                x: model3d.rotation.x,
+                y: model3d.rotation.y
+            };
 
-        let to = {
-            x: model3d.rotation.x + components.pointer.y * 0.5,
-            y: model3d.rotation.y - components.pointer.x * 0.5
-        };
+            let to = {
+                x: model3d.rotation.x + components.pointer.y * 0.5,
+                y: model3d.rotation.y + components.pointer.x * 0.5
+            };
 
-        if( to.x > 0.12 ) {
-            to.x = 0.12;
+            if( to.x > 0.12 ) {
+                to.x = 0.12;
+            }
+
+            if( to.x < -0.02 ) {
+                to.x = -0.02;
+            }
+
+            if( to.y > 0.1 ) {
+                to.y = 0.1;
+            }
+
+            if( to.y < -0.1 ) {
+                to.y = -0.1;
+            }
+
+            gsap
+            .timeline()
+            .fromTo(
+                model3d.rotation, 
+                1.5,
+                { y: from.y, x: from.x }, 
+                { y: to.y, x: to.x, ease: Power3.easeOut }
+            );
         }
-
-        if( to.x < -0.02 ) {
-            to.x = -0.02;
-        }
-
-        console.log(to.x)
-
-        if( to.y > 0.1 ) {
-            to.y = 0.1;
-        }
-
-        if( to.y < -0.1 ) {
-            to.y = -0.1;
-        }
-
-        gsap
-        .timeline()
-        .fromTo(
-            model3d.rotation, 
-            1.5,
-            { y: from.y, x: from.x }, 
-            { y: to.y, x: to.x, ease: Power3.easeOut }
-        );
     };
 
     const onWindowResize = () => {
         components.camera.aspect = window.innerWidth / window.innerHeight;
         components.camera.updateProjectionMatrix();
         components.renderer.setSize( window.innerWidth, window.innerHeight );
-    }
+    };
 
     return (
-        <div className="overflow-hidden">  
-            <Buttons onAnimate={() => setInitialAnimate(true)} />
-            <Clouds animate={ initialAnimate } delay={.5} />
-            <div className={`${ model3d ? "!opacity-0 !pointer-events-none" : "" } opacity-100 fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out z-[10]`}>
-                <div className="loader"></div>
-            </div>
-            <div className={`pointer-events-none z-[-1] overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
-                <video autoPlay muted loop>
-                    <source src="/assets/world1/bg.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
-                <div className="absolute top-0 left-[20px]">
-                    <img src="/assets/world1/elements/logo.png" />
-                    <div className="text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
-                        <h2 className="text-[60px] leading-none uppercase">Humble<br></br>Beginnings</h2>
-                        <p className="text-[40px]">1979-2003</p>
+        <div>
+            <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
+                <Buttons onAnimate={() => setInitialAnimate(true)} />
+                <Clouds animate={ initialAnimate } delay={.5} />
+                <div className={`${ model3d ? "!opacity-0 !pointer-events-none" : "" } opacity-100 fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out z-[10]`}>
+                    <div className="loader"></div>
+                </div>
+                <div className={`pointer-events-none z-[-1] overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
+                    <video autoPlay muted loop>
+                        <source src="/assets/world1/bg.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
+                    <div className="absolute top-0 left-[20px]">
+                        <img src="/assets/world1/elements/logo.png" />
+                        <div className="text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
+                            <h2 className="text-[60px] leading-none uppercase">Humble<br></br>Beginnings</h2>
+                            <p className="text-[40px]">1979-2003</p>
+                        </div>
+                    </div>
+                    <div className="absolute bottom-[-70px] left-[-65px]">
+                        <img src="/assets/world1/elements/icons.png" />
+                    </div>
+                    <div className="absolute top-[90px] right-[110px]">
+                        <img src="/assets/world1/elements/chapter.svg" width="200" />
                     </div>
                 </div>
-                <div className="absolute bottom-[-70px] left-[-65px]">
-                    <img src="/assets/world1/elements/icons.png" />
-                </div>
-                <div className="absolute top-[90px] right-[110px]">
-                    <img src="/assets/world1/elements/chapter.svg" width="200" />
-                </div>
             </div>
-            { selected && (
-                <div>
-                    <div className="details-modal">
-                        <video autoPlay loop muted>
-                            <source src={"/assets/1979.webm"} type="video/webm"></source>
-                        </video>
-                    </div>
-                    <div onClick={() => setSelected(null)} className="details-modal-overlay"/>
+            <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ selected ? "!opacity-100" : "pointer-events-none" }`}>
+                <div className={`details-modal`}>
+                    <video autoPlay loop muted className={`${ selected ? "" : "pointer-events-none" }`}>
+                        <source src={"/assets/world1/popup/1978.webm"} type="video/webm"></source>
+                    </video>
+                    <button className="absolute top-[70px] right-[85px]" onClick={ onDeselect }>
+                        <img src="/assets/world1/popup/exit.svg" width="50" />
+                    </button>
                 </div>
-            )}
-                
+                <div className={`details-modal-overlay ${ selected ? "" : "pointer-events-none" }`} />
+            </div>
         </div>
     );
 }

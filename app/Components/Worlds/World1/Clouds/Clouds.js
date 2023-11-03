@@ -80,12 +80,12 @@ const Clouds = (props) => {
                 gsap.to(`.lt${ x }`, .5, { scale: 1, ease: Power3.easeInOut, delay: .8 + ( x * headlineDuration ) });
             }
 
-            gsap.to(`#cloud1`,   {y: -1000, duration: 2.1, ease: Power3.easeInOut, delay: 2});
-            gsap.to(`#cloud2`,   {y: -1000, duration: 2.2, ease: Power3.easeInOut, delay: 2});
-            gsap.to(`#cloud3`,   {y: -1000, duration: 2.3, ease: Power3.easeInOut, delay: 2});
-            gsap.to(`#cloud4`,   {y: -1000, duration: 1.8, ease: Power3.easeInOut, delay: 2});
-            gsap.to(`#cloud5`,   {y: -1000, duration: 1.8, ease: Power3.easeInOut, delay: 2});
-            gsap.to(`.headline`, {y: -1000, duration: 2, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`#cloud1`,   {y: -1200, duration: 2.1, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`#cloud2`,   {y: -1200, duration: 2.2, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`#cloud3`,   {y: -1200, duration: 2.3, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`#cloud4`,   {y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`#cloud5`,   {y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`.headline`, {y: -1200, duration: 2, ease: Power3.easeInOut, delay: 2});
         }
     }, [props.animate])
 
