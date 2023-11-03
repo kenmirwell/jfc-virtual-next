@@ -318,13 +318,13 @@ const FirstWorld = () => {
             y: model3d.rotation.y - components.pointer.x * 0.5
         };
 
-        // if( to.x > -0.01 ) {
-        //     to.x = -0.01;
-        // }
+        if( to.x > 0.12 ) {
+            to.x = 0.12;
+        }
 
-        // if( to.x < -0.2 ) {
-        //     to.x = -0.2;
-        // }
+        if( to.x < -0.02 ) {
+            to.x = -0.02;
+        }
 
         console.log(to.x)
 
