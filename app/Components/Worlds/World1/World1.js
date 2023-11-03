@@ -428,7 +428,7 @@ const FirstWorld = () => {
                     <div className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
                         <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
                         <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
-                        <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
+                        <p data-text={"1979-2003"} className="text-[40px]">1979-20033</p>
                         </div>
                     </div>
                     <div className="absolute bottom-[-70px] left-[-65px]">
