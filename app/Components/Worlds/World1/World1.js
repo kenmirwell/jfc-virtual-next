@@ -225,6 +225,12 @@ const FirstWorld = () => {
         assetLoader.load(`assets/world1/world.glb`, async function(gltf) {
             setModel3d(gltf.scene);
 
+            gltf.scene.traverse(function (child) {
+                if (child.isMesh) {
+                    child.castShadow = true;
+                }
+            });
+
             components.scene.add(gltf.scene);
         }, undefined, function(error) {
             console.log(error)
@@ -291,6 +297,27 @@ const FirstWorld = () => {
                 const onSelect = (obj, i) => {
                     setDisableFunctionality(true);
 
+                    // const boundingBox = new THREE.Box3();
+                    // boundingBox.setFromObject(obj);
+                    
+                    // const size = boundingBox.getSize(new THREE.Vector3());
+                    // const maxSize = Math.max(size.x, size.y, size.z);
+                    // let newPositionCamera = new THREE.Vector3(maxSize, maxSize, maxSize);
+                    // components.camera.zoom = 1;
+                    // components.camera.left = -(2 * maxSize);
+                    // components.camera.bottom = -(2 * maxSize);
+                    // components.camera.top = 2 * maxSize;
+                    // components.camera.right = 2 * maxSize;
+                    // components.camera.near = -maxSize * 4;
+                    // components.camera.far = maxSize * 4;
+                    // components.camera.position.set(
+                    //     newPositionCamera.x,
+                    //     newPositionCamera.y,
+                    //     newPositionCamera.z
+                    // );
+                    // components.camera.lookAt(0, 0, 0);
+                    // components.camera.updateProjectionMatrix();
+
                     gsap.timeline().to(components.camera, 1, { 
                         zoom: 10, 
                         onUpdate: function () {
@@ -307,13 +334,13 @@ const FirstWorld = () => {
                 if( objects.length < 11 ) {
                     for ( let i = 0; i < objects.length; i ++ ) {
                         if( raycasted.indexOf(objects[i].object.name) > -1 ) {
-                            onSelect(objects[i].object.name, i)
+                            onSelect(objects[i].object, i)
                         } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
-                            onSelect(objects[i].object.parent.name, i)
+                            onSelect(objects[i].object.parent, i)
                         } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
-                            onSelect(objects[i].object.parent.parent.name, i)
+                            onSelect(objects[i].object.parent.parent, i)
                         } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
-                            onSelect(objects[i].object.parent.parent.parent.name, i)
+                            onSelect(objects[i].object.parent.parent.parent, i)
                         }
                     }
                 }

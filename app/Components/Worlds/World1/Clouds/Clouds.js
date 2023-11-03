@@ -66,8 +66,6 @@ const Clouds = (props) => {
     const headlineLength = headline.replace(" ", "").length;
     const headlineDuration = 1 / headlineLength;
 
-    console.log(headlineDuration)
-
     useEffect( () => {
         if(props.animate) {
             gsap.to(`#cloud1`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
