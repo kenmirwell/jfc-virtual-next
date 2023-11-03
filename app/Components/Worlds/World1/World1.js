@@ -367,9 +367,10 @@ const FirstWorld = () => {
             <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
                 <div className="absolute top-0 left-[20px]">
                     <img src="/assets/world1/elements/logo.png" />
-                    <div className="text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
-                        <h2 className="text-[60px] leading-none uppercase">Humble<br></br>Beginnings</h2>
-                        <p className="text-[40px]">1979-2003</p>
+                    <div className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
+                        <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
+                        <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
+                        <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
                     </div>
                 </div>
                 <div className="absolute bottom-[-70px] left-[-65px]">

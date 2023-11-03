@@ -66,8 +66,6 @@ const Clouds = (props) => {
     const headlineLength = headline.replace(" ", "").length;
     const headlineDuration = 1 / headlineLength;
 
-    console.log(headlineDuration)
-
     useEffect( () => {
         if(props.animate) {
             gsap.to(`#cloud1`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
@@ -100,7 +98,7 @@ const Clouds = (props) => {
                 <h1 className="headline uppercase text-white text-[100px] leading-none font-[700] tracking-[-2.5px]">
                     { headline.split(" ").map((w, wi) => (
                         <span className="flex justify-center" key={`headline_word_${ wi }`}>
-                            {w.split("").map((t,i) => <span key={`word_ltr_${ wi }_${ i }`} className={`block scale-0 lt${i}`}>{t}</span>)}
+                            {w.split("").map((t,i) => <span data-text={t} key={`word_ltr_${ wi }_${ i }`} className={`headline-single block scale-0 lt${i}`}>{t}</span>)}
                         </span>
                     ))}
                 </h1>
