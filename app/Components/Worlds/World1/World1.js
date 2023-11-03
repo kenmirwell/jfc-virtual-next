@@ -6,7 +6,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { gsap, Bounce, Power3, Expo } from 'gsap';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
 import Buttons from "./Buttons/Buttons"
-import Clouds from "./Clouds/Clouds"
+import Clouds from "./Clouds/Clouds";
 
 let hovered = null; 
 let contents = {
@@ -73,7 +73,7 @@ const FirstWorld = () => {
     /* Load all components */
     useEffect(() => {
         if( !loaded ) {
-            const renderer         = new THREE.WebGLRenderer();
+            const renderer         = new THREE.WebGLRenderer({ alpha: true });
             const scene            = new THREE.Scene();
             const pointer          = new THREE.Vector2();
             const raycaster        = new THREE.Raycaster();
@@ -117,7 +117,7 @@ const FirstWorld = () => {
     useEffect(() => {
         if( !model3d && loaded ) {
             components.renderer.setSize(window.innerWidth, window.innerHeight);
-            components.renderer.setClearColor(0x57D7FC);
+            // components.renderer.setClearColor(0x57D7FC);
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
             components.camera.position.set(0, 10, 10);
@@ -223,7 +223,7 @@ const FirstWorld = () => {
     const onLoad = () => {
         const assetLoader  = new GLTFLoader();
 
-        assetLoader.load(`${ process.env.NEXT_PUBLIC_WORLD_ASSETS }/world_war_one.glb`, async function(gltf) {
+        assetLoader.load(`assets/world1/world.glb`, async function(gltf) {
             setModel3d(gltf.scene);
 
             components.scene.add(gltf.scene);
@@ -309,22 +309,24 @@ const FirstWorld = () => {
         components.pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
         const from = {
-            x: components.camera.rotation.x,
-            y: components.camera.rotation.y
+            x: model3d.rotation.x,
+            y: model3d.rotation.y
         };
 
         let to = {
-            x: components.camera.rotation.x + components.pointer.y * 0.5,
-            y: components.camera.rotation.y - components.pointer.x * 0.5
+            x: model3d.rotation.x + components.pointer.y * 0.5,
+            y: model3d.rotation.y - components.pointer.x * 0.5
         };
 
-        if( to.x > -0.020 ) {
-            to.x = -0.020;
-        }
+        // if( to.x > -0.01 ) {
+        //     to.x = -0.01;
+        // }
 
-        if( to.x < -0.2 ) {
-            to.x = -0.2;
-        }
+        // if( to.x < -0.2 ) {
+        //     to.x = -0.2;
+        // }
+
+        console.log(to.x)
 
         if( to.y > 0.1 ) {
             to.y = 0.1;
@@ -334,12 +336,10 @@ const FirstWorld = () => {
             to.y = -0.1;
         }
 
-        console.log( to.y  )
-
         gsap
         .timeline()
         .fromTo(
-            components.camera.rotation, 
+            model3d.rotation, 
             1.5,
             { y: from.y, x: from.x }, 
             { y: to.y, x: to.x, ease: Power3.easeOut }
@@ -353,11 +353,31 @@ const FirstWorld = () => {
     }
 
     return (
-        <>  
+        <div className="overflow-hidden">  
             <Buttons onAnimate={() => setInitialAnimate(true)} />
             <Clouds animate={ initialAnimate } delay={.5} />
             <div className={`${ model3d ? "!opacity-0 !pointer-events-none" : "" } opacity-100 fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out z-[10]`}>
                 <div className="loader"></div>
+            </div>
+            <div className={`pointer-events-none z-[-1] overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
+                <video autoPlay muted loop>
+                    <source src="/assets/world1/bg.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
+                <div className="absolute top-0 left-[20px]">
+                    <img src="/assets/world1/elements/logo.png" />
+                    <div className="text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
+                        <h2 className="text-[60px] leading-none uppercase">Humble<br></br>Beginnings</h2>
+                        <p className="text-[40px]">1979-2003</p>
+                    </div>
+                </div>
+                <div className="absolute bottom-[-70px] left-[-65px]">
+                    <img src="/assets/world1/elements/icons.png" />
+                </div>
+                <div className="absolute top-[90px] right-[110px]">
+                    <img src="/assets/world1/elements/chapter.svg" width="200" />
+                </div>
             </div>
             { selected && (
                 <div>
@@ -370,7 +390,7 @@ const FirstWorld = () => {
                 </div>
             )}
                 
-        </>
+        </div>
     );
 }
 
