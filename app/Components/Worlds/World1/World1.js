@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react";
 import { useEffect, useState } from "react"
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -7,43 +8,60 @@ import { gsap, Bounce, Power3, Expo } from 'gsap';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
 import Buttons from "./Buttons/Buttons"
 import Clouds from "./Clouds/Clouds";
+import { constants } from "buffer";
 
 let hovered = null; 
+let popupVideo = null;
+let activeVideo = null;
+let disableFunctionality = false;
+let active = 0;
+let button = 0;
+
 let contents = {
     "Empty001": {
         year: "1978",
         title: "Jolibee Food Corporation is born",
         description: (
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        )
+        ),
+        popup: ["/assets/world1/popup/1978.webm", "/assets/world1/popup/1979.webm"],
+        post: ["85px", "40px"]
     },
     "Empty002": {
         year: "1979",
         title: "Jolibee Food Corporation is born",
         description: (
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        )
+        ), 
+        popup: ["/assets/world1/popup/1980.webm"],
+        post: ["85px"]
     },
     "Empty003": {
         year: "1979",
         title: "Jolibee Food Corporation is born",
         description: (
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        )
+        ),
+        popup: ["/assets/world1/popup/1984.webm", "/assets/world1/popup/1990.webm", "/assets/world1/popup/1993.webm"],
+        post: ["85px", "40px", "20px"]
     },
     "Empty004": {
         year: "1982",
         title: "Jolibee Food Corporation is born",
         description: (
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        )
+        ),
+        popup: ["/assets/world1/popup/1994.webm", "/assets/world1/popup/1998.webm"],
+        post: ["85px", "40px"]
     },
     "Empty005": {
         year: "1990",
         title: "Jolibee Food Corporation is born",
         description: (
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        )
+        ),
+        popup: ["/assets/world1/popup/2000.webm", "/assets/world1/popup/2001.webm"],
+        post: ["85px", "40px"]
     }
 };
 
@@ -52,9 +70,11 @@ const FirstWorld = () => {
     const [loaded, setLoaded] = useState(false);
     const [model3d, setModel3d] = useState(null);
     const [selected, setSelected] = useState(null);
+    const [objSelected, setObjSelected] = useState(null)
     const [initialAnimate, setInitialAnimate] = useState(false);
     const [finishAnimate, setFinishAnimate] = useState(false);
-    const [disableFunctionality, setDisableFunctionality] = useState(false);
+    const [audio, setAudio] = useState(false);
+    const [activeVideo, setActiveVideo] = useState(0);
     
     const [components, setComponents] = useState({
         renderer: null,
@@ -286,6 +306,14 @@ const FirstWorld = () => {
         }
     }
 
+    const onClickredButton = (index) => {
+        // active = index;
+
+        setActiveVideo(index);
+
+        console.log("active", active)
+    }
+
     const onClickObject = () => {
         if( !disableFunctionality ) {
             if( model3d ) {
@@ -294,29 +322,9 @@ const FirstWorld = () => {
                 const objects = components.raycaster.intersectObjects(model3d.children);
                 const raycasted = Object.keys(contents); 
 
-                const onSelect = (obj, i) => {
-                    setDisableFunctionality(true);
 
-                    // const boundingBox = new THREE.Box3();
-                    // boundingBox.setFromObject(obj);
-                    
-                    // const size = boundingBox.getSize(new THREE.Vector3());
-                    // const maxSize = Math.max(size.x, size.y, size.z);
-                    // let newPositionCamera = new THREE.Vector3(maxSize, maxSize, maxSize);
-                    // components.camera.zoom = 1;
-                    // components.camera.left = -(2 * maxSize);
-                    // components.camera.bottom = -(2 * maxSize);
-                    // components.camera.top = 2 * maxSize;
-                    // components.camera.right = 2 * maxSize;
-                    // components.camera.near = -maxSize * 4;
-                    // components.camera.far = maxSize * 4;
-                    // components.camera.position.set(
-                    //     newPositionCamera.x,
-                    //     newPositionCamera.y,
-                    //     newPositionCamera.z
-                    // );
-                    // components.camera.lookAt(0, 0, 0);
-                    // components.camera.updateProjectionMatrix();
+                const onSelect = (obj, i) => {
+                    disableFunctionality = true;
 
                     gsap.timeline().to(components.camera, 1, { 
                         zoom: 10, 
@@ -325,6 +333,12 @@ const FirstWorld = () => {
                         }, 
                         ease: Power3.easeInOut 
                     });
+
+                    setTimeout(() => {
+
+                        setObjSelected(obj.name)
+                        
+                    }, 1000);
 
                     setTimeout(() => {
                         setSelected(i);
@@ -349,7 +363,7 @@ const FirstWorld = () => {
     };
 
     const onDeselect = () => {
-        setDisableFunctionality(false);
+        disableFunctionality = false;
         setSelected(null);
 
         gsap.timeline().to(components.camera, 0.7, { 
@@ -358,7 +372,7 @@ const FirstWorld = () => {
                 components.camera.updateProjectionMatrix();
             }, 
             ease: Power3.easeInOut
-        });
+        });    
     }
 
     const onPointerMove = ( event ) => {
@@ -409,6 +423,14 @@ const FirstWorld = () => {
         components.renderer.setSize( window.innerWidth, window.innerHeight );
     };
 
+    const audioClick = () => {
+        if(audio) {
+            setAudio(false) 
+        } else {
+            setAudio(true)
+        }
+    }
+
     return (
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
@@ -429,7 +451,7 @@ const FirstWorld = () => {
                         <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
                         <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
                         <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
-                        </div>
+                    </div>
                     </div>
                     <div className="absolute bottom-[-70px] left-[-65px]">
                         <img src="/assets/world1/elements/icons.png" />
@@ -440,14 +462,43 @@ const FirstWorld = () => {
                 </div>
             </div>
             <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ selected ? "!opacity-100" : "pointer-events-none" }`}>
-                <div className={`details-modal`}>
-                    <video autoPlay loop muted className={`${ selected ? "" : "pointer-events-none" }`}>
-                        <source src={"/assets/world1/popup/1978.webm"} type="video/webm"></source>
-                    </video>
-                    <button className="absolute top-[70px] right-[85px]" onClick={ onDeselect }>
-                        <img src="/assets/world1/popup/exit.svg" width="50" />
+                <div className="">
+                    <button className="z-2 absolute top-[70px] right-[85px]" onClick={ onDeselect }>
+                        <img src="/assets/world1/popup-icons/exit.svg" width="50" />
                     </button>
+                    <button className="z-2 absolute bottom-[70px] right-[85px]" onClick={ "" }>
+                        <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
+                    </button>
+                    {audio ?
+                        <button className="z-2 absolute top-[70px] left-[85px]" onClick={ audioClick }>
+                            <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
+                        </button> :
+                        <button className="z-2 absolute top-[70px] left-[85px]" onClick={ audioClick }>
+                            <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
+                        </button>
+                    }
+
+                    {objSelected && contents[objSelected].popup.map((p, i) => (
+                        <button className={`z-2 absolute bottom-[70px] left-[${contents[objSelected].post[i]}]`} onClick={() => onClickredButton(i)}>
+                            {activeVideo === i ? 
+                            <div className="red-button-container">
+                                <img className="z-99" src="/assets/world1/popup-icons/circle-red.svg" width="100" />
+                                <div className="red-button" />
+                            </div> :
+                            <div className="white-button">
+                                <img className="z-99" src="/assets/world1/popup-icons/circle-white.svg" width="20" />
+                            </div> }
+                        </button>
+                    ))}
                 </div>
+                <div className={`details-modal`}>
+
+                    {objSelected && contents[objSelected].popup.map((p, i) => (
+                        <video autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
+                           <source src={p} type="video/webm"/>
+                        </video>
+                    ))}
+                </div>                
                 <div className={`details-modal-overlay ${ selected ? "" : "pointer-events-none" }`} />
             </div>
         </div>
