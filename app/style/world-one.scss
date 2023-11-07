@@ -108,16 +108,10 @@
 }
 
 
-.webm-container {
+.video {
+    width: 100%;
+}
 
-    .video {
-
-        &.not-visible {
-            display: none
-        }
-    
-        &.is-visible {
-            display: block
-        }
-    }
+.text-container {
+    width: 45%;    
 }
