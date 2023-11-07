@@ -27,7 +27,7 @@ const World = ({
     const [model3d, setModel3d] = useState(null);
     const [selected, setSelected] = useState(null);
     const [objSelected, setObjSelected] = useState(null)
-    const [initialAnimate, setInitialAnimate] = useState(true);
+    const [initialAnimate, setInitialAnimate] = useState(false);
     const [finishAnimate, setFinishAnimate] = useState(false);
     const [audio, setAudio] = useState(false);
     const [activeVideo, setActiveVideo] = useState(0);
@@ -106,6 +106,8 @@ const World = ({
     /* Setup scene */
     useEffect(() => {
         if( model3d ) {
+            setInitialAnimate(true);
+            
             window.requestAnimationFrame(animate);
 
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
