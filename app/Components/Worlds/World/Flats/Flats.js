@@ -1,12 +1,26 @@
-const Flats = ({ flats }) => {
+const Flats = ({ 
+    flats,
+    title,
+    year,
+    color
+}) => {
     return (
         <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
             <div className="absolute top-0 left-[20px]">
                 <div id="clogo" className="translate-y-[-100px]">
                     <img src={ flats.logo } />
                 </div>
-                <div id="cheader" className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0 min-w-[360px]">
-                    { flats.header }
+                <div id="cheader" className="text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0 min-w-[350px]">
+                    { title.split(" ").map(h => (
+                        <h2 className="relative text-[60px] leading-none uppercase flex justify-center">
+                            <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ h }</span>
+                            <span className="relative">{ h }</span>
+                        </h2>
+                    ))}
+                    <p data-text={ year } className="text-[40px]">
+                        <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ year }</span>
+                        <span className="relative">{ year }</span>
+                    </p>
                 </div>
             </div>
             <div id="cicons" className="absolute bottom-[-70px] left-[-65px] translate-y-[200px]">

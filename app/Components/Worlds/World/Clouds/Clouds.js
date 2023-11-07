@@ -64,7 +64,8 @@ const clouds = [
 const Clouds = ({
     title,
     delay,
-    animate
+    animate,
+    color
 }) => {
     const headline = title;
     const headlineLength = headline.replace(" ", "").length;
@@ -87,7 +88,7 @@ const Clouds = ({
             gsap.to(`#cloud3`,   {y: -1200, duration: 2.3, ease: Power3.easeInOut, delay: 2});
             gsap.to(`#cloud4`,   {y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2});
             gsap.to(`#cloud5`,   {y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2});
-            gsap.to(`.headline`, {y: -1200, duration: 2, ease: Power3.easeInOut, delay: 2});
+            gsap.to(`#mtitle`, {y: -1200, duration: 2, ease: Power3.easeInOut, delay: 2});
         }
     }, [animate])
 
@@ -99,10 +100,15 @@ const Clouds = ({
                 </div>
             ))}
             <div id="text" className="pointer-events-none absolute top-0 left-0 right-0 bottom-0 text-center flex items-center justify-center">
-                <h1 className="headline uppercase text-white text-[100px] leading-none font-[700] tracking-[-2.5px]">
+                <h1 id="mtitle" className="uppercase text-white text-[100px] leading-none font-[700]">
                     { headline.split(" ").map((w, wi) => (
                         <span className="flex justify-center" key={`headline_word_${ wi }`}>
-                            {w.split("").map((t,i) => <span data-text={t} key={`word_ltr_${ wi }_${ i }`} className={`headline-single block scale-0 lt${i}`}>{t}</span>)}
+                            {w.split("").map((t,i) => (
+                                <span key={`word_ltr_${ wi }_${ i }`} className={`relative headline-single block scale-0 lt${i}`}>
+                                    <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ t }</span>
+                                    <span className="relative">{ t }</span>
+                                </span>
+                            ))}
                         </span>
                     ))}
                 </h1>
