@@ -12,7 +12,7 @@ const Flats = ({
                 </div>
                 <div id="cheader" className="text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0 min-w-[350px]">
                     { title.split(" ").map(h => (
-                        <h2 className="relative text-[60px] leading-none uppercase flex justify-center">
+                        <h2 key={`title_${ h }`} className="relative text-[60px] leading-none uppercase flex justify-center">
                             <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ h }</span>
                             <span className="relative">{ h }</span>
                         </h2>

@@ -374,8 +374,8 @@ const World = ({
             };
 
             let to = {
-                x: model3d.rotation.x + components.pointer.y * 0.5,
-                y: model3d.rotation.y + components.pointer.x * 0.5
+                x: model3d.rotation.x + ( components.pointer.y * 0.2 ),
+                y: model3d.rotation.y + ( components.pointer.x * 0.2 )
             };
 
             if( to.x > 0.12 ) {
@@ -442,22 +442,15 @@ const World = ({
                 <div className={`details-modal`}>
                     <div className="details-modal-content">
                         <div className="text-container absolute top-[200px] right-[136px]">
-                            {objSelected && contents[objSelected].title.map((title, i) => (
-                                    activeVideo !== i && 
-                                        <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
-                                            <h4>{title}</h4>
-                                        </div>
-                                    
-                                ))
-                            }
+                            {objSelected && contents[objSelected].title.filter((title, i) => activeVideo !== i).map((title, i) => (
+                                <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
+                                    <h4>{title}</h4>
+                                </div>
+                            ))}
 
-                            {objSelected && contents[objSelected].description.map((desc, i) => (
-                                activeVideo !== i && 
-                                    <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`}>
-                                        {desc}
-                                    </div>
-                                ))
-                            }
+                            {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo !== i).map((desc, i) => (
+                                <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
+                            ))}
                         </div>
                         <div className="webm-container">
                             <button className="exit-button absolute" onClick={ onDeselect }>
