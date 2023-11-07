@@ -23,24 +23,14 @@ p {
         content: attr(data-text);
         position: absolute;
         z-index: -1; 
+        left: 0;
+        right: 0;
 
         /* visible stroke is 10px because of alignment */
         -webkit-text-stroke: 4px #00bbdc;
     
         /* is sized relative to h1 */
         font-size: 1em; 
-    }
-
-    .h2-a::after {
-        left: 54px;
-    }
-
-    .h2-b::after {
-        left: 0;
-    }
-
-    p::after {
-        left: 71px;
     }
 }
 
