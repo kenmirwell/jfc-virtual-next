@@ -20,7 +20,8 @@ const World = ({
     contents,
     flats,
     model,
-    background
+    background,
+    objects = {}
 }) => {
     const [loaded, setLoaded] = useState(false);
     const [model3d, setModel3d] = useState(null);
@@ -108,7 +109,7 @@ const World = ({
             window.requestAnimationFrame(animate);
 
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees = model3d.children.filter(obj => obj.name.indexOf("Tree") > -1 || obj.name === "Empty");
+            const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
 
             for( const obj of interactables ) {
                 obj.position.y += 5;
@@ -131,7 +132,7 @@ const World = ({
     useEffect(() => {
         if(model3d && initialAnimate) {
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees = model3d.children.filter(obj => obj.name.indexOf("Tree") > -1 || obj.name === "Empty");
+            const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
 
             gsap.timeline().to(components.camera.position, 2, { 
                 y: 3, 
