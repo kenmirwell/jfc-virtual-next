@@ -107,7 +107,7 @@ const World = ({
     useEffect(() => {
         if( model3d ) {
             setInitialAnimate(true);
-            
+
             window.requestAnimationFrame(animate);
 
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
@@ -455,7 +455,7 @@ const World = ({
                                 <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
                             ))}
 
-                            {objSelected && contents[objSelected].photos.map((image, i) => (
+                            {objSelected && contents[objSelected].photos && contents[objSelected].photos.map((image, i) => (
                                 activeVideo !== i && 
                                     <div className="popup-image-container top-[200px] right-[0px]" key={`desc-${i}`}>
                                         <img src={image}/>
