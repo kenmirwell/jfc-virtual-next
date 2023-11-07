@@ -377,25 +377,32 @@ const World = ({
             };
 
             let to = {
-                x: model3d.rotation.x + ( components.pointer.y * 0.2 ),
-                y: model3d.rotation.y + ( components.pointer.x * 0.2 )
+                x: 0.5 * ( components.pointer.y * 0.2 ),
+                y: 0.5 * ( components.pointer.x * 0.2 )
             };
 
-            if( to.x > 0.12 ) {
-                to.x = 0.12;
-            }
+            // let to = {
+            //     x: 0,
+            //     y: 0
+            // }
 
-            if( to.x < -0.02 ) {
-                to.x = -0.02;
-            }
+            // console.log(components.pointer.y)
 
-            if( to.y > 0.1 ) {
-                to.y = 0.1;
-            }
+            // if( calc.x > 0.12 ) {
+            //     to.x = 0.12;
+            // } else if( calc.x < -0.02 ) {
+            //     to.x = -0.02;
+            // } else {
+            //     to.x = calc.x
+            // }
 
-            if( to.y < -0.1 ) {
-                to.y = -0.1;
-            }
+            // if( calc.y > 0.12 ) {
+            //     to.y = 0.12;
+            // } else if( calc.y < -0.02 ) {
+            //     to.y = -0.02;
+            // } else {
+            //     to.y = calc.y;
+            // }
 
             gsap
             .timeline()
