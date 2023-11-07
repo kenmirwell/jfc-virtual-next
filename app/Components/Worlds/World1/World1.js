@@ -25,7 +25,7 @@ let contents = {
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
         ),
         popup: ["/assets/world1/popup/1978.webm", "/assets/world1/popup/1979.webm"],
-        post: ["85px", "40px"]
+        post: ["left-[105px]", "left-[200px]"]
     },
     "Empty002": {
         year: "1979",
@@ -34,7 +34,7 @@ let contents = {
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
         ), 
         popup: ["/assets/world1/popup/1980.webm"],
-        post: ["85px"]
+        post: ["left-[105px]"]
     },
     "Empty003": {
         year: "1979",
@@ -43,7 +43,7 @@ let contents = {
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
         ),
         popup: ["/assets/world1/popup/1984.webm", "/assets/world1/popup/1990.webm", "/assets/world1/popup/1993.webm"],
-        post: ["85px", "40px", "20px"]
+        post: ["left-[105px]", "left-[200px]", "20px"]
     },
     "Empty004": {
         year: "1982",
@@ -52,7 +52,7 @@ let contents = {
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
         ),
         popup: ["/assets/world1/popup/1994.webm", "/assets/world1/popup/1998.webm"],
-        post: ["85px", "40px"]
+        post: ["left-[105px]", "left-[200px]"]
     },
     "Empty005": {
         year: "1990",
@@ -61,7 +61,7 @@ let contents = {
             `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
         ),
         popup: ["/assets/world1/popup/2000.webm", "/assets/world1/popup/2001.webm"],
-        post: ["85px", "40px"]
+        post: ["left-[105px]", "left-[200px]"]
     }
 };
 
@@ -306,7 +306,7 @@ const FirstWorld = () => {
         }
     }
 
-    const onClickredButton = (index) => {
+    const onClickwhiteButton = (index) => {
         // active = index;
 
         setActiveVideo(index);
@@ -372,7 +372,7 @@ const FirstWorld = () => {
                 components.camera.updateProjectionMatrix();
             }, 
             ease: Power3.easeInOut
-        });    
+        })
     }
 
     const onPointerMove = ( event ) => {
@@ -462,42 +462,43 @@ const FirstWorld = () => {
                 </div>
             </div>
             <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ selected ? "!opacity-100" : "pointer-events-none" }`}>
-                <div className="">
-                    <button className="z-2 absolute top-[70px] right-[85px]" onClick={ onDeselect }>
-                        <img src="/assets/world1/popup-icons/exit.svg" width="50" />
-                    </button>
-                    <button className="z-2 absolute bottom-[70px] right-[85px]" onClick={ "" }>
-                        <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
-                    </button>
-                    {audio ?
-                        <button className="z-2 absolute top-[70px] left-[85px]" onClick={ audioClick }>
-                            <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
-                        </button> :
-                        <button className="z-2 absolute top-[70px] left-[85px]" onClick={ audioClick }>
-                            <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
-                        </button>
-                    }
-
-                    {objSelected && contents[objSelected].popup.map((p, i) => (
-                        <button className={`z-2 absolute bottom-[70px] left-[${contents[objSelected].post[i]}]`} onClick={() => onClickredButton(i)}>
-                            {activeVideo === i ? 
-                            <div className="red-button-container">
-                                <img className="z-99" src="/assets/world1/popup-icons/circle-red.svg" width="100" />
-                                <div className="red-button" />
-                            </div> :
-                            <div className="white-button">
-                                <img className="z-99" src="/assets/world1/popup-icons/circle-white.svg" width="20" />
-                            </div> }
-                        </button>
-                    ))}
-                </div>
                 <div className={`details-modal`}>
+                    <div className="details-modal-content">
+                        <button className="exit-button absolute" onClick={ onDeselect }>
+                            <img src="/assets/world1/popup-icons/exit.svg" width="50" />
+                        </button>
+                        <button className="arrow-right absolute" onClick={ "" }>
+                            <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
+                        </button>
+                        {audio ?
+                            <button className="audio-button absolute" onClick={ audioClick }>
+                                <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
+                            </button> :
+                            <button className="audio-button absolute" onClick={ audioClick }>
+                                <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
+                            </button>
+                        }
 
-                    {objSelected && contents[objSelected].popup.map((p, i) => (
-                        <video autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
-                           <source src={p} type="video/webm"/>
-                        </video>
-                    ))}
+                        {objSelected && contents[objSelected].popup.map((p, i) => (
+                            <button key={`red-white-${i}`} className={`red-white-container absolute bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
+                                {activeVideo === i ? 
+                                <div className="red-button-container">
+                                    <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
+                                    <div className="red-button" />
+                                </div> :
+                                <div className="white-button-container">
+                                    <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
+                                </div>}
+                            </button>
+                        ))}
+                        <div className="webm-container">
+                            {objSelected && contents[objSelected].popup.map((p, i) => (
+                                <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video not-visible" : "video is-visible"}`}>
+                                    <source src={p} type="video/webm"/>
+                                </video>
+                            ))}
+                        </div>
+                    </div>
                 </div>                
                 <div className={`details-modal-overlay ${ selected ? "" : "pointer-events-none" }`} />
             </div>

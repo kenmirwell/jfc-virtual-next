@@ -5,61 +5,126 @@
     }
 }
 
-.white-button {
-    border: 2px solid #ffffff;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        right: -500px
+    }
 
-    img {
-        position: relative;
-        z-index: 99;
+    100% {
+        opacity: 1;
+        right: 0;
     }
 }
 
-.red-button-container {
-    img {
-        position: relative;
-        z-index: 999;
+@keyframes fade-out {    
+    100% {
+        opacity: 0
     }
+}
 
-    .red-button {
+
+.arrow-right, 
+.exit-button, 
+.audio-button {
+    z-index: 999
+}
+
+.exit-button {
+    top: 58px;
+    right: 70px;
+}
+
+.arrow-right {
+    bottom: 60px;
+    right: 75px
+}
+
+.audio-button {
+    top: 55px;
+    left: 50px;
+}
+
+.red-white-container {
+    z-index: 999;
+
+    .white-button-container {
         &:after {
             content: "";
             border: 2px solid #ffffff;
-            height: 20px;
-            width: 20px;
+            height: 35px;
+            width: 35px;
             border-radius: 50%;
             position: absolute;
-            top: 41px;
-            right: 41px;
-            
+            top: -9px;
+            right: -8px;
         }
     }
     
-    .red-button {
-        &:before {
-            content: "";
-            border: 2px solid #ffffff;
-            height: 25px;
-            width: 25px;
-            border-radius: 50%;
-            position: absolute;
-            top: 37px;
-            right: 37px;
+    .red-button-container {
+        img {
+            position: relative;
         }
-    }
     
-    .red-button {
-        &:before {
-            animation: pulse 2s ease-out infinite;
+        .red-button {
+    
+            &:after {
+                content: "";
+                border: 2px solid #ffffff;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
         }
-    }
-    
-    .red-button {
-        &:after {
-            animation: pulse 2s .5s ease-out infinite;
+        
+        .red-button {
+            &:before {
+                content: "";
+                border: 2px solid #ffffff;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                position: absolute;
+                top: -3px;
+                right: -3px;
+            }
+        }
+        
+        .red-button {
+            &:before {
+                animation: pulse 2s ease-out infinite;
+            }
+        }
+        
+        .red-button {
+            &:after {
+                animation: pulse 2s .5s ease-out infinite;
+            }
         }
     }
 }
 
+
+.webm-container {
+    display: flex;
+    height: 700px;
+    width: 100%;
+
+    .video {
+        position: absolute;
+
+        &.not-visible {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s, transform 1s ease-in-out
+        }
+    
+        &.is-visible {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+    }
+}
