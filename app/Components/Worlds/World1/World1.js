@@ -66,19 +66,13 @@ const World1 = () => {
     return (
         <World 
             title="Humble Beginnings"
+            year="1979-2003"
             model="/assets/world1/world.glb"
             background="/assets/world1/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
                 chapter: "/assets/world1/elements/chapter.svg",
-                icons: "/assets/world1/elements/icons.png",
-                header: (
-                    <>
-                        <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
-                        <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
-                        <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
-                    </>
-                )
+                icons: "/assets/world1/elements/icons.png"
             }}
             contents={ contents }
         />

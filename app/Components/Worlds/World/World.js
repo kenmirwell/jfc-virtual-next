@@ -15,6 +15,8 @@ let disableFunctionality = false;
 
 const World = ({
     title,
+    year,
+    color,
     contents,
     flats,
     model,
@@ -427,10 +429,10 @@ const World = ({
     return (
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
-                <Clouds title={ title } animate={ initialAnimate } delay={.5} />
+                <Clouds title={ title } animate={ initialAnimate } delay={.5} color={ color } />
                 <Loader model3d={ model3d } />
                 <Background background={ background } />
-                <Flats flats={ flats } />
+                <Flats flats={ flats } title={ title } year={ year } color={ color } />
                 <audio className="hidden" controls autoplay ref={ref}> 
                     <source src={"/assets/world1/popup-audio.mp3"} />
                 </audio>
