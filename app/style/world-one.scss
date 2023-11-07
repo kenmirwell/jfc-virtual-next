@@ -109,22 +109,15 @@
 
 
 .webm-container {
-    display: flex;
-    height: 700px;
-    width: 100%;
 
     .video {
-        position: absolute;
 
         &.not-visible {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 1s, transform 1s ease-in-out
+            display: none
         }
     
         &.is-visible {
-            opacity: 1;
-            transform: translateX(10px);
+            display: block
         }
     }
 }

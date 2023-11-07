@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { gsap, Bounce, Power3, Expo } from 'gsap';
@@ -75,6 +75,7 @@ const FirstWorld = () => {
     const [finishAnimate, setFinishAnimate] = useState(false);
     const [audio, setAudio] = useState(false);
     const [activeVideo, setActiveVideo] = useState(0);
+    const ref = useRef(false)
     
     const [components, setComponents] = useState({
         renderer: null,
@@ -330,6 +331,12 @@ const FirstWorld = () => {
                         zoom: 10, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
+
+                            setAudio(true)
+
+                            if(ref.current) {
+                                ref.current.play()
+                            }
                         }, 
                         ease: Power3.easeInOut 
                     });
@@ -364,12 +371,21 @@ const FirstWorld = () => {
 
     const onDeselect = () => {
         disableFunctionality = false;
-        setSelected(null);
+        setSelected(null);        
 
         gsap.timeline().to(components.camera, 0.7, { 
             zoom: 1, 
             onUpdate: function () {
                 components.camera.updateProjectionMatrix();
+
+                if(audio) {
+                    if(ref.current) {
+                        ref.current.pause()
+                        ref.current.currentTime = 0
+
+                        console.log(ref)
+                    }
+                }
             }, 
             ease: Power3.easeInOut
         })
@@ -426,8 +442,16 @@ const FirstWorld = () => {
     const audioClick = () => {
         if(audio) {
             setAudio(false) 
+            
+            if(ref.current) {
+                ref.current.pause()
+            }
         } else {
             setAudio(true)
+
+            if(ref.current) {
+                ref.current.play()
+            }
         }
     }
 
@@ -460,6 +484,9 @@ const FirstWorld = () => {
                         <img src="/assets/world1/elements/chapter.svg" width="200" />
                     </div>
                 </div>
+                <audio className="hidden" controls autoplay ref={ref}> 
+                    <source src={"/assets/world1/popup-audio.mp3"} />
+                </audio>
             </div>
             <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ selected ? "!opacity-100" : "pointer-events-none" }`}>
                 <div className={`details-modal`}>
