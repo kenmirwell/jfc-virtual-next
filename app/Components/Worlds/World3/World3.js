@@ -68,7 +68,7 @@ const World3 = () => {
             title="Going Global"
             year="2013-2020"
             color="#06abcb"
-            model="/assets/world1/world.glb"
+            model="/assets/world3/world.glb"
             background="/assets/world3/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",

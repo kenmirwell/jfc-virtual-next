@@ -68,7 +68,7 @@ const World2 = () => {
             title="Dreaming Bigger"
             year="2004-2012"
             color="#c79c1e"
-            model="/assets/world1/world.glb"
+            model="/assets/world2/world.glb"
             background="/assets/world2/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
@@ -76,6 +76,9 @@ const World2 = () => {
                 icons: "/assets/world2/elements/icons.png"
             }}
             contents={ contents }
+            objects={{
+                tree: "Pine"
+            }}
         />
     )
 }

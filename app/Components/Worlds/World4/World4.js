@@ -68,7 +68,7 @@ const World4 = () => {
             title="New Frontier"
             year="2021-2023"
             color="#df4637"
-            model="/assets/world1/world.glb"
+            model="/assets/world4/world.glb"
             background="/assets/world4/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
