@@ -303,6 +303,7 @@ const World = ({
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
 
+                            setActiveVideo(0)
                             setAudio(true)
 
                             if(ref.current) {
@@ -457,6 +458,14 @@ const World = ({
                                     </div>
                                 ))
                             }
+
+                            {objSelected && contents[objSelected].photos.map((image, i) => (
+                                activeVideo !== i && 
+                                    <div className="popup-image-container top-[200px] right-[0px]" key={`desc-${i}`}>
+                                        <img src={image}/>
+                                    </div>
+                                ))
+                            }
                         </div>
                         <div className="webm-container">
                             <button className="exit-button absolute" onClick={ onDeselect }>
@@ -488,10 +497,13 @@ const World = ({
                                     </div>}
                                 </button>
                             ))}
+
+                            
                             {objSelected && contents[objSelected].popup.map((p, i) => (
+                                <>{console.log('iiii', i)}
                                 <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
                                     <source src={p} type="video/webm"/>
-                                </video>
+                                </video></>
                             ))}
                         </div>
                     </div>
