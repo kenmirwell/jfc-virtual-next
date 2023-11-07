@@ -5,17 +5,14 @@ import { useEffect, useState, useRef } from "react"
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { gsap, Bounce, Power3, Expo } from 'gsap';
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
-import Buttons from "./Buttons/Buttons"
 import Clouds from "./Clouds/Clouds";
-import { constants } from "buffer";
+import Flats from "./Flats/Flats";
+import Background from "./Background/Background";
+import Loader from "./Loader/Loader";
 
 let hovered = null; 
-let popupVideo = null;
-let activeVideo = null;
 let disableFunctionality = false;
 let active = 0;
-let button = 0;
 
 let contents = {
     "Empty001": {
@@ -128,8 +125,6 @@ const FirstWorld = () => {
                 100 
             );
 
-            const orbit = new OrbitControls(camera, renderer.domElement);
-
             setComponents({
                 renderer,
                 scene,
@@ -141,8 +136,7 @@ const FirstWorld = () => {
                     directional: directionalLight,
                     directionalHelper: dLightHelper
                 },
-                camera,
-                orbit
+                camera
             });
 
             setLoaded(true);
@@ -497,32 +491,9 @@ const FirstWorld = () => {
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
                 <Clouds animate={ initialAnimate } delay={.5} />
-                <div className={`${ model3d ? "!opacity-0 !pointer-events-none" : "" } opacity-100 fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out z-[10]`}>
-                    <div className="loader"></div>
-                </div>
-                <div className={`pointer-events-none z-[-1] overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
-                    <video autoPlay muted loop>
-                        <source src="/assets/world1/bg.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
-                    <div className="absolute top-0 left-[20px]">
-                        <div id="clogo" className="translate-y-[-100px]">
-                            <img src="/assets/world1/elements/logo.png" />
-                        </div>
-                        <div id="cheader" className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0">
-                            <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
-                            <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
-                            <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
-                        </div>
-                    </div>
-                    <div id="cicons" className="absolute bottom-[-70px] left-[-65px] translate-y-[200px]">
-                        <img src="/assets/world1/elements/icons.png" />
-                    </div>
-                    <div id="cchapter" className="absolute top-[90px] right-[110px] translate-x-[400px]">
-                        <img src="/assets/world1/elements/chapter.svg" width="200" />
-                    </div>
-                </div>
+                <Loader model3d={ model3d } />
+                <Background />
+                <Flats />
                 <audio className="hidden" controls autoplay ref={ref}> 
                     <source src={"/assets/world1/popup-audio.mp3"} />
                 </audio>
