@@ -12,9 +12,9 @@ import Loader from "./Loader/Loader";
 
 let hovered = null; 
 let disableFunctionality = false;
-let active = 0;
 
 const World = ({
+    title,
     contents,
     flats,
     model,
@@ -427,7 +427,7 @@ const World = ({
     return (
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
-                <Clouds animate={ initialAnimate } delay={.5} />
+                <Clouds title={ title } animate={ initialAnimate } delay={.5} />
                 <Loader model3d={ model3d } />
                 <Background background={ background } />
                 <Flats flats={ flats } />

@@ -65,12 +65,20 @@ const World3 = () => {
 
     return (
         <World 
+            title="Going Global"
             model="/assets/world1/world.glb"
             background="/assets/world3/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
                 chapter: "/assets/world1/elements/chapter.svg",
-                icons: "/assets/world1/elements/icons.png"
+                icons: "/assets/world3/elements/icons.png",
+                header: (
+                    <>
+                        <h2 data-text={"Going"} className="h2-a text-[60px] leading-none uppercase">Going</h2>
+                        <h2 data-text={"Global"} className="h2-b text-[60px] leading-none uppercase">Global</h2>
+                        <p data-text={"2013-2020"} className="text-[40px]">2013-2020</p>
+                    </>
+                )
             }}
             contents={ contents }
         />

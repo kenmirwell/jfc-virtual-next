@@ -65,12 +65,20 @@ const World4 = () => {
 
     return (
         <World 
+            title="New Frontier"
             model="/assets/world1/world.glb"
             background="/assets/world4/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
-                chapter: "/assets/world1/elements/chapter.svg",
-                icons: "/assets/world1/elements/icons.png"
+                chapter: "/assets/world4/elements/chapter.svg",
+                icons: "/assets/world4/elements/icons.png",
+                header: (
+                    <>
+                        <h2 data-text={"New"} className="h2-a text-[60px] leading-none uppercase">New</h2>
+                        <h2 data-text={"Frontier"} className="h2-b text-[60px] leading-none uppercase">Frontier</h2>
+                        <p data-text={"2021-2023"} className="text-[40px]">2021-2023</p>
+                    </>
+                )
             }}
             contents={ contents }
         />

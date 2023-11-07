@@ -61,18 +61,22 @@ const clouds = [
     }
 ];
 
-const Clouds = (props) => {
-    const headline = "Humble Beginnings";
+const Clouds = ({
+    title,
+    delay,
+    animate
+}) => {
+    const headline = title;
     const headlineLength = headline.replace(" ", "").length;
     const headlineDuration = 1 / headlineLength;
 
     useEffect( () => {
-        if(props.animate) {
-            gsap.to(`#cloud1`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
-            gsap.to(`#cloud2`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
-            gsap.to(`#cloud3`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
-            gsap.to(`#cloud4`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
-            gsap.to(`#cloud5`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay: props.delay});
+        if(animate) {
+            gsap.to(`#cloud1`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay});
+            gsap.to(`#cloud2`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay});
+            gsap.to(`#cloud3`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay});
+            gsap.to(`#cloud4`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay});
+            gsap.to(`#cloud5`, {x: 0, y: 0, duration: .5, ease: Power3.easeInOut, delay});
 
             for(var x = 0; x < headlineLength; x++) {
                 gsap.to(`.lt${ x }`, .5, { scale: 1, ease: Power3.easeInOut, delay: .8 + ( x * headlineDuration ) });
@@ -85,7 +89,7 @@ const Clouds = (props) => {
             gsap.to(`#cloud5`,   {y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2});
             gsap.to(`.headline`, {y: -1200, duration: 2, ease: Power3.easeInOut, delay: 2});
         }
-    }, [props.animate])
+    }, [animate])
 
     return (
         <div id="welcome-text" className="pointer-events-none fixed top-0 left-0 right-0 bottom-0">

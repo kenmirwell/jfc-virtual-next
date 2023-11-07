@@ -5,10 +5,8 @@ const Flats = ({ flats }) => {
                 <div id="clogo" className="translate-y-[-100px]">
                     <img src={ flats.logo } />
                 </div>
-                <div id="cheader" className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0">
-                    <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
-                    <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
-                    <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
+                <div id="cheader" className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0 min-w-[360px]">
+                    { flats.header }
                 </div>
             </div>
             <div id="cicons" className="absolute bottom-[-70px] left-[-65px] translate-y-[200px]">
