@@ -71,7 +71,7 @@ const FirstWorld = () => {
     const [model3d, setModel3d] = useState(null);
     const [selected, setSelected] = useState(null);
     const [objSelected, setObjSelected] = useState(null)
-    const [initialAnimate, setInitialAnimate] = useState(false);
+    const [initialAnimate, setInitialAnimate] = useState(true);
     const [finishAnimate, setFinishAnimate] = useState(false);
     const [audio, setAudio] = useState(false);
     const [activeVideo, setActiveVideo] = useState(0);
@@ -178,7 +178,7 @@ const FirstWorld = () => {
 
     /* Initial animate */
     useEffect(() => {
-        if(initialAnimate) {
+        if(model3d && initialAnimate) {
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
             const trees = model3d.children.filter(obj => obj.name.indexOf("Tree") > -1 || obj.name === "Empty");
 
@@ -186,6 +186,30 @@ const FirstWorld = () => {
                 y: 3, 
                 ease: Power3.easeInOut, 
                 delay: 2
+            });
+
+            gsap.timeline().to("#clogo", .5, { 
+                y: 0, 
+                ease: Power3.easeInOut, 
+                delay: 3.5 
+            });
+
+            gsap.timeline().to("#cicons", .5, { 
+                y: 0, 
+                ease: Power3.easeInOut, 
+                delay: 3.5 
+            });
+
+            gsap.timeline().to("#cchapter", .5, { 
+                x: 0, 
+                ease: Power3.easeInOut, 
+                delay: 3.5 
+            });
+
+            gsap.timeline().to("#cheader", .5, { 
+                opacity: 1, 
+                ease: Power3.easeInOut, 
+                delay: 3.5 
             });
             
             for( const [i, obj] of trees.entries() ) {
@@ -230,7 +254,7 @@ const FirstWorld = () => {
                 }
             }, 4500);
         }
-    }, [initialAnimate])
+    }, [model3d, initialAnimate])
 
     /* Finish animate */
     useEffect(() => {
@@ -458,7 +482,6 @@ const FirstWorld = () => {
     return (
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
-                <Buttons onAnimate={() => setInitialAnimate(true)} />
                 <Clouds animate={ initialAnimate } delay={.5} />
                 <div className={`${ model3d ? "!opacity-0 !pointer-events-none" : "" } opacity-100 fixed top-0 left-0 right-0 bottom-0 bg-white flex items-center justify-center transition-all duration-[1s] ease-in-out z-[10]`}>
                     <div className="loader"></div>
@@ -469,18 +492,20 @@ const FirstWorld = () => {
                     </video>
                 </div>
                 <div className={`pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
-                <div className="absolute top-0 left-[20px]">
-                    <img src="/assets/world1/elements/logo.png" />
-                    <div className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px]">
-                        <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
-                        <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
-                        <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
+                    <div className="absolute top-0 left-[20px]">
+                        <div id="clogo" className="translate-y-[-100px]">
+                            <img src="/assets/world1/elements/logo.png" />
+                        </div>
+                        <div id="cheader" className="h-b text-center mx-auto text-white font-[700] absolute top-[130px] left-[95px] opacity-0">
+                            <h2 data-text={"Humble"} className="h2-a text-[60px] leading-none uppercase">Humble</h2>
+                            <h2 data-text={"Beginnings"} className="h2-b text-[60px] leading-none uppercase">Beginnings</h2>
+                            <p data-text={"1979-2003"} className="text-[40px]">1979-2003</p>
+                        </div>
                     </div>
-                    </div>
-                    <div className="absolute bottom-[-70px] left-[-65px]">
+                    <div id="cicons" className="absolute bottom-[-70px] left-[-65px] translate-y-[200px]">
                         <img src="/assets/world1/elements/icons.png" />
                     </div>
-                    <div className="absolute top-[90px] right-[110px]">
+                    <div id="cchapter" className="absolute top-[90px] right-[110px] translate-x-[400px]">
                         <img src="/assets/world1/elements/chapter.svg" width="200" />
                     </div>
                 </div>
