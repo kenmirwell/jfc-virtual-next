@@ -5,3 +5,5 @@ const Loader = ({ model3d }) => {
         </div>
     )
 }
+
+export default Loader;
