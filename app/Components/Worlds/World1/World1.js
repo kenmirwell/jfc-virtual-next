@@ -19,47 +19,61 @@ let button = 0;
 
 let contents = {
     "Empty001": {
-        year: "1978",
-        title: "Jolibee Food Corporation is born",
-        description: (
-            `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        ),
+        year: ["1978", "1979"],
+        title: ["Jolibee Food Corporation is born", "Beginning of Jollibee’s Franchising Journey"],
+        description: [
+            <p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>,
+            <p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee
+            EDSA Central. Today, more than half of all JFC Brands' stores globally are franchise-owned: a
+            testament to the enduring partnership between JFC and its franchisees around the globe.</p>
+        ],
         popup: ["/assets/world1/popup/1978.webm", "/assets/world1/popup/1979.webm"],
-        post: ["left-[105px]", "left-[200px]"]
+        post: ["left-[105px]", "left-[200px]"],
+
     },
     "Empty002": {
-        year: "1979",
-        title: "Jolibee Food Corporation is born",
-        description: (
-            `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        ), 
+        year: ["1980"],
+        title: ["Introducing The Face Of Jollibee"],
+        description: [
+            <p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>
+        ],
         popup: ["/assets/world1/popup/1980.webm"],
         post: ["left-[105px]"]
     },
     "Empty003": {
-        year: "1979",
-        title: "Jolibee Food Corporation is born",
-        description: (
-            `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        ),
+        year: ["1984", "1990", "1993"],
+        title: ["Reaching International Markets", "Celebrating 100 Stores", "Going Public"],
+        description: [
+            <p>Jollibee Group opens its first international Jollibee store in Singapore. Although not successful
+            at the time, Jollibee eventually re-entered the market in 2013 to huge fanfare. Jollibee now has
+            over 15 stores in Singapore, and over 350 stores outside the Philippines.</p>, 
+            <p>Jollibee opens its 100th store in Davao, Philippines.</p>,
+            <p>Jollibee Group lists on the Philippine Stock Exchange, with an initial offering of
+            PHP 9/share.</p>],
         popup: ["/assets/world1/popup/1984.webm", "/assets/world1/popup/1990.webm", "/assets/world1/popup/1993.webm"],
         post: ["left-[105px]", "left-[200px]", "20px"]
     },
     "Empty004": {
-        year: "1982",
-        title: "Jolibee Food Corporation is born",
-        description: (
-            `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        ),
+        year: ["1994", "1998"],
+        title: ["Greenwich: The Philippines’ #1 Pizza Chain", "Entering North America Markets and More"],
+        description: [
+            <p>Jollibee Group makes its first acquisition with Greenwich. It is now the Philippines’ #1 Pizza
+            Chain in terms of store network and market share.</p>,
+            <p>Jollibee Group opens its first-ever store in North America with Jollibee Daly City in California,
+            USA. Jollibee Group's North America presence is now composed of six brands (Jollibee,
+            Chowking, Red Ribbon, Smashburger, and The Coffee Bean and Tea Leaf) with over 550
+            stores.</p>
+        ],
         popup: ["/assets/world1/popup/1994.webm", "/assets/world1/popup/1998.webm"],
         post: ["left-[105px]", "left-[200px]"]
     },
     "Empty005": {
-        year: "1990",
-        title: "Jolibee Food Corporation is born",
-        description: (
-            `<strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.`
-        ),
+        year: ["2000", "2001"],
+        title: ["Chowking: The Philippines’ Chinese Quick Serving Restaurant", "Welcome to the Jollibee Plaza"],
+        description: [
+            <p>Chowking joins the Jollibee Group. It is now the Philippines' leading Chinese Quick Service
+            Restaurant, with over 560 stores nationwide.</p>, 
+            <p>Jollibee Group moves to Jollibee Plaza, initially operating with 8 floors in the building.</p>],
         popup: ["/assets/world1/popup/2000.webm", "/assets/world1/popup/2001.webm"],
         post: ["left-[105px]", "left-[200px]"]
     }
@@ -516,36 +530,56 @@ const FirstWorld = () => {
             <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ selected ? "!opacity-100" : "pointer-events-none" }`}>
                 <div className={`details-modal`}>
                     <div className="details-modal-content">
-                        <button className="exit-button absolute" onClick={ onDeselect }>
-                            <img src="/assets/world1/popup-icons/exit.svg" width="50" />
-                        </button>
-                        <button className="arrow-right absolute" onClick={ "" }>
-                            <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
-                        </button>
-                        {audio ?
-                            <button className="audio-button absolute" onClick={ audioClick }>
-                                <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
-                            </button> :
-                            <button className="audio-button absolute" onClick={ audioClick }>
-                                <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
-                            </button>
-                        }
+                        <div className="text-container absolute top-[200px] right-[136px]">
+                            {objSelected && contents[objSelected].title.map((title, i) => (
+                                    activeVideo !== i && 
+                                        <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
+                                            <h4>{title}</h4>
+                                        </div>
+                                    
+                                ))
+                            }
 
-                        {objSelected && contents[objSelected].popup.map((p, i) => (
-                            <button key={`red-white-${i}`} className={`red-white-container absolute bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
-                                {activeVideo === i ? 
-                                <div className="red-button-container">
-                                    <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
-                                    <div className="red-button" />
-                                </div> :
-                                <div className="white-button-container">
-                                    <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
-                                </div>}
-                            </button>
-                        ))}
+                            {objSelected && contents[objSelected].description.map((desc, i) => (
+                                activeVideo !== i && 
+                                    <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`}>
+                                        {desc}
+                                    </div>
+                                ))
+                            }
+                        </div>
                         <div className="webm-container">
+                            <button className="exit-button absolute" onClick={ onDeselect }>
+                                <img src="/assets/world1/popup-icons/exit.svg" width="50" />
+                            </button>
+                            
+                            <button className="arrow-right absolute" onClick={ "" }>
+                                <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
+                            </button>
+                            
+                            {audio ?
+                                <button className="audio-button absolute" onClick={ audioClick }>
+                                    <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
+                                </button> :
+                                <button className="audio-button absolute" onClick={ audioClick }>
+                                    <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
+                                </button>
+                            }
+
                             {objSelected && contents[objSelected].popup.map((p, i) => (
-                                <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video not-visible" : "video is-visible"}`}>
+                                <button key={`red-white-${i}`} className={`red-white-container absolute bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
+                                    {activeVideo === i ? 
+                                    <div className="red-button-container">
+                                        <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
+                                        <div className="red-button" />
+                                    </div> :
+                                    <div className="white-button-container">
+                                        <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
+                                    </div>}
+                                </button>
+                            ))}
+                            {objSelected && contents[objSelected].popup.map((p, i) => (
+                                <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
                                     <source src={p} type="video/webm"/>
                                 </video>
                             ))}
