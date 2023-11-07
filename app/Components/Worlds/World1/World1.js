@@ -12,6 +12,7 @@ const World1 = () => {
                 testament to the enduring partnership between JFC and its franchisees around the globe.</p>
             ],
             popup: ["/assets/world1/popup/1978.webm", "/assets/world1/popup/1979.webm"],
+            photos: ["/assets/world1/popup-photos/1978/1978_1.png", "/assets/world1/popup-photos/1978/1979.png"],
             post: ["left-[105px]", "left-[200px]"],
     
         },
@@ -22,6 +23,7 @@ const World1 = () => {
                 <p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>
             ],
             popup: ["/assets/world1/popup/1980.webm"],
+            photos: ["/assets/world1/popup-photos/1980/1980.png"],
             post: ["left-[105px]"]
         },
         "Empty003": {
@@ -35,6 +37,7 @@ const World1 = () => {
                 <p>Jollibee Group lists on the Philippine Stock Exchange, with an initial offering of
                 PHP 9/share.</p>],
             popup: ["/assets/world1/popup/1984.webm", "/assets/world1/popup/1990.webm", "/assets/world1/popup/1993.webm"],
+            photos: ["/assets/world1/popup-photos/1984/1984.png", "/assets/world1/popup-photos/1990/1990.png", "/assets/world1/popup-photos/1993/1993.png"],
             post: ["left-[105px]", "left-[200px]", "20px"]
         },
         "Empty004": {
@@ -49,6 +52,7 @@ const World1 = () => {
                 stores.</p>
             ],
             popup: ["/assets/world1/popup/1994.webm", "/assets/world1/popup/1998.webm"],
+            photos: ["/assets/world1/popup-photos/1994/1994.png", "/assets/world1/popup-photos/1998/1998.png"],
             post: ["left-[105px]", "left-[200px]"]
         },
         "Empty005": {
@@ -59,6 +63,7 @@ const World1 = () => {
                 Restaurant, with over 560 stores nationwide.</p>, 
                 <p>Jollibee Group moves to Jollibee Plaza, initially operating with 8 floors in the building.</p>],
             popup: ["/assets/world1/popup/2000.webm", "/assets/world1/popup/2001.webm"],
+            photos: ["/assets/world1/popup-photos/2000/2000.png", "/assets/world1/popup-photos/2001/2001.png"],
             post: ["left-[105px]", "left-[200px]"]
         }
     };
