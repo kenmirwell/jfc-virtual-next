@@ -1,17 +1,105 @@
 import World from "../World/World";
 
 const World1 = () => {
+    let flow = [
+        {
+            step: 0,
+            action: "WAVE",
+            prompt: "<p>This is JOY, she will be your guide as  you explore the <strong>JFC Universe</strong></p>",
+            end: 1
+        },
+        {
+            step: 1,
+            action: "GOTO",
+            target: "Empty005",
+            prompt: "<p>Let's go to the <strong>Jollibee Building</strong></p>",
+            end: "EXIT"
+        },
+        {
+            step: 2,
+            action: "WAIT",
+            prompt: "<p>Now that we're done continue to the next landmark</p>",
+            end: 2
+        },
+        {
+            step: 3,
+            action: "GOTO",
+            target: "Empty004",
+            prompt: "<p>Let's go to the <strong>Jollibee Mascot</strong></p>",
+            end: "EXIT"
+        },
+        {
+            step: 4,
+            action: "WAIT",
+            prompt: "<p>Now that we're done continue to the next landmark</p>",
+            end: 2
+        },
+        {
+            step: 5,
+            action: "GOTO",
+            target: "Empty003",
+            prompt: "<p>Let's check out the <strong>Open Sign</strong></p>",
+            end: "EXIT"
+        },
+        {
+            step: 6,
+            action: "WAIT",
+            prompt: "<p>Now that we're done continue to the next landmark</p>",
+            end: 2
+        },
+        {
+            step: 7,
+            action: "GOTO",
+            target: "Empty001",
+            prompt: "<p>Let's go to the <strong>Greenwich Building</strong></p>",
+            end: "EXIT"
+        },
+        {
+            step: 8,
+            action: "WAIT",
+            prompt: "<p>Now that we're done continue to the next landmark</p>",
+            end: 2
+        },
+        {
+            step: 9,
+            action: "GOTO",
+            target: "Empty002",
+            prompt: "<p>Let's go to the <strong>Chowking Building</strong></p>",
+            end: "EXIT"
+        },
+        {
+            step: 10,
+            action: "THINK",
+            prompt: "<p>Now that we're done, it's time to test your knowledge"
+        }
+    ];
+
     let contents = {
         "Empty001": {
-            year: ["1978", "1979"],
-            title: ["Jolibee Food Corporation is born", "Beginning of Jollibee’s Franchising Journey"],
+            year: [
+                "1978", 
+                "1979"
+            ],
+            title: [
+                "Jolibee Food Corporation is born", 
+                "Beginning of Jollibee’s Franchising Journey"
+            ],
             description: [
                 `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>`,
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
             ],
-            popup: ["/assets/world1/popup/1978.webm", "/assets/world1/popup/1979.webm"],
-            photos: ["/assets/world1/popup-photos/1978/1978_1.png", "/assets/world1/popup-photos/1978/1979.png"],
-            post: ["left-[105px]", "left-[200px]"],
+            popup: [
+                "/assets/world1/popup/1978.webm", 
+                "/assets/world1/popup/1979.webm"
+            ],
+            photos: [
+                "/assets/world1/popup-photos/1978/1978_1.png", 
+                "/assets/world1/popup-photos/1978/1979.png"
+            ],
+            post: [
+                "left-[105px]", 
+                "left-[200px]"
+            ],
     
         },
         "Empty002": {
@@ -72,6 +160,7 @@ const World1 = () => {
                 icons: "/assets/world1/elements/icons.png"
             }}
             contents={ contents }
+            flow={ flow }
         />
     )
 }

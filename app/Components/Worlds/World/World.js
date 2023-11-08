@@ -10,6 +10,7 @@ import Flats from "./Flats/Flats";
 import Background from "./Background/Background";
 import Loader from "./Loader/Loader";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import Prompt from "./Prompt/Prompt";
 
 let hovered = null; 
 let disableFunctionality = false;
@@ -22,17 +23,9 @@ const World = ({
     flats,
     model,
     background,
-    objects = {}
+    objects = {},
+    flow
 }) => {
-    const [loaded, setLoaded] = useState(false);
-    const [model3d, setModel3d] = useState(null);
-    const [selected, setSelected] = useState(null);
-    const [objSelected, setObjSelected] = useState(null)
-    const [initialAnimate, setInitialAnimate] = useState(false);
-    const [finishAnimate, setFinishAnimate] = useState(false);
-    const [audio, setAudio] = useState(false);
-    const [activeVideo, setActiveVideo] = useState(0);
-    const ref = useRef(false);
     const [components, setComponents] = useState({
         renderer: null,
         scene: null,
@@ -48,6 +41,17 @@ const World = ({
         orbit: null
     });
 
+    const [loaded, setLoaded] = useState(false);
+    const [model3d, setModel3d] = useState(null);
+    const [objSelected, setObjSelected] = useState(null)
+    const [initialAnimate, setInitialAnimate] = useState(false);
+    const [finishAnimate, setFinishAnimate] = useState(false);
+    const [audio, setAudio] = useState(false);
+    const [activeVideo, setActiveVideo] = useState(0);
+    const [currentFlow, setCurrentFlow] = useState({});
+    
+    const ref = useRef(false);
+    
     /* Load all components */
     useEffect(() => {
         if( !loaded ) {
@@ -222,9 +226,19 @@ const World = ({
     useEffect(() => {
         if(finishAnimate) {
             document.addEventListener( 'pointermove', onPointerMove, false );
-            document.addEventListener( 'click', onClickObject, false );
+
+            if( flow && flow.length > 0 && !currentFlow.action ) {
+                setCurrentFlow( flow[0] );
+            }
         }
-    }, [finishAnimate, disableFunctionality])
+    }, [finishAnimate, disableFunctionality]);
+
+    /* Apply click animation */
+    useEffect(() => {
+        if( currentFlow.action === "GOTO" ) {
+            document.addEventListener( 'click', onClickObject );
+        }
+    }, [currentFlow]);
 
     const onLoad = () => {
         const assetLoader  = new GLTFLoader();
@@ -297,26 +311,28 @@ const World = ({
         setActiveVideo(index);
     }
 
-    const onClickObject = () => {
+    const onClickObject = (action) => {
         if( !disableFunctionality ) {
             if( model3d ) {
                 components.raycaster.setFromCamera( components.pointer, components.camera );
-                
+
+                const target = model3d.children.find(c => c.name === currentFlow.target);
+                const index = Object.keys(contents).indexOf( currentFlow.target );
                 const objects = components.raycaster.intersectObjects(model3d.children);
-                const raycasted = Object.keys(contents); 
 
-
-                const onSelect = (obj, i) => {
+                const onSelect = () => {
                     disableFunctionality = true;
+
+                    document.removeEventListener( 'click', onClickObject );
 
                     components.orbit.target.x = 0;
                     components.orbit.target.y = 3;
-                    components.orbit.target.z = obj.position.z;
+                    components.orbit.target.z = target.position.z;
                     
                     gsap.timeline().to(components.orbit.target, 1, { 
-                        x: obj.position.x, 
-                        y: obj.position.y + 1.2, 
-                        z: obj.position.z, 
+                        x: target.position.x, 
+                        y: target.position.y + 1.2, 
+                        z: target.position.z, 
                         onUpdate: function () {
                             components.orbit.update();
                         }, 
@@ -339,24 +355,24 @@ const World = ({
                     });
 
                     setTimeout(() => {
-                        setObjSelected(obj.name);
-                    }, 1000);
-
-                    setTimeout(() => {
-                        setSelected(i);
+                        setObjSelected(target.name);
                     }, 1500);
+                }
+
+                if( action === "BUTTON" ) {
+                    onSelect( target );
                 }
 
                 if( objects.length < 11 ) {
                     for ( let i = 0; i < objects.length; i ++ ) {
-                        if( raycasted.indexOf(objects[i].object.name) > -1 ) {
-                            onSelect(objects[i].object, i)
-                        } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
-                            onSelect(objects[i].object.parent, i)
-                        } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
-                            onSelect(objects[i].object.parent.parent, i)
-                        } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
-                            onSelect(objects[i].object.parent.parent.parent, i)
+                        if( objects[i].object.name === currentFlow.target ) {
+                            onSelect()
+                        } else if( objects[i].object.parent && objects[i].object.parent.name === currentFlow.target ) {
+                            onSelect()
+                        } else if( objects[i].object.parent.parent && objects[i].object.parent.parent.name === currentFlow.target ) {
+                            onSelect()
+                        } else if( objects[i].object.parent.parent.parent && objects[i].object.parent.parent.parent.name === currentFlow.target ) {
+                            onSelect()
                         }
                     }
                 }
@@ -366,7 +382,8 @@ const World = ({
 
     const onDeselect = () => {
         disableFunctionality = false;
-        setSelected(null);        
+        setObjSelected(null);
+        setCurrentFlow(flow.find(f => f.step === currentFlow.step + 1));
 
         gsap.timeline().to(components.orbit.target, 0.7, { 
             x: 0, 
@@ -392,7 +409,7 @@ const World = ({
                 }
             }, 
             ease: Power3.easeInOut
-        })
+        });
     }
 
     const onPointerMove = ( event ) => {
@@ -445,16 +462,21 @@ const World = ({
 
     return (
         <div>
-            <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ selected ? "blur-[50px]" : "" }`}>  
+            <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ objSelected ? "blur-[50px]" : "" }`}>  
                 <Clouds title={ title } animate={ initialAnimate } delay={.5} color={ color } />
                 <Loader model3d={ model3d } />
                 <Background background={ background } />
                 <Flats flats={ flats } title={ title } year={ year } color={ color } />
+                <Prompt 
+                    flow={ flow } 
+                    currentFlow={{ get: currentFlow, set: setCurrentFlow }} 
+                    onClickInteractables={ onClickObject }
+                />
                 <audio className="hidden" controls autoplay ref={ref}> 
                     <source src={"/assets/world1/popup-audio.mp3"} />
                 </audio>
             </div>
-            <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ selected ? "!opacity-100" : "pointer-events-none" }`}>
+            <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ objSelected ? "!opacity-100" : "pointer-events-none" }`}>
                 <div className={`details-modal`}>
                     <div className="details-modal-content">
                         <div className="text-container absolute top-[200px] right-[136px]">
@@ -517,7 +539,7 @@ const World = ({
                         </div>
                     </div>
                 </div>                
-                <div className={`details-modal-overlay ${ selected ? "" : "pointer-events-none" }`} />
+                <div className={`details-modal-overlay ${ objSelected ? "" : "pointer-events-none" }`} />
             </div>
         </div>
     );
