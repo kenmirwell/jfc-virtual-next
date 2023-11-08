@@ -11,6 +11,7 @@ import Background from "./Background/Background";
 import Loader from "./Loader/Loader";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Prompt from "./Prompt/Prompt";
+import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
 
 let hovered = null; 
 let disableFunctionality = false;
@@ -188,13 +189,13 @@ const World = ({
                         yoyo: true 
                     });
                 } else {
-                    gsap.timeline().to(obj.children[0].rotation, 3, { 
-                        x: obj.children[0].rotation.x + 0.3, 
-                        ease: Power3.easeInOut, 
-                        delay: 3.5 + (i * 0.5), 
-                        repeat: -1, 
-                        yoyo: true 
-                    });
+                    // gsap.timeline().to(obj.children[0].rotation, 3, { 
+                    //     x: obj.children[0].rotation.x + 0.3, 
+                    //     ease: Power3.easeInOut, 
+                    //     delay: 3.5 + (i * 0.5), 
+                    //     repeat: -1, 
+                    //     yoyo: true 
+                    // });
                 }
 
                 gsap.timeline().to(obj.scale, .5, { 
@@ -242,6 +243,10 @@ const World = ({
 
     const onLoad = () => {
         const assetLoader  = new GLTFLoader();
+        const dLoader      = new DRACOLoader();        
+        dLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.6/")
+        dLoader.setDecoderConfig({type: "js"})
+        assetLoader.setDRACOLoader(dLoader)
 
         assetLoader.load(model, async function(gltf) {
             setModel3d(gltf.scene);
@@ -381,6 +386,8 @@ const World = ({
     };
 
     const onDeselect = () => {
+        console.log("exit")
+
         disableFunctionality = false;
         setObjSelected(null);
         setCurrentFlow(flow.find(f => f.step === currentFlow.step + 1));
@@ -403,8 +410,6 @@ const World = ({
                     if(ref.current) {
                         ref.current.pause()
                         ref.current.currentTime = 0
-
-                        console.log(ref)
                     }
                 }
             }, 
@@ -476,7 +481,7 @@ const World = ({
                     <source src={"/assets/world1/popup-audio.mp3"} />
                 </audio>
             </div>
-            <div className={`opacity-0 transition-all duration-[0.5s] ease-in-out ${ objSelected ? "!opacity-100" : "pointer-events-none" }`}>
+            <div className={`details-modal-container opacity-0 transition-all duration-[0.5s] ease-in-out ${ objSelected ? "!opacity-100" : "pointer-events-none" }`}>
                 <div className={`details-modal`}>
                     <div className="details-modal-content">
                         <div className="text-container absolute top-[200px] right-[136px]">
@@ -499,7 +504,7 @@ const World = ({
                             }
                         </div>
                         <div className="webm-container">
-                            <button className="exit-button absolute" onClick={ onDeselect }>
+                            <button className="exit-button" onClick={ onDeselect }>
                                 <img src="/assets/world1/popup-icons/exit.svg" width="50" />
                             </button>
                             
@@ -531,15 +536,16 @@ const World = ({
 
                             
                             {objSelected && contents[objSelected].popup.map((p, i) => (
-                                <>{console.log('iiii', i)}
-                                <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
-                                    <source src={p} type="video/webm"/>
-                                </video></>
+                                <>
+                                    <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
+                                        <source src={p} type="video/webm"/>
+                                    </video>
+                                </>
                             ))}
                         </div>
                     </div>
                 </div>                
-                <div className={`details-modal-overlay ${ objSelected ? "" : "pointer-events-none" }`} />
+                <div onClick={ onDeselect } className={`details-modal-overlay ${ objSelected ? "" : "pointer-events-none" }`} />
             </div>
         </div>
     );
