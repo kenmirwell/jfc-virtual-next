@@ -125,9 +125,14 @@ const World = ({
 
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
             const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
+            const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
 
             for( const obj of interactables ) {
                 obj.position.y += 5;
+                obj.visible = false;
+            }
+
+            for( const obj of joys ) {
                 obj.visible = false;
             }
 
@@ -180,23 +185,13 @@ const World = ({
             });
             
             for( const [i, obj] of trees.entries() ) {
-                if( obj.name === "Empty" ) {
-                    gsap.timeline().to(obj.rotation, 3, { 
-                        x: obj.rotation.x + 0.3, 
-                        ease: Power3.easeInOut, 
-                        delay: 3.5 + (i * 0.5), 
-                        repeat: -1, 
-                        yoyo: true 
-                    });
-                } else {
-                    // gsap.timeline().to(obj.children[0].rotation, 3, { 
-                    //     x: obj.children[0].rotation.x + 0.3, 
-                    //     ease: Power3.easeInOut, 
-                    //     delay: 3.5 + (i * 0.5), 
-                    //     repeat: -1, 
-                    //     yoyo: true 
-                    // });
-                }
+                gsap.timeline().to(obj.rotation, 3, { 
+                    z: obj.rotation.z + 0.3, 
+                    ease: Power3.easeInOut, 
+                    delay: 3.5 + (i * 0.5), 
+                    repeat: -1, 
+                    yoyo: true 
+                });
 
                 gsap.timeline().to(obj.scale, .5, { 
                     x: obj.originalScale.x, 
@@ -322,7 +317,7 @@ const World = ({
                 components.raycaster.setFromCamera( components.pointer, components.camera );
 
                 const target = model3d.children.find(c => c.name === currentFlow.target);
-                const index = Object.keys(contents).indexOf( currentFlow.target );
+                const joy = model3d.children.find(c => c.name === currentFlow.joy);
                 const objects = components.raycaster.intersectObjects(model3d.children);
 
                 const onSelect = () => {
@@ -358,6 +353,10 @@ const World = ({
                         }, 
                         ease: Power3.easeInOut 
                     });
+                    
+                    setTimeout(() => {
+                        joy.visible = true;
+                    }, 1000);
 
                     setTimeout(() => {
                         setObjSelected(target.name);
@@ -386,9 +385,13 @@ const World = ({
     };
 
     const onDeselect = () => {
-        console.log("exit")
-
         disableFunctionality = false;
+
+        const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
+        for( const obj of joys ) {
+            obj.visible = false;
+        }
+
         setObjSelected(null);
         setCurrentFlow(flow.find(f => f.step === currentFlow.step + 1));
 

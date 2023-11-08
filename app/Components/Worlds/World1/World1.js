@@ -12,6 +12,7 @@ const World1 = () => {
             step: 1,
             action: "GOTO",
             target: "Empty005",
+            joy: "Joys003",
             prompt: "<p>Let's go to the <strong>Jollibee Building</strong></p>",
             end: "EXIT"
         },
@@ -25,6 +26,7 @@ const World1 = () => {
             step: 3,
             action: "GOTO",
             target: "Empty004",
+            joy: "Joys002",
             prompt: "<p>Let's go to the <strong>Jollibee Mascot</strong></p>",
             end: "EXIT"
         },
@@ -51,6 +53,7 @@ const World1 = () => {
             step: 7,
             action: "GOTO",
             target: "Empty001",
+            joy: "Joys001",
             prompt: "<p>Let's go to the <strong>Greenwich Building</strong></p>",
             end: "EXIT"
         },
@@ -64,6 +67,7 @@ const World1 = () => {
             step: 9,
             action: "GOTO",
             target: "Empty002",
+            joy: "Joys",
             prompt: "<p>Let's go to the <strong>Chowking Building</strong></p>",
             end: "EXIT"
         },
