@@ -64,7 +64,8 @@ const World1 = () => {
         <World 
             title="Humble Beginnings"
             year="1979-2003"
-            model="/assets/world1/world.glb"
+            // model="/assets/world1/world.glb"
+            model="/assets/world1/world1-with-minijoy.glb"
             background="/assets/world1/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
