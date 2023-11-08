@@ -30,8 +30,14 @@ const Prompt = ({ flow, currentFlow, onClickInteractables }) => {
                 { currentFlow.get.prompt && (
                     <div className="absolute top-0 right-[100%] mr-[20px] p-[20px] bg-white min-w-[300px]">
                         <div dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }} />
-                        { currentFlow.get.action === "WAVE" && <button onClick={ onProceed }>NEXT</button> }
+                        { currentFlow.get.action === "START" && <button onClick={ onProceed }>NEXT</button> }
                         { currentFlow.get.action === "GOTO" && <button onClick={ () => onClickInteractables("BUTTON") }>PROCEED</button> }
+                        { currentFlow.get.action === "END" && (
+                            <div>
+                                <button>PLAY GAME</button><br></br>
+                                <button>SKIP</button>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>

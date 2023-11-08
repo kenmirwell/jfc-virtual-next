@@ -4,7 +4,7 @@ const World1 = () => {
     let flow = [
         {
             step: 0,
-            action: "WAVE",
+            action: "START",
             prompt: "<p>This is JOY, she will be your guide as  you explore the <strong>JFC Universe</strong></p>",
             end: 1
         },
@@ -69,7 +69,7 @@ const World1 = () => {
         },
         {
             step: 10,
-            action: "THINK",
+            action: "END",
             prompt: "<p>Now that we're done, it's time to test your knowledge"
         }
     ];
