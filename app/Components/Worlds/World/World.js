@@ -9,6 +9,7 @@ import Clouds from "./Clouds/Clouds";
 import Flats from "./Flats/Flats";
 import Background from "./Background/Background";
 import Loader from "./Loader/Loader";
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 let hovered = null; 
 let disableFunctionality = false;
@@ -69,6 +70,12 @@ const World = ({
                 100 
             );
 
+            const orbit = new OrbitControls( camera, renderer.domElement );
+            orbit.enableRotate = false;
+            orbit.enableZoom = false;
+            orbit.enablePan = false;
+            orbit.update();
+
             setComponents({
                 renderer,
                 scene,
@@ -80,7 +87,8 @@ const World = ({
                     directional: directionalLight,
                     directionalHelper: dLightHelper
                 },
-                camera
+                camera,
+                orbit
             });
 
             setLoaded(true);
@@ -301,8 +309,22 @@ const World = ({
                 const onSelect = (obj, i) => {
                     disableFunctionality = true;
 
+                    components.orbit.target.x = 0;
+                    components.orbit.target.y = 3;
+                    components.orbit.target.z = obj.position.z;
+                    
+                    gsap.timeline().to(components.orbit.target, 1, { 
+                        x: obj.position.x, 
+                        y: obj.position.y + 1.2, 
+                        z: obj.position.z, 
+                        onUpdate: function () {
+                            components.orbit.update();
+                        }, 
+                        ease: Power3.easeInOut 
+                    });
+
                     gsap.timeline().to(components.camera, 1, { 
-                        zoom: 10, 
+                        zoom: 1.7, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
 
@@ -317,9 +339,7 @@ const World = ({
                     });
 
                     setTimeout(() => {
-
-                        setObjSelected(obj.name)
-                        
+                        setObjSelected(obj.name);
                     }, 1000);
 
                     setTimeout(() => {
@@ -347,6 +367,15 @@ const World = ({
     const onDeselect = () => {
         disableFunctionality = false;
         setSelected(null);        
+
+        gsap.timeline().to(components.orbit.target, 0.7, { 
+            x: 0, 
+            y: 3, 
+            onUpdate: function () {
+                components.orbit.update();
+            }, 
+            ease: Power3.easeInOut 
+        });
 
         gsap.timeline().to(components.camera, 0.7, { 
             zoom: 1, 
@@ -380,29 +409,6 @@ const World = ({
                 x: 0.5 * ( components.pointer.y * 0.2 ),
                 y: 0.5 * ( components.pointer.x * 0.2 )
             };
-
-            // let to = {
-            //     x: 0,
-            //     y: 0
-            // }
-
-            // console.log(components.pointer.y)
-
-            // if( calc.x > 0.12 ) {
-            //     to.x = 0.12;
-            // } else if( calc.x < -0.02 ) {
-            //     to.x = -0.02;
-            // } else {
-            //     to.x = calc.x
-            // }
-
-            // if( calc.y > 0.12 ) {
-            //     to.y = 0.12;
-            // } else if( calc.y < -0.02 ) {
-            //     to.y = -0.02;
-            // } else {
-            //     to.y = calc.y;
-            // }
 
             gsap
             .timeline()
