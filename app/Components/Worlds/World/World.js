@@ -84,7 +84,7 @@ const World = ({
             //     0.1, 
             //     100 
             // );
-            const camera = new THREE.PerspectiveCamera( 32, aspect, 1, 2000 );
+            const camera = new THREE.PerspectiveCamera( 22, aspect, 1, 2000 );
 
             const orbit = new OrbitControls( camera, renderer.domElement );
             orbit.enableRotate = false;
@@ -117,7 +117,7 @@ const World = ({
             components.renderer.setSize(window.innerWidth, window.innerHeight);
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
-            components.camera.position.set(0, 10, 15);
+            components.camera.position.set(0, 10, 20);
             components.lights.directional.position.set(0, 10, 10);
                 
             onLoad();
