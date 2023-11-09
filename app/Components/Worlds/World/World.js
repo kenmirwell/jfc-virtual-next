@@ -144,6 +144,7 @@ const World = ({
             for( const obj of lights ) {
                 obj.scale.x = 0;
                 obj.scale.y = 0;
+                obj.material.color = new THREE.Color( 0xFFD700 );
             }
 
             for( const obj of trees ) {
