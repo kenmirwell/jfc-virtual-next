@@ -12,6 +12,7 @@ import Loader from "./Loader/Loader";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Prompt from "./Prompt/Prompt";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import Joy from "./Joy/Joy";
 
 let hovered = null; 
 let disableFunctionality = false;
@@ -50,6 +51,7 @@ const World = ({
     const [audio, setAudio] = useState(false);
     const [activeVideo, setActiveVideo] = useState(0);
     const [currentFlow, setCurrentFlow] = useState({});
+    const [showJoy, setShowJoy] = useState(false);
     
     const ref = useRef(false);
     
@@ -74,16 +76,7 @@ const World = ({
             const ambientLight     = new THREE.AmbientLight(0xBEBEBE);
             const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 10 );
             const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 3);
-            const frustumSize      = 6;
             const aspect = window.innerWidth / window.innerHeight;
-            // const camera = new THREE.OrthographicCamera( 
-            //     frustumSize * aspect / - 2, 
-            //     frustumSize * aspect / 2, 
-            //     frustumSize / 2, 
-            //     frustumSize / - 2, 
-            //     0.1, 
-            //     100 
-            // );
             const camera = new THREE.PerspectiveCamera( 22, aspect, 1, 2000 );
 
             const orbit = new OrbitControls( camera, renderer.domElement );
@@ -241,7 +234,11 @@ const World = ({
             document.addEventListener( 'pointermove', onPointerMove, false );
 
             if( flow && flow.length > 0 && !currentFlow.action ) {
-                setCurrentFlow( flow[0] );
+                setShowJoy(true);
+
+                setTimeout(() => {
+                    setCurrentFlow( flow[0] );
+                }, 700);
             }
         }
     }, [finishAnimate, disableFunctionality]);
@@ -512,10 +509,12 @@ const World = ({
                 <Background background={ background } />
                 <Flats flats={ flats } title={ title } year={ year } color={ color } />
                 <Prompt 
+                    showJoy={ showJoy }
                     flow={ flow } 
                     currentFlow={{ get: currentFlow, set: setCurrentFlow }} 
                     onClickInteractables={ onClickObject }
                 />
+                <Joy />
                 <audio className="hidden" controls autoplay ref={ref}> 
                     <source src={"/assets/world1/popup-audio.mp3"} />
                 </audio>
