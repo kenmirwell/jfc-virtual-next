@@ -11,7 +11,7 @@ import Background from "./Background/Background";
 import Loader from "./Loader/Loader";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import Prompt from "./Prompt/Prompt";
-import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 let hovered = null; 
 let disableFunctionality = false;
@@ -56,24 +56,35 @@ const World = ({
     /* Load all components */
     useEffect(() => {
         if( !loaded ) {
-            const renderer         = new THREE.WebGLRenderer({ alpha: true });
+            const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
+            renderer.shadows = true;
+            renderer.shadowType = 1;
+            renderer.shadowMap.enabled = true;
+            renderer.toneMapping = 0;
+            renderer.toneMappingExposure = 1;
+            renderer.toneMapping = THREE.NoToneMapping;
+            renderer.setClearColor(0xffffff, 0);
+            renderer.outputColorSpace = THREE.SRGBColorSpace;
+            renderer.useLegacyLights = false;
+
             const scene            = new THREE.Scene();
             const pointer          = new THREE.Vector2();
             const raycaster        = new THREE.Raycaster();
             const axesHelper       = new THREE.AxesHelper(5);
-            const ambientLight     = new THREE.AmbientLight(0xffffff);
-            const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
-            const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 5);
-            const frustumSize = 6;
+            const ambientLight     = new THREE.AmbientLight(0xBEBEBE);
+            const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 10 );
+            const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 3);
+            const frustumSize      = 6;
             const aspect = window.innerWidth / window.innerHeight;
-            const camera = new THREE.OrthographicCamera( 
-                frustumSize * aspect / - 2, 
-                frustumSize * aspect / 2, 
-                frustumSize / 2, 
-                frustumSize / - 2, 
-                0.1, 
-                100 
-            );
+            // const camera = new THREE.OrthographicCamera( 
+            //     frustumSize * aspect / - 2, 
+            //     frustumSize * aspect / 2, 
+            //     frustumSize / 2, 
+            //     frustumSize / - 2, 
+            //     0.1, 
+            //     100 
+            // );
+            const camera = new THREE.PerspectiveCamera( 32, aspect, 1, 2000 );
 
             const orbit = new OrbitControls( camera, renderer.domElement );
             orbit.enableRotate = false;
@@ -106,7 +117,7 @@ const World = ({
             components.renderer.setSize(window.innerWidth, window.innerHeight);
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
-            components.camera.position.set(0, 10, 10);
+            components.camera.position.set(0, 10, 15);
             components.lights.directional.position.set(0, 10, 10);
                 
             onLoad();
@@ -124,8 +135,9 @@ const World = ({
             window.requestAnimationFrame(animate);
 
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
-            const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
+            const trees  = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
+            const joys   = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
+            const lights = model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
 
             for( const obj of interactables ) {
                 obj.position.y += 5;
@@ -134,6 +146,11 @@ const World = ({
 
             for( const obj of joys ) {
                 obj.visible = false;
+            }
+            
+            for( const obj of lights ) {
+                obj.scale.x = 0;
+                obj.scale.y = 0;
             }
 
             for( const obj of trees ) {
@@ -233,6 +250,17 @@ const World = ({
     useEffect(() => {
         if( currentFlow.action === "GOTO" ) {
             document.addEventListener( 'click', onClickObject );
+
+            const light = model3d.children.find(c => c.name === currentFlow.light );
+
+            if( light ) {
+                gsap.timeline().to(light.scale, .5, { 
+                    x: 10, 
+                    y: 10, 
+                    z: 10,
+                    ease: Power3.easeInOut
+                });
+            }
         }
     }, [currentFlow]);
 
@@ -246,6 +274,7 @@ const World = ({
         assetLoader.load(model, async function(gltf) {
             setModel3d(gltf.scene);
 
+            gltf.scene.overrideMaterial = new THREE.MeshBasicMaterial({ color: "green" });
             gltf.scene.traverse(function (child) {
                 if (child.isMesh) {
                     child.castShadow = true;
@@ -316,8 +345,8 @@ const World = ({
             if( model3d ) {
                 components.raycaster.setFromCamera( components.pointer, components.camera );
 
-                const target = model3d.children.find(c => c.name === currentFlow.target);
-                const joy = model3d.children.find(c => c.name === currentFlow.joy);
+                const target  = model3d.children.find(c => c.name === currentFlow.target);
+                const joy     = model3d.children.find(c => c.name === currentFlow.joy);
                 const objects = components.raycaster.intersectObjects(model3d.children);
 
                 const onSelect = () => {
@@ -355,7 +384,9 @@ const World = ({
                     });
                     
                     setTimeout(() => {
-                        joy.visible = true;
+                        if( joy ) {
+                            joy.visible = true;
+                        }
                     }, 1000);
 
                     setTimeout(() => {
@@ -390,6 +421,11 @@ const World = ({
         const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
         for( const obj of joys ) {
             obj.visible = false;
+        }
+
+        const light = model3d.children.find(c => c.name === currentFlow.light );
+        if( light ) {
+            light.visible = false;
         }
 
         setObjSelected(null);
