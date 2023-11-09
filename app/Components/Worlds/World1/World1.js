@@ -14,7 +14,7 @@ const World1 = () => {
             target: "Empty005",
             joy: "Joys003",
             light: "Light-Rays-Transparent003",
-            prompt: "<p>Let's go to the <strong>Jollibee Building</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
             end: "EXIT"
         },
         {
@@ -29,7 +29,7 @@ const World1 = () => {
             target: "Empty004",
             joy: "Joys002",
             light: "Light-Rays-Transparent002",
-            prompt: "<p>Let's go to the <strong>Jollibee Mascot</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
             end: "EXIT"
         },
         {
@@ -43,7 +43,7 @@ const World1 = () => {
             action: "GOTO",
             target: "Empty003",
             light: "Light-Rays-Transparent004",
-            prompt: "<p>Let's check out the <strong>Open Sign</strong></p>",
+            prompt: "<p>Let's check out the<br /><strong>Open Sign</strong></p>",
             end: "EXIT"
         },
         {
@@ -58,7 +58,7 @@ const World1 = () => {
             target: "Empty001",
             joy: "Joys001",
             light: "Light-Rays-Transparent001",
-            prompt: "<p>Let's go to the <strong>Greenwich Building</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Greenwich Building</strong></p>",
             end: "EXIT"
         },
         {
@@ -73,7 +73,7 @@ const World1 = () => {
             target: "Empty002",
             joy: "Joys",
             light: "Light-Rays-Transparent",
-            prompt: "<p>Let's go to the <strong>Chowking Building</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
             end: "EXIT"
         },
         {

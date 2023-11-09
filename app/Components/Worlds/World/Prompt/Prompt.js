@@ -25,10 +25,10 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
     }
 
     return (
-        <div id="prompt" className="fixed bottom-0 right-[100px] z-[22] translate-x-[300px] h-[200px] w-[200px] flex items-end justify-center">
+        <div id="prompt" className="fixed bottom-0 right-[100px] z-[22]  text-center translate-x-[300px] h-[300px] w-[200px] flex items-end justify-center">
             { currentFlow.get.prompt && (
-                <div className="absolute top-0 right-[100%] mr-[20px] p-[20px] bg-white min-w-[300px]">
-                    <div dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }} />
+                <div className="absolute top-0 right-[100%] mr-[20px] p-[30px] min-w-[400px] bg-[url(/assets/prompt-bg.png)]" style={{ backgroundSize: "100% 100%" }}>
+                    <div className="text-[30px] leading-[1.2] text-center" dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }} />
                     { currentFlow.get.action === "START" && <button onClick={ onProceed }>NEXT</button> }
                     { currentFlow.get.action === "GOTO" && <button onClick={ () => onClickInteractables("BUTTON") }>PROCEED</button> }
                     { currentFlow.get.action === "END" && (
