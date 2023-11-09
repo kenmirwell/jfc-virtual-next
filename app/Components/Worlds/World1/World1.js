@@ -84,9 +84,9 @@ const World1 = () => {
     ];
 
     let contents = {
-        "Empty001": {
+        "Empty005": {
             year: [
-                "1978", 
+                "1978",
                 "1979"
             ],
             title: [
@@ -106,12 +106,12 @@ const World1 = () => {
                 "/assets/world1/popup-photos/1978/1979.png"
             ],
             post: [
-                "left-[105px]", 
-                "left-[200px]"
+                "left-[15%]", 
+                "left-[25%]"
             ],
     
         },
-        "Empty002": {
+        "Empty004": {
             year: ["1980"],
             title: ["Introducing The Face Of Jollibee"],
             description: [
@@ -131,9 +131,9 @@ const World1 = () => {
             ],
             popup: ["/assets/world1/popup/1984.webm", "/assets/world1/popup/1990.webm", "/assets/world1/popup/1993.webm"],
             photos: ["/assets/world1/popup-photos/1984/1984.png", "/assets/world1/popup-photos/1990/1990.png", "/assets/world1/popup-photos/1993/1993.png"],
-            post: ["left-[105px]", "left-[200px]", "20px"]
+            post: ["left-[105px]", "left-[200px]", "left-[300px]"]
         },
-        "Empty004": {
+        "Empty001": {
             year: ["1994", "1998"],
             title: ["Greenwich: The Philippines’ #1 Pizza Chain", "Entering North America Markets and More"],
             description: [
@@ -144,7 +144,7 @@ const World1 = () => {
             photos: ["/assets/world1/popup-photos/1994/1994.png", "/assets/world1/popup-photos/1998/1998.png"],
             post: ["left-[105px]", "left-[200px]"]
         },
-        "Empty005": {
+        "Empty002": {
             year: ["2000", "2001"],
             title: ["Chowking: The Philippines’ Chinese Quick Serving Restaurant", "Welcome to the Jollibee Plaza"],
             description: [

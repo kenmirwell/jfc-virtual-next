@@ -25,6 +25,7 @@
 
 
 .arrow-right, 
+.arrow-left,
 .exit-button, 
 .audio-button {
     z-index: 999
@@ -32,17 +33,22 @@
 
 .exit-button {
     top: 58px;
-    right: 70px;
+    right: 10%;
 }
 
 .arrow-right {
     bottom: 60px;
-    right: 75px
+    right: 10%;
+}
+
+.arrow-left {
+    bottom: 60px;
+    right: 20%;
 }
 
 .audio-button {
     top: 55px;
-    left: 50px;
+    left: 8%;
 }
 
 .red-white-container {
@@ -62,12 +68,13 @@
     }
     
     .red-button-container {
+
         img {
             position: relative;
         }
     
         .red-button {
-    
+            
             &:after {
                 content: "";
                 border: 2px solid #ffffff;
@@ -117,10 +124,30 @@
 }
 
 .popup-image-container {
-    width: 65%;
+    display: flex;
+    padding-top: 20px;
 
-    img {
-
-        width: 100%;
+    .popup-image-single {
+        width: 65%;
+    
+        img {
+            height: 70%;
+        }
     }
+}
+
+.year-container {
+
+    p {
+        font-size: 25px;
+        color: #ffffff;
+
+        &.active {
+            font-size: 35px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+
 }
