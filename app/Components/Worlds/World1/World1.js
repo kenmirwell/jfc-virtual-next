@@ -13,6 +13,7 @@ const World1 = () => {
             action: "GOTO",
             target: "Empty005",
             joy: "Joys003",
+            light: "Light-Rays-Transparent003",
             prompt: "<p>Let's go to the <strong>Jollibee Building</strong></p>",
             end: "EXIT"
         },
@@ -27,6 +28,7 @@ const World1 = () => {
             action: "GOTO",
             target: "Empty004",
             joy: "Joys002",
+            light: "Light-Rays-Transparent002",
             prompt: "<p>Let's go to the <strong>Jollibee Mascot</strong></p>",
             end: "EXIT"
         },
@@ -40,6 +42,7 @@ const World1 = () => {
             step: 5,
             action: "GOTO",
             target: "Empty003",
+            light: "Light-Rays-Transparent004",
             prompt: "<p>Let's check out the <strong>Open Sign</strong></p>",
             end: "EXIT"
         },
@@ -54,6 +57,7 @@ const World1 = () => {
             action: "GOTO",
             target: "Empty001",
             joy: "Joys001",
+            light: "Light-Rays-Transparent001",
             prompt: "<p>Let's go to the <strong>Greenwich Building</strong></p>",
             end: "EXIT"
         },
@@ -68,6 +72,7 @@ const World1 = () => {
             action: "GOTO",
             target: "Empty002",
             joy: "Joys",
+            light: "Light-Rays-Transparent",
             prompt: "<p>Let's go to the <strong>Chowking Building</strong></p>",
             end: "EXIT"
         },
@@ -156,8 +161,8 @@ const World1 = () => {
         <World 
             title="Humble Beginnings"
             year="1979-2003"
-            // model="/assets/world1/world.glb"
-            model="/assets/world1/world1-with-minijoy.glb"
+            model="/assets/world1/world.glb"
+            // model="/assets/world1/worldu.gltf"
             background="/assets/world1/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
