@@ -468,6 +468,23 @@ const World = ({
         }
     }
 
+    const onNext = (popupCount) => {
+        console.log("activeVideo", activeVideo)
+        if(activeVideo < popupCount - 1) {
+            setActiveVideo(activeVideo + 1)
+        } else {
+            return null
+        }
+    }
+
+    const onPrev = () => {
+        if(activeVideo > 0) {
+            setActiveVideo(activeVideo - 1)
+        } else {
+            return null
+        }
+    }
+
     return (
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ objSelected ? "blur-[50px]" : "" }`}>  
@@ -488,32 +505,42 @@ const World = ({
                 <div className={`details-modal`}>
                     <div className="details-modal-content">
                         <div className="text-container absolute top-[200px] right-[136px]">
-                            {objSelected && contents[objSelected].title.filter((title, i) => activeVideo !== i).map((title, i) => (
+                            {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
                                 <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
                                     <h4>{title}</h4>
                                 </div>
                             ))}
-
-                            {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo !== i).map((desc, i) => (
+                            
+                            {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo === i).map((desc, i) => (
                                 <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
                             ))}
 
-                            {objSelected && contents[objSelected].photos && contents[objSelected].photos.map((image, i) => (
-                                activeVideo !== i && 
-                                    <div className="popup-image-container top-[200px] right-[0px]" key={`desc-${i}`}>
-                                        <img src={image}/>
-                                    </div>
-                                ))
-                            }
+                            <div className="popup-image-container">
+                                {objSelected && contents[objSelected].photos && contents[objSelected].photos.map((image, i) => (
+                                    activeVideo !== i && 
+                                        <div className="popup-image-single top-[200px] right-[0px]" key={`desc-${i}`}>
+                                            <img src={image}/>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                         <div className="webm-container">
-                            <button className="exit-button" onClick={ onDeselect }>
+                            <button className="exit-button absolute" onClick={ onDeselect }>
                                 <img src="/assets/world1/popup-icons/exit.svg" width="50" />
                             </button>
                             
-                            <button className="arrow-right absolute" onClick={ "" }>
-                                <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
-                            </button>
+                            {objSelected && 
+                                <button className={`arrow-left absolute ${activeVideo > 0 ? "" : "opacity-50"}`} onClick={ onPrev }>
+                                    <img src="/assets/world1/popup-icons/arrow-left.svg" width="50" />
+                                </button>
+                            }
+
+                            {objSelected && 
+                                <button className={`arrow-right absolute ${activeVideo < (contents[objSelected].year.length - 1) ? "" : "opacity-50"}`} onClick={ () => onNext(contents[objSelected].year.length) }>
+                                    <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
+                                </button>
+                            }
                             
                             {audio ?
                                 <button className="audio-button absolute" onClick={ audioClick }>
@@ -523,6 +550,12 @@ const World = ({
                                     <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
                                 </button>
                             }
+
+                            {objSelected && contents[objSelected].year.map((p, i) => (
+                                <div key={`year-text-${i}`} className={`year-container absolute bottom-[100px] ${contents[objSelected].post[i]}`}>
+                                    <p className={`${activeVideo === i ? "active year-text" : "year-text"}`}>{p}</p>
+                                </div>
+                            ))}
 
                             {objSelected && contents[objSelected].popup.map((p, i) => (
                                 <button key={`red-white-${i}`} className={`red-white-container absolute bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
@@ -536,7 +569,6 @@ const World = ({
                                     </div>}
                                 </button>
                             ))}
-
                             
                             {objSelected && contents[objSelected].popup.map((p, i) => (
                                 <>
