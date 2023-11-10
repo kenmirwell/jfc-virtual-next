@@ -231,10 +231,6 @@ const World = ({
             }
 
             setTimeout(() => {
-                setFinishAnimate(true);
-            }, 5500);
-
-            setTimeout(() => {
                 for( const [i, obj] of interactables.entries() ) {
                     obj.visible = true;
                     gsap.timeline().to(obj.position, 1, { 
@@ -244,6 +240,10 @@ const World = ({
                     });
                 }
             }, 4500);
+
+            setTimeout(() => {
+                setFinishAnimate(true);
+            }, 5300);
         }
     }, [model3d, initialAnimate])
 
@@ -254,10 +254,6 @@ const World = ({
 
             if( flow && flow.length > 0 && !currentFlow.action ) {
                 setShowJoy(true);
-
-                setTimeout(() => {
-                    setCurrentFlow( flow[0] );
-                }, 700);
             }
         }
     }, [finishAnimate, disableFunctionality]);
@@ -395,6 +391,7 @@ const World = ({
                 const objects = components.raycaster.intersectObjects(model3d.children);
 
                 const onSelect = () => {
+                    setShowJoy(false);
                     disableFunctionality = true;
 
                     document.removeEventListener( 'click', onClickObject );
@@ -461,6 +458,7 @@ const World = ({
     };
 
     const onDeselect = () => {
+        setShowJoy(true);
         disableFunctionality = false;
 
         const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );

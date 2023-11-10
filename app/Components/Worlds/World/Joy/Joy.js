@@ -88,7 +88,7 @@ const Joy = () => {
                 
             onLoad();
 
-            document.getElementById("prompt").appendChild( components.renderer.domElement );
+            document.getElementById("promptc").appendChild( components.renderer.domElement );
         }
     }, [model3d, loaded]);
 
