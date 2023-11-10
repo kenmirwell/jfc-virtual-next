@@ -144,7 +144,12 @@ const World = ({
             for( const obj of lights ) {
                 obj.scale.x = 0;
                 obj.scale.y = 0;
-                obj.material.color = new THREE.Color( 0xFFD700 );
+                obj.material = new THREE.MeshLambertMaterial({ map: obj.material.map });
+                obj.material.color = new THREE.Color( 0xE7E7E7 );
+                obj.material.emissive = new THREE.Color( 0xFFD700 );
+                obj.material.emissiveIntensity = 4.34;
+                obj.material.depthTest = false;
+                obj.material.transparent = true;
             }
 
             for( const obj of trees ) {
@@ -250,6 +255,7 @@ const World = ({
             document.addEventListener( 'click', onClickObject );
 
             const light = model3d.children.find(c => c.name === currentFlow.light );
+            const interactables = model3d.children.find(c => c.name === currentFlow.target);
 
             if( light ) {
                 gsap.timeline().to(light.scale, .5, { 
@@ -258,6 +264,14 @@ const World = ({
                     z: 10,
                     ease: Power3.easeInOut
                 });
+            }
+
+            if( interactables ) {
+                interactables.renderOrder = 20;
+
+                for( const obj of interactables.children ) {
+                    obj.renderOrder = 20;
+                }
             }
         }
     }, [currentFlow]);
@@ -289,6 +303,12 @@ const World = ({
         onHover();
         components.renderer.render(components.scene, components.camera);
         window.requestAnimationFrame(animate);
+
+        const lights = model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+
+        for( const light of lights ) {
+            light.rotation.y += 0.01;
+        }
     };
 
     const onHover = () => {
