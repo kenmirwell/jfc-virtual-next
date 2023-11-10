@@ -69,7 +69,7 @@ const World = ({
             renderer.toneMappingExposure = 1;
             renderer.toneMapping = THREE.NoToneMapping;
             renderer.setClearColor(0xffffff, 0);
-            // renderer.outputColorSpace = THREE.SRGBColorSpace;
+            renderer.outputColorSpace = THREE.SRGBColorSpace;
             renderer.useLegacyLights = false;
             renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -77,11 +77,11 @@ const World = ({
             const pointer          = new THREE.Vector2();
             const raycaster        = new THREE.Raycaster();
             const axesHelper       = new THREE.AxesHelper(5);
-            const ambientLight     = new THREE.AmbientLight( 0xFFFFFF, 1 );
+            const ambientLight     = new THREE.AmbientLight( 0xFFFFFF, 1.3 );
             const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 8 );
             const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 3);
             const aspect = window.innerWidth / window.innerHeight;
-            const camera = new THREE.PerspectiveCamera( 22, aspect, 1, 2000 );
+            const camera = new THREE.PerspectiveCamera( 30, aspect, 1, 2000 );
 
             const orbit = new OrbitControls( camera, renderer.domElement );
             orbit.enableRotate = false;
@@ -112,9 +112,9 @@ const World = ({
     useEffect(() => {
         if( !model3d && loaded ) {
             components.renderer.setSize(window.innerWidth, window.innerHeight);
-            components.camera.position.set(0, 10, 20);
-            components.lights.directional.position.set(0, 11.190, 7.133);
-            components.lights.directional.castShadow = true;
+            components.camera.position.set(0, 20, 17);
+            components.lights.directional.position.set(0, 11.190, 12.133);
+            components.lights.directional.castShadow = true;1
             components.lights.directional.shadow.bias = -0.001;
             components.lights.directional.shadowMapWidth = 2048; // default is 512
             components.lights.directional.shadowMapHeight = 2048;
@@ -414,7 +414,7 @@ const World = ({
                     });
 
                     gsap.timeline().to(components.camera, 1, { 
-                        zoom: 2.2, 
+                        zoom: 2.5, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
 
