@@ -58,7 +58,10 @@ const World = ({
     /* Load all components */
     useEffect(() => {
         if( !loaded ) {
-            const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
+            const renderer = new THREE.WebGLRenderer({ 
+                antialias: true, 
+                preserveDrawingBuffer: true 
+            });
             renderer.shadows = true;
             renderer.shadowType = 1;
             renderer.shadowMap.enabled = true;
@@ -68,16 +71,17 @@ const World = ({
             renderer.setClearColor(0xffffff, 0);
             renderer.outputColorSpace = THREE.SRGBColorSpace;
             renderer.useLegacyLights = false;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
             const scene            = new THREE.Scene();
             const pointer          = new THREE.Vector2();
             const raycaster        = new THREE.Raycaster();
             const axesHelper       = new THREE.AxesHelper(5);
-            const ambientLight     = new THREE.AmbientLight(0xBEBEBE);
-            const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 10 );
+            const ambientLight     = new THREE.AmbientLight( 0xFFFFFF, 1.3 );
+            const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 8 );
             const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 3);
             const aspect = window.innerWidth / window.innerHeight;
-            const camera = new THREE.PerspectiveCamera( 22, aspect, 1, 2000 );
+            const camera = new THREE.PerspectiveCamera( 30, aspect, 1, 2000 );
 
 
             const orbit = new OrbitControls( camera, renderer.domElement );
@@ -109,10 +113,17 @@ const World = ({
     useEffect(() => {
         if( !model3d && loaded ) {
             components.renderer.setSize(window.innerWidth, window.innerHeight);
+            components.camera.position.set(0, 20, 17);
+            components.lights.directional.position.set(0, 11.190, 12.133);
+            components.lights.directional.castShadow = true;1
+            components.lights.directional.shadow.bias = -0.001;
+            components.lights.directional.shadowMapWidth = 2048; // default is 512
+            components.lights.directional.shadowMapHeight = 2048;
+            components.lights.directional.shadow.mapSize.width = 2048;
+            components.lights.directional.shadow.mapSize.height = 2048;
+
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
-            components.camera.position.set(0, 10, 20);
-            components.lights.directional.position.set(0, 10, 10);
                 
             onLoad();
 
@@ -151,6 +162,8 @@ const World = ({
                 obj.material.emissiveIntensity = 4.34;
                 obj.material.depthTest = false;
                 obj.material.transparent = true;
+                obj.receiveShadow = false;
+                obj.castShadow = false;
             }
 
             for( const obj of trees ) {
@@ -219,10 +232,6 @@ const World = ({
             }
 
             setTimeout(() => {
-                setFinishAnimate(true);
-            }, 5500);
-
-            setTimeout(() => {
                 for( const [i, obj] of interactables.entries() ) {
                     obj.visible = true;
                     gsap.timeline().to(obj.position, 1, { 
@@ -232,6 +241,10 @@ const World = ({
                     });
                 }
             }, 4500);
+
+            setTimeout(() => {
+                setFinishAnimate(true);
+            }, 5300);
         }
     }, [model3d, initialAnimate])
 
@@ -242,10 +255,6 @@ const World = ({
 
             if( flow && flow.length > 0 && !currentFlow.action ) {
                 setShowJoy(true);
-
-                setTimeout(() => {
-                    setCurrentFlow( flow[0] );
-                }, 700);
             }
         }
     }, [finishAnimate, disableFunctionality]);
@@ -287,8 +296,22 @@ const World = ({
         assetLoader.load(model, async function(gltf) {
             setModel3d(gltf.scene);
             gltf.scene.traverse(function (child) {
-                if (child.isMesh) {
-                    child.castShadow = true;
+                child.castShadow = true;
+                child.receiveShadow = true;
+
+                for( const c of child.children ) {
+                    c.castShadow = true;
+                    c.receiveShadow = true;
+
+                    for( const d of c.children ) {
+                        d.castShadow = true;
+                        d.receiveShadow = true;
+
+                        for( const e of d.children ) {
+                            e.castShadow = true;
+                            e.receiveShadow = true;
+                        }
+                    }
                 }
             });
 
@@ -367,6 +390,7 @@ const World = ({
                 const objects = components.raycaster.intersectObjects(model3d.children);
 
                 const onSelect = () => {
+                    setShowJoy(false);
                     disableFunctionality = true;
 
                     document.removeEventListener( 'click', onClickObject );
@@ -386,7 +410,7 @@ const World = ({
                     });
 
                     gsap.timeline().to(components.camera, 1, { 
-                        zoom: 1.7, 
+                        zoom: 2.5, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
 
@@ -433,6 +457,7 @@ const World = ({
     };
 
     const onDeselect = () => {
+        setShowJoy(true);
         disableFunctionality = false;
 
         const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );

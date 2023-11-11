@@ -28,7 +28,10 @@ const Joy = () => {
     /* Load all components */
     useEffect(() => {
         if( !loaded ) {
-            const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
+            const renderer = new THREE.WebGLRenderer({ 
+                alpha: false, 
+                antialias: true 
+            });
             renderer.shadows = true;
             renderer.shadowType = 1;
             renderer.shadowMap.enabled = true;
@@ -43,8 +46,8 @@ const Joy = () => {
             const pointer          = new THREE.Vector2();
             const raycaster        = new THREE.Raycaster();
             const axesHelper       = new THREE.AxesHelper(5);
-            const ambientLight     = new THREE.AmbientLight(0xBEBEBE);
-            const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 10 );
+            const ambientLight     = new THREE.AmbientLight( 0xBEBEBE, 3 );
+            const directionalLight = new THREE.DirectionalLight( 0xFFFFFF, 4 );
             const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 3);
             const aspect = window.innerWidth / window.innerHeight;
             const camera = new THREE.PerspectiveCamera( 22, aspect, 1, 2000 );
@@ -81,11 +84,11 @@ const Joy = () => {
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
             components.camera.position.set(0, 10, 20);
-            components.lights.directional.position.set(0, 10, 10);
+            components.lights.directional.position.set(5, 10, 10);
                 
             onLoad();
 
-            document.getElementById("prompt").appendChild( components.renderer.domElement );
+            document.getElementById("promptc").appendChild( components.renderer.domElement );
         }
     }, [model3d, loaded]);
 
