@@ -4,7 +4,8 @@
     left: 50%;
     position: absolute;
     top: 50%;
-    max-width: 90%;
+    max-width: 1200px;
+    width: 100%;
     overflow: hidden;
     transform: translate(-50%, -50%);
     text-align: left;
@@ -28,3 +29,129 @@
     top: 0;
     opacity: 0.5;
   }
+
+
+  .text-container {
+    width: 45%;    
+}
+
+
+
+.arrow-right, 
+.arrow-left,
+.exit-button, 
+.audio-button {
+    z-index: 999
+}
+
+.exit-button {
+    top: 58px;
+    right: 67px;
+}
+
+.arrow-right {
+    bottom: 60px;
+    right: 10%;
+}
+
+.arrow-left {
+    bottom: 60px;
+    right: 20%;
+}
+
+.audio-button {
+    top: 55px;
+    left: 50px;
+}
+
+.red-white-container {
+    z-index: 999;
+
+    .white-button-container {
+        &:after {
+            content: "";
+            border: 2px solid #ffffff;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            position: absolute;
+            top: -9px;
+            right: -8px;
+        }
+    }
+    
+    .red-button-container {
+
+        img {
+            position: relative;
+        }
+    
+        .red-button {
+            
+            &:after {
+                content: "";
+                border: 2px solid #ffffff;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+        }
+        
+        .red-button {
+            &:before {
+                content: "";
+                border: 2px solid #ffffff;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                position: absolute;
+                top: -3px;
+                right: -3px;
+            }
+        }
+        
+        .red-button {
+            &:before {
+                animation: pulse 2s ease-out infinite;
+            }
+        }
+        
+        .red-button {
+            &:after {
+                animation: pulse 2s .5s ease-out infinite;
+            }
+        }
+    }
+}
+
+.video {
+    width: 100%;
+}
+
+.popup-image-container {
+    display: flex;
+    padding-top: 20px;
+
+    .popup-image-single {
+        width: 65%;
+    
+        img {
+            height: 70%;
+        }
+    }
+}
+
+.year-container {
+
+    p {
+        font-size: 25px;
+        color: #ffffff;
+
+        &.active {
+            font-size: 35px;
+        }
+    }
+}

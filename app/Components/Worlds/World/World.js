@@ -79,6 +79,7 @@ const World = ({
             const aspect = window.innerWidth / window.innerHeight;
             const camera = new THREE.PerspectiveCamera( 22, aspect, 1, 2000 );
 
+
             const orbit = new OrbitControls( camera, renderer.domElement );
             orbit.enableRotate = false;
             orbit.enableZoom = false;
@@ -97,7 +98,7 @@ const World = ({
                     directionalHelper: dLightHelper
                 },
                 camera,
-                orbit
+                orbit,
             });
 
             setLoaded(true);
@@ -278,15 +279,13 @@ const World = ({
 
     const onLoad = () => {
         const assetLoader  = new GLTFLoader();
-        const dLoader      = new DRACOLoader();        
+        const dLoader      = new DRACOLoader();      
         dLoader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.6/")
         dLoader.setDecoderConfig({type: "js"})
         assetLoader.setDRACOLoader(dLoader)
 
         assetLoader.load(model, async function(gltf) {
             setModel3d(gltf.scene);
-
-            gltf.scene.overrideMaterial = new THREE.MeshBasicMaterial({ color: "green" });
             gltf.scene.traverse(function (child) {
                 if (child.isMesh) {
                     child.castShadow = true;
@@ -560,7 +559,7 @@ const World = ({
             <div className={`details-modal-container opacity-0 transition-all duration-[0.5s] ease-in-out ${ objSelected ? "!opacity-100" : "pointer-events-none" }`}>
                 <div className={`details-modal`}>
                     <div className="details-modal-content">
-                        <div className="text-container absolute top-[200px] right-[136px]">
+                        <div className="text-container absolute top-[32%] right-[136px]">
                             {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
                                 <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
                                     <h4>{title}</h4>
@@ -608,7 +607,7 @@ const World = ({
                             }
 
                             {objSelected && contents[objSelected].year.map((p, i) => (
-                                <div key={`year-text-${i}`} className={`year-container absolute bottom-[100px] ${contents[objSelected].post[i]}`}>
+                                <div key={`year-text-${i}`} className={`year-container absolute bottom-[100px] ${contents[objSelected].textPost[i]}`}>
                                     <p className={`${activeVideo === i ? "active year-text" : "year-text"}`}>{p}</p>
                                 </div>
                             ))}
