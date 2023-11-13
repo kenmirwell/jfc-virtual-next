@@ -10,7 +10,8 @@
     transform: translate(-50%, -50%);
     text-align: left;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 99;
 
     video {
@@ -31,43 +32,23 @@
   }
 
 
-  .text-container {
-    width: 45%;    
+.details-modal-content {
+    z-index: 9999;
 }
 
-
-
-.arrow-right, 
-.arrow-left,
-.exit-button, 
-.audio-button {
-    z-index: 999
-}
-
-.exit-button {
-    top: 58px;
-    right: 67px;
-}
-
-.arrow-right {
-    bottom: 60px;
-    right: 10%;
-}
-
-.arrow-left {
-    bottom: 60px;
-    right: 20%;
-}
-
-.audio-button {
-    top: 55px;
-    left: 50px;
+.dashline {
+    height: 2px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: -15px;
+    border: 2px dashed #ffffff;
 }
 
 .red-white-container {
     z-index: 999;
 
     .white-button-container {
+        position: relative;
         &:after {
             content: "";
             border: 2px solid #ffffff;
@@ -75,8 +56,8 @@
             width: 35px;
             border-radius: 50%;
             position: absolute;
-            top: -9px;
-            right: -8px;
+            top: -8px;
+            right: -7px;
         }
     }
     
@@ -87,7 +68,8 @@
         }
     
         .red-button {
-            
+            position: relative;
+
             &:after {
                 content: "";
                 border: 2px solid #ffffff;
@@ -95,12 +77,14 @@
                 width: 20px;
                 border-radius: 50%;
                 position: absolute;
-                top: 0px;
+                top: -20px;
                 right: 0px;
             }
         }
         
         .red-button {
+            position: relative;
+
             &:before {
                 content: "";
                 border: 2px solid #ffffff;
@@ -108,7 +92,7 @@
                 width: 25px;
                 border-radius: 50%;
                 position: absolute;
-                top: -3px;
+                top: -23px;
                 right: -3px;
             }
         }
@@ -132,14 +116,14 @@
 }
 
 .popup-image-container {
-    display: flex;
-    padding-top: 20px;
 
     .popup-image-single {
-        width: 65%;
-    
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
         img {
-            height: 70%;
+            width: 50%;
         }
     }
 }
@@ -154,4 +138,8 @@
             font-size: 35px;
         }
     }
+}
+
+.right-content, .left-contant {
+    position: relative;
 }

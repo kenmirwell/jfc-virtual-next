@@ -94,7 +94,7 @@ const World1 = () => {
                 "Beginning of Jollibee’s Franchising Journey"
             ],
             description: [
-                `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>`,
+                `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand: Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>`,
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
             ],
             popup: [
@@ -103,7 +103,7 @@ const World1 = () => {
             ],
             photos: [
                 "/assets/world1/popup-photos/1978/1978_1.png", 
-                "/assets/world1/popup-photos/1978/1979.png"
+                "/assets/world1/popup-photos/1979/1979.png"
             ],
             textPost: [
                 "left-[11%]", 
@@ -123,7 +123,7 @@ const World1 = () => {
                 "Introducing The Face Of Jollibee"
             ],
             description: [
-                `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand:<br />Jolibee. The first-ever Jolibee store was located in Quezon, Cubao.</p>`
+                `<p>The iconic Jollibee mascot, then named “Jolly Bee” is introduced for the first time at the Virra Mall store opening. The second Jollibee mascot, Mr. YUM, would be introduced next year.</p>`
             ],
             popup: [
                 "/assets/world1/popup/1980.webm"

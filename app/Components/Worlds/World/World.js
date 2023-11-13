@@ -52,6 +52,7 @@ const World = ({
     const [activeVideo, setActiveVideo] = useState(0);
     const [currentFlow, setCurrentFlow] = useState({});
     const [showJoy, setShowJoy] = useState(false);
+    const [videoPlayed, setVideoPlayed] = useState(false)
     
     const ref = useRef(false);
     
@@ -478,6 +479,7 @@ const World = ({
 
         setObjSelected(null);
         setCurrentFlow(flow.find(f => f.step === currentFlow.step + 1));
+        setVideoPlayed(false)
 
         gsap.timeline().to(components.orbit.target, 0.7, { 
             x: 0, 
@@ -572,16 +574,18 @@ const World = ({
     const WebMbg = () => {
 
         return (
-            <div className="popup-image-container">
-                {objSelected && contents[objSelected].photos && contents[objSelected].photos.map((image, i) => (
-                    activeVideo !== i && 
-                        <div className="popup-image-single top-[200px] right-[0px]" key={`desc-${i}`}>
-                            <img src={image}/>
-                        </div>
-                    ))
-                }
-            </div>
+            objSelected && contents[objSelected].popup.map((p, i) => (
+                <>
+                    <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
+                        <source src={p} type="video/webm"/>
+                    </video>
+                </>
+            ))
         )
+    }
+
+    const handleStartVideo = () => {
+        setVideoPlayed(true)
     }
 
     return (
@@ -598,86 +602,94 @@ const World = ({
                     onClickInteractables={ onClickObject }
                 />
                 <Joy />
-                <audio className="hidden" controls autoplay ref={ref}> 
+                <audio className="hidden" controls autoPlay ref={ref}> 
                     <source src={"/assets/world1/popup-audio.mp3"} />
                 </audio>
             </div>
             <div className={`details-modal-container opacity-0 transition-all duration-[0.5s] ease-in-out ${ objSelected ? "!opacity-100" : "pointer-events-none" }`}>
                 <div className={`details-modal`}>
-                    <div className="details-modal-content">
-                        <WebMbg/>
-                        {<WebMbg/> &&
+                    <div className="details-modal-content absolute flex h-[85%] w-[90%]">
+                        {videoPlayed && 
                             <>
-                                <div className="text-container absolute top-[32%] right-[136px]">
-                                    {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
-                                        <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
-                                            <h4>{title}</h4>
-                                        </div>
-                                    ))}
-                                    
-                                    {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo === i).map((desc, i) => (
-                                        <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
-                                    ))}
-                                </div>
-                                <div className="webm-container">
-                                    <button className="exit-button absolute" onClick={ onDeselect }>
-                                        <img src="/assets/world1/popup-icons/exit.svg" width="50" />
-                                    </button>
-                                    
-                                    {objSelected && 
-                                        <button className={`arrow-left absolute ${activeVideo > 0 ? "" : "opacity-50"}`} onClick={ onPrev }>
-                                            <img src="/assets/world1/popup-icons/arrow-left.svg" width="50" />
-                                        </button>
-                                    }
-
-                                    {objSelected && 
-                                        <button className={`arrow-right absolute ${activeVideo < (contents[objSelected].year.length - 1) ? "" : "opacity-50"}`} onClick={ () => onNext(contents[objSelected].year.length) }>
-                                            <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
-                                        </button>
-                                    }
-                                    
+                                <div className="left-content w-[40%] flex flex-col justify-between">
                                     {audio ?
-                                        <button className="audio-button absolute" onClick={ audioClick }>
+                                        <button className="audio-button" onClick={ audioClick }>
                                             <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
                                         </button> :
-                                        <button className="audio-button absolute" onClick={ audioClick }>
+                                        <button className="audio-button" onClick={ audioClick }>
                                             <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
                                         </button>
-                                    }
-
-                                    {objSelected && contents[objSelected].year.map((p, i) => (
-                                        <div key={`year-text-${i}`} className={`year-container absolute bottom-[100px] ${contents[objSelected].textPost[i]}`}>
-                                            <p className={`${activeVideo === i ? "active year-text" : "year-text"}`}>{p}</p>
+                                     }
+                                    <div className="button-rw-container w-[50%] ml-[15%] mb-[5%]">
+                                        <div className={`ear-content-container flex ${(objSelected && contents[objSelected].year.length > 1) ? "justify-between" : "justify-around"}`}>
+                                                {objSelected && contents[objSelected].year.map((p, i) => (
+                                                <div key={`year-text-${i}`} className={`year-container bottom-[100px] ${contents[objSelected].textPost[i]}`}>
+                                                    <p className={`${activeVideo === i ? "active year-text" : "year-text"}`}>{p}</p>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-
-                                    {objSelected && contents[objSelected].popup.map((p, i) => (
-                                        <button key={`red-white-${i}`} className={`red-white-container absolute bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
-                                            {activeVideo === i ? 
-                                            <div className="red-button-container">
-                                                <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
-                                                <div className="red-button" />
-                                            </div> :
-                                            <div className="white-button-container">
-                                                <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
-                                            </div>}
-                                        </button>
-                                    ))}
-
-                                    <div className="dash-line"></div>
+                                        <div className={`rw-content-container flex ${(objSelected && contents[objSelected].year.length > 1) ? "justify-between" : "justify-around"}`}>
+                                            {objSelected && contents[objSelected].popup.map((p, i) => (
+                                                <button key={`red-white-${i}`} className={`red-white-container bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
+                                                    {activeVideo === i ? 
+                                                    <div className="red-button-container">
+                                                        <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
+                                                        <div className="red-button" />
+                                                    </div> :
+                                                    <div className="white-button-container">
+                                                        <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
+                                                    </div>}
+                                                </button>
+                                            ))}
+                                        </div>
+                                        {objSelected && contents[objSelected].year.length > 1 && <div className="dashline"/>}
+                                    </div>
+                                </div>
+                                <div className="right-content w-[60%] flex flex-col justify-around">
+                                    <div className="exit-button flex justify-end">
+                                            <img onClick={ onDeselect } src="/assets/world1/popup-icons/exit.svg" width="50" />
+                                    </div>
+                                    <div className="text-container mt-[107px]">
+                                        {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
+                                            <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
+                                                <h4>{title}</h4>
+                                            </div>
+                                        ))}
                                     
-                                    {objSelected && contents[objSelected].popup.map((p, i) => (
-                                        <>
-                                            <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
-                                                <source src={p} type="video/webm"/>
-                                            </video>
-                                        </>
-                                    ))}
+                                        {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo === i).map((desc, i) => (
+                                            <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
+                                        ))}
+                                    
+                                        <div className="popup-image-container mt-[23px]">
+                                            {objSelected && contents[objSelected].photos.filter((image, i) => activeVideo === i).map((image, i) => (
+                                                <div className="popup-image-single" key={`img-${i}`}>
+                                                    <img src={image}/>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="button-lr-container flex justify-end gap-5">
+                                        {objSelected && contents[objSelected].year.length > 1 &&
+                                            <button className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"}`} onClick={ onPrev }>
+                                                <img src="/assets/world1/popup-icons/arrow-left.svg" width="50" />
+                                            </button>
+                                        }
+
+                                        {objSelected && contents[objSelected].year.length > 1 &&
+                                            <button className={`arrow-right ${activeVideo < (contents[objSelected].year.length - 1) ? "" : "opacity-50"}`} onClick={ () => onNext(contents[objSelected].year.length) }>
+                                                <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
+                                            </button>
+                                        }
+                                    </div>
                                 </div>
                             </>
                         }
-                        
                     </div>
+                    {objSelected && contents[objSelected].popup.map((p, i) => (
+                        <video onPlay={handleStartVideo} key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
+                            <source src={p} type="video/webm"/>
+                        </video>
+                    ))}
                 </div>                
                 <div onClick={ onDeselect } className={`details-modal-overlay ${ objSelected ? "" : "pointer-events-none" }`} />
             </div>
