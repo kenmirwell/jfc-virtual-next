@@ -98,8 +98,12 @@ const World1 = () => {
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1978.webm", 
-                "/assets/world1/popup/1979.webm"
+                "/assets/world1/popup/1978-MAIN.webm", 
+                "/assets/world1/popup/1979-MAIN.webm"
+            ],
+            popupYears: [
+                "/assets/world1/popup-years/1978-YEAR.webm", 
+                "/assets/world1/popup-years/1979-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/1978/1978_1.png", 
@@ -126,7 +130,10 @@ const World1 = () => {
                 `<p>The iconic Jollibee mascot, then named “Jolly Bee” is introduced for the first time at the Virra Mall store opening. The second Jollibee mascot, Mr. YUM, would be introduced next year.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1980.webm"
+                "/assets/world1/popup/1980-MAIN.webm"
+            ],
+            popupYears: [
+                "/assets/world1/popup-years/1980-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/1980/1980.png"
@@ -155,9 +162,14 @@ const World1 = () => {
                 `<p>Jollibee Group lists on the Philippine Stock Exchange, with an initial offering of PHP 9/share.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1984.webm", 
-                "/assets/world1/popup/1990.webm", 
-                "/assets/world1/popup/1993.webm"
+                "/assets/world1/popup/1984-MAIN.webm", 
+                "/assets/world1/popup/1990-MAIN.webm", 
+                "/assets/world1/popup/1993-MAIN.webm"
+            ],
+            popupYears: [
+                "/assets/world1/popup-years/1984-YEAR.webm", 
+                "/assets/world1/popup-years/1990-YEAR.webm", 
+                "/assets/world1/popup-years/1993-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/1984/1984.png", 
@@ -188,8 +200,12 @@ const World1 = () => {
                 `<p>Jollibee Group opens its first-ever store in North America with Jollibee Daly City in California, USA. Jollibee Group&apos;s North America presence is now composed of six brands (Jollibee, Chowking, Red Ribbon, Smashburger, and The Coffee Bean and Tea Leaf) with over 550 stores.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1994.webm", 
-                "/assets/world1/popup/1998.webm"
+                "/assets/world1/popup/1994-MAIN.webm", 
+                "/assets/world1/popup/1998-MAIN.webm"
+            ],
+            popupYears: [
+                "/assets/world1/popup-years/1994-YEAR.webm", 
+                "/assets/world1/popup-years/1998-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/1994/1994.png", 
@@ -218,8 +234,12 @@ const World1 = () => {
                 `<p>Jollibee Group moves to Jollibee Plaza, initially operating with 8 floors in the building.</p>`
             ],
             popup: [
-                "/assets/world1/popup/2000.webm", 
-                "/assets/world1/popup/2001.webm"
+                "/assets/world1/popup/2000-MAIN.webm", 
+                "/assets/world1/popup/2001-MAIN.webm"
+            ],
+            popupYears: [
+                "/assets/world1/popup-years/2000-YEAR.webm", 
+                "/assets/world1/popup-years/2001-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/2000/2000.png", 
@@ -240,8 +260,8 @@ const World1 = () => {
         <World 
             title="Humble Beginnings"
             year="1979-2003"
+            // model="/assets/world1/World1-Complete.glb"
             model="/assets/world1/world.glb"
-            // model="/assets/world1/worldu.gltf"
             background="/assets/world1/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",

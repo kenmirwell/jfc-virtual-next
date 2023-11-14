@@ -1,3 +1,42 @@
+@keyframes pulse {
+    100% {
+        transform: scale(2.5);
+        opacity: 0
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        right: -500px
+    }
+
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes fade-out {    
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes grow-shrink {    
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
 .details-modal {
     background: transparent;
     width: 100%;
@@ -143,3 +182,43 @@
 .right-content, .left-contant {
     position: relative;
 }
+
+.popup-years-container {
+
+    video {
+        width: 100%;
+        max-width: 30%;
+    }
+}
+
+.exit-button {
+    cursor: pointer;
+    
+    img {
+        transform: scale(0);
+        transition: .2s transform;
+    }
+
+    &.active {
+
+        img {
+             transform: scale(1);
+        }
+    }
+
+    &:hover {
+
+        img {
+            animation: grow-shrink .3s ease-in-out infinite;
+        }
+    }
+}
+
+.text-container {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.text-container::-webkit-scrollbar {
+    display: none;
+  }

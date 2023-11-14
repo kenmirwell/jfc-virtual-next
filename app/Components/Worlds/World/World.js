@@ -116,7 +116,7 @@ const World = ({
             components.renderer.setSize(window.innerWidth, window.innerHeight);
             components.camera.position.set(0, 20, 17);
             components.lights.directional.position.set(0, 11.190, 12.133);
-            components.lights.directional.castShadow = true;1
+            components.lights.directional.castShadow = true;
             components.lights.directional.shadow.bias = -0.001;
             components.lights.directional.shadowMapWidth = 2048; // default is 512
             components.lights.directional.shadowMapHeight = 2048;
@@ -468,11 +468,13 @@ const World = ({
         disableFunctionality = false;
 
         const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
+        
         for( const obj of joys ) {
             obj.visible = false;
         }
 
         const light = model3d.children.find(c => c.name === currentFlow.light );
+        
         if( light ) {
             light.visible = false;
         }
@@ -555,7 +557,6 @@ const World = ({
     }
 
     const onNext = (popupCount) => {
-        console.log("activeVideo", activeVideo)
         if(activeVideo < popupCount - 1) {
             setActiveVideo(activeVideo + 1)
         } else {
@@ -569,19 +570,6 @@ const World = ({
         } else {
             return null
         }
-    }
-
-    const WebMbg = () => {
-
-        return (
-            objSelected && contents[objSelected].popup.map((p, i) => (
-                <>
-                    <video key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
-                        <source src={p} type="video/webm"/>
-                    </video>
-                </>
-            ))
-        )
     }
 
     const handleStartVideo = () => {
@@ -603,7 +591,7 @@ const World = ({
                 />
                 <Joy />
                 <audio className="hidden" controls autoPlay ref={ref}> 
-                    <source src={"/assets/world1/popup-audio.mp3"} />
+                    <source src={"/assets/world1/popup-audio.wav"} />
                 </audio>
             </div>
             <div className={`details-modal-container opacity-0 transition-all duration-[0.5s] ease-in-out ${ objSelected ? "!opacity-100" : "pointer-events-none" }`}>
@@ -645,27 +633,37 @@ const World = ({
                                         {objSelected && contents[objSelected].year.length > 1 && <div className="dashline"/>}
                                     </div>
                                 </div>
-                                <div className="right-content w-[60%] flex flex-col justify-around">
-                                    <div className="exit-button flex justify-end">
+
+                                <div className="right-content w-[60%] flex flex-col justify-between">
+                                    <div>
+                                        <div className={`exit-button flex justify-end ${activeVideo === (contents[objSelected].year.length - 1) && "active" }`}>
                                             <img onClick={ onDeselect } src="/assets/world1/popup-icons/exit.svg" width="50" />
-                                    </div>
-                                    <div className="text-container mt-[107px]">
-                                        {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
-                                            <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
-                                                <h4>{title}</h4>
+                                        </div>
+                                        {objSelected && contents[objSelected].popupYears.filter((pYears, i) => activeVideo === i).map((popYears, i) => (
+                                            <div className={"popup-years-container"} key={`popup-years-${i}`}>
+                                                    <video autoPlay loop muted>
+                                                    <source src={popYears} type="video/webm"/>
+                                                </video>
                                             </div>
                                         ))}
-                                    
-                                        {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo === i).map((desc, i) => (
-                                            <div className="desc-container top-[200px] right-[245px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
-                                        ))}
-                                    
-                                        <div className="popup-image-container mt-[23px]">
-                                            {objSelected && contents[objSelected].photos.filter((image, i) => activeVideo === i).map((image, i) => (
-                                                <div className="popup-image-single" key={`img-${i}`}>
-                                                    <img src={image}/>
+                                        <div className="text-container">
+                                            {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
+                                                <div className={"title-container top-[170px] right-[245px]"} key={`title-${i}`}>
+                                                    <h4>{title}</h4>
                                                 </div>
                                             ))}
+                                        
+                                            {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo === i).map((desc, i) => (
+                                                <div className="desc-container top-[200px] pr-[80px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
+                                            ))}
+                                        
+                                            <div className="popup-image-container mt-[23px]">
+                                                {objSelected && contents[objSelected].photos.filter((image, i) => activeVideo === i).map((image, i) => (
+                                                    <div className="popup-image-single" key={`img-${i}`}>
+                                                        <img src={image}/>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="button-lr-container flex justify-end gap-5">
