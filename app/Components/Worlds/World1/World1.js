@@ -12,7 +12,7 @@ const World1 = () => {
             step: 1,
             action: "GOTO",
             target: "Empty005",
-            joy: "Joys003",
+            joy: "Joy-Pointing003",
             light: "Light-Rays-Transparent003",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
             end: "EXIT"
@@ -27,7 +27,7 @@ const World1 = () => {
             step: 3,
             action: "GOTO",
             target: "Empty004",
-            joy: "Joys002",
+            joy: "Joy-Pointing002",
             light: "Light-Rays-Transparent002",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
             end: "EXIT"
@@ -42,6 +42,7 @@ const World1 = () => {
             step: 5,
             action: "GOTO",
             target: "Empty003",
+            joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent004",
             prompt: "<p>Let's check out the<br /><strong>Open Sign</strong></p>",
             end: "EXIT"
@@ -56,7 +57,7 @@ const World1 = () => {
             step: 7,
             action: "GOTO",
             target: "Empty001",
-            joy: "Joys001",
+            joy: "Joy-Pointing001",
             light: "Light-Rays-Transparent001",
             prompt: "<p>Let's go to the<br /><strong>Greenwich Building</strong></p>",
             end: "EXIT"
@@ -71,7 +72,7 @@ const World1 = () => {
             step: 9,
             action: "GOTO",
             target: "Empty002",
-            joy: "Joys",
+            joy: "Joy-Pointing",
             light: "Light-Rays-Transparent",
             prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
             end: "EXIT"
@@ -260,7 +261,6 @@ const World1 = () => {
         <World 
             title="Humble Beginnings"
             year="1979-2003"
-            // model="/assets/world1/World1-Complete.glb"
             model="/assets/world1/world.glb"
             background="/assets/world1/bg.mp4"
             flats={{
@@ -270,6 +270,9 @@ const World1 = () => {
             }}
             contents={ contents }
             flow={ flow }
+            objects={{
+                joy: "Joy-"
+            }}
         />
     )
 }

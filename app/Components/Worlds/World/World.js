@@ -78,8 +78,8 @@ const World = ({
             const pointer          = new THREE.Vector2();
             const raycaster        = new THREE.Raycaster();
             const axesHelper       = new THREE.AxesHelper(5);
-            const ambientLight     = new THREE.AmbientLight( 0xFFFFFF, 1.3 );
-            const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 8 );
+            const ambientLight     = new THREE.AmbientLight( 0xFFFFFF, 1.5 );
+            const directionalLight = new THREE.DirectionalLight( 0xBEBEBE, 6 );
             const dLightHelper     = new THREE.DirectionalLightHelper(directionalLight, 3);
             const aspect = window.innerWidth / window.innerHeight;
             const camera = new THREE.PerspectiveCamera( 30, aspect, 1, 2000 );
@@ -146,6 +146,7 @@ const World = ({
             const trees  = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
             const joys   = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
             const lights = model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+            const clouds = model3d.children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 );
 
             for( const obj of interactables ) {
                 obj.position.y += 5;
@@ -162,7 +163,7 @@ const World = ({
                 obj.material = new THREE.MeshLambertMaterial({ map: obj.material.map });
                 obj.material.color = new THREE.Color( 0xE7E7E7 );
                 obj.material.emissive = new THREE.Color( 0xFFD700 );
-                obj.material.emissiveIntensity = 10.34;
+                obj.material.emissiveIntensity = 4.34;
                 // obj.material.depthTest = false;
                 obj.material.transparent = true;
                 obj.receiveShadow = false;
@@ -177,6 +178,19 @@ const World = ({
                     obj.scale.x = 0;
                     obj.scale.y = 0;
                 }, 500);
+            }
+
+            for( const [i,obj] of clouds.entries() ) {
+                const tl = gsap.timeline({
+                    repeat: -1,
+                    defaults: { ease: "sine.inOut", duration: 4 }
+                });
+
+                tl.to(obj.position, { x: obj.position.x + 0.2, y: obj.position.y + 0.2, delay: i * 0.5 });
+                tl.to(obj.position, { x: obj.position.x + 0.2, y: obj.position.y - 0.2, delay: i * 0.5 });
+                tl.to(obj.position, { x: obj.position.x - 0.2, y: obj.position.y + 0.2, delay: i * 0.5 });
+                tl.to(obj.position, { x: obj.position.x - 0.2, y: obj.position.y - 0.2, delay: i * 0.5 });
+                tl.to(obj.position, { x: obj.position.x, y: obj.position.y, delay: i * 0.5 });
             }
         }
     }, [model3d]);
@@ -341,42 +355,44 @@ const World = ({
     };
 
     const onHover = () => {
-        if( model3d ) {
-            components.raycaster.setFromCamera( components.pointer, components.camera );
-            
-            const objects = components.raycaster.intersectObjects(model3d.children);
-            const raycasted = Object.keys(contents); 
+        if( !disableFunctionality ) {
+            if( model3d ) {
+                components.raycaster.setFromCamera( components.pointer, components.camera );
+                
+                const objects = components.raycaster.intersectObjects(model3d.children);
+                const raycasted = Object.keys(contents); 
 
-            const setTransition = (object) => { 
-                if( hovered === null ) {
-                    let step = .3;
-                    let speed = 0.1;
-                    step += speed
-    
-                    hovered = object.name;
+                const setTransition = (object) => { 
+                    if( hovered === null ) {
+                        let step = .3;
+                        let speed = 0.1;
+                        step += speed
+        
+                        hovered = object.name;
 
-                    const position = object.position;
+                        const position = object.position;
 
-                    gsap.timeline()
-                    .to(object.position, 0.3, {y: position.y + 1, ease: Power3.easeOut })
-                    .to(object.position, 0.6, {y: position.y, ease: Bounce.easeOut });
+                        gsap.timeline()
+                        .to(object.position, 0.4, {y: position.y + 0.5, ease: Power3.easeOut })
+                        .to(object.position, 0.2, {y: position.y, ease: Power3.easeOut });
 
-                    setTimeout(() => {
-                        hovered = null;
-                    }, 1000);
-                }
-            };
-            
-            if( objects.length < 11 ) {
-                for ( let i = 0; i < objects.length; i ++ ) {
-                    if( raycasted.indexOf(objects[i].object.name) > -1 ) {
-                        setTransition(objects[i].object);
-                    } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
-                        setTransition(objects[i].object.parent);
-                    } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
-                        setTransition(objects[i].object.parent.parent);
-                    } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
-                        setTransition(objects[i].object.parent.parent.parent);
+                        setTimeout(() => {
+                            hovered = null;
+                        }, 600);
+                    }
+                };
+                
+                if( objects.length < 11 ) {
+                    for ( let i = 0; i < objects.length; i ++ ) {
+                        if( raycasted.indexOf(objects[i].object.name) > -1 ) {
+                            setTransition(objects[i].object);
+                        } else if( objects[i].object.parent && raycasted.indexOf(objects[i].object.parent.name) > -1 ) {
+                            setTransition(objects[i].object.parent);
+                        } else if( objects[i].object.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.name) > -1 ) {
+                            setTransition(objects[i].object.parent.parent);
+                        } else if( objects[i].object.parent.parent.parent && raycasted.indexOf(objects[i].object.parent.parent.parent.name) > -1 ) {
+                            setTransition(objects[i].object.parent.parent.parent);
+                        }
                     }
                 }
             }
@@ -405,7 +421,7 @@ const World = ({
                     components.orbit.target.y = 3;
                     components.orbit.target.z = target.position.z;
                     
-                    gsap.timeline().to(components.orbit.target, 1, { 
+                    gsap.timeline().to(components.orbit.target, 2, { 
                         x: target.position.x, 
                         y: target.position.y + 1.2, 
                         z: target.position.z, 
@@ -415,7 +431,7 @@ const World = ({
                         ease: Power3.easeInOut 
                     });
 
-                    gsap.timeline().to(components.camera, 1, { 
+                    gsap.timeline().to(components.camera, 2, { 
                         zoom: 2.5, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
@@ -441,8 +457,14 @@ const World = ({
                     }, 1000);
 
                     setTimeout(() => {
+                        gsap.timeline()
+                            .to(target.position, 0.4, {y: target.position.y + 0.5, ease: Power3.easeOut })
+                            .to(target.position, 0.2, {y: target.position.y, ease: Power3.easeOut });
+                    }, 2000);
+
+                    setTimeout(() => {
                         setObjSelected(target.name);
-                    }, 1500);
+                    }, 3000);
                 }
 
                 if( action === "BUTTON" ) {
