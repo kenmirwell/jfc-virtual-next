@@ -162,8 +162,8 @@ const World = ({
                 obj.material = new THREE.MeshLambertMaterial({ map: obj.material.map });
                 obj.material.color = new THREE.Color( 0xE7E7E7 );
                 obj.material.emissive = new THREE.Color( 0xFFD700 );
-                obj.material.emissiveIntensity = 4.34;
-                obj.material.depthTest = false;
+                obj.material.emissiveIntensity = 10.34;
+                // obj.material.depthTest = false;
                 obj.material.transparent = true;
                 obj.receiveShadow = false;
                 obj.castShadow = false;
@@ -397,7 +397,6 @@ const World = ({
                 const objects = components.raycaster.intersectObjects(model3d.children);
 
                 const onSelect = () => {
-                    setShowJoy(false);
                     disableFunctionality = true;
 
                     document.removeEventListener( 'click', onClickObject );
@@ -430,6 +429,10 @@ const World = ({
                         }, 
                         ease: Power3.easeInOut 
                     });
+
+                    setTimeout(() => {
+                        setShowJoy(false);
+                    }, 200);
                     
                     setTimeout(() => {
                         if( joy ) {

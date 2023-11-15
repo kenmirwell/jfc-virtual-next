@@ -17,7 +17,7 @@ const Flats = ({
                             <span className="relative">{ h }</span>
                         </h2>
                     ))}
-                    <p data-text={ year } className="text-[40px]">
+                    <p data-text={ year } className="text-[40px] text-white">
                         <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ year }</span>
                         <span className="relative">{ year }</span>
                     </p>

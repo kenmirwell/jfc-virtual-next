@@ -79,7 +79,7 @@ const World1 = () => {
         {
             step: 10,
             action: "END",
-            prompt: "<p>Now that we're done, it's time to test your knowledge"
+            prompt: "<p>Now that we're done,<br />it's time to test<br />your knowledge"
         }
     ];
 

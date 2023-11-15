@@ -86,7 +86,7 @@ const Joy = () => {
             components.camera.position.set(0, 10, 20);
             components.lights.directional.position.set(5, 10, 10);
                 
-            onLoad();
+            // onLoad();
 
             document.getElementById("promptc").appendChild( components.renderer.domElement );
         }
