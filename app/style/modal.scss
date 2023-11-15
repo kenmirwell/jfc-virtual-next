@@ -167,15 +167,14 @@
     }
 }
 
-.year-container {
 
-    p {
-        font-size: 25px;
-        color: #ffffff;
+.year-text {
+    font-size: 25px;
+    color: #ffffff;
+    filter: drop-shadow(3px 1px 9px #a6a6a6);
 
-        &.active {
-            font-size: 35px;
-        }
+    &.active {
+        font-size: 35px;
     }
 }
 

@@ -423,9 +423,6 @@ const World = ({
                             setActiveVideo(0)
                             setAudio(true)
 
-                            if(ref.current) {
-                                ref.current.play()
-                            }
                         }, 
                         ease: Power3.easeInOut 
                     });
@@ -577,6 +574,10 @@ const World = ({
 
     const handleStartVideo = () => {
         setVideoPlayed(true)
+        
+        if(ref.current) {
+            ref.current.play()
+        }
     }
 
     return (
@@ -612,22 +613,17 @@ const World = ({
                                         </button>
                                      }
                                     <div className="button-rw-container w-[50%] ml-[15%] mb-[5%]">
-                                        <div className={`ear-content-container flex ${(objSelected && contents[objSelected].year.length > 1) ? "justify-between" : "justify-around"}`}>
-                                                {objSelected && contents[objSelected].year.map((p, i) => (
-                                                <div key={`year-text-${i}`} className={`year-container bottom-[100px] ${contents[objSelected].textPost[i]}`}>
-                                                    <p className={`${activeVideo === i ? "active year-text" : "year-text"}`}>{p}</p>
-                                                </div>
-                                            ))}
-                                        </div>
                                         <div className={`rw-content-container flex ${(objSelected && contents[objSelected].year.length > 1) ? "justify-between" : "justify-around"}`}>
-                                            {objSelected && contents[objSelected].popup.map((p, i) => (
+                                            {objSelected && contents[objSelected].year.map((item, i) => (
                                                 <button key={`red-white-${i}`} className={`red-white-container bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
                                                     {activeVideo === i ? 
-                                                    <div className="red-button-container">
+                                                    <div className="red-button-container relative">
+                                                        <p className={"active year-text absolute top-[-55px] left-[-20px]"}>{item}</p>
                                                         <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
                                                         <div className="red-button" />
                                                     </div> :
-                                                    <div className="white-button-container">
+                                                    <div className="white-button-container relative">
+                                                        <p className={"year-text absolute top-[-45px] left-[-15px]"}>{item}</p>
                                                         <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
                                                     </div>}
                                                 </button>
@@ -639,7 +635,7 @@ const World = ({
 
                                 <div className="right-content w-[60%] flex flex-col justify-between">
                                     <div>
-                                        <div className={`exit-button flex justify-end ${activeVideo === (contents[objSelected].year.length - 1) && "active" }`}>
+                                        <div className={`exit-button flex justify-end ${"2001" === (contents[objSelected].year) && "active" }`}>
                                             <img onClick={ onDeselect } src="/assets/world1/popup-icons/exit.svg" width="50" />
                                         </div>
                                         {objSelected && contents[objSelected].popupYears.filter((pYears, i) => activeVideo === i).map((popYears, i) => (
@@ -676,8 +672,14 @@ const World = ({
                                             </button>
                                         }
 
-                                        {objSelected && contents[objSelected].year.length > 1 &&
+                                        {/* {objSelected && contents[objSelected].year.length > 1 &&
                                             <button className={`arrow-right ${activeVideo < (contents[objSelected].year.length - 1) ? "" : "opacity-50"}`} onClick={ () => onNext(contents[objSelected].year.length) }>
+                                                <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
+                                            </button>
+                                        } */}
+
+                                        {objSelected &&
+                                            <button className={`arrow-right`} onClick={activeVideo < (contents[objSelected].year.length - 1) ? () => onNext(contents[objSelected].year.length) : onDeselect}>
                                                 <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
                                             </button>
                                         }
