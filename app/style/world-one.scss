@@ -24,9 +24,102 @@
 }
 
 .flats {
-    
 
-    #cchapter {
-        
-    }
+
+        @media (max-width: 1250px) {
+            
+            #cchapter {
+                top: 25px;
+
+                img {
+                    width: 150px;
+                }
+            }
+
+            .clogo-cheader {
+
+                #clogo {
+
+                    img {
+                        width: 350px;
+                    }
+                }
+    
+                #cheader {
+                    top: 80px;
+                    left: 0px;
+    
+                    span {
+                        font-size: 35px;
+                    }
+    
+                    p {
+                        .fill-text {
+    
+                            top: -6px;
+                        }
+                    }
+                }
+            }
+
+            #cicons {
+                bottom: -45px;
+                left: 20px;
+
+                img {
+                    width: 500px;
+                }
+            }
+        }
+    
+        @media (max-width: 991px) {
+            
+            #cchapter {
+                right: 45px;
+            }
+
+            .clogo-cheader { 
+                left: -40px;
+            }
+
+            #cicons {
+                left: 55px;
+            }
+        }
+
+        // @media (max-width: 768px) {
+            
+        //     #cchapter {
+            
+        //         img {
+        //             width: 110px;
+        //         }
+        //     }
+
+        //     .clogo-cheader { 
+        //         left: -40px;
+
+        //         #clogo {
+
+        //             img {
+        //                 width: 250px;
+        //             }
+        //         }
+    
+        //         #cheader {
+        //             right: 45px;
+
+        //             span {
+    
+        //             }
+        //         }
+        //     }
+        // }
+    
+        // @media (max-width: 480px) {
+           
+        //     img {
+        //         width: 40px;
+        //     }
+        // }
 }

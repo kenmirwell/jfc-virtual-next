@@ -6,7 +6,7 @@ const Flats = ({
 }) => {
     return (
         <div className={`flats pointer-events-none overflow-hidden z-[0] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center transition-all duration-[1s] ease-in-out`}>
-            <div className="absolute top-0 left-[20px]">
+            <div className="clogo-cheader absolute top-0 left-[20px]">
                 <div id="clogo" className="translate-y-[-100px]">
                     <img src={ flats.logo } />
                 </div>
@@ -18,8 +18,8 @@ const Flats = ({
                         </h2>
                     ))}
                     <p data-text={ year } className="text-[40px] text-white">
-                        <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ year }</span>
-                        <span className="relative">{ year }</span>
+                        <span className="stroke-text absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${ color ? color : "#00bbdc" }` }}>{ year }</span>
+                        <span className="fill-text relative">{ year }</span>
                     </p>
                 </div>
             </div>
