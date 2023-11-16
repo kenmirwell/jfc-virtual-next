@@ -13,7 +13,7 @@ const World1 = () => {
             action: "GOTO",
             target: "Empty005",
             joy: "Joy-Pointing003",
-            light: "Light-Rays-Transparent003",
+            light: "Light-Rays-Jollibee",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
             end: "EXIT"
         },

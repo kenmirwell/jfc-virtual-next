@@ -16,6 +16,7 @@ import Joy from "./Joy/Joy";
 
 let hovered = null; 
 let disableFunctionality = false;
+var clock = new THREE.Clock();
 
 const World = ({
     title,
@@ -44,6 +45,8 @@ const World = ({
     });
 
     const [loaded, setLoaded] = useState(false);
+    const [mixer, setMixer] = useState(null);
+    const [gltfLoaded, setGltfLoaded] = useState(null);
     const [model3d, setModel3d] = useState(null);
     const [objSelected, setObjSelected] = useState(null)
     const [initialAnimate, setInitialAnimate] = useState(false);
@@ -52,7 +55,7 @@ const World = ({
     const [activeVideo, setActiveVideo] = useState(0);
     const [currentFlow, setCurrentFlow] = useState({});
     const [showJoy, setShowJoy] = useState(false);
-    const [videoPlayed, setVideoPlayed] = useState(false)
+    const [videoPlayed, setVideoPlayed] = useState(false);
     
     const ref = useRef(false);
     
@@ -71,7 +74,6 @@ const World = ({
             renderer.toneMapping = THREE.NoToneMapping;
             renderer.setClearColor(0xffffff, 0);
             renderer.outputColorSpace = THREE.SRGBColorSpace;
-            renderer.useLegacyLights = false;
             renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
             const scene            = new THREE.Scene();
@@ -315,7 +317,12 @@ const World = ({
         assetLoader.setDRACOLoader(dLoader)
 
         assetLoader.load(model, async function(gltf) {
+            const mixer = new THREE.AnimationMixer(gltf.scene);
+
+            setMixer(mixer);
             setModel3d(gltf.scene);
+            setGltfLoaded(gltf);
+
             gltf.scene.traverse(function (child) {
                 child.castShadow = true;
                 child.receiveShadow = true;
@@ -344,9 +351,12 @@ const World = ({
 
     const animate = () => {
         onHover();
-        components.renderer.render(components.scene, components.camera);
         window.requestAnimationFrame(animate);
 
+        mixer.update( clock.getDelta() );
+
+        components.renderer.render(components.scene, components.camera);
+        
         const lights = model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
 
         for( const light of lights ) {
@@ -450,14 +460,19 @@ const World = ({
                     setTimeout(() => {
                         if( joy ) {
                             joy.visible = true;
+
+                            const clips = gltfLoaded.animations;
+                            const clip = THREE.AnimationClip.findByName( clips, 'All' );
+                            const action = mixer.clipAction( clip );
+                            action.play();
                         }
-                    }, 1000);
+                    }, 1500);
 
                     setTimeout(() => {
                         gsap.timeline()
                             .to(target.position, 0.4, {y: target.position.y + 0.5, ease: Power3.easeOut })
                             .to(target.position, 0.2, {y: target.position.y, ease: Power3.easeOut });
-                    }, 2000);
+                    }, 2200);
 
                     setTimeout(() => {
                         setObjSelected(target.name);
@@ -494,6 +509,11 @@ const World = ({
         for( const obj of joys ) {
             obj.visible = false;
         }
+
+        const clips = gltfLoaded.animations;
+        const clip = THREE.AnimationClip.findByName( clips, 'All' );
+        const action = mixer.clipAction( clip );
+        action.stop();
 
         const light = model3d.children.find(c => c.name === currentFlow.light );
         
