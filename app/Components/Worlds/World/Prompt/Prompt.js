@@ -32,22 +32,22 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
         <>
             <div className={`fixed top-0 left-0 right-0 bottom-0 opacity-0 bg-black/50 transition-all duration-[0.3s] ease-in-out ${ currentFlow.get.action === "END" ? "opacity-100" : "pointer-events-none" }`}></div>
             <div id="prompt" className={`fixed bottom-0 right-[100px] z-[22]  text-center translate-x-[300px] h-[380px] w-[200px] flex items-end justify-center transition-all duration-[0.5s] ease-in-out ${ currentFlow.get.action === "END" ? "!w-[100%] !right-0" : "" }`}>
-                <video muted autoPlay loop className={`absolute top-[10px] ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : "" }`}>
+                <video muted autoPlay loop className={`joy-idle absolute top-[10px] ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : "" }`}>
                     <source src="/assets/joy/idle.webm" type="video/webm" />
                 </video>
-                <video muted autoPlay loop className={`absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "START" ? "opacity-100" : "" }`}>
+                <video muted autoPlay loop className={`joy-wave absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "START" ? "opacity-100" : "" }`}>
                     <source src="/assets/joy/wave.webm" type="video/webm" />
                 </video>
-                <video muted autoPlay loop className={`absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : "" }`}>
+                <video muted autoPlay loop className={`joy-point absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : "" }`}>
                     <source src="/assets/joy/point-go.webm" type="video/webm" />
                 </video>
-                <video muted autoPlay loop className={`absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "END" ? "opacity-100" : "" }`}>
+                <video muted autoPlay loop className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "END" ? "opacity-100" : "" }`}>
                     <source src="/assets/joy/thinking.webm" type="video/webm" />
                 </video>
                 <div id="promptc" className="relative text-center h-[300px] w-[200px] flex items-end justify-center">
                     <div 
                         className={
-                            `absolute top-[30px] right-[100%] mr-[40px] p-[30px] min-w-[400px] opacity-0 translate-x-[100px] ease-in-out 
+                            `prompt-content absolute top-[30px] right-[100%] mr-[40px] p-[30px] min-w-[400px] opacity-0 translate-x-[100px] ease-in-out 
                             ${ showJoy && currentFlow.get.prompt ? "!opacity-[100] !translate-x-[0]" : "" } 
                             ${ currentFlow.get.action === "END" ? "!bottom-[100%] !top-auto !left-[100%] !right-auto !py-[40px] !pb-[30px]" : "" } 
                             ${ currentFlow.get.action === "GOTO" || currentFlow.get.action === "WAIT" ? "!pr-[70px]" : "" } 

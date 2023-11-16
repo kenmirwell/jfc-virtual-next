@@ -1,4 +1,3 @@
-
 .world-background {
 
     @media (max-width: 1145px) {
@@ -83,43 +82,28 @@
             }
 
             #cicons {
-                left: 55px;
+                left: -48px;
             }
         }
+}
 
-        // @media (max-width: 768px) {
-            
-        //     #cchapter {
-            
-        //         img {
-        //             width: 110px;
-        //         }
-        //     }
+#prompt {
 
-        //     .clogo-cheader { 
-        //         left: -40px;
+    @media (max-width: 1250px) {
 
-        //         #clogo {
+        video {
+            width: 500px;
+            top: 85px;
+        }
 
-        //             img {
-        //                 width: 250px;
-        //             }
-        //         }
-    
-        //         #cheader {
-        //             right: 45px;
+        .prompt-content {
+            transform: scale(.8) !important;
+            right: 134px;
+            top: 83px;
+        }
+    }
 
-        //             span {
-    
-        //             }
-        //         }
-        //     }
-        // }
-    
-        // @media (max-width: 480px) {
-           
-        //     img {
-        //         width: 40px;
-        //     }
-        // }
+    @media (max-width: 991px) { 
+        right: 0px;
+    }
 }
