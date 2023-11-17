@@ -670,7 +670,7 @@ const World = ({
                                                 <button key={`red-white-${i}`} className={`red-white-container bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
                                                     {activeVideo === i ? 
                                                     <div className="red-button-container relative">
-                                                        <p className={"active year-text absolute top-[-55px] left-[-20px]"}>{item}</p>
+                                                        <p className={"active year-text absolute top-[-55px] left-[-26px]"}>{item}</p>
                                                         <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
                                                         <div className="red-button" />
                                                     </div> :
