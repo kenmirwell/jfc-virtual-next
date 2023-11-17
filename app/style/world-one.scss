@@ -1,23 +1,30 @@
 .world-background {
 
-    @media (max-width: 1145px) {
+    @media (max-width: 1500px) {
        
         video {
             max-width: 150%;
         }
     }
 
-    @media (max-width: 765px) {
+    @media (max-width: 991px) {
        
         video {
             max-width: 200%;
         }
     }
 
-    @media (max-width: 570px) {
+    @media (max-width: 750px) {
        
         video {
             max-width: 250%;
+        }
+    }
+
+    @media (max-width: 570px) {
+       
+        video {
+            max-width: 400%;
         }
     }
 }
