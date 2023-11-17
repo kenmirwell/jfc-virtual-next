@@ -622,6 +622,16 @@ const World = ({
         }
     }
 
+    const PopupYearcomponent = ({popYears, i}) => {
+        return (
+            <>
+                <video key={`popup-years-${i}`} autoPlay loop muted>
+                    <source src={popYears} type="video/webm"/>
+                </video>
+            </>
+        )
+    }
+
     return (
         <div>
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ objSelected ? "blur-[50px]" : "" }`}>  
@@ -636,7 +646,7 @@ const World = ({
                     onClickInteractables={ onClickObject }
                 />
                 <Joy />
-                <audio className="hidden" controls autoPlay ref={ref}> 
+                <audio className="hidden" controls ref={ref}> 
                     <source src={"/assets/world1/popup-audio.wav"} />
                 </audio>
             </div>
@@ -682,10 +692,13 @@ const World = ({
                                         </div>
                                         {objSelected && contents[objSelected].popupYears.filter((pYears, i) => activeVideo === i).map((popYears, i) => (
                                             <div className={"popup-years-container"} key={`popup-years-${i}`}>
-                                                    <video autoPlay loop muted>
-                                                    <source src={popYears} type="video/webm"/>
-                                                </video>
+                                                {console.log('popYears', popYears)}
+                                                <PopupYearcomponent
+                                                    popYears={popYears}
+                                                    i={i}
+                                                />
                                             </div>
+                                            
                                         ))}
                                         <div className="text-container">
                                             {objSelected && contents[objSelected].title.filter((title, i) => activeVideo === i).map((title, i) => (
