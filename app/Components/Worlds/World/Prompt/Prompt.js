@@ -36,7 +36,7 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
                     <source src="/assets/joy/idle.webm" type="video/webm" />
                 </video>
                 <video muted autoPlay loop className={`joy-wave absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "START" ? "opacity-100" : "" }`}>
-                    <source src="/assets/joy/wave.webm" type="video/webm" />
+                    <source src="/assets/joy/wave-2.webm" type="video/webm" />
                 </video>
                 <video muted autoPlay loop className={`joy-point absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${ showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : "" }`}>
                     <source src="/assets/joy/point-go.webm" type="video/webm" />
