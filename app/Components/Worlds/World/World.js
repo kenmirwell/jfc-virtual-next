@@ -433,7 +433,7 @@ const World = ({
                     
                     gsap.timeline().to(components.orbit.target, 2, { 
                         x: target.position.x, 
-                        y: target.position.y + 1.2, 
+                        y: target.position.y + 0.5, 
                         z: target.position.z, 
                         onUpdate: function () {
                             components.orbit.update();
@@ -442,7 +442,7 @@ const World = ({
                     });
 
                     gsap.timeline().to(components.camera, 2, { 
-                        zoom: 2.5, 
+                        zoom: 3.5, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
 
