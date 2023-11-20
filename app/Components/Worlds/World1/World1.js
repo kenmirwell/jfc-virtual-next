@@ -100,7 +100,8 @@ const World1 = () => {
             ],
             popup: [
                 "/assets/world1/popup/1978-MAIN.webm", 
-                "/assets/world1/popup/1979-MAIN.webm"
+                // "/assets/world1/popup/1979-MAIN.webm",
+                "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World1_v2.glb?t=2023-11-20T13%3A51%3A54.330Z"
             ],
             popupYears: [
                 "/assets/world1/popup-years/1978-YEAR.webm", 
