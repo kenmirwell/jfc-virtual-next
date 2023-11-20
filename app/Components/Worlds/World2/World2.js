@@ -60,7 +60,8 @@ const World2 = () => {
             title="Dreaming Bigger"
             year="2004-2012"
             color="#c79c1e"
-            model="/assets/world2/world.glb"
+            // model="/assets/world2/world.glb"
+            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2.glb?t=2023-11-20T00%3A38%3A24.104Z"
             background="/assets/world2/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",

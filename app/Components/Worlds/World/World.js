@@ -687,7 +687,7 @@ const World = ({
 
                                 <div className="right-content w-[60%] flex flex-col justify-between">
                                     <div>
-                                        <div className={`exit-button flex justify-end ${"2001" === (contents[objSelected].year) && "active" }`}>
+                                        <div className={`exit-button flex justify-end ${contents[objSelected].year.filter((yr, i) => activeVideo === i)[0] === "2001" && "active" }`}>
                                             <img onClick={ onDeselect } src="/assets/world1/popup-icons/exit.svg" width="50" />
                                         </div>
                                         {objSelected && contents[objSelected].popupYears.filter((pYears, i) => activeVideo === i).map((popYears, i) => (
