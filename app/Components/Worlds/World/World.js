@@ -136,7 +136,7 @@ const World = ({
             window.addEventListener( 'resize', onWindowResize, false );
         }
     }, [model3d, loaded]);
-
+    
     /* Setup scene */
     useEffect(() => {
         if( model3d ) {
@@ -200,6 +200,18 @@ const World = ({
     /* Initial animate */
     useEffect(() => {
         if(model3d && initialAnimate) {
+            
+                const clips = gltfLoaded.animations;
+                const clip = THREE.AnimationClip.findByName( clips, 'All' );
+                const action = mixer.clipAction( clip );
+    
+                setInterval(() => {
+                action
+                    .reset()
+                    .play();
+                }, 5000);
+
+            // console.log("action", action)
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
             const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
 
@@ -284,6 +296,7 @@ const World = ({
 
     /* Apply click animation */
     useEffect(() => {
+
         if( currentFlow.action === "GOTO" ) {
             document.addEventListener( 'click', onClickObject );
 
@@ -353,6 +366,8 @@ const World = ({
         onHover();
         window.requestAnimationFrame(animate);
 
+        // console.log("model3d.children", model3d.children)
+
         mixer.update( clock.getDelta() );
 
         components.renderer.render(components.scene, components.camera);
@@ -413,6 +428,7 @@ const World = ({
         setActiveVideo(index);
     }
 
+
     const onClickObject = (action) => {
         if( !disableFunctionality ) {
             if( model3d ) {
@@ -464,7 +480,7 @@ const World = ({
                             const clips = gltfLoaded.animations;
                             const clip = THREE.AnimationClip.findByName( clips, 'All' );
                             const action = mixer.clipAction( clip );
-                            action.play();
+                            action.reset().play();
                         }
                     }, 1500);
 
