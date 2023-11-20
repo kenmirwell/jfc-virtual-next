@@ -99,8 +99,9 @@ const World1 = () => {
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1978-MAIN.webm", 
+                // "/assets/world1/popup/1978-MAIN.webm", 
                 // "/assets/world1/popup/1979-MAIN.webm",
+                "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World1_v2.glb?t=2023-11-20T13%3A51%3A54.330Z",
                 "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World1_v2.glb?t=2023-11-20T13%3A51%3A54.330Z"
             ],
             popupYears: [
