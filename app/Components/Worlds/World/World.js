@@ -19,6 +19,7 @@ let disableFunctionality = false;
 var clock = new THREE.Clock();
 
 const World = ({
+    world,
     title,
     year,
     color,
@@ -202,14 +203,16 @@ const World = ({
         if(model3d && initialAnimate) {
             
                 const clips = gltfLoaded.animations;
-                const clip = THREE.AnimationClip.findByName( clips, 'All' );
+                const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
                 const action = mixer.clipAction( clip );
-    
+
+                console.log("THREE.LoopRepeat", THREE.LoopRepeat)
+
                 setInterval(() => {
-                action
+                    action
                     .reset()
                     .play();
-                }, 5000);
+                }, 20000);
 
             // console.log("action", action)
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
@@ -437,7 +440,7 @@ const World = ({
                 const target  = model3d.children.find(c => c.name === currentFlow.target);
                 const joy     = model3d.children.find(c => c.name === currentFlow.joy);
                 const objects = components.raycaster.intersectObjects(model3d.children);
-
+                
                 const onSelect = () => {
                     disableFunctionality = true;
 
@@ -478,7 +481,7 @@ const World = ({
                             joy.visible = true;
 
                             const clips = gltfLoaded.animations;
-                            const clip = THREE.AnimationClip.findByName( clips, 'All' );
+                            const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
                             const action = mixer.clipAction( clip );
                             action.reset().play();
                         }
@@ -527,7 +530,7 @@ const World = ({
         }
 
         const clips = gltfLoaded.animations;
-        const clip = THREE.AnimationClip.findByName( clips, 'All' );
+        const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
         const action = mixer.clipAction( clip );
         action.stop();
 
@@ -617,6 +620,10 @@ const World = ({
     const onNext = (popupCount) => {
         if(activeVideo < popupCount - 1) {
             setActiveVideo(activeVideo + 1)
+
+            if(ref.current) {
+                ref.current.play()
+            }
         } else {
             return null
         }
@@ -625,6 +632,10 @@ const World = ({
     const onPrev = () => {
         if(activeVideo > 0) {
             setActiveVideo(activeVideo - 1)
+
+            if(ref.current) {
+                ref.current.play()
+            }
         } else {
             return null
         }

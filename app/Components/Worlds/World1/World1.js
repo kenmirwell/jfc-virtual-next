@@ -98,11 +98,12 @@ const World1 = () => {
                 `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand: Jolibee. The first-ever Jolibee store is located in Quezon, Cubao.</p>`,
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
             ],
+            audio: [
+                
+            ],
             popup: [
                 "/assets/world1/popup/1978-MAIN.webm", 
                 "/assets/world1/popup/1979-MAIN.webm",
-                // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World1_v2.glb?t=2023-11-20T13%3A51%3A54.330Z",
-                // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World1_v2.glb?t=2023-11-20T13%3A51%3A54.330Z"
             ],
             popupYears: [
                 "/assets/world1/popup-years/1978-YEAR.webm", 
@@ -261,10 +262,11 @@ const World1 = () => {
 
     return (
         <World 
+            world={1}
             title="Humble Beginnings"
             year="1979-2003"
             // model="/assets/world1/World1-Complete-NoLights.glb"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World1_v2.glb?t=2023-11-20T09%3A57%3A46.892Z"
+            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1?t=2023-11-21T21%3A00%3A12.056Z"
             background="/assets/world1/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
