@@ -205,14 +205,16 @@ const World = ({
                 const clips = gltfLoaded.animations;
                 const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
                 const action = mixer.clipAction( clip );
+                action.setLoop(THREE.LoopRepeat);
+                action.play()
 
                 console.log("THREE.LoopRepeat", THREE.LoopRepeat)
 
-                setInterval(() => {
-                    action
-                    .reset()
-                    .play();
-                }, 20000);
+                // setInterval(() => {
+                //     action
+                //     .reset()
+                //     .play();
+                // }, 20000);
 
             // console.log("action", action)
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
