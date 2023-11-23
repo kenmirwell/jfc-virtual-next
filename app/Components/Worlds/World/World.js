@@ -563,6 +563,7 @@ const World = ({
                     if(ref.current) {
                         ref.current.pause()
                         ref.current.currentTime = 0
+                        setAudio(false)
                     }
                 }
             }, 
@@ -623,7 +624,8 @@ const World = ({
             setActiveVideo(activeVideo + 1)
 
             if(ref.current) {
-                ref.current.play()
+                ref.current.load()
+                setAudio(true)
             }
         } else {
             return null
@@ -635,7 +637,8 @@ const World = ({
             setActiveVideo(activeVideo - 1)
 
             if(ref.current) {
-                ref.current.play()
+                ref.current.load()
+                setAudio(true)
             }
         } else {
             return null
