@@ -128,8 +128,8 @@ const World = ({
 
             components.scene.add(components.lights.directional);
             components.scene.add(components.lights.ambient);
-            components.camera.position.set(0, 10, 20);
-            components.lights.directional.position.set(0, 10, 10);
+            components.camera.position.set(0, 10, 17);
+            components.lights.directional.position.set(0, 10, 30);
                 
             onLoad();
 
@@ -215,8 +215,7 @@ const World = ({
                 //     .reset()
                 //     .play();
                 // }, 20000);
-
-            // console.log("action", action)
+                
             const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
             const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
 
@@ -368,7 +367,7 @@ const World = ({
     };
 
     const animate = () => {
-        onHover();
+        // onHover();
         window.requestAnimationFrame(animate);
 
         // console.log("model3d.children", model3d.children)
