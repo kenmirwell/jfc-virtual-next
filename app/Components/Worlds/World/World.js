@@ -111,6 +111,19 @@ const World = ({
 
             setLoaded(true);
         }
+        
+        window.addEventListener("orientationchange", function(event){
+            switch(window.orientation) 
+            {  
+                case -90: case 90:
+                    console.log("landscape mode")
+                    document.getElementById("worldcomp").removeAttribute("style");
+                    break; 
+                default:
+                    console.log("portrait mode")
+                    document.getElementById("worldcomp").setAttribute("style", `width:100vh;height:100vw;transform:rotate(90deg) translateY(58%)`);
+            }
+        });
     }, []);
     
     /* Initialize Scene */
@@ -134,7 +147,7 @@ const World = ({
             onLoad();
 
             document.getElementById("world1").appendChild( components.renderer.domElement );
-            window.addEventListener( 'resize', onWindowResize, false );
+            window.addEventListener("resize orientationchange", onWindowResize, false );
         }
     }, [model3d, loaded]);
     
@@ -205,8 +218,10 @@ const World = ({
                 const clips = gltfLoaded.animations;
                 const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
                 const action = mixer.clipAction( clip );
-                action.setLoop(THREE.LoopRepeat);
-                action.play()
+                if( action ) {
+                    action.setLoop(THREE.LoopRepeat);
+                    action.play()
+                }
 
                 console.log("THREE.LoopRepeat", THREE.LoopRepeat)
 
@@ -300,7 +315,6 @@ const World = ({
 
     /* Apply click animation */
     useEffect(() => {
-
         if( currentFlow.action === "GOTO" ) {
             document.addEventListener( 'click', onClickObject );
 
@@ -432,7 +446,6 @@ const World = ({
         setActiveVideo(index);
     }
 
-
     const onClickObject = (action) => {
         if( !disableFunctionality ) {
             if( model3d ) {
@@ -484,7 +497,10 @@ const World = ({
                             const clips = gltfLoaded.animations;
                             const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
                             const action = mixer.clipAction( clip );
-                            action.reset().play();
+
+                            if( action ) {
+                                action.reset().play();
+                            }
                         }
                     }, 1500);
 
@@ -533,7 +549,9 @@ const World = ({
         const clips = gltfLoaded.animations;
         const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
         const action = mixer.clipAction( clip );
-        action.stop();
+        if( action ) {
+            action.stop();
+        }
 
         const light = model3d.children.find(c => c.name === currentFlow.light );
         
@@ -664,7 +682,7 @@ const World = ({
     }
 
     return (
-        <div>
+        <div id="worldcomp" className="overflow-hidden flex-shrink-0 origin-center">
             <div id="world1" className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ objSelected ? "blur-[50px]" : "" }`}>  
                 <Clouds title={ title } animate={ initialAnimate } delay={.5} color={ color } />
                 <Loader model3d={ model3d } />
