@@ -11,7 +11,7 @@ const World2 = () => {
         {
             step: 1,
             action: "GOTO",
-            target: "Empty005",
+            target: "",
             joy: "Joy-Pointing003",
             light: "Light-Rays-Jollibee",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
@@ -266,7 +266,7 @@ const World2 = () => {
             title="Dreaming Bigger"
             year="2004-2012"
             color="#c79c1e"
-            // model="/assets/world2/World2-Complete-NoLights-Car.glb"
+            // model="/assets/world2/World2.glb"
             model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world2?t=2023-11-21T21%3A00%3A28.799Z"
             background="/assets/world2/bg.mp4"
             flats={{

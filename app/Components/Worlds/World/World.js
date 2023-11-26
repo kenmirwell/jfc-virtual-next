@@ -158,11 +158,17 @@ const World = ({
 
             window.requestAnimationFrame(animate);
 
-            const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees  = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
-            const joys   = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
-            const lights = model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
-            const clouds = model3d.children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 );
+            const interactables = world === 1 ? model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) : model3d.children[0].children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
+            const trees  = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
+            const joys   = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
+            const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+            const clouds = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 );
+
+            console.log("iteractables", interactables)
+            console.log("trees", trees)
+            console.log("joys", joys)
+            console.log("lights", lights)
+            console.log("clouds", clouds)
 
             for( const obj of interactables ) {
                 obj.position.y += 5;
@@ -187,7 +193,12 @@ const World = ({
             }
 
             for( const obj of trees ) {
+                console.log("obj", obj)
+
                 const scale = obj.scale.clone();
+
+                console.log("scale", scale)
+
                 obj.originalScale = scale;
 
                 setTimeout(() => {
@@ -223,16 +234,14 @@ const World = ({
                     action.play()
                 }
 
-                console.log("THREE.LoopRepeat", THREE.LoopRepeat)
-
                 // setInterval(() => {
                 //     action
                 //     .reset()
                 //     .play();
                 // }, 20000);
                 
-            const interactables = model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees = model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
+            const interactables = world === 1 ? model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) : model3d.children[0].children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
+            const trees = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
 
             gsap.timeline().to(components.camera.position, 2, { 
                 y: 3, 
@@ -318,8 +327,8 @@ const World = ({
         if( currentFlow.action === "GOTO" ) {
             document.addEventListener( 'click', onClickObject );
 
-            const light = model3d.children.find(c => c.name === currentFlow.light );
-            const interactables = model3d.children.find(c => c.name === currentFlow.target);
+            const light = world === 1 ? model3d.children.find(c => c.name === currentFlow.light ) : model3d.children[0].children.find(c => c.name === currentFlow.light );
+            const interactables = world === 1 ? model3d.children[0].children.find(c => c.name === currentFlow.target) : model3d.children.find(c => c.name === currentFlow.target);
 
             if( light ) {
                 gsap.timeline().to(light.scale, .5, { 
@@ -390,7 +399,8 @@ const World = ({
 
         components.renderer.render(components.scene, components.camera);
         
-        const lights = model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+        const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 )
+                        : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
 
         for( const light of lights ) {
             light.rotation.y += 0.01;
@@ -451,14 +461,20 @@ const World = ({
             if( model3d ) {
                 components.raycaster.setFromCamera( components.pointer, components.camera );
 
-                const target  = model3d.children.find(c => c.name === currentFlow.target);
+                console.log("world2", world)
+
+                const target  = world === 1 ? model3d.children.find(c => c.name === currentFlow.target) :
+                                world === 2 ? model3d.children[0].children.find(c => c.name === currentFlow.target) :
+                                null
                 const joy     = model3d.children.find(c => c.name === currentFlow.joy);
                 const objects = components.raycaster.intersectObjects(model3d.children);
                 
+
                 const onSelect = () => {
                     disableFunctionality = true;
 
-                    document.removeEventListener( 'click', onClickObject );
+                    document.removeEventListener( 'click', onClickObject )
+
 
                     components.orbit.target.x = 0;
                     components.orbit.target.y = 3;
@@ -741,7 +757,6 @@ const World = ({
                                         </div>
                                         {objSelected && contents[objSelected].popupYears.filter((pYears, i) => activeVideo === i).map((popYears, i) => (
                                             <div className={"popup-years-container"} key={`popup-years-${i}`}>
-                                                {console.log('popYears', popYears)}
                                                 <PopupYearcomponent
                                                     popYears={popYears}
                                                     i={i}
