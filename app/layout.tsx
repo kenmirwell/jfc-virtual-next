@@ -8,10 +8,6 @@ export const metadata: Metadata = {
   viewport: 'idth=device-width, initial-scale=1, maximum-scale=1'
 }
 
-export const viewport = {
-    initialScale: 1
-}
-
 export default function RootLayout({
   children,
 }: {

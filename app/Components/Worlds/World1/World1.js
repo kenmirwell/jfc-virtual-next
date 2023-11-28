@@ -266,7 +266,7 @@ const World1 = () => {
             title="Humble Beginnings"
             year="1979-2003"
             // model="/assets/world1/World1.glb"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1?t=2023-11-24T15%3A31%3A05.189Z"
+            model="/assets/world1/world.glb"
             background="/assets/world1/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",

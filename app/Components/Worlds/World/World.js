@@ -112,18 +112,18 @@ const World = ({
             setLoaded(true);
         }
         
-        window.addEventListener("orientationchange", function(event){
-            switch(window.orientation) 
-            {  
-                case -90: case 90:
-                    console.log("landscape mode")
-                    document.getElementById("worldcomp").removeAttribute("style");
-                    break; 
-                default:
-                    console.log("portrait mode")
-                    document.getElementById("worldcomp").setAttribute("style", `width:100vh;height:100vw;transform:rotate(90deg) translateY(58%)`);
-            }
-        });
+        // window.addEventListener("orientationchange", function(event){
+        //     switch(window.orientation) 
+        //     {  
+        //         case -90: case 90:
+        //             console.log("landscape mode")
+        //             document.getElementById("worldcomp").removeAttribute("style");
+        //             break; 
+        //         default:
+        //             console.log("portrait mode")
+        //             document.getElementById("worldcomp").setAttribute("style", `width:100vh;height:100vw;transform:rotate(90deg) translateY(58%)`);
+        //     }
+        // });
     }, []);
     
     /* Initialize Scene */
@@ -147,7 +147,7 @@ const World = ({
             onLoad();
 
             document.getElementById("world1").appendChild( components.renderer.domElement );
-            window.addEventListener("resize orientationchange", onWindowResize, false );
+            window.addEventListener("resize", onWindowResize, false );
         }
     }, [model3d, loaded]);
     
@@ -174,24 +174,22 @@ const World = ({
             }
             
             for( const obj of lights ) {
+                const material = obj.children[0];
+
                 obj.scale.x = 0;
                 obj.scale.y = 0;
-                obj.material = new THREE.MeshLambertMaterial({ map: obj.material.map });
-                obj.material.color = new THREE.Color( 0xE7E7E7 );
-                obj.material.emissive = new THREE.Color( 0xFFD700 );
-                obj.material.emissiveIntensity = 4.34;
+                material.material = new THREE.MeshLambertMaterial({ map: material.material.map });
+                material.material.color = new THREE.Color( 0xE7E7E7 );
+                material.material.emissive = new THREE.Color( 0xFFD700 );
+                material.material.emissiveIntensity = 4.34;
                 // obj.material.depthTest = false;
-                obj.material.transparent = true;
-                obj.receiveShadow = false;
-                obj.castShadow = false;
+                material.material.transparent = true;
+                material.receiveShadow = false;
+                material.castShadow = false;
             }
 
             for( const obj of trees ) {
-                console.log("obj", obj)
-
                 const scale = obj.scale.clone();
-
-                console.log("scale", scale)
 
                 obj.originalScale = scale;
 
@@ -219,20 +217,14 @@ const World = ({
     /* Initial animate */
     useEffect(() => {
         if(model3d && initialAnimate) {
-            
-                const clips = gltfLoaded.animations;
-                const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
-                const action = mixer.clipAction( clip );
-                if( action ) {
-                    action.setLoop(THREE.LoopRepeat);
-                    action.play()
-                }
+            const clips = gltfLoaded.animations;
+            const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
+            const action = mixer.clipAction( clip );
 
-                // setInterval(() => {
-                //     action
-                //     .reset()
-                //     .play();
-                // }, 20000);
+            if( action ) {
+                action.setLoop(THREE.LoopRepeat);
+                action.play()
+            }
                 
             const interactables = world === 1 ? model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) : model3d.children[0].children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
             const trees = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
@@ -268,6 +260,7 @@ const World = ({
             });
             
             for( const [i, obj] of trees.entries() ) {
+                console.log(obj);
                 gsap.timeline().to(obj.rotation, 3, { 
                     z: obj.rotation.z + 0.3, 
                     ease: Power3.easeInOut, 
@@ -384,17 +377,13 @@ const World = ({
     };
 
     const animate = () => {
-        // onHover();
         window.requestAnimationFrame(animate);
-
-        // console.log("model3d.children", model3d.children)
 
         mixer.update( clock.getDelta() );
 
         components.renderer.render(components.scene, components.camera);
         
-        const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 )
-                        : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+        const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
 
         for( const light of lights ) {
             light.rotation.y += 0.01;
@@ -473,7 +462,7 @@ const World = ({
                     
                     gsap.timeline().to(components.orbit.target, 2, { 
                         x: target.position.x, 
-                        y: target.position.y + 0.5, 
+                        y: target.position.y + 1, 
                         z: target.position.z, 
                         onUpdate: function () {
                             components.orbit.update();
@@ -798,8 +787,6 @@ const World = ({
                             </>
                         }
                     </div>
-                    {console.log("conatent", contents)}
-                    {console.log("objSelected", objSelected)}
                     {objSelected && contents[objSelected].popup.map((p, i) => (
                         <video onPlay={handleStartVideo} key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
                             <source src={p} type="video/webm"/>

@@ -19,11 +19,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: red;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  height: 100vh;
 }
 
 .loader {
