@@ -164,12 +164,6 @@ const World = ({
             const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
             const clouds = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 );
 
-            console.log("iteractables", interactables)
-            console.log("trees", trees)
-            console.log("joys", joys)
-            console.log("lights", lights)
-            console.log("clouds", clouds)
-
             for( const obj of interactables ) {
                 obj.position.y += 5;
                 obj.visible = false;
@@ -227,7 +221,7 @@ const World = ({
         if(model3d && initialAnimate) {
             
                 const clips = gltfLoaded.animations;
-                const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
+                const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
                 const action = mixer.clipAction( clip );
                 if( action ) {
                     action.setLoop(THREE.LoopRepeat);
@@ -461,14 +455,11 @@ const World = ({
             if( model3d ) {
                 components.raycaster.setFromCamera( components.pointer, components.camera );
 
-                console.log("world2", world)
-
                 const target  = world === 1 ? model3d.children.find(c => c.name === currentFlow.target) :
                                 world === 2 ? model3d.children[0].children.find(c => c.name === currentFlow.target) :
                                 null
                 const joy     = model3d.children.find(c => c.name === currentFlow.joy);
                 const objects = components.raycaster.intersectObjects(model3d.children);
-                
 
                 const onSelect = () => {
                     disableFunctionality = true;
@@ -511,7 +502,7 @@ const World = ({
                             joy.visible = true;
 
                             const clips = gltfLoaded.animations;
-                            const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
+                            const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
                             const action = mixer.clipAction( clip );
 
                             if( action ) {
@@ -563,7 +554,7 @@ const World = ({
         }
 
         const clips = gltfLoaded.animations;
-        const clip = world === 1 ? THREE.AnimationClip.findByName( clips, 'AnimAll' ) : THREE.AnimationClip.findByName( clips, 'AllAnim' );
+        const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
         const action = mixer.clipAction( clip );
         if( action ) {
             action.stop();
@@ -807,6 +798,8 @@ const World = ({
                             </>
                         }
                     </div>
+                    {console.log("conatent", contents)}
+                    {console.log("objSelected", objSelected)}
                     {objSelected && contents[objSelected].popup.map((p, i) => (
                         <video onPlay={handleStartVideo} key={`video-${i}`} autoPlay loop muted className={`${activeVideo !== i ? "video hidden" : "video"}`}>
                             <source src={p} type="video/webm"/>

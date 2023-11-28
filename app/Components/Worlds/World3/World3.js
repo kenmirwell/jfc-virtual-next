@@ -11,7 +11,7 @@ const World3 = () => {
         {
             step: 1,
             action: "GOTO",
-            target: "Empty005",
+            target: "HandBulb",
             joy: "Joy-Pointing003",
             light: "Light-Rays-Jollibee",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
@@ -26,7 +26,7 @@ const World3 = () => {
         {
             step: 3,
             action: "GOTO",
-            target: "Empty004",
+            target: "JFCGold",
             joy: "Joy-Pointing002",
             light: "Light-Rays-Transparent002",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
@@ -41,7 +41,7 @@ const World3 = () => {
         {
             step: 5,
             action: "GOTO",
-            target: "Empty003",
+            target: "Dumplings",
             joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent004",
             prompt: "<p>Let's check out the<br /><strong>Open Sign</strong></p>",
@@ -56,7 +56,7 @@ const World3 = () => {
         {
             step: 7,
             action: "GOTO",
-            target: "Empty001",
+            target: "CoffeeBeans",
             joy: "Joy-Pointing001",
             light: "Light-Rays-Transparent001",
             prompt: "<p>Let's go to the<br /><strong>Greenwich Building</strong></p>",
@@ -71,7 +71,7 @@ const World3 = () => {
         {
             step: 9,
             action: "GOTO",
-            target: "Empty002",
+            target: "Burger",
             joy: "Joy-Pointing",
             light: "Light-Rays-Transparent",
             prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
@@ -85,7 +85,7 @@ const World3 = () => {
     ];
 
     let contents = {
-        "Empty005": {
+        "HandBulb": {
             year: [
                 "1978",
                 "1979"
@@ -123,7 +123,7 @@ const World3 = () => {
             ],
     
         },
-        "Empty004": {
+        "JFCGold": {
             year: [
                 "1980"
             ],
@@ -149,7 +149,7 @@ const World3 = () => {
                 "left-[17%]"
             ]
         },
-        "Empty003": {
+        "Dumplings": {
             year: [
                 "1984", 
                 "1990", 
@@ -191,7 +191,7 @@ const World3 = () => {
                 "left-[27%]"
             ]
         },
-        "Empty001": {
+        "CoffeeBeans": {
             year: [
                 "1994", "1998"
             ],
@@ -224,7 +224,7 @@ const World3 = () => {
                 "left-[25%]"
             ],
         },
-        "Empty002": {
+        "Burger": {
             year: [
                 "2000", 
                 "2001"
@@ -267,7 +267,7 @@ const World3 = () => {
             year="2013-2020"
             color="#06abcb"
             // model="/assets/world3/World3.glb"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world2?t=2023-11-21T21%3A00%3A28.799Z"
+            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoLights-Plane%20(3).glb?t=2023-11-28T03%3A34%3A11.957Z"
             background="/assets/world3/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
