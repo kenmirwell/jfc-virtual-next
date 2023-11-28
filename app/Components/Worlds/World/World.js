@@ -174,18 +174,16 @@ const World = ({
             }
             
             for( const obj of lights ) {
-                const material = obj.children[0];
-
                 obj.scale.x = 0;
                 obj.scale.y = 0;
-                material.material = new THREE.MeshLambertMaterial({ map: material.material.map });
-                material.material.color = new THREE.Color( 0xE7E7E7 );
-                material.material.emissive = new THREE.Color( 0xFFD700 );
-                material.material.emissiveIntensity = 4.34;
+                obj.material = new THREE.MeshLambertMaterial({ map: material.material.map });
+                obj.material.color = new THREE.Color( 0xE7E7E7 );
+                obj.material.emissive = new THREE.Color( 0xFFD700 );
+                obj.material.emissiveIntensity = 4.34;
                 // obj.material.depthTest = false;
-                material.material.transparent = true;
-                material.receiveShadow = false;
-                material.castShadow = false;
+                obj.material.transparent = true;
+                obj.receiveShadow = false;
+                obj.castShadow = false;
             }
 
             for( const obj of trees ) {
