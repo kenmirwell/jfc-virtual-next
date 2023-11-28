@@ -12,8 +12,8 @@ const World2 = () => {
             step: 1,
             action: "GOTO",
             target: "FlagMain",
-            joy: "Joy-Pointing003",
-            light: "Light-Rays-Jollibee",
+            joy: "Joy-Pointing001",
+            light: "Light-Rays-Transparent004",
             prompt: "<p>Let's go to the<br /><strong>Flag</strong></p>",
             end: "EXIT",
             width: 370,
@@ -32,7 +32,7 @@ const World2 = () => {
             action: "GOTO",
             target: "CakeBldg001",
             joy: "Joy-Pointing002",
-            light: "Light-Rays-Transparent002",
+            light: "Light-Rays-Transparent003",
             prompt: "<p>Let's go to the<br /><strong>Red Ribbon Building</strong></p>",
             end: "EXIT",
             zoomOffset: {
@@ -48,11 +48,14 @@ const World2 = () => {
         {
             step: 5,
             action: "GOTO",
-            target: "BananaLeaf",
-            joy: "Joy-Pointing004",
-            light: "Light-Rays-Transparent004",
+            target: "OnionLeaves",
+            joy: "Joy-Pointing",
+            light: "Light-Rays-Transparent002",
             prompt: "<p>Let's check out the<br /><strong>Hong Zhuang Yuan Building</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: -0.9
+            }
         },
         {
             step: 6,
@@ -63,8 +66,8 @@ const World2 = () => {
         {
             step: 7,
             action: "GOTO",
-            target: "Burger001",
-            joy: "Joy-Pointing001",
+            target: "BananaLeaf",
+            joy: "Joy-Pointing003",
             light: "Light-Rays-Transparent001",
             prompt: "<p>Let's continue<br />our Journey</p>",
             end: "EXIT",
@@ -82,8 +85,8 @@ const World2 = () => {
         {
             step: 9,
             action: "GOTO",
-            target: "OnionLeaves",
-            joy: "Joy-Pointing",
+            target: "Burger001",
+            joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent",
             prompt: "<p>Let's continue<br />exploring</p>",
             end: "EXIT",
