@@ -453,7 +453,7 @@ const World = ({
                     });
 
                     gsap.timeline().to(components.camera, 2, { 
-                        zoom: 3.5, 
+                        zoom: currentFlow.zoom ? currentFlow.zoom : 3.5, 
                         onUpdate: function () {
                             components.camera.updateProjectionMatrix();
 

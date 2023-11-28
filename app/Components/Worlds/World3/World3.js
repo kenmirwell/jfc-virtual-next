@@ -13,13 +13,14 @@ const World3 = () => {
             action: "GOTO",
             target: "HandBulb",
             joy: "Joy-Pointing001",
-            light: "Light-Rays-Jollibee",
+            light: "Light-Rays-Transparent003",
             prompt: "<p>Let's check out the<br /><strong>Hologram</strong></p>",
             end: "EXIT",
             zoomOffset: {
-                y: 2.2
+                y: 2
             },
-            width: 370
+            width: 370,
+            zoom: 3
         },
         {
             step: 2,
@@ -55,7 +56,7 @@ const World3 = () => {
             prompt: "<p>Let's go to the<br /><strong>Smashburger Building</strong></p>",
             end: "EXIT",
             zoomOffset: {
-                y: -0.7
+                y: -0.5
             }
         },
         {
@@ -89,7 +90,10 @@ const World3 = () => {
             joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent",
             prompt: "<p>Let's go to the<br /><strong>Coffee Beans</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: -1
+            }
         },
         {
             step: 10,
