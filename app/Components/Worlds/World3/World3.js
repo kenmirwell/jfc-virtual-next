@@ -15,7 +15,10 @@ const World3 = () => {
             joy: "Joy-Pointing003",
             light: "Light-Rays-Jollibee",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: 2.2
+            }
         },
         {
             step: 2,
@@ -30,7 +33,10 @@ const World3 = () => {
             joy: "Joy-Pointing002",
             light: "Light-Rays-Transparent002",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: 2.5
+            }
         },
         {
             step: 4,
@@ -45,7 +51,10 @@ const World3 = () => {
             joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent004",
             prompt: "<p>Let's check out the<br /><strong>Open Sign</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: 2
+            }
         },
         {
             step: 6,
@@ -75,7 +84,10 @@ const World3 = () => {
             joy: "Joy-Pointing",
             light: "Light-Rays-Transparent",
             prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: -0.7
+            }
         },
         {
             step: 10,
