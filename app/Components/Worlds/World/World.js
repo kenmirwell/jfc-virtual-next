@@ -29,7 +29,7 @@ const World = ({
     background,
     objects = {},
     flow,
-    zoomMultiplier = 0
+    zoomMultiplier = 1
 }) => {
     const [components, setComponents] = useState({
         renderer: null,
