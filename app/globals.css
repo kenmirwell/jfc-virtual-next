@@ -59,3 +59,7 @@ body {
     width: 1500px !important;
     height: 700px !important;
 }
+
+#promptc .GOTO strong {
+    font-size: 36px;
+}

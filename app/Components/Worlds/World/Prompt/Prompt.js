@@ -47,7 +47,8 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
                 <div id="promptc" className="relative text-center h-[300px] w-[200px] flex items-end justify-center">
                     <div 
                         className={
-                            `prompt-content absolute top-[30px] right-[100%] mr-[40px] p-[30px] min-w-[400px] opacity-0 translate-x-[100px] ease-in-out 
+                            `prompt-content absolute top-[30px] right-[100%] mr-[40px] p-[30px] min-w-[470px] opacity-0 translate-x-[100px] ease-in-out 
+                            ${ currentFlow.get.action === "START" ? "!min-w-[430px]" : "" }
                             ${ showJoy && currentFlow.get.prompt ? "!opacity-[100] !translate-x-[0]" : "" } 
                             ${ currentFlow.get.action === "END" ? "!bottom-[100%] !top-auto !left-[100%] !right-auto !py-[40px] !pb-[30px]" : "" } 
                             ${ currentFlow.get.action === "GOTO" || currentFlow.get.action === "WAIT" ? "!pr-[70px]" : "" } 
@@ -56,13 +57,16 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
                         } 
                         style={{ 
                             backgroundSize: "100% 100%", 
-                            backgroundImage: `url(${ currentFlow.get.action === "GOTO" || currentFlow.get.action === "WAIT" ? "/assets/prompt-speech.png" : "/assets/prompt-bg.png" })`
+                            backgroundImage: `url(${ currentFlow.get.action === "GOTO" || currentFlow.get.action === "WAIT" ? "/assets/prompt-speech.png" : "/assets/prompt-bg.png" })`,
+                            minWidth: currentFlow.get.width ? currentFlow.get.width : null
                         }}
                     >
                         <div 
                             className={`
-                                text-[30px] leading-[1.2] text-center 
-                                ${ currentFlow.get.action === "END" || currentFlow.get.action === "START" ? "tracking-[0]" : "tracking-[1.6px]" } 
+                                ${ currentFlow.get.action } 
+                                leading-[1.2] text-center 
+                                ${ currentFlow.get.action === "START" ? "text-[30px]" : "text-[30px]" }
+                                ${ currentFlow.get.action === "END" || currentFlow.get.action === "START" ? "tracking-[0]" : "tracking-[-0.5px]" } 
                                 ${ currentFlow.get.action === "WAIT" ? "!tracking-[0.9px]" : "" } 
                             `} 
                             dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }} 
