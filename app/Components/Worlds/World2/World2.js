@@ -14,8 +14,9 @@ const World2 = () => {
             target: "FlagMain",
             joy: "Joy-Pointing003",
             light: "Light-Rays-Jollibee",
-            prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Flag</strong></p>",
             end: "EXIT",
+            width: 370,
             zoomOffset: {
                 y: 0.5
             }
@@ -32,7 +33,7 @@ const World2 = () => {
             target: "CakeBldg001",
             joy: "Joy-Pointing002",
             light: "Light-Rays-Transparent002",
-            prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Red Ribbon Building</strong></p>",
             end: "EXIT",
             zoomOffset: {
                 y: 1.7
@@ -50,7 +51,7 @@ const World2 = () => {
             target: "BananaLeaf",
             joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent004",
-            prompt: "<p>Let's check out the<br /><strong>Open Sign</strong></p>",
+            prompt: "<p>Let's check out the<br /><strong>Hong Zhuang Yuan Building</strong></p>",
             end: "EXIT"
         },
         {
@@ -65,11 +66,12 @@ const World2 = () => {
             target: "Burger001",
             joy: "Joy-Pointing001",
             light: "Light-Rays-Transparent001",
-            prompt: "<p>Let's go to the<br /><strong>Greenwich Building</strong></p>",
+            prompt: "<p>Let's continue<br />our Journey</p>",
             end: "EXIT",
             zoomOffset: {
                 y: -0.5
-            }
+            },
+            width: 370
         },
         {
             step: 8,
@@ -83,11 +85,12 @@ const World2 = () => {
             target: "OnionLeaves",
             joy: "Joy-Pointing",
             light: "Light-Rays-Transparent",
-            prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
+            prompt: "<p>Let's continue<br />exploring</p>",
             end: "EXIT",
             zoomOffset: {
                 y: -0.5
-            }
+            },
+            width: 370
         },
         {
             step: 10,
