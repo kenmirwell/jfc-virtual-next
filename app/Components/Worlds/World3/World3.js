@@ -12,13 +12,14 @@ const World3 = () => {
             step: 1,
             action: "GOTO",
             target: "HandBulb",
-            joy: "Joy-Pointing003",
+            joy: "Joy-Pointing001",
             light: "Light-Rays-Jollibee",
-            prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
+            prompt: "<p>Let's check out the<br /><strong>Hologram</strong></p>",
             end: "EXIT",
             zoomOffset: {
                 y: 2.2
-            }
+            },
+            width: 370
         },
         {
             step: 2,
@@ -32,11 +33,12 @@ const World3 = () => {
             target: "JFCGold",
             joy: "Joy-Pointing002",
             light: "Light-Rays-Transparent002",
-            prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>JFC Building</strong></p>",
             end: "EXIT",
             zoomOffset: {
                 y: 2.5
-            }
+            },
+            width: 370
         },
         {
             step: 4,
@@ -47,13 +49,13 @@ const World3 = () => {
         {
             step: 5,
             action: "GOTO",
-            target: "Dumplings",
-            joy: "Joy-Pointing004",
+            target: "Burger",
+            joy: "Joy-Pointing",
             light: "Light-Rays-Transparent004",
-            prompt: "<p>Let's check out the<br /><strong>Open Sign</strong></p>",
+            prompt: "<p>Let's go to the<br /><strong>Smashburger Building</strong></p>",
             end: "EXIT",
             zoomOffset: {
-                y: 2
+                y: -0.7
             }
         },
         {
@@ -65,11 +67,14 @@ const World3 = () => {
         {
             step: 7,
             action: "GOTO",
-            target: "CoffeeBeans",
-            joy: "Joy-Pointing001",
+            target: "Dumplings",
+            joy: "Joy-Pointing003",
             light: "Light-Rays-Transparent001",
-            prompt: "<p>Let's go to the<br /><strong>Greenwich Building</strong></p>",
-            end: "EXIT"
+            prompt: "<p>Let's go to the<br /><strong>Dumplings</strong></p>",
+            end: "EXIT",
+            zoomOffset: {
+                y: 2
+            }
         },
         {
             step: 8,
@@ -80,14 +85,11 @@ const World3 = () => {
         {
             step: 9,
             action: "GOTO",
-            target: "Burger",
-            joy: "Joy-Pointing",
+            target: "CoffeeBeans",
+            joy: "Joy-Pointing004",
             light: "Light-Rays-Transparent",
-            prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
-            end: "EXIT",
-            zoomOffset: {
-                y: -0.7
-            }
+            prompt: "<p>Let's go to the<br /><strong>Coffee Beans</strong></p>",
+            end: "EXIT"
         },
         {
             step: 10,
