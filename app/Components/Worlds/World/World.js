@@ -28,7 +28,8 @@ const World = ({
     model,
     background,
     objects = {},
-    flow
+    flow,
+    zoomMultiplier = 0
 }) => {
     const [components, setComponents] = useState({
         renderer: null,
@@ -49,6 +50,7 @@ const World = ({
     const [mixer, setMixer] = useState(null);
     const [gltfLoaded, setGltfLoaded] = useState(null);
     const [model3d, setModel3d] = useState(null);
+    const [modelObjs, setModelObjs] = useState(null);
     const [objSelected, setObjSelected] = useState(null)
     const [initialAnimate, setInitialAnimate] = useState(false);
     const [finishAnimate, setFinishAnimate] = useState(false);
@@ -111,19 +113,6 @@ const World = ({
 
             setLoaded(true);
         }
-        
-        // window.addEventListener("orientationchange", function(event){
-        //     switch(window.orientation) 
-        //     {  
-        //         case -90: case 90:
-        //             console.log("landscape mode")
-        //             document.getElementById("worldcomp").removeAttribute("style");
-        //             break; 
-        //         default:
-        //             console.log("portrait mode")
-        //             document.getElementById("worldcomp").setAttribute("style", `width:100vh;height:100vw;transform:rotate(90deg) translateY(58%)`);
-        //     }
-        // });
     }, []);
     
     /* Initialize Scene */
@@ -153,16 +142,16 @@ const World = ({
     
     /* Setup scene */
     useEffect(() => {
-        if( model3d ) {
+        if( modelObjs ) {
             setInitialAnimate(true);
 
             window.requestAnimationFrame(animate);
 
-            const interactables = world === 1 ? model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) : model3d.children[0].children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees  = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
-            const joys   = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
-            const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
-            const clouds = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 );
+            const interactables = modelObjs.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
+            const trees  = modelObjs.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1 );
+            const joys   = modelObjs.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joy-" ) > -1 );
+            const lights = modelObjs.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+            const clouds = modelObjs.children.filter(obj => obj.name.indexOf( objects.cloud ? objects.cloud : "Cloud" ) > -1 );
 
             for( const obj of interactables ) {
                 obj.position.y += 5;
@@ -176,7 +165,7 @@ const World = ({
             for( const obj of lights ) {
                 obj.scale.x = 0;
                 obj.scale.y = 0;
-                obj.material = new THREE.MeshLambertMaterial({ map: material.material.map });
+                obj.material = new THREE.MeshLambertMaterial({ map: obj.material.map });
                 obj.material.color = new THREE.Color( 0xE7E7E7 );
                 obj.material.emissive = new THREE.Color( 0xFFD700 );
                 obj.material.emissiveIntensity = 4.34;
@@ -210,11 +199,11 @@ const World = ({
                 tl.to(obj.position, { x: obj.position.x, y: obj.position.y, delay: i * 0.5 });
             }
         }
-    }, [model3d]);
+    }, [modelObjs]);
 
     /* Initial animate */
     useEffect(() => {
-        if(model3d && initialAnimate) {
+        if(modelObjs && initialAnimate) {
             const clips = gltfLoaded.animations;
             const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
             const action = mixer.clipAction( clip );
@@ -224,8 +213,8 @@ const World = ({
                 action.play()
             }
                 
-            const interactables = world === 1 ? model3d.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1) : model3d.children[0].children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
-            const trees = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
+            const interactables = modelObjs.children.filter(obj => Object.keys(contents).indexOf(obj.name) > -1);
+            const trees = modelObjs.children.filter(obj => obj.name.indexOf( objects.tree ? objects.tree : "Tree" ) > -1);
 
             gsap.timeline().to(components.camera.position, 2, { 
                 y: 3, 
@@ -290,7 +279,7 @@ const World = ({
                 setFinishAnimate(true);
             }, 5300);
         }
-    }, [model3d, initialAnimate])
+    }, [modelObjs, initialAnimate])
 
     /* Finish animate */
     useEffect(() => {
@@ -312,8 +301,8 @@ const World = ({
         if( currentFlow.action === "GOTO" ) {
             document.addEventListener( 'click', onClickObject );
 
-            const light = world === 1 ? model3d.children.find(c => c.name === currentFlow.light ) : model3d.children[0].children.find(c => c.name === currentFlow.light );
-            const interactables = world === 1 ? model3d.children[0].children.find(c => c.name === currentFlow.target) : model3d.children.find(c => c.name === currentFlow.target);
+            const light = modelObjs.children.find(c => c.name === currentFlow.light );
+            const interactables = modelObjs.children[0].children.find(c => c.name === currentFlow.target);
 
             if( light ) {
                 gsap.timeline().to(light.scale, .5, { 
@@ -345,7 +334,8 @@ const World = ({
             const mixer = new THREE.AnimationMixer(gltf.scene);
 
             setMixer(mixer);
-            setModel3d(gltf.scene);
+            setModel3d( gltf.scene );
+            setModelObjs( world !== 1 ? gltf.scene.children[0] : gltf.scene );
             setGltfLoaded(gltf);
 
             gltf.scene.traverse(function (child) {
@@ -381,7 +371,7 @@ const World = ({
 
         components.renderer.render(components.scene, components.camera);
         
-        const lights = world === 1 ? model3d.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 ) : model3d.children[0].children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
+        const lights = modelObjs.children.filter(obj => obj.name.indexOf( objects.light ? objects.light : "Light-Rays" ) > -1 );
 
         for( const light of lights ) {
             light.rotation.y += 0.01;
@@ -439,29 +429,23 @@ const World = ({
 
     const onClickObject = (action) => {
         if( !disableFunctionality ) {
-            if( model3d ) {
-                components.raycaster.setFromCamera( components.pointer, components.camera );
-
-                const target  = world === 1 ? model3d.children.find(c => c.name === currentFlow.target) :
-                                world === 2 ? model3d.children[0].children.find(c => c.name === currentFlow.target) :
-                                null
-                const joy     = model3d.children.find(c => c.name === currentFlow.joy);
-                const objects = components.raycaster.intersectObjects(model3d.children);
+            if( modelObjs ) {
+                const target  = modelObjs.children.find(c => c.name === currentFlow.target);
+                const joy     = modelObjs.children.find(c => c.name === currentFlow.joy);
 
                 const onSelect = () => {
                     disableFunctionality = true;
 
                     document.removeEventListener( 'click', onClickObject )
 
-
                     components.orbit.target.x = 0;
                     components.orbit.target.y = 3;
                     components.orbit.target.z = target.position.z;
-                    
+
                     gsap.timeline().to(components.orbit.target, 2, { 
-                        x: target.position.x, 
-                        y: target.position.y + 1, 
-                        z: target.position.z, 
+                        x: target.position.x * zoomMultiplier, 
+                        y: (target.position.y + 1 + (currentFlow.zoomOffset?.y || 0)) * zoomMultiplier, 
+                        z: target.position.z * zoomMultiplier, 
                         onUpdate: function () {
                             components.orbit.update();
                         }, 
@@ -512,20 +496,6 @@ const World = ({
                 if( action === "BUTTON" ) {
                     onSelect( target );
                 }
-
-                if( objects.length < 11 ) {
-                    for ( let i = 0; i < objects.length; i ++ ) {
-                        if( objects[i].object.name === currentFlow.target ) {
-                            onSelect()
-                        } else if( objects[i].object.parent && objects[i].object.parent.name === currentFlow.target ) {
-                            onSelect()
-                        } else if( objects[i].object.parent.parent && objects[i].object.parent.parent.name === currentFlow.target ) {
-                            onSelect()
-                        } else if( objects[i].object.parent.parent.parent && objects[i].object.parent.parent.parent.name === currentFlow.target ) {
-                            onSelect()
-                        }
-                    }
-                }
             }
         }
     };
@@ -534,20 +504,13 @@ const World = ({
         setShowJoy(true);
         disableFunctionality = false;
 
-        const joys = model3d.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joys" ) > -1 );
+        const joys = modelObjs.children.filter(obj => obj.name.indexOf( objects.joy ? objects.joy : "Joy-" ) > -1 );
         
         for( const obj of joys ) {
             obj.visible = false;
         }
 
-        const clips = gltfLoaded.animations;
-        const clip = world === 2 ? THREE.AnimationClip.findByName( clips, 'AllAnim' ) : THREE.AnimationClip.findByName( clips, 'AnimAll' );
-        const action = mixer.clipAction( clip );
-        if( action ) {
-            action.stop();
-        }
-
-        const light = model3d.children.find(c => c.name === currentFlow.light );
+        const light = modelObjs.children.find(c => c.name === currentFlow.light );
         
         if( light ) {
             light.visible = false;

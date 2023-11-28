@@ -15,7 +15,10 @@ const World2 = () => {
             joy: "Joy-Pointing003",
             light: "Light-Rays-Jollibee",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Building</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: 0.5
+            }
         },
         {
             step: 2,
@@ -30,7 +33,10 @@ const World2 = () => {
             joy: "Joy-Pointing002",
             light: "Light-Rays-Transparent002",
             prompt: "<p>Let's go to the<br /><strong>Jollibee Mascot</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: 1.7
+            }
         },
         {
             step: 4,
@@ -60,7 +66,10 @@ const World2 = () => {
             joy: "Joy-Pointing001",
             light: "Light-Rays-Transparent001",
             prompt: "<p>Let's go to the<br /><strong>Greenwich Building</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: -0.5
+            }
         },
         {
             step: 8,
@@ -75,7 +84,10 @@ const World2 = () => {
             joy: "Joy-Pointing",
             light: "Light-Rays-Transparent",
             prompt: "<p>Let's go to the<br /><strong>Chowking Building</strong></p>",
-            end: "EXIT"
+            end: "EXIT",
+            zoomOffset: {
+                y: -0.5
+            }
         },
         {
             step: 10,
@@ -121,7 +133,7 @@ const World2 = () => {
                 "left-[13%]", 
                 "left-[25%]"
             ],
-    
+            
         },
         "CakeBldg001": {
             year: [
@@ -266,7 +278,6 @@ const World2 = () => {
             title="Dreaming Bigger"
             year="2004-2012"
             color="#c79c1e"
-            // model="/assets/world2/World2.glb"
             model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2-Complete-NoLights-Car%20(3).glb?t=2023-11-28T03%3A33%3A12.361Z"
             background="/assets/world2/bg.mp4"
             flats={{
@@ -276,9 +287,7 @@ const World2 = () => {
             }}
             contents={ contents }
             flow={ flow }
-            objects={{
-                joy: "Joy-"
-            }}
+            zoomMultiplier={ 0.4 }
         />
     )
 }

@@ -275,9 +275,6 @@ const World1 = () => {
             }}
             contents={ contents }
             flow={ flow }
-            objects={{
-                joy: "Joy-"
-            }}
         />
     )
 }

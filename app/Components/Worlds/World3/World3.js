@@ -276,9 +276,7 @@ const World3 = () => {
             }}
             contents={ contents }
             flow={ flow }
-            objects={{
-                joy: "Joy-"
-            }}
+            zoomMultiplier={ 0.4 }
         />
     )
 }
