@@ -1,4 +1,7 @@
 import World from "../World/World";
+import { en } from "./en";
+import { vi } from "./vi";
+import { ch } from "./ch";
 
 const World2 = () => {
     let flow = [
@@ -104,8 +107,8 @@ const World2 = () => {
 
     let contents = {
         "FlagMain": {
-            audio: "JFC_VO_W2_MS1",
             "2004": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS1.wav",
                 "bg": "/assets/world2/popup/2004-MAIN.webm",
                 "year": "/assets/world2/popup-years/2004-YEAR.webm",
                 "photos": [
@@ -120,8 +123,8 @@ const World2 = () => {
         },
 
         "CakeBldg001": {
-            audio: "JFC_VO_W2_MS2",
             "2005": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS2.wav",
                 "bg": "/assets/world2/popup/2005-MAIN.webm",
                 "year": "/assets/world2/popup-years/2005-YEAR.webm",
                 "photos": [
@@ -134,6 +137,7 @@ const World2 = () => {
                 }
             },
             "2006": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS2B.wav",
                 "bg": "/assets/world2/popup/2006-MAIN.webm",
                 "year": "/assets/world2/popup-years/2006-YEAR.webm",
                 "photos": [
@@ -148,8 +152,8 @@ const World2 = () => {
         },
 
         "BananaLeaf": {
-            audio: "JFC_VO_W2_MS3",
             "2008": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS3.wav",
                 "bg": "/assets/world2/popup/2008-MAIN.webm",
                 "year": "/assets/world2/popup-years/2008-YEAR.webm",
                 "photos": [
@@ -164,8 +168,8 @@ const World2 = () => {
         },
 
         "Burger001": {
-            audio: "JFC_VO_W2_MS4",
             "2010": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS4.wav",
                 "bg": "/assets/world2/popup/2010-MAIN.webm",
                 "year": "/assets/world2/popup-years/2010-YEAR.webm",
                 "photos": [
@@ -177,7 +181,8 @@ const World2 = () => {
                     "vi": vi["2010"]
                 }
             },
-            "2011A": {
+            "2011": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS4B.wav",
                 "bg": "/assets/world2/popup/2011A-MAIN.webm",
                 "year": "/assets/world2/popup-years/2011-YEAR.webm",
                 "photos": [
@@ -192,8 +197,8 @@ const World2 = () => {
         },
         
         "OnionLeaves": {
-            audio: "JFC_VO_W2_MS5",
-            "2011B": {
+            "2011": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS5.wav",
                 "bg": "/assets/world2/popup/2011B-MAIN.webm",
                 "year": "/assets/world2/popup-years/2011-YEAR.webm",
                 "photos": [

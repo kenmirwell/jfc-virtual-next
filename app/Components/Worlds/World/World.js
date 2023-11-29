@@ -734,18 +734,18 @@ const World = ({
             /> 
         ) : (
             <PopupsB
-                objSelected={objSelected}
-                contents={contents}
-                onClickwhiteButton={() => onClickwhiteButton()}
-                activeVideo={activeVideo}
-                audio={audio}
-                onPrev={(e) => onPrev(e)}
-                onNext={(e) => onNext(e)}
-                handleStartVideo={handleStartVideo}
-                onDeselect={() => onDeselect()}
-                onClickObject={() => onClickObject()}
-                videoPlayed={videoPlayed}
-            />
+                objSelected={ objSelected }
+                contents={ contents }
+                onClickwhiteButton={ onClickwhiteButton }
+                activeVideo={ activeVideo }
+                audio={ audio }
+                onPrev={ onPrev }
+                onNext={ onNext }
+                handleStartVideo={ handleStartVideo }
+                onDeselect={ onDeselect }
+                onClickObject={ onClickObject }
+                videoPlayed={ videoPlayed }
+            /> 
         )}
     </div>
   );
