@@ -284,8 +284,8 @@ const World3 = () => {
             title="Going Global"
             year="2013-2020"
             color="#06abcb"
-            // model="/assets/world3/World3.glb"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoLights-Plane%20(3).glb?t=2023-11-28T03%3A34%3A11.957Z"
+            model="/assets/world3/world.glb"
+            // model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoLights-Plane%20(3).glb?t=2023-11-28T03%3A34%3A11.957Z"
             background="/assets/world3/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",

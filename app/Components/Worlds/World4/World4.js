@@ -274,8 +274,8 @@ const World4 = () => {
             title="New Frontier"
             year="2021-2023"
             color="#df4637"
-            // model="/assets/world4/World4.glb"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb?t=2023-11-28T03%3A35%3A00.423Z"
+            model="/assets/world4/world.glb"
+            // model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb?t=2023-11-28T03%3A35%3A00.423Z"
             background="/assets/world4/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
