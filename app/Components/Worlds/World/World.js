@@ -15,6 +15,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import Joy from "./Joy/Joy";
 import PopupsA from "./Popups/PopupsA";
 import PopupsB from "./Popups/PopupsB";
+import { setCookie } from "cookies-next";
 
 let hovered = null;
 let disableFunctionality = false;
@@ -119,6 +120,11 @@ const World = ({
       setLoaded(true);
     }
   }, []);
+
+    /* @TODO: Handle translation for cookie */
+    useEffect(() => {
+        setCookie("lang", "en");
+    }, []);
 
   /* Initialize Scene */
   useEffect(() => {
@@ -508,9 +514,7 @@ const World = ({
   const onClickObject = (action) => {
     if (!disableFunctionality) {
       if (modelObjs) {
-        const target = modelObjs.children.find(
-          (c) => c.name === currentFlow.target
-        );
+        const target = modelObjs.children.find((c) => c.name === currentFlow.target);
         const joy = modelObjs.children.find((c) => c.name === currentFlow.joy);
 
         const onSelect = () => {
@@ -687,34 +691,17 @@ const World = ({
     }
   };
 
-  const onNext = (popupCount) => {
-    if (activeVideo < popupCount - 1) {
-      setActiveVideo(activeVideo + 1);
+    const onNext = () => {
+        setActiveVideo(activeVideo + 1);
+    };
 
-      //   if (ref.current) {
-      //     // ref.current.load()
-      //     // setAudio(true)
-      //   }
-    } else {
-      return null;
-    }
-  };
-
-  const onPrev = (data) => {
-    console.log("data", data)
-    if (activeVideo > 0) {
-      setActiveVideo(activeVideo - 1);
-
-      console.log('trigger')
-
-      //   if (ref.current) {
-      //     ref.current.load();
-      //     setAudio(true);
-      //   }
-    } else {
-      return null;
-    }
-  };
+    const onPrev = () => {
+        if (activeVideo > 0) {
+            setActiveVideo(activeVideo - 1);
+        } else {
+            return null;
+        }
+    };
 
   const handleStartVideo = () => {
     setVideoPlayed(true);
@@ -724,26 +711,15 @@ const World = ({
     }
   };
 
-  const PopupYearcomponent = ({ popYears, i }) => {
-    return (
-      <>
-        <video key={`popup-years-${i}`} autoPlay loop muted>
-          <source src={popYears} type='video/webm' />
-        </video>
-      </>
-    );
-  };
-
   const [played, setPlayed] = useState(false);
 
   useEffect(() => {
     ref.current.load();
     setPlayed(false);
+    console.log(objSelected)
   }, [objSelected]);
 
-  useEffect(() => {
-    console.log(contents[objSelected]);
-  }, [contents[objSelected]]);
+  
 
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
@@ -774,25 +750,26 @@ const World = ({
                 ref={ref}
             >
             {objSelected && (
-                <source src={contents[objSelected].audio} />
+                <source src={contents[objSelected]?.audio} />
             )}
             </audio>
         </div>
-        {world === 1 || world == 3 || world === 5 ?
+        {world === 1 || world == 3 || world === 5 ? (
             <PopupsA
-                audioClick={() => audioClick()}
-                objSelected={objSelected}
-                contents={contents}
-                onClickwhiteButton={() => onClickwhiteButton()}
-                activeVideo={activeVideo}
-                audio={audio}
-                onPrev={(e) => onPrev(e)}
-                onNext={(e) => onNext(e)}
-                handleStartVideo={handleStartVideo}
-                onDeselect={() => onDeselect()}
-                onClickObject={() => onClickObject()}
-                videoPlayed={videoPlayed}
-            /> :
+                audioClick={ audioClick }
+                objSelected={ objSelected }
+                contents={ contents }
+                onClickwhiteButton={ onClickwhiteButton }
+                activeVideo={ activeVideo }
+                audio={ audio }
+                onPrev={ onPrev }
+                onNext={ onNext }
+                handleStartVideo={ handleStartVideo }
+                onDeselect={ onDeselect }
+                onClickObject={ onClickObject }
+                videoPlayed={ videoPlayed }
+            /> 
+        ) : (
             <PopupsB
                 audioClick={() => audioClick()}
                 objSelected={objSelected}
@@ -807,7 +784,7 @@ const World = ({
                 onClickObject={() => onClickObject()}
                 videoPlayed={videoPlayed}
             />
-        }
+        )}
     </div>
   );
 };

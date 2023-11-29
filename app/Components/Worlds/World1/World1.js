@@ -93,8 +93,7 @@ const World1 = () => {
     ];
 
     let contents = {
-        "EMPTY005": {
-            audio: "JFC_VO_W1_MS1",
+        "Empty005": {
             "1978": {
                 "bg": "/assets/world1/popup/1978-MAIN.webm",
                 "year": "/assets/world1/popup-years/1978-YEAR.webm",
@@ -120,8 +119,7 @@ const World1 = () => {
                 }
             }
         },
-        "EMPTY004": {
-            audio: "JFC_VO_W1_MS2",
+        "Empty004": {
             "1980": {
                 "bg": "/assets/world1/popup/1980-MAIN.webm",
                 "year": "/assets/world1/popup-years/1980-YEAR.webm",
@@ -135,8 +133,7 @@ const World1 = () => {
                 }
             }
         },
-        "EMPTY003": {
-            audio: "JFC_VO_W1_MS3",
+        "Empty003": {
             "1984": {
                 "bg": "/assets/world1/popup/1984-MAIN.webm",
                 "year": "/assets/world1/popup-years/1984-YEAR.webm",
@@ -174,8 +171,7 @@ const World1 = () => {
                 }
             }
         },
-        "EMPTY001": {
-            audio: ["JFC_VO_W1_MS4"],
+        "Empty001": {
             "1994": {
                 "bg": "/assets/world1/popup/1994-MAIN.webm",
                 "year": "/assets/world1/popup-years/1994-YEAR.webm",
@@ -201,8 +197,7 @@ const World1 = () => {
                 }
             },
         },
-        "EMPTY002": {
-            audio: ["JFC_VO_W1_MS4"],
+        "Empty002": {
             "2000": {
                 "bg": "/assets/world1/popup/2000-MAIN.webm",
                 "year": "/assets/world1/popup-years/2000-YEAR.webm",
