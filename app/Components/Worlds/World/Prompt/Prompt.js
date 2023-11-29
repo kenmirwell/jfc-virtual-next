@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap, Power3 } from "gsap";
 
 let timer;
@@ -24,13 +24,33 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
     }
   }, [showJoy, currentFlow.get]);
 
+  const [hasPlayed, setHasPlayed] = useState(false);
+
   const onProceed = () => {
     currentFlow.set(flow.find((f) => f.step === currentFlow.get.step + 1));
+
+    // PLAY ONCE
+
+    if (!hasPlayed) soundRef.current.play();
   };
+
+  const handleClickHere = () => {
+    onClickInteractables("BUTTON");
+
+    // PAUSE AFTER AND NEVER PLAY AGAIN
+    soundRef.current.pause();
+  };
+
+  const soundRef = useRef(null);
 
   return (
     <>
-      <audio className='hidden' controls>
+      <audio
+        onPlay={() => setHasPlayed(true)}
+        ref={soundRef}
+        className='hidden'
+        controls
+      >
         <source src={`/assets/world1/audio/JFC_VO_W1_INTRO.wav`} />
       </audio>
       <div
@@ -163,7 +183,7 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
             )}
             {currentFlow.get.action === "GOTO" && (
               <button
-                onClick={() => onClickInteractables("BUTTON")}
+                onClick={handleClickHere}
                 className='bg-[#cf463f] text-white rounded-[50px] font-[700] text-[12px] px-[15px] mt-[5px]'
               >
                 CLICK HERE TO PROCEED
