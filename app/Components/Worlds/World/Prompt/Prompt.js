@@ -4,8 +4,6 @@ import { gsap, Power3 } from "gsap";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-
 let timer;
 const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables, audioEnding }) => {
   useEffect(() => {

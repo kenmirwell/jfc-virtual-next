@@ -231,7 +231,6 @@ const World1 = () => {
                 }
             },
         }
-      }
     }
 
     return (
