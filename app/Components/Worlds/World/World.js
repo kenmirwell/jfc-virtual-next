@@ -728,6 +728,10 @@ const World = ({
     );
   };
 
+  useEffect(() => {
+    ref.current.load();
+  }, [objSelected]);
+
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <div
