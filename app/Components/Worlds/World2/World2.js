@@ -407,28 +407,35 @@ const World2 = () => {
         "OnionLeaves": [
             {
                 year: [
+                    "2011",
                     "2012"
                 ],
                 title: {
                     en: [
-                        ""
+                        "Burger King: Home of the Whopper",
+                        "Highlands Coffee: Vietnam’s #1 Coffee Chain"
                     ],
                     ch: [
-                        ""
+                        "汉堡王:皇堡之家",
+                        "高地咖啡:越南排名第一的咖啡连锁店"
                     ],
                     vi: [
-                        ""
+                        "Burger King: Nơi khởi nguồn của Burger Whopper",
+                        "Highlands Coffee: Chuỗi cà phê số 1 Việt Nam"
                     ],
                 },
                 description: {
                   en: [
-                        `<p></p>`
+                        `<p>Burger King Philippines joins the Jollibee Group. Now with over 120 stores and growing, the brand is known for its line of Whoppers.</p>`,
+                        `<p>Highlands Coffee joins the Jollibee Group. It is Vietnam's #1 coffee chain, with over 700 stores in Vietnam and the Philippines.</p>`
                     ],
                   ch: [
-                        `<p></p>`
+                        `<p>菲律宾汉堡王加入快乐蜂集团。该品牌现已拥有超过120家门店,门店数量还在不断增加,以其皇堡系列而闻名。</p>`,
+                        `<p>高地咖啡加入快乐蜂集团。它是越南排名第一的咖啡连锁店,在越南和菲律宾拥有逾600家门店。</p>`
                   ],
                   vi: [
-                        `<p></p>`
+                        `<p>Burger King Philippines gia nhập Tập đoàn Jollibee. Hiện nay với hơn 120 cửa hàng và đang ngày càng phát triển, thương hiệu này được biết đến với dòng sản phẩm Burger Whoppers.</p>`,
+                        `<p>Highlands Coffee gia nhập Tập đoàn Jollibee. Đây là chuỗi cà phê số 1 Việt Nam với hơn 600 cửa hàng tại Việt Nam và Philippines.</p>`
                   ]
                 },
             }
