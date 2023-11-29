@@ -54,6 +54,11 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
     if (path.includes("world3")) return 4;
   };
 
+  const [isEnd, setIsEnd] = useState(false);
+  useEffect(() => {
+    if (currentFlow.get.action === "END") setIsEnd(true);
+  }, [currentFlow.get.action]);
+
   return (
     <>
       <audio
@@ -64,6 +69,11 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
       >
         <source src={`/assets/world1/audio/JFC_VO_W1_INTRO.wav`} />
       </audio>
+      {isEnd && (
+        <audio autoPlay className='hidden' controls>
+          <source src={`/assets/world1/audio/JFC_VO_W1_GAME1.wav`} />
+        </audio>
+      )}
       <div
         className={`fixed top-0 left-0 right-0 bottom-0 opacity-0 bg-black/50 transition-all duration-[0.3s] ease-in-out ${
           currentFlow.get.action === "END"
