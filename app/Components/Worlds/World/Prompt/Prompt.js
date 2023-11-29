@@ -101,37 +101,15 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables, audioEnding 
               minWidth: currentFlow.get.width ? currentFlow.get.width : null,
             }}
           >
-            <div
-              className={`
-                                ${currentFlow.get.action} 
-                                leading-[1.2] text-center 
-                                ${
-                                  currentFlow.get.action === "START"
-                                    ? "text-[30px]"
-                                    : "text-[30px]"
-                                }
-                                ${
-                                  currentFlow.get.action === "END" ||
-                                  currentFlow.get.action === "START"
-                                    ? "tracking-[0]"
-                                    : "tracking-[-0.5px]"
-                                } 
-                                ${
-                                  currentFlow.get.action === "WAIT"
-                                    ? "!tracking-[0.9px]"
-                                    : ""
-                                } 
-                            `}
-              dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }}
-            />
-            {currentFlow.get.action === "START" && (
+            <div onClick={currentFlow.get.action === "START" ? onProceed : currentFlow.get.action === "GOTO" ? handleClickHere : null } className={`${currentFlow.get.action} leading-[1.2] text-center ${currentFlow.get.action === "START" ? "text-[30px]" : "text-[30px]" } ${ currentFlow.get.action === "END" || currentFlow.get.action === "START" ? "tracking-[0]" : "tracking-[-0.5px]" } ${ currentFlow.get.action === "WAIT" ? "!tracking-[0.9px]" : "" } `} dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }}/>
+            {/* {currentFlow.get.action === "START" && (
               <button
                 onClick={onProceed}
                 className='absolute right-[22px] bottom-[22px]'
               >
                 <img src='/assets/arrow-right.svg' width={25} />
               </button>
-            )}
+            )} */}
             {currentFlow.get.action === "GOTO" && (
               <button
                 onClick={handleClickHere}
@@ -148,9 +126,7 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables, audioEnding 
                   </button>
                 </a>
                 <br></br>
-                <a
-                  href={`http://ec2-13-213-56-159.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
-                >
+                <a href={`http://ec2-13-213-56-159.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}>
                   <button className='lowercase text-[12px] tracking-[1.4px] text-black/50 font-[500]'>
                     SKIP
                   </button>
