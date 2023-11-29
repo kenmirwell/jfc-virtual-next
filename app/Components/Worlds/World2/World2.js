@@ -106,8 +106,7 @@ const World2 = () => {
         "FlagMain": {
             audio: ["/assets/world2/audio/JFC_VO_W2_MS1.wav"],
             year: [
-                "1978",
-                "1979"
+                "2004"
             ],
             title: [
                 "Jolibee Food Corporation is born", 
@@ -118,16 +117,13 @@ const World2 = () => {
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1978-MAIN.webm", 
-                "/assets/world1/popup/1979-MAIN.webm",
+                "/assets/world2/popup/2004-MAIN.webm"
             ],
             popupYears: [
-                "/assets/world1/popup-years/1978-YEAR.webm", 
-                "/assets/world1/popup-years/1979-YEAR.webm"
+                "/assets/world2/popup-years/2004-YEAR.webm"
             ],
             photos: [
-                "/assets/world1/popup-photos/1978/1978_1.png", 
-                "/assets/world1/popup-photos/1979/1979.png"
+                "/assets/world1/popup-photos/1978/1978_1.png"
             ],
             textPost: [
                 "left-[11%]", 
@@ -142,7 +138,7 @@ const World2 = () => {
         "CakeBldg001": {
             audio: ["/assets/world2/audio/JFC_VO_W2_MS2.wav"],
             year: [
-                "1980"
+                "2005", "2006"
             ],
             title: [
                 "Introducing The Face Of Jollibee"
@@ -151,13 +147,15 @@ const World2 = () => {
                 `<p>The iconic Jollibee mascot, then named “Jolly Bee” is introduced for the first time at the Virra Mall store opening. The second Jollibee mascot, Mr. YUM, would be introduced next year.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1980-MAIN.webm"
+                "/assets/world1/popup/2005-MAIN.webm",
+                "/assets/world1/popup/2006-MAIN.webm",
             ],
             popupYears: [
-                "/assets/world1/popup-years/1980-YEAR.webm"
+                "/assets/world1/popup-years/2005-YEAR.webm",
+                "/assets/world1/popup-years/2006-YEAR.webm",
             ],
             photos: [
-                "/assets/world1/popup-photos/1980/1980.png"
+                "/assets/world1/popup-photos/1980/1980.png",
             ],
             textPost: [
                 "left-[15%]"
@@ -169,9 +167,7 @@ const World2 = () => {
         "BananaLeaf": {
             audio: ["/assets/world2/audio/JFC_VO_W2_MS2B.wav"],
             year: [
-                "1984", 
-                "1990", 
-                "1993"
+                "2008"
             ],
             title: [
                 "Reaching International Markets", 
@@ -184,19 +180,13 @@ const World2 = () => {
                 `<p>Jollibee Group lists on the Philippine Stock Exchange, with an initial offering of PHP 9/share.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1984-MAIN.webm", 
-                "/assets/world1/popup/1990-MAIN.webm", 
-                "/assets/world1/popup/1993-MAIN.webm"
+                "/assets/world2/popup/2008-MAIN.webm", 
             ],
             popupYears: [
-                "/assets/world1/popup-years/1984-YEAR.webm", 
-                "/assets/world1/popup-years/1990-YEAR.webm", 
-                "/assets/world1/popup-years/1993-YEAR.webm"
+                "/assets/world2/popup-years/2008-YEAR.webm", 
             ],
             photos: [
-                "/assets/world1/popup-photos/1984/1984.png", 
-                "/assets/world1/popup-photos/1990/1990.png", 
-                "/assets/world1/popup-photos/1993/1993.png"
+                "/assets/world2/popup-photos/1984/1984.png", 
             ],
             textPost: [
                 "left-[6%]", 
@@ -212,7 +202,7 @@ const World2 = () => {
         "Burger001": {
             audio: ["/assets/world2/audio/JFC_VO_W2_MS3.wav"],
             year: [
-                "1994", "1998"
+                "2010", "2011"
             ],
             title: [
                 "Greenwich: The Philippines’ #1 Pizza Chain", 
@@ -223,12 +213,12 @@ const World2 = () => {
                 `<p>Jollibee Group opens its first-ever store in North America with Jollibee Daly City in California, USA. Jollibee Group&apos;s North America presence is now composed of six brands (Jollibee, Chowking, Red Ribbon, Smashburger, and The Coffee Bean and Tea Leaf) with over 550 stores.</p>`
             ],
             popup: [
-                "/assets/world1/popup/1994-MAIN.webm", 
-                "/assets/world1/popup/1998-MAIN.webm"
+                "/assets/world2/popup/2010-MAIN.webm", 
+                "/assets/world2/popup/2011A-MAIN.webm"
             ],
             popupYears: [
-                "/assets/world1/popup-years/1994-YEAR.webm", 
-                "/assets/world1/popup-years/1998-YEAR.webm"
+                "/assets/world2/popup-years/2010-YEAR.webm", 
+                "/assets/world2/popup-years/2011A-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/1994/1994.png", 
@@ -246,8 +236,7 @@ const World2 = () => {
         "OnionLeaves": {
             audio: ["/assets/world2/audio/JFC_VO_W2_MS4.wav"],
             year: [
-                "2000", 
-                "2001"
+                "2011", "2012"
             ],
             title: [
                 "Chowking: The Philippines’ Chinese Quick Serving Restaurant", 
@@ -258,12 +247,12 @@ const World2 = () => {
                 `<p>Jollibee Group moves to Jollibee Plaza, initially operating with 8 floors in the building.</p>`
             ],
             popup: [
-                "/assets/world1/popup/2000-MAIN.webm", 
-                "/assets/world1/popup/2001-MAIN.webm"
+                "/assets/world2/popup/2011B-MAIN.webm", 
+                "/assets/world2/popup/2012-MAIN.webm"
             ],
             popupYears: [
-                "/assets/world1/popup-years/2000-YEAR.webm", 
-                "/assets/world1/popup-years/2001-YEAR.webm"
+                "/assets/world2/popup-years/2011B-YEAR.webm", 
+                "/assets/world2/popup-years/2012-YEAR.webm"
             ],
             photos: [
                 "/assets/world1/popup-photos/2000/2000.png", 
