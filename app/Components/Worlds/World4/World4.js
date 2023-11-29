@@ -178,7 +178,8 @@ const World4 = () => {
                 "bg": "/assets/world4/popup/2023B-MAIN.webm",
                 "year": "/assets/world4/popup-years/2023B-YEAR.webm",
                 "photos": [
-                  "/assets/world4/popup-photos/2023B/2023B.png"
+                  "/assets/world4/popup-photos/2023B/2023B_1.png",
+                  "/assets/world4/popup-photos/2023B/2023B_2.png"
                 ],
                 "contents": {
                   "en": en["2023B"],
