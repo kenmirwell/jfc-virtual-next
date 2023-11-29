@@ -712,6 +712,7 @@ const World = ({
             <Background background={background} />
             <Flats flats={flats} title={title} year={year} color={color} />
             <Prompt
+                world={ world }
                 audioEnding={audioEnding}
                 showJoy={showJoy}
                 flow={flow}
