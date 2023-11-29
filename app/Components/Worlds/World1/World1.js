@@ -218,7 +218,7 @@ const World1 = () => {
     <World
       world={1}
       title='Humble Beginnings'
-      year='1979-2003'
+      year='1978-2003'
       // model="/assets/world1/World1.glb"
       model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1?t=2023-11-24T15%3A31%3A05.189Z'
       background='/assets/world1/bg.mp4'
