@@ -735,6 +735,10 @@ const World = ({
     setPlayed(false);
   }, [objSelected]);
 
+  useEffect(() => {
+    console.log(contents[objSelected]);
+  }, [contents[objSelected]]);
+
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <div
@@ -890,7 +894,7 @@ const World = ({
                               }
                               key={`title-${i}`}
                             >
-                              <h4>{title}</h4>
+                              <h4 className='text-2xl'> {title}</h4>
                             </div>
                           ))}
 
@@ -899,7 +903,7 @@ const World = ({
                           .filter((desc, i) => activeVideo === i)
                           .map((desc, i) => (
                             <div
-                              className='desc-container top-[200px] pr-[80px]'
+                              className='desc-container top-[200px] pr-[80px] text-xl'
                               key={`desc-${i}`}
                               dangerouslySetInnerHTML={{ __html: desc }}
                             />

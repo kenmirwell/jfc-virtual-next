@@ -91,6 +91,7 @@ const World1 = () => {
 
   let contents = {
     Empty005: {
+      audio: ["JFC_VO_W1_MS1"],
       year: ["1978", "1979"],
       title: [
         "Jolibee Food Corporation is born",
@@ -100,7 +101,6 @@ const World1 = () => {
         `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand: Jolibee. The first-ever Jolibee store is located in Quezon, Cubao.</p>`,
         `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`,
       ],
-      audio: "JFC_VO_W1_MS1",
       popup: [
         "/assets/world1/popup/1978-MAIN.webm",
         "/assets/world1/popup/1979-MAIN.webm",
@@ -122,7 +122,7 @@ const World1 = () => {
       description: [
         `<p>The iconic Jollibee mascot, then named “Jolly Bee” is introduced for the first time at the Virra Mall store opening. The second Jollibee mascot, Mr. YUM, would be introduced next year.</p>`,
       ],
-      audio: "JFC_VO_W1_MS2",
+      audio: ["JFC_VO_W1_MS2"],
       popup: ["/assets/world1/popup/1980-MAIN.webm"],
       popupYears: ["/assets/world1/popup-years/1980-YEAR.webm"],
       photos: ["/assets/world1/popup-photos/1980/1980.png"],
@@ -130,7 +130,7 @@ const World1 = () => {
       post: ["left-[17%]"],
     },
     Empty003: {
-      audio: "JFC_VO_W1_MS3",
+      audio: ["JFC_VO_W1_MS3"],
       year: ["1984", "1990", "1993"],
       title: [
         "Reaching International Markets",
@@ -161,7 +161,7 @@ const World1 = () => {
       post: ["left-[8%]", "left-[18%]", "left-[27%]"],
     },
     Empty001: {
-      audio: "JFC_VO_W1_MS4",
+      audio: ["JFC_VO_W1_MS4"],
       year: ["1994", "1998"],
       title: [
         "Greenwich: The Philippines’ #1 Pizza Chain",
@@ -187,7 +187,7 @@ const World1 = () => {
       post: ["left-[13%]", "left-[25%]"],
     },
     Empty002: {
-      audio: "JFC_VO_W1_MS5",
+      audio: ["JFC_VO_W1_MS5"],
       year: ["2000", "2001"],
       title: [
         "Chowking: The Philippines’ Chinese Quick Serving Restaurant",
