@@ -104,6 +104,7 @@ const World2 = () => {
 
     let contents = {
         "FlagMain": {
+            audio: ["/assets/world2/audio/JFC_VO_W2_MS1.wav"],
             year: [
                 "1978",
                 "1979"
@@ -115,9 +116,6 @@ const World2 = () => {
             description: [
                 `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand: Jolibee. The first-ever Jolibee store is located in Quezon, Cubao.</p>`,
                 `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`
-            ],
-            audio: [
-                
             ],
             popup: [
                 "/assets/world1/popup/1978-MAIN.webm", 
@@ -142,6 +140,7 @@ const World2 = () => {
             
         },
         "CakeBldg001": {
+            audio: ["/assets/world2/audio/JFC_VO_W2_MS2.wav"],
             year: [
                 "1980"
             ],
@@ -168,6 +167,7 @@ const World2 = () => {
             ]
         },
         "BananaLeaf": {
+            audio: ["/assets/world2/audio/JFC_VO_W2_MS2B.wav"],
             year: [
                 "1984", 
                 "1990", 
@@ -210,6 +210,7 @@ const World2 = () => {
             ]
         },
         "Burger001": {
+            audio: ["/assets/world2/audio/JFC_VO_W2_MS3.wav"],
             year: [
                 "1994", "1998"
             ],
@@ -243,6 +244,7 @@ const World2 = () => {
             ],
         },
         "OnionLeaves": {
+            audio: ["/assets/world2/audio/JFC_VO_W2_MS4.wav"],
             year: [
                 "2000", 
                 "2001"

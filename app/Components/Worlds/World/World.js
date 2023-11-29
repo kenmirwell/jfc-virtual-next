@@ -769,9 +769,7 @@ const World = ({
                 ref={ref}
             >
             {objSelected && (
-                <source
-                src={`/assets/world1/audio/${contents[objSelected].audio}.wav`}
-                />
+                <source src={contents[objSelected].audio} />
             )}
             </audio>
         </div>
