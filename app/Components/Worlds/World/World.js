@@ -728,8 +728,11 @@ const World = ({
     );
   };
 
+  const [played, setPlayed] = useState(false);
+
   useEffect(() => {
     ref.current.load();
+    setPlayed(false);
   }, [objSelected]);
 
   return (
@@ -756,7 +759,14 @@ const World = ({
           onClickInteractables={onClickObject}
         />
         <Joy />
-        <audio className='hidden' controls ref={ref}>
+        <audio
+          onPause={() => setPlayed(true)}
+          onEnded={() => setPlayed(true)}
+          muted={played}
+          className='hidden'
+          controls
+          ref={ref}
+        >
           {objSelected && (
             <source
               src={`/assets/world1/audio/${contents[objSelected].audio}.wav`}
