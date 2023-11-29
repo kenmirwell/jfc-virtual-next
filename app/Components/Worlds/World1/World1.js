@@ -231,33 +231,8 @@ const World1 = () => {
                 }
             },
         }
+      }
     }
-
-    // Empty005: {
-    //   textPost: ["left-[11%]", "left-[24%]"],
-    //   post: ["left-[13%]", "left-[25%]"],
-    // },
-
-    // Empty004: {
-    //   textPost: ["left-[15%]"],
-    //   post: ["left-[17%]"],
-    // },
-    
-    // Empty003: {
-    //   textPost: ["left-[6%]", "left-[16%]", "left-[25%]"],
-    //   post: ["left-[8%]", "left-[18%]", "left-[27%]"],
-    // },
-
-    // Empty001: {
-    //   textPost: ["left-[11%]", "left-[24%]"],
-    //   post: ["left-[13%]", "left-[25%]"],
-    // },
-
-    // Empty002: {
-    //   textPost: ["left-[11%]", "left-[24%]"],
-    //   post: ["left-[13%]", "left-[25%]"],
-    // },
-//   };
 
     return (
         <World
