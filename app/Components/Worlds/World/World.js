@@ -289,7 +289,6 @@ const World = ({
       });
 
       for (const [i, obj] of trees.entries()) {
-        console.log(obj);
         gsap.timeline().to(obj.rotation, 3, {
           z: obj.rotation.z + 0.3,
           ease: Power3.easeInOut,
