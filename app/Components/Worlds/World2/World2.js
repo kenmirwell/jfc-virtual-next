@@ -1,4 +1,7 @@
 import World from "../World/World";
+import { en } from "./en";
+import { vi } from "./vi";
+import { ch } from "./ch";
 
 const World2 = () => {
     let flow = [
