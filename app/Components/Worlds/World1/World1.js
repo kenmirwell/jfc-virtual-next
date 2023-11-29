@@ -161,7 +161,7 @@ const World1 = () => {
       post: ["left-[8%]", "left-[18%]", "left-[27%]"],
     },
     Empty001: {
-      audio: ["JFC_VO_W1_MS4"],
+      audio: ["JFC_VO_W1_MS4", "JFC_VO_W1_MS4B"],
       year: ["1994", "1998"],
       title: [
         "Greenwich: The Philippines’ #1 Pizza Chain",
@@ -187,7 +187,7 @@ const World1 = () => {
       post: ["left-[13%]", "left-[25%]"],
     },
     Empty002: {
-      audio: ["JFC_VO_W1_MS5"],
+      audio: ["JFC_VO_W1_MS5", "JFC_VO_W1_MS5B"],
       year: ["2000", "2001"],
       title: [
         "Chowking: The Philippines’ Chinese Quick Serving Restaurant",
