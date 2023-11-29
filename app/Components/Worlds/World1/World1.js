@@ -122,6 +122,7 @@ const World1 = () => {
       description: [
         `<p>The iconic Jollibee mascot, then named “Jolly Bee” is introduced for the first time at the Virra Mall store opening. The second Jollibee mascot, Mr. YUM, would be introduced next year.</p>`,
       ],
+      audio: "JFC_VO_W1_MS2",
       popup: ["/assets/world1/popup/1980-MAIN.webm"],
       popupYears: ["/assets/world1/popup-years/1980-YEAR.webm"],
       photos: ["/assets/world1/popup-photos/1980/1980.png"],
@@ -129,6 +130,7 @@ const World1 = () => {
       post: ["left-[17%]"],
     },
     Empty003: {
+      audio: "JFC_VO_W1_MS3",
       year: ["1984", "1990", "1993"],
       title: [
         "Reaching International Markets",
@@ -159,6 +161,7 @@ const World1 = () => {
       post: ["left-[8%]", "left-[18%]", "left-[27%]"],
     },
     Empty001: {
+      audio: "JFC_VO_W1_MS4",
       year: ["1994", "1998"],
       title: [
         "Greenwich: The Philippines’ #1 Pizza Chain",
@@ -184,6 +187,7 @@ const World1 = () => {
       post: ["left-[13%]", "left-[25%]"],
     },
     Empty002: {
+      audio: "JFC_VO_W1_MS5",
       year: ["2000", "2001"],
       title: [
         "Chowking: The Philippines’ Chinese Quick Serving Restaurant",
