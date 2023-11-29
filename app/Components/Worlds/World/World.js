@@ -687,11 +687,12 @@ const World = ({
   const onNext = (popupCount) => {
     if (activeVideo < popupCount - 1) {
       setActiveVideo(activeVideo + 1);
-
-      //   if (ref.current) {
-      //     // ref.current.load()
-      //     // setAudio(true)
-      //   }
+      if (contents[objSelected]?.audio.length > 1) {
+        setPlayed(false);
+        setAudioIndex((prev) => prev + 1);
+        ref.current.load();
+        ref.current.play();
+      }
     } else {
       return null;
     }
@@ -728,12 +729,14 @@ const World = ({
     );
   };
 
+  const [audioIndex, setAudioIndex] = useState(0);
   const [played, setPlayed] = useState(false);
 
   useEffect(() => {
     ref.current.load();
+    ref.current.play();
     setPlayed(false);
-  }, [objSelected]);
+  }, [objSelected, audioIndex]);
 
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
@@ -769,7 +772,7 @@ const World = ({
         >
           {objSelected && (
             <source
-              src={`/assets/world1/audio/${contents[objSelected].audio}.wav`}
+              src={`/assets/world1/audio/${contents[objSelected].audio[audioIndex]}.wav`}
             />
           )}
         </audio>
@@ -934,12 +937,6 @@ const World = ({
                         />
                       </button>
                     )}
-
-                    {/* {objSelected && contents[objSelected].year.length > 1 &&
-                                            <button className={`arrow-right ${activeVideo < (contents[objSelected].year.length - 1) ? "" : "opacity-50"}`} onClick={ () => onNext(contents[objSelected].year.length) }>
-                                                <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
-                                            </button>
-                                        } */}
 
                     {objSelected && (
                       <button
