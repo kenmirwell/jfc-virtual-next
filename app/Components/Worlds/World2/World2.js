@@ -152,22 +152,6 @@ const World2 = () => {
         },
 
         "BananaLeaf": {
-            "2008": {
-                "audio": "/assets/world2/audio/JFC_VO_W2_MS3.wav",
-                "bg": "/assets/world2/popup/2008-MAIN.webm",
-                "year": "/assets/world2/popup-years/2008-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1978/1978_1.png"
-                ],
-                "contents": {
-                    "en": en["2008"],
-                    "ch": ch["2008"],
-                    "vi": vi["2008"]
-                }
-            },
-        },
-
-        "Burger001": {
             "2010": {
                 "audio": "/assets/world2/audio/JFC_VO_W2_MS4.wav",
                 "bg": "/assets/world2/popup/2010-MAIN.webm",
@@ -193,10 +177,10 @@ const World2 = () => {
                     "ch": ch["2011A"],
                     "vi": vi["2011A"]
                 }
-            },
+            }
         },
-        
-        "OnionLeaves": {
+
+        "Burger001": {
             "2011": {
                 "audio": "/assets/world2/audio/JFC_VO_W2_MS5.wav",
                 "bg": "/assets/world2/popup/2011B-MAIN.webm",
@@ -221,13 +205,30 @@ const World2 = () => {
                     "ch": ch["2012"],
                     "vi": vi["2012"]
                 }
-            },
+            }
+        },
+        
+        "OnionLeaves": {
+            "2008": {
+                "audio": "/assets/world2/audio/JFC_VO_W2_MS3.wav",
+                "bg": "/assets/world2/popup/2008-MAIN.webm",
+                "year": "/assets/world2/popup-years/2008-YEAR.webm",
+                "photos": [
+                    "/assets/world1/popup-photos/1978/1978_1.png"
+                ],
+                "contents": {
+                    "en": en["2008"],
+                    "ch": ch["2008"],
+                    "vi": vi["2008"]
+                }
+            }
         },
     };
 
     return (
         <World 
             world={2}
+            audioEnding={'/assets/world2/audio/JFC_VO_W2_GAME2.wav'}
             title="Dreaming Bigger"
             year="2004-2012"
             color="#c79c1e"
