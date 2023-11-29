@@ -93,141 +93,141 @@ const World1 = () => {
     ];
 
     let contents = {
-        "EMPTY005": {
-            audio: "JFC_VO_W1_MS1",
-            "1978": {
-                "bg": "/assets/world1/popup/1978-MAIN.webm",
-                "year": "/assets/world1/popup-years/1978-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1978/1978_1.png"
-                ],
-                "contents": {
-                    "en": en["1978"],
-                    "ch": ch["1978"],
-                    "vi": vi["1978"]
-                }
-            },
-            "1979": {
-                "bg": "/assets/world1/popup/1979-MAIN.webm",
-                "year": "/assets/world1/popup-years/1979-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1979/1979.png"
-                ],
-                "contents": {
-                    "en": en["1979"],
-                    "ch": ch["1979"],
-                    "vi": vi["1979"]
-                }
+      "EMPTY005": {
+        audio: "JFC_VO_W1_MS1",
+        "1978": {
+            "bg": "/assets/world1/popup/1978-MAIN.webm",
+            "year": "/assets/world1/popup-years/1978-YEAR.webm",
+            "photos": [
+              "/assets/world1/popup-photos/1978/1978_1.png"
+            ],
+            "contents": {
+              "en": en["1978"],
+              "ch": ch["1978"],
+              "vi": vi["1978"]
             }
         },
-        "EMPTY004": {
-            audio: "JFC_VO_W1_MS2",
-            "1980": {
-                "bg": "/assets/world1/popup/1980-MAIN.webm",
-                "year": "/assets/world1/popup-years/1980-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1980/1980.png"
-                ],
-                "contents": {
-                    "en": en["1980"],
-                    "ch": ch["1980"],
-                    "vi": vi["1980"]
-                }
-            }
-        },
-        "EMPTY003": {
-            audio: "JFC_VO_W1_MS3",
-            "1984": {
-                "bg": "/assets/world1/popup/1984-MAIN.webm",
-                "year": "/assets/world1/popup-years/1984-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1984/1984.png"
-                ],
-                "contents": {
-                    "en": en["1984"],
-                    "ch": ch["1984"],
-                    "vi": vi["1984"]
-                }
-            },
-            "1990": {
-                "bg": "/assets/world1/popup/1990-MAIN.webm",
-                "year": "/assets/world1/popup-years/1990-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1990/1990.png"
-                ],
-                "contents": {
-                    "en": en["1990"],
-                    "ch": ch["1990"],
-                    "vi": vi["1990"]
-                }
-            },
-            "1993": {
-                "bg": "/assets/world1/popup/1993-MAIN.webm",
-                "year": "/assets/world1/popup-years/1993-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1993/1993.png"
-                ],
-                "contents": {
-                    "en": en["1993"],
-                    "ch": ch["1993"],
-                    "vi": vi["1993"]
-                }
-            }
-        },
-        "EMPTY001": {
-            audio: ["JFC_VO_W1_MS4"],
-            "1994": {
-                "bg": "/assets/world1/popup/1994-MAIN.webm",
-                "year": "/assets/world1/popup-years/1994-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1994/1994.png"
-                ],
-                "contents": {
-                    "en": en["1994"],
-                    "ch": ch["1994"],
-                    "vi": vi["1994"]
-                }
-            },
-            "1998": {
-                "bg": "/assets/world1/popup/1998-MAIN.webm",
-                "year": "/assets/world1/popup-years/1998-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/1998/1998.png"
-                ],
-                "contents": {
-                    "en": en["1998"],
-                    "ch": ch["1998"],
-                    "vi": vi["1998"]
-                }
-            },
-        },
-        "EMPTY002": {
-            audio: ["JFC_VO_W1_MS4"],
-            "2000": {
-                "bg": "/assets/world1/popup/2000-MAIN.webm",
-                "year": "/assets/world1/popup-years/2000-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/2000/2000.png"
-                ],
-                "contents": {
-                    "en": en["2000"],
-                    "ch": ch["2000"],
-                    "vi": vi["2000"]
-                }
-            },
-            "2001": {
-                "bg": "/assets/world1/popup/2001-MAIN.webm",
-                "year": "/assets/world1/popup-years/2001-YEAR.webm",
-                "photos": [
-                    "/assets/world1/popup-photos/2001/2001.png"
-                ],
-                "contents": {
-                    "en": en["2001"],
-                    "ch": ch["2001"],
-                    "vi": vi["2001"]
-                }
-            },
+        "1979": {
+          "bg": "/assets/world1/popup/1979-MAIN.webm",
+          "year": "/assets/world1/popup-years/1979-YEAR.webm",
+          "photos": [
+            "/assets/world1/popup-photos/1979/1979.png"
+          ],
+          "contents": {
+            "en": en["1979"],
+            "ch": ch["1979"],
+            "vi": vi["1979"]
+          }
         }
+      },
+      "EMPTY004": {
+        audio: "JFC_VO_W1_MS2",
+        "1980": {
+          "bg": "/assets/world1/popup/1980-MAIN.webm",
+          "year": "/assets/world1/popup-years/1980-YEAR.webm",
+          "photos": [
+            "/assets/world1/popup-photos/1980/1980.png"
+          ],
+          "contents": {
+            "en": en["1980"],
+            "ch": ch["1980"],
+            "vi": vi["1980"]
+          }
+        }
+      },
+      "EMPTY003": {
+        audio: "JFC_VO_W1_MS3",
+        "1984": {
+            "bg": "/assets/world1/popup/1984-MAIN.webm",
+            "year": "/assets/world1/popup-years/1984-YEAR.webm",
+            "photos": [
+                "/assets/world1/popup-photos/1984/1984.png"
+            ],
+            "contents": {
+                "en": en["1984"],
+                "ch": ch["1984"],
+                "vi": vi["1984"]
+            }
+        },
+        "1990": {
+            "bg": "/assets/world1/popup/1990-MAIN.webm",
+            "year": "/assets/world1/popup-years/1990-YEAR.webm",
+            "photos": [
+                "/assets/world1/popup-photos/1990/1990.png"
+            ],
+            "contents": {
+                "en": en["1990"],
+                "ch": ch["1990"],
+                "vi": vi["1990"]
+            }
+        },
+        "1993": {
+          "bg": "/assets/world1/popup/1993-MAIN.webm",
+          "year": "/assets/world1/popup-years/1993-YEAR.webm",
+          "photos": [
+            "/assets/world1/popup-photos/1993/1993.png"
+          ],
+          "contents": {
+            "en": en["1993"],
+            "ch": ch["1993"],
+            "vi": vi["1993"]
+          }
+        }
+      },
+      "EMPTY001": {
+        audio: ["JFC_VO_W1_MS4"],
+        "1994": {
+            "bg": "/assets/world1/popup/1994-MAIN.webm",
+            "year": "/assets/world1/popup-years/1994-YEAR.webm",
+            "photos": [
+                "/assets/world1/popup-photos/1994/1994.png"
+            ],
+            "contents": {
+                "en": en["1994"],
+                "ch": ch["1994"],
+                "vi": vi["1994"]
+            }
+        },
+        "1998": {
+          "bg": "/assets/world1/popup/1998-MAIN.webm",
+          "year": "/assets/world1/popup-years/1998-YEAR.webm",
+          "photos": [
+            "/assets/world1/popup-photos/1998/1998.png"
+          ],
+          "contents": {
+            "en": en["1998"],
+            "ch": ch["1998"],
+            "vi": vi["1998"]
+          }
+        },
+      },
+      "EMPTY002": {
+        audio: ["JFC_VO_W1_MS4"],
+        "2000": {
+          "bg": "/assets/world1/popup/2000-MAIN.webm",
+          "year": "/assets/world1/popup-years/2000-YEAR.webm",
+          "photos": [
+            "/assets/world1/popup-photos/2000/2000.png"
+          ],
+          "contents": {
+            "en": en["2000"],
+            "ch": ch["2000"],
+            "vi": vi["2000"]
+          }
+        },
+        "2001": {
+          "bg": "/assets/world1/popup/2001-MAIN.webm",
+          "year": "/assets/world1/popup-years/2001-YEAR.webm",
+          "photos": [
+            "/assets/world1/popup-photos/2001/2001.png"
+          ],
+          "contents": {
+            "en": en["2001"],
+            "ch": ch["2001"],
+            "vi": vi["2001"]
+          }
+        },
+      }
     }
 
     // Empty005: {
