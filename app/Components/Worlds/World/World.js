@@ -735,10 +735,6 @@ const World = ({
     setPlayed(false);
   }, [objSelected]);
 
-  useEffect(() => {
-    console.log(contents[objSelected]);
-  }, [contents[objSelected]]);
-
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <div
