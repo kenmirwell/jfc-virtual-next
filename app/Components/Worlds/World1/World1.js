@@ -95,10 +95,12 @@ const World1 = () => {
     let contents = {
         "Empty005": {
             "1978": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS1.wav",
                 "bg": "/assets/world1/popup/1978-MAIN.webm",
                 "year": "/assets/world1/popup-years/1978-YEAR.webm",
                 "photos": [
-                    "/assets/world1/popup-photos/1978/1978_1.png"
+                    "/assets/world1/popup-photos/1978/1978_1.png",
+                    "/assets/world1/popup-photos/1978/1978_2.png"
                 ],
                 "contents": {
                     "en": en["1978"],
@@ -121,6 +123,7 @@ const World1 = () => {
         },
         "Empty004": {
             "1980": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS2.wav",
                 "bg": "/assets/world1/popup/1980-MAIN.webm",
                 "year": "/assets/world1/popup-years/1980-YEAR.webm",
                 "photos": [
@@ -135,6 +138,7 @@ const World1 = () => {
         },
         "Empty003": {
             "1984": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS3.wav",
                 "bg": "/assets/world1/popup/1984-MAIN.webm",
                 "year": "/assets/world1/popup-years/1984-YEAR.webm",
                 "photos": [
@@ -173,6 +177,7 @@ const World1 = () => {
         },
         "Empty001": {
             "1994": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS4.wav",
                 "bg": "/assets/world1/popup/1994-MAIN.webm",
                 "year": "/assets/world1/popup-years/1994-YEAR.webm",
                 "photos": [
@@ -185,6 +190,7 @@ const World1 = () => {
                 }
             },
             "1998": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS4B.wav",
                 "bg": "/assets/world1/popup/1998-MAIN.webm",
                 "year": "/assets/world1/popup-years/1998-YEAR.webm",
                 "photos": [
@@ -199,6 +205,7 @@ const World1 = () => {
         },
         "Empty002": {
             "2000": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS5.wav",
                 "bg": "/assets/world1/popup/2000-MAIN.webm",
                 "year": "/assets/world1/popup-years/2000-YEAR.webm",
                 "photos": [
@@ -211,6 +218,7 @@ const World1 = () => {
                 }
             },
             "2001": {
+                "audio": "/assets/world1/audio/JFC_VO_W1_MS5B.wav",
                 "bg": "/assets/world1/popup/2001-MAIN.webm",
                 "year": "/assets/world1/popup-years/2001-YEAR.webm",
                 "photos": [

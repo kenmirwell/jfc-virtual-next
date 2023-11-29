@@ -43,7 +43,6 @@
   left: 50%;
   position: absolute;
   top: 50%;
-  max-width: 1400px;
   width: 100%;
   overflow: hidden;
   transform: translate(-50%, -50%);
@@ -75,11 +74,11 @@
 }
 
 .dashline {
-  height: 2px;
+  height: 1px;
   width: 95%;
   margin: 0 auto;
   margin-top: -11px;
-  border: 2px dashed #ffffff;
+  border-top: 1px dashed #ffffff;
 }
 
 .red-white-container {
@@ -159,13 +158,13 @@
     justify-content: center;
 
     img {
-      width: 50%;
+    //   width: 50%;
     }
   }
 }
 
 .year-text {
-  font-size: 25px;
+  font-size: 30px;
   color: #ffffff;
   filter: drop-shadow(3px 1px 9px rgb(214, 154, 99));
 
@@ -208,8 +207,8 @@
 }
 
 .text-container {
-  max-height: 350px;
-  overflow-y: scroll;
+//   max-height: 350px;
+//   overflow-y: scroll;
 }
 
 .text-container::-webkit-scrollbar {

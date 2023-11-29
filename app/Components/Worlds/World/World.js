@@ -630,14 +630,6 @@ const World = ({
       zoom: 1,
       onUpdate: function () {
         components.camera.updateProjectionMatrix();
-
-        if (audio) {
-          if (ref.current) {
-            ref.current.pause();
-            ref.current.currentTime = 0;
-            setAudio(false);
-          }
-        }
       },
       ease: Power3.easeInOut,
     });
@@ -675,22 +667,6 @@ const World = ({
     components.renderer.setSize(window.innerWidth, window.innerHeight);
   };
 
-  const audioClick = () => {
-    if (audio) {
-      setAudio(false);
-
-      if (ref.current) {
-        ref.current.pause();
-      }
-    } else {
-      setAudio(true);
-
-      if (ref.current) {
-        ref.current.play();
-      }
-    }
-  };
-
     const onNext = () => {
         setActiveVideo(activeVideo + 1);
     };
@@ -706,15 +682,15 @@ const World = ({
   const handleStartVideo = () => {
     setVideoPlayed(true);
 
-    if (ref.current) {
-      ref.current.play();
-    }
+    // if (ref.current) {
+    //   ref.current.play();
+    // }
   };
 
   const [played, setPlayed] = useState(false);
 
   useEffect(() => {
-    ref.current.load();
+    // ref.current.load();
     setPlayed(false);
     console.log(objSelected)
   }, [objSelected]);
@@ -741,22 +717,9 @@ const World = ({
                 onClickInteractables={onClickObject}
             />
             <Joy />
-            <audio
-                onPause={() => setPlayed(true)}
-                onEnded={() => setPlayed(true)}
-                muted={played}
-                className='hidden'
-                controls
-                ref={ref}
-            >
-            {objSelected && (
-                <source src={contents[objSelected]?.audio} />
-            )}
-            </audio>
         </div>
         {world === 1 || world == 3 || world === 5 ? (
             <PopupsA
-                audioClick={ audioClick }
                 objSelected={ objSelected }
                 contents={ contents }
                 onClickwhiteButton={ onClickwhiteButton }
@@ -771,7 +734,6 @@ const World = ({
             /> 
         ) : (
             <PopupsB
-                audioClick={() => audioClick()}
                 objSelected={objSelected}
                 contents={contents}
                 onClickwhiteButton={() => onClickwhiteButton()}
