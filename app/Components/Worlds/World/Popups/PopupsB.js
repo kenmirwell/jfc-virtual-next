@@ -8,8 +8,6 @@ const PopupsB = (props) => {
     const onDeselect = props.onDeselect
     const videoPlayed = props.videoPlayed
     const activeVideo = props.activeVideo;
-
-    console.log("videPlayed", videoPlayed)
     
     const onClickwhiteButton = () => {
         props.onClickwhiteButton
@@ -45,7 +43,7 @@ const PopupsB = (props) => {
                     <div className="details-modal-content absolute flex h-[85%] w-[90%]">
                         {videoPlayed && 
                             <>
-                                <div className="left-content w-[40%] flex flex-col justify-between">
+                                <div className="right-content w-[60%] flex flex-col justify-between">
                                     {audio ?
                                         <button className="audio-button" onClick={ audioClick }>
                                             <img src="/assets/world1/popup-icons/audio-icon.svg" width="100" />
@@ -54,28 +52,6 @@ const PopupsB = (props) => {
                                             <img src="/assets/world1/popup-icons/audio-mute.svg" width="100" />
                                         </button>
                                      }
-                                    <div className="button-rw-container w-[50%] ml-[15%] mb-[5%]">
-                                        <div className={`rw-content-container flex ${(objSelected && contents[objSelected].year.length > 1) ? "justify-between" : "justify-around"}`}>
-                                            {objSelected && contents[objSelected].year.map((item, i) => (
-                                                <button key={`red-white-${i}`} className={`red-white-container bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
-                                                    {props.activeVideo === i ? 
-                                                    <div className="red-button-container relative">
-                                                        <p className={"active year-text absolute top-[-55px] left-[-26px]"}>{item}</p>
-                                                        <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
-                                                        <div className="red-button" />
-                                                    </div> :
-                                                    <div className="white-button-container relative">
-                                                        <p className={"year-text absolute top-[-45px] left-[-15px]"}>{item}</p>
-                                                        <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
-                                                    </div>}
-                                                </button>
-                                            ))}
-                                        </div>
-                                        {objSelected && contents[objSelected].year.length > 1 && <div className="dashline"/>}
-                                    </div>
-                                </div>
-
-                                <div className="right-content w-[60%] flex flex-col justify-between">
                                     <div>
                                         <div className={`exit-button flex justify-end ${contents[objSelected].year.filter((yr, i) => activeVideo === i)[0] === "2001" && "active" }`}>
                                             <img onClick={ onDeselect } src="/assets/world1/popup-icons/exit.svg" width="50" />
@@ -123,10 +99,31 @@ const PopupsB = (props) => {
                                         } */}
 
                                         {objSelected &&
-                                            <button className={`arrow-right`} onClick={activeVideo < (contents[objSelected].year.length - 1) ? () => onNext(contents[objSelected].year.length) : onDeselect}>
+                                            <button className={`arrow-right`} onClick={activeVideo < (contents[objSelected].year.length - 1) ? () => props.onNext(contents[objSelected].year.length) : onDeselect}>
                                                 <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
                                             </button>
                                         }
+                                    </div>
+                                </div>
+                                <div className="left-content w-[40%]">
+                                    <div className="button-rw-container w-[50%] ml-[15%] mb-[5%]">
+                                        <div className={`rw-content-container flex ${(objSelected && contents[objSelected].year.length > 1) ? "justify-between" : "justify-around"}`}>
+                                            {objSelected && contents[objSelected].year.map((item, i) => (
+                                                <button key={`red-white-${i}`} className={`red-white-container bottom-[70px] ${contents[objSelected].post[i]}`} onClick={() => onClickwhiteButton(i)}>
+                                                    {props.activeVideo === i ? 
+                                                    <div className="red-button-container relative">
+                                                        <p className={"active year-text absolute top-[-55px] left-[-26px]"}>{item}</p>
+                                                        <img src="/assets/world1/popup-icons/circle-red.svg" width="20" />
+                                                        <div className="red-button" />
+                                                    </div> :
+                                                    <div className="white-button-container relative">
+                                                        <p className={"year-text absolute top-[-45px] left-[-15px]"}>{item}</p>
+                                                        <img src="/assets/world1/popup-icons/circle-white.svg" width="20" />
+                                                    </div>}
+                                                </button>
+                                            ))}
+                                        </div>
+                                        {objSelected && contents[objSelected].year.length > 1 && <div className="dashline"/>}
                                     </div>
                                 </div>
                             </>

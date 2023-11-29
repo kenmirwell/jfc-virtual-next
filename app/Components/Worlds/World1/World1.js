@@ -130,7 +130,7 @@ const World1 = () => {
       post: ["left-[17%]"],
     },
     Empty003: {
-      audio: ["JFC_VO_W1_MS3"],
+      audio: ["assets/world1/audio/JFC_VO_W1_MS3.wav"],
       year: ["1984", "1990", "1993"],
       title: [
         "Reaching International Markets",

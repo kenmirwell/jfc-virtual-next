@@ -700,9 +700,12 @@ const World = ({
     }
   };
 
-  const onPrev = () => {
+  const onPrev = (data) => {
+    console.log("data", data)
     if (activeVideo > 0) {
       setActiveVideo(activeVideo - 1);
+
+      console.log('trigger')
 
       //   if (ref.current) {
       //     ref.current.load();
@@ -783,8 +786,8 @@ const World = ({
                 onClickwhiteButton={() => onClickwhiteButton()}
                 activeVideo={activeVideo}
                 audio={audio}
-                onPrev={() => onPrev()}
-                onNext={() => onNext()}
+                onPrev={(e) => onPrev(e)}
+                onNext={(e) => onNext(e)}
                 handleStartVideo={handleStartVideo}
                 onDeselect={() => onDeselect()}
                 onClickObject={() => onClickObject()}
@@ -797,8 +800,8 @@ const World = ({
                 onClickwhiteButton={() => onClickwhiteButton()}
                 activeVideo={activeVideo}
                 audio={audio}
-                onPrev={() => onPrev()}
-                onNext={() => onNext()}
+                onPrev={(e) => onPrev(e)}
+                onNext={(e) => onNext(e)}
                 handleStartVideo={handleStartVideo}
                 onDeselect={() => onDeselect()}
                 onClickObject={() => onClickObject()}
