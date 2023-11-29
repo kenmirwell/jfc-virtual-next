@@ -15,7 +15,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import Joy from "./Joy/Joy";
 import PopupsA from "./Popups/PopupsA";
 import PopupsB from "./Popups/PopupsB";
-import { setCookie } from "cookies-next";
+import { getCookie, setCookie } from "cookies-next";
 
 let hovered = null;
 let disableFunctionality = false;
@@ -123,7 +123,9 @@ const World = ({
 
     /* @TODO: Handle translation for cookie */
     useEffect(() => {
-        setCookie("lang", "en");
+        if( !getCookie("lang") ) {
+            setCookie("lang", "en");
+        }
     }, []);
 
   /* Initialize Scene */

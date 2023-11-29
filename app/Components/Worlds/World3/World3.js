@@ -107,8 +107,8 @@ const World3 = () => {
 
     let contents = {
         "HandBulb": {
-            audio: "JFC_VO_W3_MS1",
             "2013": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS1.wav",
                 "bg": "/assets/world3/popup/2013-MAIN.webm",
                 "year": "/assets/world3/popup-years/2013-YEAR.webm",
                 "photos": [
@@ -123,8 +123,8 @@ const World3 = () => {
         },
 
         "JFCGold": {
-            audio: "JFC_VO_W3_MS2",
             "2014": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS2.wav",
                 "bg": "/assets/world3/popup/2014-MAIN.webm",
                 "year": "/assets/world3/popup-years/2014-YEAR.webm",
                 "photos": [
@@ -139,8 +139,8 @@ const World3 = () => {
         },
         
         "Burger": {
-            audio: "JFC_VO_W3_MS3",
             "2015": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS3.wav",
                 "bg": "/assets/world3/popup/2015-MAIN.webm",
                 "year": "/assets/world3/popup-years/2015-YEAR.webm",
                 "photos": [
@@ -153,6 +153,7 @@ const World3 = () => {
                 }
             },
             "2017": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS3b.wav",
                 "bg": "/assets/world3/popup/2017-MAIN.webm",
                 "year": "/assets/world3/popup-years/2017-YEAR.webm",
                 "photos": [
@@ -167,8 +168,8 @@ const World3 = () => {
         },
         
         "Dumplings": {
-            audio: "JFC_VO_W3_MS4",
             "2018": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS4.wav",
                 "bg": "/assets/world3/popup/2018-MAIN.webm",
                 "year": "/assets/world3/popup-years/2018-YEAR.webm",
                 "photos": [
@@ -184,8 +185,8 @@ const World3 = () => {
         },
 
         "CoffeeBeans": {
-            audio: "JFC_VO_W3_MS5",
             "2019": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS5.wav",
                 "bg": "/assets/world3/popup/2019-MAIN.webm",
                 "year": "/assets/world3/popup-years/2019-YEAR.webm",
                 "photos": [
@@ -197,7 +198,8 @@ const World3 = () => {
                   "vi": vi["2019"]
                 }
             },
-            "2020A": {
+            "2020": {
+                "audio": "/assets/world3/audio/JFC_VO_W3_MS5B.wav",
                 "bg": "/assets/world3/popup/2020A-MAIN.webm",
                 "year": "/assets/world3/popup-years/2020A-YEAR.webm",
                 "photos": [
@@ -215,11 +217,11 @@ const World3 = () => {
     return (
         <World 
             world={3}
+            audioEnding={'/assets/world2/audio/JFC_VO_W3_GAME3.wav'}
             title="Going Global"
             year="2013-2020"
             color="#06abcb"
             model="/assets/world3/world.glb"
-            // model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoLights-Plane%20(3).glb?t=2023-11-28T03%3A34%3A11.957Z"
             background="/assets/world3/bg.mp4"
             flats={{
                 logo: "/assets/world1/elements/logo.png",
