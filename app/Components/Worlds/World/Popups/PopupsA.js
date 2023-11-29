@@ -125,7 +125,7 @@ const PopupsA = (props) => {
                                         <div className="popup-image-container mt-[23px]">
                                             <div className="popup-image-single">
                                                 { curr.photos.map(img => (
-                                                    <div className="px-[5px]">
+                                                    <div key={`img_${img}`} className="px-[5px]">
                                                         <img src={img} width={300} className="md:!w-[180px]" /> 
                                                     </div>
                                                 ))}
