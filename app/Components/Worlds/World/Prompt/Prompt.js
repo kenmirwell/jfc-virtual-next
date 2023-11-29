@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, Power3 } from "gsap";
 
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+
 let timer;
 const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
   useEffect(() => {
@@ -42,6 +45,14 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
   };
 
   const soundRef = useRef(null);
+
+  const path = usePathname();
+
+  const getNextWorld = () => {
+    if (path === "/") return 2;
+    if (path.includes("world2")) return 3;
+    if (path.includes("world3")) return 4;
+  };
 
   return (
     <>
@@ -191,13 +202,19 @@ const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables }) => {
             )}
             {currentFlow.get.action === "END" && (
               <div>
-                <button className='bg-[#cf463f] text-white rounded-[50px] font-[700] text-[18px] px-[20px] mt-[5px]'>
-                  PLAY GAME
-                </button>
+                <a href='http://ec2-13-213-56-159.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'>
+                  <button className='bg-[#cf463f] text-white rounded-[50px] font-[700] text-[18px] px-[20px] mt-[5px]'>
+                    PLAY GAME
+                  </button>
+                </a>
                 <br></br>
-                <button className='lowercase text-[12px] tracking-[1.4px] text-black/50 font-[500]'>
-                  SKIP
-                </button>
+                <a
+                  href={`http://ec2-13-213-56-159.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
+                >
+                  <button className='lowercase text-[12px] tracking-[1.4px] text-black/50 font-[500]'>
+                    SKIP
+                  </button>
+                </a>
               </div>
             )}
           </div>
