@@ -73,8 +73,7 @@ const PopupsB = (props) => {
                                             ))}
                                         
                                             {objSelected && contents[objSelected].description.filter((desc, i) => activeVideo === i).map((desc, i) => (
-                                                // <div className="desc-container top-[200px] pr-[80px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
-                                                <></>
+                                                <div className="desc-container top-[200px] pr-[80px]" key={`desc-${i}`} dangerouslySetInnerHTML={{ __html: desc }} />
                                             ))}
                                         
                                             <div className="popup-image-container mt-[23px]">

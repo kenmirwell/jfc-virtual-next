@@ -86,10 +86,10 @@ const PopupsA = (props) => {
                                         <div className={"title-container top-[170px] right-[245px]"}>
                                             <h4>{ curr.title }</h4>
                                         </div>
-                                        {/* <div className="desc-container top-[200px] pr-[80px]" dangerouslySetInnerHTML={{ __html: curr.description }} /> */}
+                                        <div className="desc-container top-[200px] pr-[80px]" dangerouslySetInnerHTML={{ __html: curr.description }} />
                                         <div className="popup-image-container mt-[23px]">
                                             <div className="popup-image-single">
-                                                { curr.photos.map(img => <img src={img} /> )}
+                                                { curr.photos.map((img, i) => <img src={img} key={`img--${i}`} /> )}
                                             </div>
                                         </div>
                                     </div>
