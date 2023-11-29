@@ -753,7 +753,7 @@ const World = ({
         />
         <Joy />
         <audio className='hidden' controls ref={ref}>
-          {contents[objSelected] && (
+          {objSelected && (
             <source
               src={`/assets/world1/audio/${contents[objSelected].audio}.wav`}
             />
