@@ -108,7 +108,7 @@ const PopupsA = (props) => {
                                     </div>
                                     <div className="button-lr-container flex justify-end gap-5">
                                         {objSelected && contents[objSelected].year.length > 1 &&
-                                            <button className={`arrow-left ${props.activeVideo > 0 ? "" : "opacity-50"}`} onClick={ onPrev }>
+                                            <button className={`arrow-left ${props.activeVideo > 0 ? "" : "opacity-50"}`} onClick={ () => props.onPrev() }>
                                                 <img src="/assets/world1/popup-icons/arrow-left.svg" width="50" />
                                             </button>
                                         }
@@ -120,7 +120,7 @@ const PopupsA = (props) => {
                                         } */}
 
                                         {objSelected &&
-                                            <button className={`arrow-right`} onClick={props.activeVideo < (contents[objSelected].year.length - 1) ? () => onNext(contents[objSelected].year.length) : onDeselect}>
+                                            <button className={`arrow-right`} onClick={props.activeVideo < (contents[objSelected].year.length - 1) ? () => props.onNext(contents[objSelected].year.length) : onDeselect}>
                                                 <img src="/assets/world1/popup-icons/arrow-right.svg" width="50" />
                                             </button>
                                         }
