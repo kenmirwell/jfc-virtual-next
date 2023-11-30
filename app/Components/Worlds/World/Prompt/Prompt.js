@@ -78,7 +78,7 @@ const Prompt = ({
         className='hidden'
         controls
       >
-        <source src={`/assets/world1/audio/JFC_VO_W1_INTRO.wav`} />
+        <source src={`/assets/world1/audio/JFC_VO_W1_INTRO.mp3`} />
       </audio>
       {isEnd && (
         <audio autoPlay className='hidden' controls>
