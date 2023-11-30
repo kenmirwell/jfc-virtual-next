@@ -97,7 +97,7 @@ const World1 = () => {
       1978: {
         audio: "/assets/world1/audio/JFC_VO_W1_MS1.mp3",
         // bg: "/assets/world1/popup/1978-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm?t=2023-11-30T09%3A18%3A37.943Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978%20MAIN.webm?t=2023-11-30T09%3A19%3A31.082Z",
         year: "/assets/world1/popup-years/1978-YEAR.webm",
         photos: [
           "/assets/world1/popup-photos/1978/1978_1.png",
