@@ -12,7 +12,7 @@ const clouds = [
             y: 0,
         },
         svg: (
-            <img src="/assets/world1/clouds/cloud1.png" width="300" />
+            <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/clouds/CLOUD-ASSET-1.webp?t=2023-11-30T10%3A20%3A11.622Z" width="300" />
         )
     },
     {
@@ -23,7 +23,7 @@ const clouds = [
             y: -300,
         },
         svg: (
-            <img src="/assets/world1/clouds/cloud2.png" width="300" />
+            <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/clouds/CLOUD-ASSET-2.webp?t=2023-11-30T10%3A21%3A53.811Z" width="300" />
         )
     },
     {
@@ -34,7 +34,7 @@ const clouds = [
             y: 0,
         },
         svg: (
-            <img src="/assets/world1/clouds/cloud2.png" width="430" />
+            <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/clouds/CLOUD-ASSET-2.webp?t=2023-11-30T10%3A21%3A53.811Z" width="430" />
         )
     },
     {
@@ -45,7 +45,7 @@ const clouds = [
             y: -400,
         },
         svg: (
-            <img src="/assets/world1/clouds/cloud1.png" width="530" />
+            <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/clouds/CLOUD-ASSET-1.webp?t=2023-11-30T10%3A20%3A11.622Z" width="530" />
         )
     },
     {
@@ -56,7 +56,7 @@ const clouds = [
             y: 300,
         },
         svg: (
-            <img src="/assets/world1/clouds/cloud2.png" width="700" />
+            <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/clouds/CLOUD-ASSET-2.webp?t=2023-11-30T10%3A21%3A53.811Z" width="700" />
         )
     }
 ];

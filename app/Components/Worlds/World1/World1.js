@@ -239,9 +239,9 @@ const World1 = () => {
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world1/elements/chapter.svg",
         icons: [
-          "/assets/world1/elements/jfc.webp",
-          "/assets/world1/elements/jfc-gw.webp",
-          "/assets/world1/elements/jfc-gw-ck.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc.webp?t=2023-11-30T10%3A24%3A50.758Z",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw.webp?t=2023-11-30T10%3A25%3A08.400Z",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw-ck.webp?t=2023-11-30T09%3A18%3A16.091Z",
         ],
       }}
       contents={contents}
