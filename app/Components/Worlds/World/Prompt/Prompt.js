@@ -231,7 +231,9 @@ const Prompt = ({
                   ? handleClickHere
                   : null
               }
-              className={`${currentFlow.get.action} leading-[1.2] text-center ${
+              className={`${
+                currentFlow.get.action
+              } leading-[1.2] text-center "text-[#E23636]" ${
                 currentFlow.get.action === "START"
                   ? "text-[30px]"
                   : "text-[30px]"
@@ -256,7 +258,7 @@ const Prompt = ({
             {currentFlow.get.action === "GOTO" && (
               <button
                 onClick={handleClickHere}
-                className='bg-[#cf463f] text-white rounded-[50px] font-[700] text-[12px] px-[15px] mt-[5px]'
+                className='bg-[#E23636] text-white rounded-[50px] font-[700] text-[24px] px-8  mt-[5px]'
               >
                 CLICK HERE TO PROCEED
               </button>
