@@ -187,7 +187,7 @@ const World1 = () => {
       post: ["left-[13%]", "left-[25%]"],
     },
     Empty002: {
-      audio: ["JFC_VO_W1_MS5", "JFC_VO_W1_MS5B"],
+      audio: ["", "JFC_VO_W1_MS5", "JFC_VO_W1_MS5B"],
       year: ["2000", "2001"],
       title: [
         "Chowking: The Philippines’ Chinese Quick Serving Restaurant",
