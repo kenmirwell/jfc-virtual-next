@@ -45,6 +45,9 @@ const Prompt = ({
   };
 
   const handleClickHere = () => {
+    if (currentFlow.get.action === "START") {
+      return onProceed();
+    }
     onClickInteractables("BUTTON");
 
     // PAUSE AFTER AND NEVER PLAY AGAIN
