@@ -111,7 +111,7 @@ const World1 = () => {
       },
       1979: {
         // bg: "/assets/world1/popup/1979-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979-MAIN.webm?t=2023-11-30T11%3A06%3A07.487Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979-MAIN.webm?t=2023-11-30T18%3A40%3A36.740Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1979-YEAR.webm?t=2023-11-30T10%3A39%3A07.776Z",
         photos: ["/assets/world1/popup-photos/1979/1979.png"],
         contents: {
