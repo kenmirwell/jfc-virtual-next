@@ -121,12 +121,12 @@ const World = ({
     }
   }, []);
 
-    /* @TODO: Handle translation for cookie */
-    useEffect(() => {
-        if( !getCookie("lang") ) {
-            setCookie("lang", "en");
-        }
-    }, []);
+  /* @TODO: Handle translation for cookie */
+  useEffect(() => {
+    if (!getCookie("lang")) {
+      setCookie("lang", "en");
+    }
+  }, []);
 
   /* Initialize Scene */
   useEffect(() => {
@@ -350,6 +350,8 @@ const World = ({
 
   /* Apply click animation */
   useEffect(() => {
+    bgAudioRef.current.play();
+    bgAudioRef.current.volume = 0.05;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
 
@@ -516,7 +518,9 @@ const World = ({
   const onClickObject = (action) => {
     if (!disableFunctionality) {
       if (modelObjs) {
-        const target = modelObjs.children.find((c) => c.name === currentFlow.target);
+        const target = modelObjs.children.find(
+          (c) => c.name === currentFlow.target
+        );
         const joy = modelObjs.children.find((c) => c.name === currentFlow.joy);
 
         const onSelect = () => {
@@ -669,17 +673,17 @@ const World = ({
     components.renderer.setSize(window.innerWidth, window.innerHeight);
   };
 
-    const onNext = () => {
-        setActiveVideo(activeVideo + 1);
-    };
+  const onNext = () => {
+    setActiveVideo(activeVideo + 1);
+  };
 
-    const onPrev = () => {
-        if (activeVideo > 0) {
-            setActiveVideo(activeVideo - 1);
-        } else {
-            return null;
-        }
-    };
+  const onPrev = () => {
+    if (activeVideo > 0) {
+      setActiveVideo(activeVideo - 1);
+    } else {
+      return null;
+    }
+  };
 
   const handleStartVideo = () => {
     setVideoPlayed(true);
@@ -689,67 +693,77 @@ const World = ({
     // }
   };
 
-  const [played, setPlayed] = useState(false);
+  const bgAudioRef = useRef(null);
+  const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
   useEffect(() => {
-    // ref.current.load();
-    setPlayed(false);
-    console.log(objSelected)
+    if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
+    if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
   }, [objSelected]);
-
-  
-
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
-        <div id='world1' className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${ objSelected ? "blur-[50px]" : "" }`}>
-            <Clouds
-                title={title}
-                animate={initialAnimate}
-                delay={0.5}
-                color={color}
-            />
-            <Loader model3d={model3d} />
-            <Background background={background} />
-            <Flats flats={flats} title={title} year={year} color={color} />
-            <Prompt
-                world={ world }
-                audioEnding={audioEnding}
-                showJoy={showJoy}
-                flow={flow}
-                currentFlow={{ get: currentFlow, set: setCurrentFlow }}
-                onClickInteractables={onClickObject}
-            />
-            <Joy />
-        </div>
-        {world === 1 || world == 3 || world === 5 ? (
-            <PopupsA
-                objSelected={ objSelected }
-                contents={ contents }
-                onClickwhiteButton={ onClickwhiteButton }
-                activeVideo={ activeVideo }
-                audio={ audio }
-                onPrev={ onPrev }
-                onNext={ onNext }
-                handleStartVideo={ handleStartVideo }
-                onDeselect={ onDeselect }
-                onClickObject={ onClickObject }
-                videoPlayed={ videoPlayed }
-            /> 
-        ) : (
-            <PopupsB
-                objSelected={ objSelected }
-                contents={ contents }
-                onClickwhiteButton={ onClickwhiteButton }
-                activeVideo={ activeVideo }
-                audio={ audio }
-                onPrev={ onPrev }
-                onNext={ onNext }
-                handleStartVideo={ handleStartVideo }
-                onDeselect={ onDeselect }
-                onClickObject={ onClickObject }
-                videoPlayed={ videoPlayed }
-            /> 
-        )}
+      <audio ref={bgAudioRef}>
+        <source src='/assets/bgAudio.wav' />
+      </audio>
+      <div
+        id='world1'
+        className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${
+          objSelected ? "blur-[50px]" : ""
+        }`}
+      >
+        <Clouds
+          title={title}
+          animate={initialAnimate}
+          delay={0.5}
+          color={color}
+        />
+        <Loader model3d={model3d} />
+        <Background background={background} />
+        <Flats
+          flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
+          title={title}
+          year={year}
+          color={color}
+        />
+        <Prompt
+          world={world}
+          audioEnding={audioEnding}
+          showJoy={showJoy}
+          flow={flow}
+          currentFlow={{ get: currentFlow, set: setCurrentFlow }}
+          onClickInteractables={onClickObject}
+        />
+        <Joy />
+      </div>
+      {world === 1 || world == 3 || world === 5 ? (
+        <PopupsA
+          objSelected={objSelected}
+          contents={contents}
+          onClickwhiteButton={onClickwhiteButton}
+          activeVideo={activeVideo}
+          audio={audio}
+          onPrev={onPrev}
+          onNext={onNext}
+          handleStartVideo={handleStartVideo}
+          onDeselect={onDeselect}
+          onClickObject={onClickObject}
+          videoPlayed={videoPlayed}
+        />
+      ) : (
+        <PopupsB
+          objSelected={objSelected}
+          contents={contents}
+          onClickwhiteButton={onClickwhiteButton}
+          activeVideo={activeVideo}
+          audio={audio}
+          onPrev={onPrev}
+          onNext={onNext}
+          handleStartVideo={handleStartVideo}
+          onDeselect={onDeselect}
+          onClickObject={onClickObject}
+          videoPlayed={videoPlayed}
+        />
+      )}
     </div>
   );
 };
