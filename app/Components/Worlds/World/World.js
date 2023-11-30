@@ -694,7 +694,12 @@ const World = ({
   };
 
   const bgAudioRef = useRef(null);
+  const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
+  useEffect(() => {
+    if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
+    if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
+  }, [objSelected]);
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <audio ref={bgAudioRef}>
@@ -714,7 +719,12 @@ const World = ({
         />
         <Loader model3d={model3d} />
         <Background background={background} />
-        <Flats flats={flats} title={title} year={year} color={color} />
+        <Flats
+          flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
+          title={title}
+          year={year}
+          color={color}
+        />
         <Prompt
           world={world}
           audioEnding={audioEnding}
