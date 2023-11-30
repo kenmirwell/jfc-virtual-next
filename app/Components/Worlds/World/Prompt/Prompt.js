@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 
 let timer;
-const Prompt = ({ showJoy, flow, currentFlow, onClickInteractables, audioEnding }) => {
+const Prompt = ({ showJoy, flow, currentFlow, world, onClickInteractables, audioEnding }) => {
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
       gsap.timeline().to("#prompt", 0.5, {
