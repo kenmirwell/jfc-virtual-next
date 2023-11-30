@@ -78,14 +78,14 @@ const PopupsA = (props) => {
       }`}
     >
       <div
-        className={`details-modal max-w-[1280px] xl:max-w-[1024px] md:!max-w-[767px]`}
+        className={`details-modal max-w-[1280px] h-[720px] xl:max-w-[1024px] xl:h-[576px] md:!w-[767px] md:!h-[431px]`}
       >
         <div className='details-modal-content absolute flex flex-row-reverse top-[33px] bottom-[47px] left-[38px] right-[41px]'>
           {videoPlayed && (
             <>
               <div className='left-content w-[400px] xl:w-[319px] md:!w-[225px] flex flex-col justify-between'>
                 <div className='ml-[-10px] mt-[5px]'>
-                  <div className='absolute left-[-12px]'>
+                  <div className='absolute left-[-12px] md:!left-[-40px] md:!top-[-20px]'>
                     {audio ? (
                       <button className='audio-button' onClick={audioClick}>
                         <img
@@ -127,7 +127,7 @@ const PopupsA = (props) => {
                           <div className='red-button-container relative'>
                             <p
                               className={
-                                "active year-text !text-[36px] md:!text-[30px] absolute top-[-65px] left-[-26px] md:!left-[-20px] md:!top-[-50px]"
+                                "active year-text !text-[36px] md:!text-[30px] absolute top-[-65px] left-[50%] translate-x-[-50%] md:!top-[-50px]"
                               }
                             >
                               {item}
@@ -142,7 +142,7 @@ const PopupsA = (props) => {
                           <div className='white-button-container relative'>
                             <p
                               className={
-                                "year-text !text-[24px] md:!text-[18px] absolute top-[-45px] left-[-15px] md:!left-[-10px] md:!top-[-35px]"
+                                "year-text !text-[24px] md:!text-[18px] absolute top-[-45px] left-[50%] translate-x-[-50%] md:!top-[-35px]"
                               }
                             >
                               {item}
@@ -162,12 +162,12 @@ const PopupsA = (props) => {
                 </div>
               </div>
 
-              <div className='right-content items-start w-[calc(100%-400px)] xl:w-[calc(100%-319px)] md:!w-[calc(100%-225px)] pl-[80px] flex flex-col justify-between pt-[80px] xl:pt-[40px] md:!pt-[20px] md:!pb-0 md:!pr-0 pb-[20px] pr-[20px]'>
+              <div className='right-content items-start w-[calc(100%-400px)] xl:w-[calc(100%-319px)] md:!w-[calc(100%-225px)] pl-[80px] flex flex-col justify-between pt-[80px] xl:pt-[40px] md:!pb-0 pb-[20px] pr-[20px] md:!pr-[40px] md:!pl-[40px] md:!pt-[50px]'>
                 <div>
                   <div className='ml-[-10px]'>
                     <PopupYearcomponent />
                   </div>
-                  <div className='text-container  pr-[80px] md:!pr-[20px] max-h-[400px] md:!max-h-[220px] overflow-scroll'>
+                  <div className='text-container  pr-[80px] md:!pr-[20px] max-h-[400px] xl:max-h-[290px] md:!max-h-[190px] overflow-scroll'>
                     <div className={"title-container pb-[8px] pt-[5px]"}>
                       <h4 className='text-[28px] md:!text-[18px] leading-[1.1]'>
                         {curr.title}

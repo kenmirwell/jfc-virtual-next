@@ -78,7 +78,7 @@ const PopupsA = (props) => {
       }`}
     >
       <div
-        className={`details-modal max-w-[1280px] xl:max-w-[1024px] md:!max-w-[767px]`}
+        className={`details-modal max-w-[1280px] h-[720px] xl:max-w-[1024px] xl:h-[576px] md:!w-[767px] md:!h-[431px]`}
       >
         <div className='details-modal-content absolute flex top-[33px] bottom-[47px] left-[38px] right-[41px]'>
           {videoPlayed && (
@@ -165,7 +165,7 @@ const PopupsA = (props) => {
                   <div className='ml-[-10px]'>
                     <PopupYearcomponent />
                   </div>
-                  <div className='text-container  pr-[80px] md:!pr-[20px] max-h-[400px] md:!max-h-[220px] overflow-scroll'>
+                  <div className='text-container  pr-[80px] md:!pr-[20px] max-h-[400px] xl:max-h-[290px] md:!max-h-[220px] overflow-scroll'>
                     <div className={"title-container pb-[8px] pt-[5px]"}>
                       <h4 className='text-[28px] md:!text-[18px] leading-[1.1]'>
                         {curr.title}
