@@ -125,7 +125,7 @@ const World1 = () => {
       1980: {
         audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980-MAIN.webm?t=2023-11-30T11%3A06%3A16.861Z",
         // bg: "/assets/world1/popup/1980-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980%20MAIN.webm?t=2023-11-30T09%3A20%3A30.328Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980-MAIN.webm?t=2023-11-30T11%3A06%3A16.861Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1980-YEAR.webm?t=2023-11-30T10%3A39%3A22.965Z",
         photos: ["https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20assets/1980/1980.png?t=2023-11-30T10%3A35%3A02.196Z"],
         contents: {
@@ -175,7 +175,7 @@ const World1 = () => {
       1994: {
         audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1994-MAIN.webm?t=2023-11-30T11%3A06%3A57.286Z",
         // bg: "/assets/world1/popup/1994-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1994%20MAIN.webm?t=2023-11-30T09%3A22%3A00.752Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1994-MAIN.webm?t=2023-11-30T11%3A06%3A57.286Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1994-YEAR.webm?t=2023-11-30T10%3A40%3A17.513Z",
         photos: ["https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20assets/1994/1994.png?t=2023-11-30T10%3A36%3A05.548Z"],
         contents: {
@@ -187,7 +187,7 @@ const World1 = () => {
       1998: {
         audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1998-MAIN.webm?t=2023-11-30T11%3A07%3A07.251Z",
         // bg: "/assets/world1/popup/1998-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1998%20MAIN.webm?t=2023-11-30T09%3A22%3A42.650Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1998-MAIN.webm?t=2023-11-30T11%3A07%3A07.251Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1998-YEAR.webm?t=2023-11-30T10%3A40%3A27.085Z",
         photos: ["https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20assets/1998/1998.png?t=2023-11-30T10%3A36%3A19.047Z"],
         contents: {
@@ -201,7 +201,7 @@ const World1 = () => {
       2000: {
         audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2000-MAIN.webm",
         // bg: "/assets/world1/popup/2000-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2000%20MAIN%20(1).webm?t=2023-11-30T09%3A22%3A17.607Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2000-MAIN.webm",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/2000-YEAR.webm?t=2023-11-30T10%3A40%3A43.181Z",
         photos: ["https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20assets/2000/2000.png?t=2023-11-30T10%3A36%3A34.089Z"],
         contents: {
@@ -213,7 +213,7 @@ const World1 = () => {
       2001: {
         audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2001-MAIN.webm?t=2023-11-30T11%3A07%3A51.892Z",
         // bg: "/assets/world1/popup/2001-MAIN.webm",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2001%20MAIN%20(1).webm?t=2023-11-30T09%3A23%3A41.438Z",
+        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2001-MAIN.webm?t=2023-11-30T11%3A07%3A51.892Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/2001-YEAR.webm?t=2023-11-30T10%3A40%3A51.963Z",
         photos: ["https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20assets/2001/2001.png?t=2023-11-30T10%3A36%3A46.665Z"],
         contents: {
