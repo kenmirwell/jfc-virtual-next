@@ -258,7 +258,7 @@ const Prompt = ({
             {currentFlow.get.action === "GOTO" && (
               <button
                 onClick={handleClickHere}
-                className='bg-[#E23636] text-white rounded-[50px] font-[700] text-[24px] px-8  mt-[5px]'
+                className='bg-[#E23636] text-white rounded-[50px] font-[700] text-[22px] px-5  mt-[5px]'
               >
                 CLICK HERE TO PROCEED
               </button>
