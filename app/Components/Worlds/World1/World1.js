@@ -95,8 +95,7 @@ const World1 = () => {
   let contents = {
     Empty005: {
       1978: {
-        audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_INTRO.mp3?t=2023-11-30T18%3A57%3A22.862Z",
-        // bg: "/assets/world1/popup/1978-MAIN.webm",
+        audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS1.mp3?t=2023-11-30T19%3A11%3A31.013Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978-MAIN.webm?t=2023-11-30T11%3A05%3A17.251Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1978-YEAR.webm?t=2023-11-30T10%3A38%3A01.268Z",
         photos: [
@@ -110,7 +109,6 @@ const World1 = () => {
         },
       },
       1979: {
-        // bg: "/assets/world1/popup/1979-MAIN.webm",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979-MAIN.webm?t=2023-11-30T18%3A40%3A36.740Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1979-YEAR.webm?t=2023-11-30T10%3A39%3A07.776Z",
         photos: ["/assets/world1/popup-photos/1979/1979.png"],
@@ -123,8 +121,7 @@ const World1 = () => {
     },
     Empty004: {
       1980: {
-        audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS1.mp3?t=2023-11-30T19%3A11%3A31.013Z",
-        // bg: "/assets/world1/popup/1980-MAIN.webm",
+        audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS2.mp3?t=2023-11-30T20%3A25%3A43.563Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980-MAIN.webm?t=2023-11-30T11%3A06%3A16.861Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1980-YEAR.webm?t=2023-11-30T10%3A39%3A22.965Z",
         photos: ["https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20assets/1980/1980.png?t=2023-11-30T10%3A35%3A02.196Z"],
