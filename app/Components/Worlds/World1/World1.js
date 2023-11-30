@@ -95,7 +95,7 @@ const World1 = () => {
   let contents = {
     Empty005: {
       1978: {
-        audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS1.mp3?t=2023-11-30T19%3A11%3A31.013Z",
+        audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_INTRO.mp3?t=2023-11-30T18%3A57%3A22.862Z",
         // bg: "/assets/world1/popup/1978-MAIN.webm",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978-MAIN.webm?t=2023-11-30T11%3A05%3A17.251Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1978-YEAR.webm?t=2023-11-30T10%3A38%3A01.268Z",
@@ -231,9 +231,7 @@ const World1 = () => {
       audioEnding={"https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_GAME1.mp3?t=2023-11-30T10%3A52%3A25.066Z"}
       title='Humble Beginnings'
       year='1978-2003'
-    //   model='/assets/world1/world.glb'
-      model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1.glb?t=2023-11-30T08%3A36%3A28.967Z"
-    //   background='/assets/world1/bg.mp4'
+      model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1.glb?t=2023-11-30T21%3A25%3A07.421Z"
       background="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/GLOWING%20BACKGROUND.webm?t=2023-11-30T09%3A14%3A12.791Z"
       flats={{
         logo: "/assets/world1/elements/logo.png",
