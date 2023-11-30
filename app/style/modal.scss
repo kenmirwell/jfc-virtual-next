@@ -43,7 +43,8 @@
   left: 50%;
   position: absolute;
   top: 50%;
-  width: 100%;
+  // width: 100%;
+  max-width: "1440px";
   overflow: hidden;
   transform: translate(-50%, -50%);
   text-align: left;
@@ -58,7 +59,7 @@
 }
 
 .desc-container p {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .details-modal-overlay {
@@ -162,7 +163,7 @@
     justify-content: center;
 
     img {
-    //   width: 50%;
+      //   width: 50%;
     }
   }
 }
@@ -211,8 +212,8 @@
 }
 
 .text-container {
-//   max-height: 350px;
-//   overflow-y: scroll;
+  //   max-height: 350px;
+  //   overflow-y: scroll;
 }
 
 .text-container::-webkit-scrollbar {
