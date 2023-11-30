@@ -70,6 +70,13 @@ const Prompt = ({
     if (currentFlow.get.action === "END") setIsEnd(true);
   }, [currentFlow.get.action]);
 
+  const pointingRef = useRef(null);
+
+  useEffect(() => {
+    if (!showJoy && world === 1 && currentFlow.get.action === "GOTO")
+      pointingRef.current.play();
+  }, [currentFlow]);
+
   return (
     <>
       <audio
@@ -140,8 +147,9 @@ const Prompt = ({
         </video>
         <video
           muted
-          autoPlay
-          loop
+          ref={pointingRef}
+          // autoPlay
+          // loop
           className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
             !showJoy && world === 1 && currentFlow.get.action === "GOTO"
               ? "opacity-100"
