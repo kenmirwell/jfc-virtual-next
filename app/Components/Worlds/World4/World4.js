@@ -97,10 +97,10 @@ const World4 = () => {
 
     let contents = {
         "ShieldController": {
-            audio: "JFC_VO_W4_MS1",
+            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS1.mp3?t=2023-11-30T22%3A43%3A11.414Z",
             "2020": {
-                "bg": "/assets/world4/popup/2020B-MAIN.webm",
-                "year": "/assets/world4/popup-years/2020B-YEAR.webm",
+                "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20MAIN.webm?t=2023-11-30T22%3A44%3A42.596Z",
+                "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20YEAR.webm?t=2023-11-30T22%3A44%3A53.634Z",
                 "photos": [
                   "/assets/world4/popup-photos/2020B/2020B.png"
                 ],
@@ -113,10 +113,10 @@ const World4 = () => {
         },
 
         "FoodBowlController": {
-            audio: "JFC_VO_W4_MS2",
+            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS2.mp3?t=2023-11-30T22%3A43%3A25.293Z",
             "2021A": {
-                "bg": "/assets/world4/popup/2021A-MAIN.webm",
-                "year": "/assets/world4/popup-years/2021A-YEAR.webm",
+                "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021A%20MAIN.webm?t=2023-11-30T22%3A45%3A12.827Z",
+                "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021%20YEAR.webm?t=2023-11-30T22%3A45%3A04.157Z",
                 "photos": [
                   "/assets/world4/popup-photos/2021A/2021A.png"
                 ],
@@ -129,10 +129,10 @@ const World4 = () => {
         },
         
         "MilkteaBldgController": {
-            audio: "JFC_VO_W4_MS3",
+            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS3.mp3",
             "2021B": {
-                "bg": "/assets/world4/popup/2021B-MAIN.webm",
-                "year": "/assets/world4/popup-years/2021B-YEAR.webm",
+                "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021B%20MAIN.webm?t=2023-11-30T22%3A45%3A36.068Z",
+                "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021%20YEAR.webm?t=2023-11-30T22%3A45%3A04.157Z",
                 "photos": [
                   "/assets/world4/popup-photos/2021B/2021B.png"
                 ],
@@ -145,10 +145,10 @@ const World4 = () => {
         },
         
         "TrophyController": {
-            audio: "JFC_VO_W4_MS4",
+            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS4.mp3?t=2023-11-30T22%3A43%3A47.413Z",
             "2022": {
-                "bg": "/assets/world4/popup/2022-MAIN.webm",
-                "year": "/assets/world4/popup-years/2022-YEAR.webm",
+                "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022%20MAIN.webm?t=2023-11-30T22%3A47%3A23.281Z",
+                "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022%20YEAR.webm?t=2023-11-30T22%3A48%3A11.375Z",
                 "photos": [
                   "/assets/world4/popup-photos/2022/2022.png"
                 ],
@@ -161,10 +161,10 @@ const World4 = () => {
         },
 
         "JoyForTomoController": {
-            audio: "JFC_VO_W4_MS5",
+            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS5.mp3?t=2023-11-30T22%3A44%3A03.243Z",
             "2023A": {
-                "bg": "/assets/world4/popup/2023A-MAIN.webm",
-                "year": "/assets/world4/popup-years/2023A-YEAR.webm",
+                "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023A%20MAIN.webm?t=2023-11-30T22%3A49%3A04.573Z",
+                "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023%20YEAR.webm?t=2023-11-30T22%3A48%3A30.258Z",
                 "photos": [
                   "/assets/world4/popup-photos/2023A/2023A.png"
                 ],
@@ -175,8 +175,8 @@ const World4 = () => {
                 }
             },
             "2023B": {
-                "bg": "/assets/world4/popup/2023B-MAIN.webm",
-                "year": "/assets/world4/popup-years/2023B-YEAR.webm",
+                "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023B%20MAIN.webm?t=2023-11-30T22%3A49%3A31.949Z",
+                "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023%20YEAR.webm?t=2023-11-30T22%3A48%3A30.258Z",
                 "photos": [
                   "/assets/world4/popup-photos/2023B/2023B.png"
                 ],
@@ -192,16 +192,16 @@ const World4 = () => {
     return (
         <World 
             world={4}
+            audioEnding={"https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_END.mp3?t=2023-11-30T22%3A42%3A18.247Z"}
             title="New Frontier"
             year="2021-2023"
             color="#df4637"
-            model="/assets/world4/world.glb"
-            // model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb?t=2023-11-28T03%3A35%3A00.423Z"
-            background="/assets/world4/bg.mp4"
+            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb?t=2023-11-30T22%3A50%3A08.452Z"
+            background="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/GLOWING%20BACKGROUND%204.webm"
             flats={{
-                logo: "/assets/world1/elements/logo.png",
+                logo: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_Chapters_Logo.webp?t=2023-11-30T22%3A50%3A50.067Z",
                 chapter: "/assets/world1/elements/chapter.svg",
-                icons: "/assets/world1/elements/icons.png"
+                icons: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_18.webp?t=2023-11-30T22%3A50%3A59.972Z"
             }}
             contents={ contents }
             flow={ flow }
