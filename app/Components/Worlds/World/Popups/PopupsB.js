@@ -83,7 +83,7 @@ const PopupsA = (props) => {
         <div className='details-modal-content absolute flex flex-row-reverse top-[33px] bottom-[47px] left-[38px] right-[41px]'>
           {videoPlayed && (
             <>
-              <div className='left-content w-[400px] xl:w-[319px] md:!w-[225px] flex flex-col justify-between'>
+              <div className='left-content w-[400px] xl:w-[319px] md:!w-[205px] flex flex-col justify-between'>
                 <div className='ml-[-10px] mt-[5px]'>
                   <div className='absolute left-[-12px] md:!left-[-40px] md:!top-[-20px]'>
                     {audio ? (
@@ -108,7 +108,7 @@ const PopupsA = (props) => {
                     Object.keys(documents).length === 3
                       ? "max-w-[280px] md:!max-w-[180px]"
                       : "max-w-[200px] md:!max-w-[150px]"
-                  } mb-[60px] md:!mb-[20px]`}
+                  } mb-[60px] md:!mb-[15px]`}
                 >
                   <div
                     className={`rw-content-container flex ${
@@ -162,7 +162,7 @@ const PopupsA = (props) => {
                 </div>
               </div>
 
-              <div className='right-content items-start w-[calc(100%-400px)] xl:w-[calc(100%-319px)] md:!w-[calc(100%-225px)] pl-[80px] flex flex-col justify-between pt-[80px] xl:pt-[40px] md:!pb-0 pb-[20px] pr-[20px] md:!pr-[40px] md:!pl-[40px] md:!pt-[50px]'>
+              <div className='right-content items-start w-[calc(100%-400px)] xl:w-[calc(100%-319px)] md:!w-[calc(100%-205px)] pl-[80px] flex flex-col justify-between pt-[80px] xl:pt-[40px] md:!pb-0 pb-[20px] pr-[20px] md:!pr-[40px] md:!pl-[40px] md:!pt-[50px]'>
                 <div>
                   <div className='ml-[-10px]'>
                     <PopupYearcomponent />
