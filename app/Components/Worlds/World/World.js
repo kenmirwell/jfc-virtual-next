@@ -703,7 +703,7 @@ const World = ({
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <audio ref={bgAudioRef}>
-        <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_INTRO.mp3?t=2023-11-30T18%3A57%3A22.862Z' />
+        <source src='' />
       </audio>
       <div
         id='world1'

@@ -63,7 +63,7 @@ const Prompt = ({ showJoy, flow, currentFlow, world, onClickInteractables, audio
   return (
     <>
       <audio onPlay={() => setHasPlayed(true)} ref={soundRef} className='hidden' controls>
-        <source src={`https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_INTRO.mp3?t=2023-11-30T10%3A45%3A33.428Z`} />
+        <source src={``} />
       </audio>
       {isEnd && (
         <audio autoPlay className='hidden' controls>
@@ -73,7 +73,7 @@ const Prompt = ({ showJoy, flow, currentFlow, world, onClickInteractables, audio
       <div className={`fixed top-0 left-0 right-0 bottom-0 opacity-0 bg-black/50 transition-all duration-[0.3s] ease-in-out ${currentFlow.get.action === "END" ? "opacity-100" : "pointer-events-none"}`}></div>
       <div id='prompt' className={`fixed bottom-0 right-[100px] z-[22]  text-center translate-x-[300px] h-[380px] w-[200px] flex items-end justify-center transition-all duration-[0.5s] ease-in-out ${!showJoy ? "translate-x-[400%]" : ""} ${currentFlow.get.action === "END" ? "!w-[100%] !right-0" : ""}`}>
         <video muted autoPlay loop className={`joy-idle absolute top-[10px] ml-[-63px] w-[900px] max-w-none opacity-0 ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""}`}>
-          <source src='/assets/joy/Joy-Idle-v2.webm' type='video/webm' />
+          <source src='/assets/joy/Joy-Idle.webm' type='video/webm' />
         </video>
         <video muted autoPlay loop className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${showJoy && currentFlow.get.action === "END" ? "opacity-100" : ""}`}>
           <source src='/assets/joy/Joy-Thinking.webm' type='video/webm' />
