@@ -41,7 +41,7 @@ const Prompt = ({
 
     // PLAY ONCE
 
-    if (!hasPlayed) soundRef.current.play();
+    if (!hasPlayed && path === "/") soundRef.current.play();
   };
 
   const handleClickHere = () => {
