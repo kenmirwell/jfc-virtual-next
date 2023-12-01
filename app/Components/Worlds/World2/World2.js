@@ -125,7 +125,7 @@ const World2 = () => {
       },
     },
 
-    CakeBldg001: {
+    CakeControl001: {
       2005: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS2.mp3?t=2023-12-01T06%3A36%3A08.967Z",
@@ -152,7 +152,7 @@ const World2 = () => {
       },
     },
 
-    BananaLeaf: {
+    Inasal: {
       2010: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS4.mp3?t=2023-12-01T06%3A36%3A31.438Z",
@@ -204,7 +204,7 @@ const World2 = () => {
       },
     },
 
-    OnionLeaves: {
+    CongeeBldgController001: {
       2008: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS3.mp3?t=2023-12-01T06%3A37%3A06.221Z",
