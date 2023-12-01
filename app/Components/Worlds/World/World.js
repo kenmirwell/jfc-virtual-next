@@ -128,10 +128,15 @@ const World = ({
     }
   }, []);
 
+  const canvasWrapper = document.getElementById('world1');
+
   /* Initialize Scene */
   useEffect(() => {
     if (!model3d && loaded) {
-      components.renderer.setSize(window.innerWidth, window.innerHeight);
+      components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
+      components.camera.aspect = 16 / 9;
+      components.camera.updateProjectionMatrix()
+      // components.renderer.setSize(window.innerWidth, window.innerHeight);
       components.camera.position.set(0, 20, 17);
       components.lights.directional.position.set(0, 11.19, 12.133);
       components.lights.directional.castShadow = true;
@@ -351,7 +356,7 @@ const World = ({
   /* Apply click animation */
   useEffect(() => {
     bgAudioRef.current.play();
-    bgAudioRef.current.volume = 0.05;
+    bgAudioRef.current.volume = 0;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
 
@@ -501,7 +506,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-                -1
+              -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -668,9 +673,9 @@ const World = ({
   };
 
   const onWindowResize = () => {
-    components.camera.aspect = window.innerWidth / window.innerHeight;
+    components.camera.aspect = canvasWrapper.clientWidth / canvasWrapper.clientHeight;
     components.camera.updateProjectionMatrix();
-    components.renderer.setSize(window.innerWidth, window.innerHeight);
+    components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
   };
 
   const onNext = () => {
@@ -701,70 +706,72 @@ const World = ({
     if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
   }, [objSelected]);
   return (
-    <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
-      <audio ref={bgAudioRef}>
-        <source src='/assets/bgAudio.wav' />
-      </audio>
-      <div
-        id='world1'
-        className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${
-          objSelected ? "blur-[50px]" : ""
-        }`}
-      >
-        <Clouds
-          title={title}
-          animate={initialAnimate}
-          delay={0.5}
-          color={color}
-        />
-        <Loader model3d={model3d} />
-        <Background background={background} />
-        <Flats
-          flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
-          title={title}
-          year={year}
-          color={color}
-        />
-        <Prompt
-          world={world}
-          audioEnding={audioEnding}
-          showJoy={showJoy}
-          flow={flow}
-          currentFlow={{ get: currentFlow, set: setCurrentFlow }}
-          onClickInteractables={onClickObject}
-        />
-        <Joy />
+    <>
+      <div id='worldcomp' className='w-full relative'>
+        <audio ref={bgAudioRef}>
+          <source src='/assets/bgAudio.wav' />
+        </audio>
+        <div
+          id='world1'
+          className={`overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
+            }`}
+        >
+          <Clouds
+            title={title}
+            animate={initialAnimate}
+            delay={0.5}
+            color={color}
+          />
+          {/*
+          <Loader model3d={model3d} />
+          <Background background={background} />
+          <Flats
+            flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
+            title={title}
+            year={year}
+            color={color}
+          />
+          <Prompt
+            world={world}
+            audioEnding={audioEnding}
+            showJoy={showJoy}
+            flow={flow}
+            currentFlow={{ get: currentFlow, set: setCurrentFlow }}
+            onClickInteractables={onClickObject}
+          />
+          <Joy /> */}
+        </div>
+        {world === 1 || world == 3 || world === 5 ? (
+          <PopupsA
+            objSelected={objSelected}
+            contents={contents}
+            onClickwhiteButton={onClickwhiteButton}
+            activeVideo={activeVideo}
+            audio={audio}
+            onPrev={onPrev}
+            onNext={onNext}
+            handleStartVideo={handleStartVideo}
+            onDeselect={onDeselect}
+            onClickObject={onClickObject}
+            videoPlayed={videoPlayed}
+          />
+        ) : (
+          <PopupsB
+            objSelected={objSelected}
+            contents={contents}
+            onClickwhiteButton={onClickwhiteButton}
+            activeVideo={activeVideo}
+            audio={audio}
+            onPrev={onPrev}
+            onNext={onNext}
+            handleStartVideo={handleStartVideo}
+            onDeselect={onDeselect}
+            onClickObject={onClickObject}
+            videoPlayed={videoPlayed}
+          />
+        )}
       </div>
-      {world === 1 || world == 3 || world === 5 ? (
-        <PopupsA
-          objSelected={objSelected}
-          contents={contents}
-          onClickwhiteButton={onClickwhiteButton}
-          activeVideo={activeVideo}
-          audio={audio}
-          onPrev={onPrev}
-          onNext={onNext}
-          handleStartVideo={handleStartVideo}
-          onDeselect={onDeselect}
-          onClickObject={onClickObject}
-          videoPlayed={videoPlayed}
-        />
-      ) : (
-        <PopupsB
-          objSelected={objSelected}
-          contents={contents}
-          onClickwhiteButton={onClickwhiteButton}
-          activeVideo={activeVideo}
-          audio={audio}
-          onPrev={onPrev}
-          onNext={onNext}
-          handleStartVideo={handleStartVideo}
-          onDeselect={onDeselect}
-          onClickObject={onClickObject}
-          videoPlayed={videoPlayed}
-        />
-      )}
-    </div>
+    </>
   );
 };
 
