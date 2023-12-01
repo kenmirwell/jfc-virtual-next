@@ -112,7 +112,8 @@ const World2 = () => {
   let contents = {
     FlagMain: {
       2004: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS1.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS1.mp3?t=2023-12-01T06%3A35%3A58.803Z",
         bg: "/assets/world2/popup/2004-MAIN.webm",
         year: "/assets/world2/popup-years/2004-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -126,7 +127,8 @@ const World2 = () => {
 
     CakeBldg001: {
       2005: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS2.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS2.mp3?t=2023-12-01T06%3A36%3A08.967Z",
         bg: "/assets/world2/popup/2005-MAIN.webm",
         year: "/assets/world2/popup-years/2005-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -137,7 +139,8 @@ const World2 = () => {
         },
       },
       2006: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS2B.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS2B.mp3?t=2023-12-01T06%3A36%3A18.609Z",
         bg: "/assets/world2/popup/2006-MAIN.webm",
         year: "/assets/world2/popup-years/2006-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -151,7 +154,8 @@ const World2 = () => {
 
     BananaLeaf: {
       2010: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS4.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS4.mp3?t=2023-12-01T06%3A36%3A31.438Z",
         bg: "/assets/world2/popup/2010-MAIN.webm",
         year: "/assets/world2/popup-years/2010-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -162,7 +166,8 @@ const World2 = () => {
         },
       },
       2011: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS4B.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS4B.mp3?t=2023-12-01T06%3A36%3A43.474Z",
         bg: "/assets/world2/popup/2011A-MAIN.webm",
         year: "/assets/world2/popup-years/2011-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -176,7 +181,8 @@ const World2 = () => {
 
     Burger001: {
       2011: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS5.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS5.mp3?t=2023-12-01T06%3A36%3A51.781Z",
         bg: "/assets/world2/popup/2011B-MAIN.webm",
         year: "/assets/world2/popup-years/2011-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -200,7 +206,8 @@ const World2 = () => {
 
     OnionLeaves: {
       2008: {
-        audio: "/assets/world2/audio/JFC_VO_W2_MS3.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS3.mp3?t=2023-12-01T06%3A37%3A06.221Z",
         bg: "/assets/world2/popup/2008-MAIN.webm",
         year: "/assets/world2/popup-years/2008-YEAR.webm",
         photos: ["/assets/world1/popup-photos/1978/1978_1.png"],
@@ -216,7 +223,9 @@ const World2 = () => {
   return (
     <World
       world={2}
-      audioEnding={"/assets/world2/audio/JFC_VO_W2_GAME2.wav"}
+      audioEnding={
+        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_GAME2.mp3?t=2023-12-01T06%3A37%3A15.663Z"
+      }
       title='Dreaming Bigger'
       year='2004-2012'
       color='#c79c1e'
