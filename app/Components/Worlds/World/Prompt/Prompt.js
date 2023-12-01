@@ -284,7 +284,7 @@ const Prompt = ({
                 </a>
                 <br></br>
                 <a
-                  href={`http://ec2-13-213-56-159.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
+                  href={`http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
                 >
                   <button className='lowercase text-[12px] tracking-[1.4px] text-black/50 font-[500]'>
                     SKIP
