@@ -125,7 +125,7 @@ const World2 = () => {
       },
     },
 
-    CakeBldg001: {
+    CakeControl001: {
       2005: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS2.mp3?t=2023-12-01T06%3A36%3A08.967Z",
@@ -152,7 +152,7 @@ const World2 = () => {
       },
     },
 
-    BananaLeaf: {
+    Inasal: {
       2010: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS4.mp3?t=2023-12-01T06%3A36%3A31.438Z",
@@ -179,7 +179,7 @@ const World2 = () => {
       },
     },
 
-    Burger001: {
+    BurgerController001: {
       2011: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS5.mp3?t=2023-12-01T06%3A36%3A51.781Z",
@@ -204,7 +204,7 @@ const World2 = () => {
       },
     },
 
-    OnionLeaves: {
+    CongeeBldgController001: {
       2008: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS3.mp3?t=2023-12-01T06%3A37%3A06.221Z",
@@ -229,7 +229,7 @@ const World2 = () => {
       title='Dreaming Bigger'
       year='2004-2012'
       color='#c79c1e'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2-Complete-NoJoy.glb?t=2023-12-01T03%3A27%3A00.808Z'
+      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2-Complete-NoJoy.glb?t=2023-12-01T09%3A47%3A40.553Z'
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/GLOWING%20BACKGROUND%202.webm'
       flats={{
         logo: "/assets/world1/elements/logo.png",
