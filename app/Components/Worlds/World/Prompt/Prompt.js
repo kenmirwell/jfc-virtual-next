@@ -277,7 +277,7 @@ const Prompt = ({
             )}
             {currentFlow.get.action === "END" && (
               <div>
-                <a href='http://ec2-13-213-56-159.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'>
+                <a href='http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'>
                   <button className='bg-[#cf463f] text-white rounded-[50px] font-[700] text-[18px] px-[20px] mt-[5px]'>
                     PLAY GAME
                   </button>
