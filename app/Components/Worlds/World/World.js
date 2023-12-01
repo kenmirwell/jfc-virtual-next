@@ -696,7 +696,18 @@ const World = ({
   };
 
   const bgAudioRef = useRef(null);
+  const [bgPlaying, setBgPlaying] = useState(true);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
+
+  const handleMuteBg = () => {
+    if (bgPlaying) {
+      bgAudioRef.current.volume = 0;
+      setBgPlaying(false);
+    } else {
+      bgAudioRef.current.volume = 0.05;
+      setBgPlaying(true);
+    }
+  };
 
   const pathname = usePathname();
 
@@ -718,6 +729,15 @@ const World = ({
           objSelected ? "blur-[50px]" : ""
         }`}
       >
+        <button className='ml-4 mt-4 audio-button' onClick={handleMuteBg}>
+          <img
+            src={`/assets/world1/popup-icons/${
+              bgPlaying ? "audio-icon" : "audio-mute"
+            }.webp`}
+            width='56'
+          />
+        </button>
+
         <Clouds
           title={title}
           animate={initialAnimate}
