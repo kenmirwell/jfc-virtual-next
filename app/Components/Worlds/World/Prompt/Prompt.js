@@ -115,7 +115,10 @@ const Prompt = ({
             showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
           }`}
         >
-          <source src='/assets/joy/Joy-Idle-v2.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
+            type='video/webm'
+          />
         </video>
         <video
           muted
@@ -135,7 +138,10 @@ const Prompt = ({
             showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
           }`}
         >
-          <source src='/assets/joy/Joy-Idle-v2.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
+            type='video/webm'
+          />
         </video>
         <video
           muted
@@ -145,7 +151,10 @@ const Prompt = ({
             showJoy && currentFlow.get.action === "END" ? "opacity-100" : ""
           }`}
         >
-          <source src='/assets/joy/Joy-Thinking.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm'
+            type='video/webm'
+          />
         </video>
         <video
           muted
@@ -158,7 +167,10 @@ const Prompt = ({
               : ""
           }`}
         >
-          <source src='/assets/joy/Joy-Pointing.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
+            type='video/webm'
+          />
         </video>
         <video
           muted
@@ -170,7 +182,10 @@ const Prompt = ({
               : ""
           }`}
         >
-          <source src='/assets/joy/Joy-WavePeek.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
+            type='video/webm'
+          />
         </video>
         <video
           muted
@@ -182,7 +197,10 @@ const Prompt = ({
               : ""
           }`}
         >
-          <source src='/assets/joy/Joy-PointLetsGo.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
+            type='video/webm'
+          />
         </video>
         <video
           muted
@@ -194,7 +212,10 @@ const Prompt = ({
               : ""
           }`}
         >
-          <source src='/assets/joy/Joy-LetsGo.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
+            type='video/webm'
+          />
         </video>
         <div
           id='promptc'
