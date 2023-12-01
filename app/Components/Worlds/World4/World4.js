@@ -100,7 +100,7 @@ const World4 = () => {
         year: ["1978", "1979"],
         title: {
           en: [
-            "Jolibee Food Corporation is born",
+            "Jollibee Food Corporation is born",
             "Beginning of Jollibee’s Franchising Journey",
           ],
           ch: ["快乐蜂食品公司于", "第一次特许经营之旅"],
@@ -111,7 +111,7 @@ const World4 = () => {
         },
         description: {
           en: [
-            `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand: Jolibee. The first-ever Jolibee store is located in Quezon, Cubao.</p>`,
+            `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao.</p>`,
             `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`,
           ],
           ch: [
@@ -129,11 +129,11 @@ const World4 = () => {
     ShieldController: {
       year: ["1978", "1979"],
       title: [
-        "Jolibee Food Corporation is born",
+        "Jollibee Food Corporation is born",
         "Beginning of Jollibee’s Franchising Journey",
       ],
       description: [
-        `<p><strong>Jolibee Foods Corporation</strong> (also known as Jolibee Group) is born with a single brand: Jolibee. The first-ever Jolibee store is located in Quezon, Cubao.</p>`,
+        `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao.</p>`,
         `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`,
       ],
       audio: [],

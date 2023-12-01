@@ -128,7 +128,10 @@ const Prompt = ({
             showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
           }`}
         >
-          <source src='/assets/joy/Joy-WavingLoop-v2.webm' type='video/webm' />
+          <source
+            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
+            type='video/webm'
+          />
         </video>
         <video
           muted
