@@ -16,6 +16,8 @@ import Joy from "./Joy/Joy";
 import PopupsA from "./Popups/PopupsA";
 import PopupsB from "./Popups/PopupsB";
 import { getCookie, setCookie } from "cookies-next";
+import path from "path";
+import { usePathname } from "next/navigation";
 
 let hovered = null;
 let disableFunctionality = false;
@@ -696,10 +698,15 @@ const World = ({
   const bgAudioRef = useRef(null);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
+  const pathname = usePathname();
+
   useEffect(() => {
-    if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
-    if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
+    if (pathname === "/") {
+      if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
+      if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
+    }
   }, [objSelected]);
+
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <audio ref={bgAudioRef}>
