@@ -221,7 +221,7 @@ const World1 = () => {
       audioEnding={"/assets/world1/audio/JFC_VO_W1_GAME1.mp3"}
       title='Humble Beginnings'
       year='1978-2003'
-      model='/assets/world1/world.glb'
+      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1.glb'
       background='/assets/world1/bg.mp4'
       flats={{
         logo: "/assets/world1/elements/logo.png",
