@@ -525,6 +525,9 @@ const World = ({
         );
         const joy = modelObjs.children.find((c) => c.name === currentFlow.joy);
 
+        console.log("modelObjs", modelObjs.children)
+        console.log("currentFlow.target", currentFlow.target)
+
         const onSelect = () => {
           disableFunctionality = true;
 
