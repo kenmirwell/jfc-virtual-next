@@ -12,7 +12,8 @@ const PopupsA = (props) => {
   const onDeselect = props.onDeselect;
   const videoPlayed = props.videoPlayed;
   const ref = React.createRef();
-  const [playing, setPlaying] = useState(true);
+  // const [playing, setPlaying] = useState(true);
+  const [audioIcon, setAudioIcon] = useState("icon");
   let curr;
 
   useEffect(() => {
@@ -56,19 +57,24 @@ const PopupsA = (props) => {
   };
 
   const audioClick = () => {
-    if (playing) {
-      setPlaying(false);
-
-      if (ref.current) {
-        ref.current.pause();
-      }
+    if (ref.current.volume === 1) {
+      setAudioIcon("mute");
+      ref.current.volume = 0;
     } else {
-      setPlaying(true);
-
-      if (ref.current) {
-        ref.current.play();
-      }
+      setAudioIcon("icon");
+      ref.current.volume = 1;
     }
+    // if (playing) {
+    //   setPlaying(false);
+    //   if (ref.current) {
+    //     ref.current.pause();
+    //   }
+    // } else {
+    //   setPlaying(true);
+    //   if (ref.current) {
+    //     ref.current.play();
+    //   }
+    // }
   };
 
   return (
@@ -87,9 +93,7 @@ const PopupsA = (props) => {
                 <div className='ml-[-10px] mt-[5px]'>
                   <button className='audio-button' onClick={audioClick}>
                     <img
-                      src={`/assets/world1/popup-icons/audio-${
-                        playing ? "icon" : "mute"
-                      }.svg`}
+                      src={`/assets/world1/popup-icons/audio-${audioIcon}.svg`}
                       width='120'
                     />
                   </button>
@@ -226,7 +230,7 @@ const PopupsA = (props) => {
                 </div>
               </div>
 
-              <audio muted={!playing} className='hidden' controls ref={ref}>
+              <audio className='hidden' controls ref={ref}>
                 <source src={curr.audio} />
               </audio>
             </>
