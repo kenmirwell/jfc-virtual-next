@@ -97,8 +97,8 @@ const World4 = () => {
 
     let contents = {
         "ShieldController": {
-            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS1.mp3?t=2023-11-30T22%3A43%3A11.414Z",
             "2020B": {
+                audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS1.mp3?t=2023-11-30T22%3A43%3A11.414Z",
                 "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20MAIN.webm?t=2023-11-30T22%3A44%3A42.596Z",
                 "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20YEAR.webm?t=2023-11-30T22%3A44%3A53.634Z",
                 "photos": [
@@ -106,15 +106,15 @@ const World4 = () => {
                 ],
                 "contents": {
                   "en": en["2020B"],
-                  "ch": ch["2020B"],
+                //   "ch": ch["2020B"],
                 //   "vi": vi["2020B"]
                 }
             }
         },
 
         "FoodBowlController": {
-            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS2.mp3?t=2023-11-30T22%3A43%3A25.293Z",
             "2021A": {
+                audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS2.mp3?t=2023-11-30T22%3A43%3A25.293Z",
                 "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021A%20MAIN.webm?t=2023-11-30T22%3A45%3A12.827Z",
                 "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021%20YEAR.webm?t=2023-11-30T22%3A45%3A04.157Z",
                 "photos": [
@@ -122,15 +122,15 @@ const World4 = () => {
                 ],
                 "contents": {
                   "en": en["2021A"],
-                  "ch": ch["2021A"],
+                //   "ch": ch["2021A"],
                 //   "vi": vi["2021A"]
                 }
             }
         },
         
         "MilkteaBldgController": {
-            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS3.mp3",
             "2021B": {
+                audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS3.mp3",
                 "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021B%20MAIN.webm?t=2023-11-30T22%3A45%3A36.068Z",
                 "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021%20YEAR.webm?t=2023-11-30T22%3A45%3A04.157Z",
                 "photos": [
@@ -138,15 +138,15 @@ const World4 = () => {
                 ],
                 "contents": {
                   "en": en["2021B"],
-                  "ch": ch["2021B"],
+                //   "ch": ch["2021B"],
                 //   "vi": vi["2021B"]
                 }
             }
         },
         
         "TrophyController": {
-            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS4.mp3?t=2023-11-30T22%3A43%3A47.413Z",
             "2022": {
+                audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS4.mp3?t=2023-11-30T22%3A43%3A47.413Z",
                 "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022%20MAIN.webm?t=2023-11-30T22%3A47%3A23.281Z",
                 "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022%20YEAR.webm?t=2023-11-30T22%3A48%3A11.375Z",
                 "photos": [
@@ -154,15 +154,15 @@ const World4 = () => {
                 ],
                 "contents": {
                   "en": en["2022"],
-                  "ch": ch["2022"],
+                //   "ch": ch["2022"],
                 //   "vi": vi["2022"]
                 }
             }
         },
 
         "JoyForTomoController": {
-            audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS5.mp3?t=2023-11-30T22%3A44%3A03.243Z",
             "2023A": {
+                audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS5.mp3?t=2023-11-30T22%3A44%3A03.243Z",
                 "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023A%20MAIN.webm?t=2023-11-30T22%3A49%3A04.573Z",
                 "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023%20YEAR.webm?t=2023-11-30T22%3A48%3A30.258Z",
                 "photos": [
@@ -170,7 +170,7 @@ const World4 = () => {
                 ],
                 "contents": {
                   "en": en["2023A"],
-                  "ch": ch["2023A"],
+                //   "ch": ch["2023A"],
                 //   "vi": vi["2023A"]
                 }
             },
@@ -196,7 +196,7 @@ const World4 = () => {
             title="New Frontier"
             year="2021-2023"
             color="#df4637"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoJoy.glb?t=2023-12-01T10%3A55%3A23.526Z"
+            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoJoy.glb?t=2023-12-01T11%3A57%3A52.582Z"
             background="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/GLOWING%20BACKGROUND%204.webm"
             flats={{
                 logo: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_Chapters_Logo.webp?t=2023-11-30T22%3A50%3A50.067Z",
