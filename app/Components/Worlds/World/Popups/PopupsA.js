@@ -85,7 +85,15 @@ const PopupsA = (props) => {
             <>
               <div className='left-content w-[425px] xl:w-[319px] md:!w-[225px] flex flex-col justify-between'>
                 <div className='ml-[-10px] mt-[5px]'>
-                  {audio ? (
+                  <button className='audio-button' onClick={audioClick}>
+                    <img
+                      src={`/assets/world1/popup-icons/audio-${
+                        playing ? "icon" : "mute"
+                      }.svg`}
+                      width='120'
+                    />
+                  </button>
+                  {/* {playing ? (
                     <button className='audio-button' onClick={audioClick}>
                       <img
                         src='/assets/world1/popup-icons/audio-icon.svg'
@@ -99,7 +107,7 @@ const PopupsA = (props) => {
                         width='120'
                       />
                     </button>
-                  )}
+                  )} */}
                 </div>
                 <div
                   className={`button-rw-container mx-auto w-full ${
