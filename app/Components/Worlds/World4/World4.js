@@ -98,16 +98,16 @@ const World4 = () => {
     let contents = {
         "ShieldController": {
             audio: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS1.mp3?t=2023-11-30T22%3A43%3A11.414Z",
-            "2020": {
+            "2020B": {
                 "bg": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20MAIN.webm?t=2023-11-30T22%3A44%3A42.596Z",
                 "year": "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20YEAR.webm?t=2023-11-30T22%3A44%3A53.634Z",
                 "photos": [
                   "/assets/world4/popup-photos/2020B/2020B.png"
                 ],
                 "contents": {
-                  "en": en["2020"],
-                  "ch": ch["2020"],
-                  "vi": vi["2020"]
+                  "en": en["2020B"],
+                  "ch": ch["2020B"],
+                //   "vi": vi["2020B"]
                 }
             }
         },
@@ -123,7 +123,7 @@ const World4 = () => {
                 "contents": {
                   "en": en["2021A"],
                   "ch": ch["2021A"],
-                  "vi": vi["2021A"]
+                //   "vi": vi["2021A"]
                 }
             }
         },
@@ -139,7 +139,7 @@ const World4 = () => {
                 "contents": {
                   "en": en["2021B"],
                   "ch": ch["2021B"],
-                  "vi": vi["2021B"]
+                //   "vi": vi["2021B"]
                 }
             }
         },
@@ -155,7 +155,7 @@ const World4 = () => {
                 "contents": {
                   "en": en["2022"],
                   "ch": ch["2022"],
-                  "vi": vi["2022"]
+                //   "vi": vi["2022"]
                 }
             }
         },
@@ -171,7 +171,7 @@ const World4 = () => {
                 "contents": {
                   "en": en["2023A"],
                   "ch": ch["2023A"],
-                  "vi": vi["2023A"]
+                //   "vi": vi["2023A"]
                 }
             },
             "2023B": {
@@ -183,7 +183,7 @@ const World4 = () => {
                 "contents": {
                   "en": en["2023B"],
                   "ch": ch["2023B"],
-                  "vi": vi["2023B"]
+                //   "vi": vi["2023B"]
                 }
             }
         },
@@ -196,7 +196,7 @@ const World4 = () => {
             title="New Frontier"
             year="2021-2023"
             color="#df4637"
-            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb?t=2023-11-30T22%3A50%3A08.452Z"
+            model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoJoy.glb?t=2023-12-01T10%3A55%3A23.526Z"
             background="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/GLOWING%20BACKGROUND%204.webm"
             flats={{
                 logo: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_Chapters_Logo.webp?t=2023-11-30T22%3A50%3A50.067Z",
