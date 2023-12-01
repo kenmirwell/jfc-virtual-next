@@ -13,6 +13,7 @@ const PopupsA = (props) => {
   const videoPlayed = props.videoPlayed;
   const ref = React.createRef();
   const [playing, setPlaying] = useState(true);
+  const [audioIcon, setAudioIcon] = useState("icon");
   let curr;
 
   useEffect(() => {
@@ -56,19 +57,24 @@ const PopupsA = (props) => {
   };
 
   const audioClick = () => {
-    if (playing) {
-      setPlaying(false);
-
-      if (ref.current) {
-        ref.current.pause();
-      }
+    if (ref.current.volume === 1) {
+      setAudioIcon("mute");
+      ref.current.volume = 0;
     } else {
-      setPlaying(true);
-
-      if (ref.current) {
-        ref.current.play();
-      }
+      setAudioIcon("icon");
+      ref.current.volume = 1;
     }
+    // if (playing) {
+    //   setPlaying(false);
+    //   if (ref.current) {
+    //     ref.current.pause();
+    //   }
+    // } else {
+    //   setPlaying(true);
+    //   if (ref.current) {
+    //     ref.current.play();
+    //   }
+    // }
   };
 
   return (
@@ -86,21 +92,12 @@ const PopupsA = (props) => {
               <div className='left-content w-[400px] xl:w-[319px] md:!w-[225px] flex flex-col justify-between'>
                 <div className='ml-[-10px] mt-[5px]'>
                   <div className='absolute left-[-12px]'>
-                    {audio ? (
-                      <button className='audio-button' onClick={audioClick}>
-                        <img
-                          src='/assets/world1/popup-icons/audio-icon.svg'
-                          width='120'
-                        />
-                      </button>
-                    ) : (
-                      <button className='audio-button' onClick={audioClick}>
-                        <img
-                          src='/assets/world1/popup-icons/audio-mute.svg'
-                          width='120'
-                        />
-                      </button>
-                    )}
+                    <button className='audio-button' onClick={audioClick}>
+                      <img
+                        src={`/assets/world1/popup-icons/audio-${audioIcon}.svg`}
+                        width='120'
+                      />
+                    </button>
                   </div>
                 </div>
                 <div
