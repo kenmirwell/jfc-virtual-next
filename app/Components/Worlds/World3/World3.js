@@ -213,7 +213,7 @@ const World3 = () => {
       year='2013-2020'
       color='#06abcb'
       model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-01T03%3A27%3A08.104Z'
-      background='/assets/world3/bg.mp4'
+      background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world2/elements/chapter.svg",
