@@ -34,7 +34,7 @@ const World2 = () => {
     {
       step: 3,
       action: "GOTO",
-      target: "CakeBldg001",
+      target: "CakeControl001",
       joy: "Joy-Pointing002",
       light: "Light-Rays-Transparent003",
       prompt:
@@ -53,7 +53,7 @@ const World2 = () => {
     {
       step: 5,
       action: "GOTO",
-      target: "OnionLeaves",
+      target: "CongeeBldgController001",
       joy: "Joy-Pointing",
       light: "Light-Rays-Transparent002",
       prompt:
@@ -72,7 +72,7 @@ const World2 = () => {
     {
       step: 7,
       action: "GOTO",
-      target: "BananaLeaf",
+      target: "Inasal",
       joy: "Joy-Pointing003",
       light: "Light-Rays-Transparent001",
       prompt: "<p>Let's continue<br />our Journey</p>",
@@ -91,7 +91,7 @@ const World2 = () => {
     {
       step: 9,
       action: "GOTO",
-      target: "Burger001",
+      target: "BurgerController001",
       joy: "Joy-Pointing004",
       light: "Light-Rays-Transparent",
       prompt: "<p>Let's continue<br />exploring</p>",
