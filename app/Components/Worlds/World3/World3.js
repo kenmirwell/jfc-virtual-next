@@ -212,7 +212,7 @@ const World3 = () => {
       title='Going Global'
       year='2013-2020'
       color='#06abcb'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoLights-Plane%20(3).glb'
+      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-01T03%3A27%3A08.104Z'
       background='/assets/world3/bg.mp4'
       flats={{
         logo: "/assets/world1/elements/logo.png",

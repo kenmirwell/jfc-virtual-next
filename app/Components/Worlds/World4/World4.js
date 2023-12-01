@@ -380,7 +380,7 @@ const World4 = () => {
       title='New Frontier'
       year='2021-2023'
       color='#df4637'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb'
+      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoJoy.glb?t=2023-12-01T03%3A27%3A17.724Z'
       // model="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoLights-Rocket%20(2).glb?t=2023-11-28T03%3A35%3A00.423Z"
       background='/assets/world4/bg.mp4'
       flats={{

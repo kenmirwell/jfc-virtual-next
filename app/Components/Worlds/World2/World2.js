@@ -220,7 +220,7 @@ const World2 = () => {
       title='Dreaming Bigger'
       year='2004-2012'
       color='#c79c1e'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2-Complete-NoLights-Car%20(3).glb'
+      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2-Complete-NoJoy.glb?t=2023-12-01T03%3A27%3A00.808Z'
       background='/assets/world2/bg.mp4'
       flats={{
         logo: "/assets/world1/elements/logo.png",
