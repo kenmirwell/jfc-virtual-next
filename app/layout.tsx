@@ -15,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <body>{children}</body>
+        <body className="h-screen flex items-center justify-center box-border">      
+            <div id='canvasWrapper' className="aspect-video w-auto h-[90%] overflow-hidden bg-blue-500 rounded-2xl">
+            {children}
+            </div>
+        </body>
     </html>
   )
 }
