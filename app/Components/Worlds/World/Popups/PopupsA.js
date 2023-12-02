@@ -97,21 +97,6 @@ const PopupsA = (props) => {
                       width='56'
                     />
                   </button>
-                  {/* {playing ? (
-                    <button className='audio-button' onClick={audioClick}>
-                      <img
-                        src='/assets/world1/popup-icons/audio-icon.svg'
-                        width='120'
-                      />
-                    </button>
-                  ) : (
-                    <button className='audio-button' onClick={audioClick}>
-                      <img
-                        src='/assets/world1/popup-icons/audio-mute.svg'
-                        width='120'
-                      />
-                    </button>
-                  )} */}
                 </div>
                 <div
                   className={`button-rw-container mx-auto w-full ${
