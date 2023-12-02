@@ -690,7 +690,7 @@ const World = ({
   }, [objSelected]);
   return (
     <>
-      <div id='worldcomp' className='w-full relative'>
+      <div id='worldcomp' className='w-full relative aspect-video'>
         <audio ref={bgAudioRef}>
           <source src='/assets/bgAudio.wav' />
         </audio>
@@ -714,15 +714,15 @@ const World = ({
           currentFlow={{ get: currentFlow, set: setCurrentFlow }}
           onClickInteractables={onClickObject}
         />
-        {/* <Joy /> */}
+        <Joy />
+        <Loader model3d={model3d} />
+        <Background background={background} />
         <div
           id='world1'
-          className={`overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
             }`}
         >
 
-          {/* <Loader model3d={model3d} />
-          <Background background={background} /> */}
         </div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA

@@ -74,7 +74,7 @@ body {
   z-index: -5;
 }
 
-@media screen and (orientation:portrait) {
+/* @media screen and (orientation:portrait) {
   body {
     background: blue;
   }
@@ -84,4 +84,4 @@ body {
   body {
     background: green;
   }
-}
+} */
