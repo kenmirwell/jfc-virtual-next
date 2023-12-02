@@ -216,7 +216,7 @@ const World3 = () => {
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
       flats={{
         logo: "/assets/world1/elements/logo.png",
-        chapter: "/assets/world2/elements/chapter.svg",
+        chapter: "/assets/world3/elements/chapter.svg",
         icons: "/assets/world2/elements/icons.png",
       }}
       contents={contents}
