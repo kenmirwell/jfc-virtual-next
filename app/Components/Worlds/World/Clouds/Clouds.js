@@ -62,12 +62,6 @@ const Clouds = ({
             }
 
             gsap.to(['.clouds', '#mtitle'], { y: '-=500%', duration: 2, ease: Power3.easeInOut, delay: 2 });
-            // gsap.to(`#cloud1`, { y: -1200, duration: 2.1, ease: Power3.easeInOut, delay: 2 });
-            // gsap.to(`#cloud2`, { y: -1200, duration: 2.2, ease: Power3.easeInOut, delay: 2 });
-            // gsap.to(`#cloud3`, { y: -1200, duration: 2.3, ease: Power3.easeInOut, delay: 2 });
-            // gsap.to(`#cloud4`, { y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2 });
-            // gsap.to(`#cloud5`, { y: -1200, duration: 1.8, ease: Power3.easeInOut, delay: 2 });
-            // gsap.to(`#mtitle`, { y: -1200, duration: 2, ease: Power3.easeInOut, delay: 2 });
         }
     }, [animate])
 
@@ -75,20 +69,20 @@ const Clouds = ({
         <div id="welcome-text" className="pointer-events-none absolute top-0 left-0 w-full h-full">
             {clouds.map(c => (
                 <div id={c.id} key={`cloud_${c.id}`}
-                    // className="absolute w-1/4"
-                    // style={{ transform: `translate(${c.position.x}px, ${c.position.y}px)` }} 
                     className={`${c.className} pointer-events-none clouds`}
                 >
                     {c.svg}
                 </div>
             ))}
-            <div id="text" className="pointer-events-none absolute top-0 left-0 right-0 bottom-0 text-center flex items-center justify-center">
-                <h1 id="mtitle" className="uppercase text-white text-[100px] leading-none font-[700]">
+            <div id="text"
+                className="textContainer w-2/4 h-2/4 pointer-events-none absolute text-center flex items-center justify-center top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]"
+                style={{ containerType: 'size', resize: 'both' }}>
+                <h1 id="mtitle" className="uppercase text-white leading-none font-[700]" style={{ fontSize: '30cqmin' }}>
                     {headline.split(" ").map((w, wi) => (
                         <span className="flex justify-center" key={`headline_word_${wi}`}>
                             {w.split("").map((t, i) => (
                                 <span key={`word_ltr_${wi}_${i}`} className={`relative headline-single block scale-0 lt${i}`}>
-                                    <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `5px ${color ? color : "#00bbdc"}` }}>{t}</span>
+                                    <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}` }}>{t}</span>
                                     <span className="relative">{t}</span>
                                 </span>
                             ))}

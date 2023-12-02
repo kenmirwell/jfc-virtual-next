@@ -711,26 +711,26 @@ const World = ({
         <audio ref={bgAudioRef}>
           <source src='/assets/bgAudio.wav' />
         </audio>
+        <Clouds
+          title={title}
+          animate={initialAnimate}
+          delay={0.5}
+          color={color}
+        />
+        <Flats
+          flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
+          title={title}
+          year={year}
+          color={color}
+        />
         <div
           id='world1'
           className={`overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
             }`}
         >
-          <Clouds
-            title={title}
-            animate={initialAnimate}
-            delay={0.5}
-            color={color}
-          />
           {/*
           <Loader model3d={model3d} />
           <Background background={background} />
-          <Flats
-            flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
-            title={title}
-            year={year}
-            color={color}
-          />
           <Prompt
             world={world}
             audioEnding={audioEnding}
