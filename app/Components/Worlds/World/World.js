@@ -525,8 +525,8 @@ const World = ({
         );
         const joy = modelObjs.children.find((c) => c.name === currentFlow.joy);
 
-        console.log("modelObjs", modelObjs.children)
-        console.log("currentFlow.target", currentFlow.target)
+        console.log("modelObjs", modelObjs.children);
+        console.log("currentFlow.target", currentFlow.target);
 
         const onSelect = () => {
           disableFunctionality = true;
@@ -723,7 +723,7 @@ const World = ({
 
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
-      <audio ref={bgAudioRef}>
+      <audio ref={bgAudioRef} loop>
         <source src='/assets/bgAudio.wav' />
       </audio>
       <div
@@ -732,15 +732,17 @@ const World = ({
           objSelected ? "blur-[50px]" : ""
         }`}
       >
-        <button className='ml-4 mt-4 audio-button' onClick={handleMuteBg}>
+        <button
+          className='fixed top-8 left-8 w-fit audio-button'
+          onClick={handleMuteBg}
+        >
           <img
             src={`/assets/world1/popup-icons/${
               bgPlaying ? "audio-icon" : "audio-mute"
             }.webp`}
-            width='56'
+            width='32'
           />
         </button>
-
         <Clouds
           title={title}
           animate={initialAnimate}
@@ -755,6 +757,7 @@ const World = ({
           year={year}
           color={color}
         />
+
         <Prompt
           world={world}
           audioEnding={audioEnding}
