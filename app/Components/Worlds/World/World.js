@@ -153,9 +153,7 @@ const World = ({
 
       onLoad();
 
-      document
-        .getElementById("world1")
-        .appendChild(components.renderer.domElement);
+      document.getElementById("world1").appendChild(components.renderer.domElement);
       window.addEventListener("resize", onWindowResize, false);
     }
   }, [model3d, loaded]);
@@ -280,25 +278,9 @@ const World = ({
         delay: 2,
       });
 
-      gsap.timeline().to("#clogo", 0.5, {
+      gsap.timeline().to(["#clogo", "#cicons", "#cchapter", "#cheader"], 0.5, {
         y: 0,
-        ease: Power3.easeInOut,
-        delay: 3.5,
-      });
-
-      gsap.timeline().to("#cicons", 0.5, {
-        y: 0,
-        ease: Power3.easeInOut,
-        delay: 3.5,
-      });
-
-      gsap.timeline().to("#cchapter", 0.5, {
         x: 0,
-        ease: Power3.easeInOut,
-        delay: 3.5,
-      });
-
-      gsap.timeline().to("#cheader", 0.5, {
         opacity: 1,
         ease: Power3.easeInOut,
         delay: 3.5,

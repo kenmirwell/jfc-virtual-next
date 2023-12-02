@@ -78,10 +78,10 @@ const Clouds = ({
                 className="textContainer w-2/4 h-2/4 pointer-events-none absolute text-center flex items-center justify-center top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]"
                 style={{ containerType: 'size', resize: 'both' }}>
                 <h1 id="mtitle" className="uppercase text-white leading-none font-[700]" style={{ fontSize: '30cqmin' }}>
-                    {headline.split(" ").map((w, wi) => (
-                        <span className="flex justify-center" key={`headline_word_${wi}`}>
-                            {w.split("").map((t, i) => (
-                                <span key={`word_ltr_${wi}_${i}`} className={`relative headline-single block scale-0 lt${i}`}>
+                    {headline.split(" ").map((index) => (
+                        <span className="flex justify-center" key={`headline_word_${index}`}>
+                            {index.split("").map((t, i) => (
+                                <span key={`word_ltr_${i}`} className={`relative headline-single block scale-0 lt${i}`}>
                                     <span className="absolute left-0 right-0" style={{ WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}` }}>{t}</span>
                                     <span className="relative">{t}</span>
                                 </span>
