@@ -740,7 +740,7 @@ const World = ({
             src={`/assets/world1/popup-icons/${
               bgPlaying ? "audio-icon" : "audio-mute"
             }.webp`}
-            width='32'
+            width='30'
           />
         </button>
         <Clouds
