@@ -5,13 +5,13 @@ import { ch } from "./ch";
 
 const World2 = () => {
   let flow = [
-    {
-      step: 0,
-      action: "START",
-      prompt:
-        "<p>This is JOY, she will be your guide as  you explore the <strong>JFC Universe</strong></p>",
-      end: 1,
-    },
+    // {
+    //   step: 0,
+    //   action: "START",
+    //   prompt:
+    //     "<p>This is JOY, she will be your guide as  you explore the <strong>JFC Universe</strong></p>",
+    //   end: 1,
+    // },
     {
       step: 1,
       action: "GOTO",
