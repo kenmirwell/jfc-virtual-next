@@ -128,10 +128,11 @@ const World = ({
     }
   }, []);
 
-  const canvasWrapper = document.getElementById('world1');
+
 
   /* Initialize Scene */
   useEffect(() => {
+    const canvasWrapper = document.getElementById('world1');
     if (!model3d && loaded) {
       components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
       components.camera.aspect = 16 / 9;
