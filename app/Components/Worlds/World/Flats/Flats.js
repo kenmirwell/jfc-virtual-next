@@ -1,7 +1,7 @@
 const Flats = ({ flats, title, year, color }) => {
   return (
     <div
-      className={`flats pointer-events-none z-[999] px-[4%] absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
+      className={`flats pointer-events-none z-[0] px-[4%] absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
     >
       {/* LOGO AND HEADLINE */}
       <div className='col-span-3 row-span-2 w-full'>

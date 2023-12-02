@@ -706,23 +706,23 @@ const World = ({
           year={year}
           color={color}
         />
+        <Prompt
+          world={world}
+          audioEnding={audioEnding}
+          showJoy={showJoy}
+          flow={flow}
+          currentFlow={{ get: currentFlow, set: setCurrentFlow }}
+          onClickInteractables={onClickObject}
+        />
+        {/* <Joy /> */}
         <div
           id='world1'
           className={`overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
             }`}
         >
-          {/*
-          <Loader model3d={model3d} />
-          <Background background={background} />
-          <Prompt
-            world={world}
-            audioEnding={audioEnding}
-            showJoy={showJoy}
-            flow={flow}
-            currentFlow={{ get: currentFlow, set: setCurrentFlow }}
-            onClickInteractables={onClickObject}
-          />
-          <Joy /> */}
+
+          {/* <Loader model3d={model3d} />
+          <Background background={background} /> */}
         </div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
