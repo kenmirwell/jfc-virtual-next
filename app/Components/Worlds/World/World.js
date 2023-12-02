@@ -723,7 +723,7 @@ const World = ({
 
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
-      <audio ref={bgAudioRef} loop>
+      <audio ref={bgAudioRef} loop muted={!bgPlaying}>
         <source src='/assets/bgAudio.wav' />
       </audio>
       <div
