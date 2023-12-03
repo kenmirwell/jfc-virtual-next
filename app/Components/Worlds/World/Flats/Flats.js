@@ -8,7 +8,7 @@ const Flats = ({ flats, title, year, color }) => {
         <img id='clogo' src={flats.logo} className="!w-[200%] -translate-y-[400px]" />
         <div id='cheader'
           className="textContainer w-full h-full text-center -mt-[10%] opacity-0"
-          style={{ containerType: 'size', resize: 'horizontal' }}>
+          style={{ containerType: 'size' }}>
           <h1 id="mheader" className="uppercase text-white leading-none font-[700] w-full" style={{ fontSize: '20cqmin' }}>
             {title.split(" ").map((w, wi) => (
               <span className="flex justify-center" key={`headline_word_${wi}`}>
