@@ -95,7 +95,7 @@ const Prompt = ({
         </audio>
       )}
       <div
-        className={`fixed top-0 left-0 right-0 bottom-0 opacity-0 bg-black/50 transition-all duration-[0.3s] ease-in-out ${currentFlow.get.action === "END"
+        className={`z-50 absolute w-full h-full opacity-0 bg-black/50 transition-all duration-[1s] ease-in-out ${currentFlow.get.action === "END"
           ? "opacity-100"
           : "pointer-events-none"
           }`}
@@ -103,7 +103,7 @@ const Prompt = ({
 
       <div
         id='prompt'
-        className={` z-[22] overflow-hidden  absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3 `}
+        className={`z-[60] overflow-hidden  absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
       >
 
         <div
@@ -116,7 +116,7 @@ const Prompt = ({
           <div
             className={`cursor-pointer p-[5%] w-full h-fit opacity-0 ease-in-out text-center
             bg-opacity-80 backdrop-blur-[2px] drop-shadow-lg rounded-2xl
-            absolute top-1/2 -translate-y-1/2 mt-[10%] scale-[80%]
+            absolute top-1/2 -translate-y-1/2 scale-[80%]
             
             ${showJoy && currentFlow.get.prompt
                 ? "!opacity-[100] !translate-x-[0]"
@@ -202,20 +202,15 @@ const Prompt = ({
           </div>
         </div>
         {/* VIDEOS OF JOY */}
-        <div className={`
-        w-full h-full relative row-start-2 row-span-2
-        pointer-events-none
-        ${currentFlow.get.action === "END" ? "col-span-full" : "col-span-4 col-start-9"}
-        `}>
+        <div className={`promptVideos relative w-full h-full pointer-events-none 
+        row-start-2 row-span-2 
+        ${currentFlow.get.action === "END" ? "col-span-full" : "col-span-4 col-start-9"}`}>
           <video
             muted
             autoPlay
             loop
-            className={`
-            absolute w-full opacity-0 
-            ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""}
-            ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-            `}
+            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
@@ -226,11 +221,8 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`
-              absolute w-full opacity-0 
-              ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
@@ -241,11 +233,8 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`
-              absolute w-full opacity-0 
-              ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
@@ -256,11 +245,11 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`
-              absolute w-full opacity-0 
-              ${showJoy && currentFlow.get.action === "END" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            className={`joy-thinking absolute w-full opacity-0 
+            ${showJoy && currentFlow.get.action === "END"
+                ? "opacity-100 scale-[80%] -top-[15%]"
+                : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm'
@@ -270,13 +259,12 @@ const Prompt = ({
           <video
             muted
             ref={pointingRef}
-            autoPlay
-            loop
-            className={`
-              absolute w-full opacity-0 
-              ${!showJoy && world === 1 && currentFlow.get.action === "GOTO" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            // autoPlay
+            // loop
+            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
@@ -287,11 +275,10 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`
-              absolute w-full opacity-0 
-              ${!showJoy && world === 2 && currentFlow.get.action === "GOTO" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
@@ -302,11 +289,10 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`
-              absolute w-full opacity-0 
-              ${!showJoy && world === 3 && currentFlow.get.action === "GOTO" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
@@ -317,11 +303,10 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`
-              absolute w-full opacity-0 
-              ${!showJoy && world === 4 && currentFlow.get.action === "GOTO" ? "opacity-100" : ""}
-              ${currentFlow.get.action === "END" ? "scale-[80%] -top-[15%]" : "scale-[2] top-[70%]"}
-              `}
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
