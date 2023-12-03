@@ -111,7 +111,8 @@ const World3 = () => {
   let contents = {
     HandBulb: {
       2013: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS1.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS1.mp3?t=2023-12-03T02%3A27%3A42.995Z",
         bg: "/assets/world3/popup/2013-MAIN.webm",
         year: "/assets/world3/popup-years/2013-YEAR.webm",
         photos: ["/assets/world3/popup-photos/2013/2013.png"],
@@ -125,7 +126,8 @@ const World3 = () => {
 
     JFCGold: {
       2014: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS2.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS2.mp3?t=2023-12-03T02%3A27%3A53.455Z",
         bg: "/assets/world3/popup/2014-MAIN.webm",
         year: "/assets/world3/popup-years/2014-YEAR.webm",
         photos: ["/assets/world3/popup-photos/2014/2014.png"],
@@ -139,7 +141,8 @@ const World3 = () => {
 
     Burger: {
       2015: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS3.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS3.mp3?t=2023-12-03T02%3A28%3A04.381Z",
         bg: "/assets/world3/popup/2015-MAIN.webm",
         year: "/assets/world3/popup-years/2015-YEAR.webm",
         photos: ["/assets/world3/popup-photos/2015/2015.png"],
@@ -150,7 +153,8 @@ const World3 = () => {
         },
       },
       2017: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS3b.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS3B.mp3?t=2023-12-03T02%3A28%3A10.908Z",
         bg: "/assets/world3/popup/2017-MAIN.webm",
         year: "/assets/world3/popup-years/2017-YEAR.webm",
         photos: ["/assets/world3/popup-photos/2017/2017.png"],
@@ -164,7 +168,8 @@ const World3 = () => {
 
     Dumplings: {
       2018: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS4.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS4.mp3?t=2023-12-03T02%3A28%3A17.898Z",
         bg: "/assets/world3/popup/2018-MAIN.webm",
         year: "/assets/world3/popup-years/2018-YEAR.webm",
         photos: [
@@ -181,7 +186,8 @@ const World3 = () => {
 
     CoffeeBeans: {
       2019: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS5.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS5.mp3?t=2023-12-03T02%3A28%3A25.172Z",
         bg: "/assets/world3/popup/2019-MAIN.webm",
         year: "/assets/world3/popup-years/2019-YEAR.webm",
         photos: ["/assets/world3/popup-photos/2019/2019.png"],
@@ -192,7 +198,8 @@ const World3 = () => {
         },
       },
       2020: {
-        audio: "/assets/world3/audio/JFC_VO_W3_MS5B.wav",
+        audio:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS5B.mp3?t=2023-12-03T02%3A31%3A12.955Zwav",
         bg: "/assets/world3/popup/2020A-MAIN.webm",
         year: "/assets/world3/popup-years/2020A-YEAR.webm",
         photos: ["/assets/world3/popup-photos/2020A/2020A.png"],
@@ -208,7 +215,9 @@ const World3 = () => {
   return (
     <World
       world={3}
-      audioEnding={"/assets/world2/audio/JFC_VO_W3_GAME3.wav"}
+      audioEnding={
+        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_GAME3.mp3?t=2023-12-03T02%3A31%3A25.721Z"
+      }
       title='Going Global'
       year='2013-2020'
       color='#06abcb'

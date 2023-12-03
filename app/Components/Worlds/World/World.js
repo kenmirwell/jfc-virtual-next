@@ -724,7 +724,7 @@ const World = ({
   return (
     <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
       <audio ref={bgAudioRef} loop muted={!bgPlaying}>
-        <source src='/assets/bgAudio.wav' />
+        <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
       </audio>
       <div
         id='world1'
