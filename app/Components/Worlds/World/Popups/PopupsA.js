@@ -79,11 +79,11 @@ const PopupsA = (props) => {
 
   return (
     <div
-      className={`details-modal-container relative w-full h-full bg-black/80 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"
+      className={`details-modal-container relative w-full h-full bg-black/60 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"
         }`}
     >
       <div
-        className={`w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[99]`}
+        className={`w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[999] backdrop-blur-lg`}
       >
         {/* VIDEO BACKGROUND */}
         {Object.keys(documents).map((k, i) => (
@@ -168,7 +168,10 @@ const PopupsA = (props) => {
                         )}
                       </button>
                     ))}
-                    <div className="absolute w-[98%] h-[1px] dotted-line"></div>
+                    {Object.keys(documents).length > 1 && (
+                      <div className="absolute w-[98%] h-[1px] dotted-line"></div>
+                    )}
+
                   </div>
                   {/* {Object.keys(documents).length > 1 && (
                     <div className='dashline' />
@@ -176,7 +179,7 @@ const PopupsA = (props) => {
                 </div>
               </div>
               <div className="w-[65%] flex flex-col justify-between box-border">
-                <div className="w-full p-[3%] overflow-y-scroll h-[88%] box-border"
+                <div className="w-full p-[6%] overflow-y-scroll h-[88%] box-border"
                   style={{ containerType: 'size' }}
                 >
                   <PopupYearcomponent />
