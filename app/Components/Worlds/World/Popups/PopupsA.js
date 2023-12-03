@@ -90,28 +90,13 @@ const PopupsA = (props) => {
           {videoPlayed && (
             <>
               <div className='left-content w-[425px] xl:w-[319px] md:!w-[225px] flex flex-col justify-between'>
-                <div className='ml-[-10px] mt-[5px]'>
+                <div className='ml-[16px] mt-[16px]'>
                   <button className='audio-button' onClick={audioClick}>
                     <img
-                      src={`/assets/world1/popup-icons/audio-${audioIcon}.svg`}
-                      width='120'
+                      src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`}
+                      width='56'
                     />
                   </button>
-                  {/* {playing ? (
-                    <button className='audio-button' onClick={audioClick}>
-                      <img
-                        src='/assets/world1/popup-icons/audio-icon.svg'
-                        width='120'
-                      />
-                    </button>
-                  ) : (
-                    <button className='audio-button' onClick={audioClick}>
-                      <img
-                        src='/assets/world1/popup-icons/audio-mute.svg'
-                        width='120'
-                      />
-                    </button>
-                  )} */}
                 </div>
                 <div
                   className={`button-rw-container mx-auto w-full ${
@@ -230,7 +215,12 @@ const PopupsA = (props) => {
                 </div>
               </div>
 
-              <audio className='hidden' controls ref={ref}>
+              <audio
+                className='hidden'
+                muted={audioIcon === "mute" ? true : false}
+                controls
+                ref={ref}
+              >
                 <source src={curr.audio} />
               </audio>
             </>
