@@ -699,15 +699,35 @@ const World = ({
     // }
   };
 
-  // useEffect(() => {
-  //   if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
-  //   if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
-  // }, [objSelected]);
+  const [audioIcon, setAudioIcon] = useState("icon");
+
+  function toggleMute() {
+    const mediaElements = document.querySelectorAll('audio');
+
+    mediaElements.forEach((element) => {
+      if (element.muted) {
+        element.muted = false;
+        setAudioIcon("icon");
+      } else {
+        element.muted = true;
+        setAudioIcon("mute");
+      }
+    });
+  }
 
   console.log("contents", Object.entries(contents).map(i => i))
   return (
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
+        {model3d ? (
+          <button className='absolute top-[2%] left-[2%] z-[900] w-[3%]'
+            onClick={toggleMute}
+          >
+            <img
+              src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`}
+            />
+          </button>
+        ) : null}
         <audio ref={bgAudioRef}>
           <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
         </audio>
@@ -754,6 +774,7 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             videoPlayed={videoPlayed}
+            audioIcon={audioIcon}
           />
         ) : (
           <PopupsB
@@ -768,6 +789,7 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             videoPlayed={videoPlayed}
+            audioIcon={audioIcon}
           />
         )}
       </div>

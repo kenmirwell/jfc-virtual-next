@@ -9,11 +9,10 @@ const PopupsA = (props) => {
   const contents = props.contents;
   const objSelected = props.objSelected;
   const audio = props.audio;
+  const audioIcon = props.audioIcon;
   const onDeselect = props.onDeselect;
   const videoPlayed = props.videoPlayed;
   const ref = React.createRef();
-  const [playing, setPlaying] = useState(true);
-  const [audioIcon, setAudioIcon] = useState("icon");
   let curr;
 
   useEffect(() => {
@@ -56,173 +55,15 @@ const PopupsA = (props) => {
     onDeselect();
   };
 
-  const audioClick = () => {
-    if (ref.current.volume === 1) {
-      setAudioIcon("mute");
-      ref.current.volume = 0;
-    } else {
-      setAudioIcon("icon");
-      ref.current.volume = 1;
-    }
-    // if (playing) {
-    //   setPlaying(false);
-    //   if (ref.current) {
-    //     ref.current.pause();
-    //   }
-    // } else {
-    //   setPlaying(true);
-    //   if (ref.current) {
-    //     ref.current.play();
-    //   }
-    // }
-  };
-
   return (
     <div
-      className={`details-modal-container opacity-0 transition-all duration-[0.5s] ease-in-out ${
-        objSelected ? "!opacity-100" : "pointer-events-none"
-      }`}
+      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"
+        }`}
     >
       <div
-        className={`details-modal max-w-[1280px] xl:max-w-[1024px] md:!max-w-[767px]`}
+        className={`w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`}
       >
-        <div className='details-modal-content absolute flex flex-row-reverse top-[33px] bottom-[47px] left-[38px] right-[41px]'>
-          {videoPlayed && (
-            <>
-              <div className='left-content w-[400px] xl:w-[319px] md:!w-[225px] flex flex-col justify-between'>
-                <div className='ml-[-10px] mt-[5px]'>
-                  <div className='absolute left-[-12px]'>
-                    <button className='audio-button' onClick={audioClick}>
-                      <img
-                        src={`/assets/world1/popup-icons/audio-${audioIcon}.svg`}
-                        width='120'
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div
-                  className={`button-rw-container mx-auto w-full ${
-                    Object.keys(documents).length === 3
-                      ? "max-w-[280px] md:!max-w-[180px]"
-                      : "max-w-[200px] md:!max-w-[150px]"
-                  } mb-[60px] md:!mb-[20px]`}
-                >
-                  <div
-                    className={`rw-content-container flex ${
-                      Object.keys(documents).length > 1
-                        ? "justify-between"
-                        : "justify-around"
-                    }`}
-                  >
-                    {Object.keys(documents).map((item, i) => (
-                      <button
-                        key={`red-white-${i}`}
-                        className={`red-white-container bottom-[70px]`}
-                        onClick={() => props.onClickwhiteButton(i)}
-                      >
-                        {activeVideo === i ? (
-                          <div className='red-button-container relative'>
-                            <p
-                              className={
-                                "active year-text !text-[36px] md:!text-[30px] absolute top-[-65px] left-[-26px] md:!left-[-20px] md:!top-[-50px]"
-                              }
-                            >
-                              {item}
-                            </p>
-                            <img
-                              src='/assets/world1/popup-icons/circle-red.svg'
-                              width='20'
-                            />
-                            <div className='red-button' />
-                          </div>
-                        ) : (
-                          <div className='white-button-container relative'>
-                            <p
-                              className={
-                                "year-text !text-[24px] md:!text-[18px] absolute top-[-45px] left-[-15px] md:!left-[-10px] md:!top-[-35px]"
-                              }
-                            >
-                              {item}
-                            </p>
-                            <img
-                              src='/assets/world1/popup-icons/circle-white.svg'
-                              width='20'
-                            />
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                  {Object.keys(documents).length > 1 && (
-                    <div className='dashline' />
-                  )}
-                </div>
-              </div>
-
-              <div className='right-content items-start w-[calc(100%-400px)] xl:w-[calc(100%-319px)] md:!w-[calc(100%-225px)] pl-[80px] flex flex-col justify-between pt-[80px] xl:pt-[40px] md:!pt-[20px] md:!pb-0 md:!pr-0 pb-[20px] pr-[20px]'>
-                <div>
-                  <div className='ml-[-10px]'>
-                    <PopupYearcomponent />
-                  </div>
-                  <div className='text-container  pr-[80px] md:!pr-[20px] max-h-[400px] md:!max-h-[220px] overflow-scroll'>
-                    <div className={"title-container pb-[8px] pt-[5px]"}>
-                      <h4 className='text-[28px] md:!text-[18px] leading-[1.1]'>
-                        {curr.title}
-                      </h4>
-                    </div>
-                    <div
-                      className='desc-container top-[200px] leading-[1.2] md:!text-[14px] text-xl'
-                      dangerouslySetInnerHTML={{ __html: curr.description }}
-                    />
-                    <div className='popup-image-container mt-[23px]'>
-                      <div className='popup-image-single'>
-                        {curr.photos.map((img) => (
-                          <div key={`img_${img}`} className='px-[5px]'>
-                            <img
-                              src={img}
-                              width={300}
-                              className='md:!w-[180px]'
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className='button-lr-container flex justify-end'>
-                  <button
-                    className={`arrow-left mr-[10px] ${
-                      activeVideo > 0 ? "" : "opacity-50"
-                    }`}
-                    onClick={() => props.onPrev()}
-                  >
-                    <img
-                      src='/assets/world1/popup-icons/arrow-left.svg'
-                      width='50'
-                    />
-                  </button>
-                  <button
-                    className={`arrow-right`}
-                    onClick={() =>
-                      activeVideo < Object.keys(documents).length - 1
-                        ? props.onNext()
-                        : onDeselect()
-                    }
-                  >
-                    <img
-                      src='/assets/world1/popup-icons/arrow-right.svg'
-                      width='50'
-                    />
-                  </button>
-                </div>
-              </div>
-
-              <audio muted={!playing} className='hidden' controls ref={ref}>
-                <source src={curr.audio} />
-              </audio>
-            </>
-          )}
-        </div>
+        {/* VIDEO BACKGROUND */}
         {Object.keys(documents).map((k, i) => (
           <video
             onPlay={props.handleStartVideo}
@@ -235,12 +76,149 @@ const PopupsA = (props) => {
             <source src={documents[k].bg} type='video/webm' />
           </video>
         ))}
+        <div className='details-modal-content 
+        absolute w-[90%] h-auto overflow-hidden aspect-video
+        flex gap-5
+        left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+        pb-[1.5%]
+        '
+        >
+          {videoPlayed && (
+            <>
+              <div className="w-[65%] flex flex-col justify-between box-border">
+                <div className="w-full p-[6%] pr-[20%] overflow-y-auto h-[88%] box-border"
+                  style={{ containerType: 'size' }}
+                >
+                  <PopupYearcomponent />
+
+                  <h4 className='text-[8cqmin] leading-[1.1] mt-[2.5%] mb-[1.5%]'>
+                    {curr.title}
+                  </h4>
+                  <div
+                    className='desc-container text-[5cqmin] leading-[1.2]'
+                    dangerouslySetInnerHTML={{ __html: curr.description }}
+                  />
+                  <div className='flex flex-wrap mt-[2.5%]'>
+                    {curr.photos.map((img) => (
+                      <div key={`img_${img}`} className='w-2/4'>
+                        <img
+                          src={img}
+                          className='w-full p-[4px]'
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className='h-[10%] w-full button-lr-container flex gap-2 px-[6%]'>
+                  <button
+                    className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"
+                      }`}
+                    onClick={() => props.onPrev()}
+                  >
+                    <img
+                      src='/assets/world1/popup-icons/arrow-left.svg'
+                      className="w-auto h-full"
+                    />
+                  </button>
+                  <button
+                    className={`arrow-right`}
+                    onClick={() =>
+                      activeVideo < Object.keys(documents).length - 1
+                        ? props.onNext()
+                        : onDeselect()
+                    }
+                  >
+                    <img
+                      src='/assets/world1/popup-icons/arrow-right.svg'
+                      className="w-auto h-full"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div className="w-[35%] flex items-end pb-[2%]">
+                <div
+                  className={`button-rw-container mx-auto w-[70%]`}
+                >
+                  <div
+                    className={`rw-content-container relative flex items-center ${Object.keys(documents).length > 1
+                      ? "justify-between"
+                      : "justify-around"
+                      }`}
+                  >
+                    {Object.keys(documents).map((item, i) => (
+                      <button
+                        key={`red-white-${i}`}
+                        className={`red-white-container relative aspect-square w-[10%]`}
+                        style={{ containerType: 'size' }}
+                        onClick={() => props.onClickwhiteButton(i)}
+                      >
+                        {activeVideo === i ? (
+                          <>
+                            <span className='absolute w-full red-button--big scale-[1.5] aspect-square
+                              border border-white rounded-full
+                              top-0 left-0
+                               ' ></span>
+                            <span className='absolute w-full red-button--small aspect-square
+                              border-2 border-white rounded-full
+                              top-0 left-0
+                               ' ></span>
+                            <img
+                              src='/assets/world1/popup-icons/circle-red.svg'
+                              className="absolute w-full top-0 left-0"
+                            />
+                            <span
+                              className={
+                                "active year-text text-[150cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full"
+                              }
+                            >
+                              {item}
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <span className='absolute w-full scale-[1.5] aspect-square
+                              border border-white rounded-full
+                              top-0 left-0
+                               ' ></span>
+                            <img
+                              src='/assets/world1/popup-icons/circle-white.svg'
+                              className="absolute w-full top-0 left-0"
+                            />
+                            <span
+                              className={
+                                "year-text text-[75cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[120%]"
+                              }
+                            >
+                              {item}
+                            </span>
+                          </>
+                        )}
+                      </button>
+                    ))}
+                    {Object.keys(documents).length > 1 && (
+                      <div className="absolute w-[98%] h-[1px] dotted-line"></div>
+                    )}
+
+                  </div>
+                  {/* {Object.keys(documents).length > 1 && (
+                    <div className='dashline' />
+                  )} */}
+                </div>
+              </div>
+
+
+              <audio className='hidden' muted={audioIcon === "mute" ? true : false} controls ref={ref}>
+                <source src={curr.audio} />
+              </audio>
+            </>
+          )}
+        </div>
       </div>
       <div
         onClick={onExit}
-        className={`details-modal-overlay ${
-          objSelected ? "" : "pointer-events-none"
-        }`}
+        className={`details-modal-overlay ${objSelected ? "" : "pointer-events-none"
+          }`}
       />
     </div>
   );
