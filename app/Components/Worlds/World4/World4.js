@@ -198,8 +198,14 @@ const World4 = () => {
       flats={{
         logo: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_Chapters_Logo.webp?t=2023-11-30T22%3A50%3A50.067Z",
         chapter: "/assets/world4/elements/chapter.svg",
-        icons:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_18.webp?t=2023-11-30T22%3A50%3A59.972Z",
+        // icons:  "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_18.webp?t=2023-11-30T22%3A50%3A59.972Z",
+        iconSet:[
+          [],
+          ["/assets/logos/world3/15Yoshinoya-Logo.png"],
+          ["/assets/logos/world3/15Yoshinoya-Logo.png", "/assets/logos/world3/16Milksha-Logo.png"],
+          ["/assets/logos/world3/15Yoshinoya-Logo.png", "/assets/logos/world3/16Milksha-Logo.png", "/assets/logos/world3/18Tiong-Bahru-Bakery-Logo.png", "/assets/logos/world3/17CMCR-Logo.png"],
+          ["/assets/logos/world3/15Yoshinoya-Logo.png", "/assets/logos/world3/16Milksha-Logo.png", "/assets/logos/world3/18Tiong-Bahru-Bakery-Logo.png", "/assets/logos/world3/17CMCR-Logo.png"],
+        ]
       }}
       contents={contents}
       flow={flow}

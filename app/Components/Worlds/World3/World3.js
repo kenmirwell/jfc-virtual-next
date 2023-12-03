@@ -221,12 +221,19 @@ const World3 = () => {
       title='Going Global'
       year='2013-2020'
       color='#06abcb'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-01T03%3A27%3A08.104Z'
+      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-03T19%3A45%3A24.538Z'
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world3/elements/chapter.svg",
-        icons: "/assets/world2/elements/icons.png",
+        // icons: "/assets/world2/elements/icons.png",
+        iconSet:[
+          ["/assets/logos/world3/12Panda-Express-Logo.png"],
+          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png"],
+          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png", "/assets/logos/world3/14Rick-Bayless-Tortazo-Logo.png"],
+          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png", "/assets/logos/world3/14Rick-Bayless-Tortazo-Logo.png", "/assets/logos/world3/13Coffee-Bean-And-Tea-Leaf-Logo.png"],
+          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png", "/assets/logos/world3/14Rick-Bayless-Tortazo-Logo.png", "/assets/logos/world3/13Coffee-Bean-And-Tea-Leaf-Logo.png", "/assets/logos/world3/10Smashburger-Logo.png"],
+        ]
       }}
       contents={contents}
       flow={flow}

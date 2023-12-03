@@ -236,7 +236,11 @@ const World2 = () => {
         chapter: "/assets/world2/elements/chapter.svg",
         // icons: "/assets/world2/elements/icons.png",
         iconSet: [
-          ["/assets/logos/world1/yonhe-king.png"],
+          ["/assets/logos/world2/yonhe-king.png"],
+          ["/assets/logos/world2/yonhe-king.png", "/assets/logos/world2/red-ribbon.png"],
+          ["/assets/logos/world2/yonhe-king.png", "/assets/logos/world2/red-ribbon.png", "/assets/logos/world2/HongZhuangYuan.png"],
+          ["/assets/logos/world2/yonhe-king.png", "/assets/logos/world2/red-ribbon.png", "/assets/logos/world2/HongZhuangYuan.png", "/assets/logos/world2/mang-inasal.png"],
+          ["/assets/logos/world2/yonhe-king.png", "/assets/logos/world2/red-ribbon.png", "/assets/logos/world2/HongZhuangYuan.png", "/assets/logos/world2/mang-inasal.png", "/assets/logos/world2/burger-king.png"],
         ]
       }}
       contents={contents}
