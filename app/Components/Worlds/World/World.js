@@ -692,7 +692,7 @@ const World = ({
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         <audio ref={bgAudioRef}>
-          <source src='/assets/bgAudio.wav' />
+          <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
         </audio>
         <Clouds
           title={title}
