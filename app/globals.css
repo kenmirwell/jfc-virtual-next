@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: red;
+  background: white;
 }
 
 .loader {
@@ -63,3 +63,29 @@ body {
 #promptc .GOTO strong {
     font-size: 36px;
 }
+
+.speechArrow::after {
+  content: url('/assets/speechArrow.svg');
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateX(calc(99%));
+  width: 10%;
+  z-index: -5;
+}
+
+video {
+  pointer-events: none;
+}
+
+/* @media screen and (orientation:portrait) {
+  body {
+    background: blue;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  body {
+    background: green;
+  }
+} */

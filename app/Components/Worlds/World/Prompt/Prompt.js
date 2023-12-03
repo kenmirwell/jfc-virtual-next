@@ -95,193 +95,61 @@ const Prompt = ({
         </audio>
       )}
       <div
-        className={`fixed top-0 left-0 right-0 bottom-0 opacity-0 bg-black/50 transition-all duration-[0.3s] ease-in-out ${
-          currentFlow.get.action === "END"
-            ? "opacity-100"
-            : "pointer-events-none"
-        }`}
+        className={`z-50 absolute w-full h-full opacity-0 bg-black/50 transition-all duration-[1s] ease-in-out ${currentFlow.get.action === "END"
+          ? "opacity-100"
+          : "pointer-events-none"
+          }`}
       ></div>
+
       <div
         id='prompt'
-        className={`fixed bottom-0 right-[100px] z-[22]  text-center translate-x-[300px] h-[380px] w-[200px] flex items-end justify-center transition-all duration-[0.5s] ease-in-out ${
-          currentFlow.get.action === "END" ? "!w-[100%] !right-0" : ""
-        }`}
+        className={`z-[60] overflow-hidden  absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
       >
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-idle absolute top-[10px] ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-wave absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-point absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            showJoy && currentFlow.get.action === "END" ? "opacity-100" : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          ref={pointingRef}
-          // autoPlay
-          // loop
-          className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            !showJoy && world === 1 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            !showJoy && world === 2 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            !showJoy && world === 3 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
-            type='video/webm'
-          />
-        </video>
-        <video
-          muted
-          autoPlay
-          loop
-          className={`joy-thinking absolute top-0 ml-[-63px] w-[900px] max-w-none opacity-0 ${
-            !showJoy && world === 4 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-          }`}
-        >
-          <source
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
-            type='video/webm'
-          />
-        </video>
+
         <div
           id='promptc'
-          className='relative text-center h-[300px] w-[200px] flex items-end justify-center'
+          className={`
+          w-full h-full relative bg-white/0 row-start-2 mt-[20%]
+          ${currentFlow.get.action === "END" ? "col-span-4 col-start-9 row-span-1" : "col-span-5 col-start-5 row-span-2"}
+          `}
         >
           <div
-            className={`prompt-content cursor-pointer absolute top-[30px] right-[100%] mr-[40px] p-[30px] min-w-[470px] opacity-0 translate-x-[100px] ease-in-out ${
-              currentFlow.get.action === "START" ? "!min-w-[430px]" : ""
-            } ${
-              showJoy && currentFlow.get.prompt
+            className={`cursor-pointer p-[5%] w-full h-fit opacity-0 ease-in-out text-center
+            bg-opacity-80 backdrop-blur-[2px] drop-shadow-lg rounded-2xl
+            absolute top-1/2 -translate-y-1/2 scale-[80%]
+            
+            ${showJoy && currentFlow.get.prompt
                 ? "!opacity-[100] !translate-x-[0]"
                 : ""
-            } 
-                            ${
-                              currentFlow.get.action === "END"
-                                ? "!bottom-[100%] !top-auto !left-[100%] !right-auto !py-[40px] !pb-[30px]"
-                                : ""
-                            } 
-                            ${
-                              currentFlow.get.action === "GOTO" ||
-                              currentFlow.get.action === "WAIT"
-                                ? "!pr-[70px]"
-                                : ""
-                            } 
-                            ${
-                              currentFlow.get.action === "WAIT"
-                                ? "!py-[35px]"
-                                : ""
-                            } 
-                            `}
-            style={{
-              backgroundSize: "100% 100%",
-              backgroundImage: `url(${
-                currentFlow.get.action === "GOTO" ||
+              } 
+              ${`${currentFlow.get.action === "GOTO" ||
                 currentFlow.get.action === "WAIT"
-                  ? "/assets/prompt-speech.png"
-                  : "/assets/prompt-bg.png"
-              })`,
-              minWidth: currentFlow.get.width ? currentFlow.get.width : null,
-            }}
+                ? "bg-white/70 speechArrow"
+                : "bg-white/70"
+              }`
+              }
+              `}
+            style={{ containerType: 'inline-size', resize: 'horizontal' }}
           >
             <div
               onClick={
                 currentFlow.get.action === "START"
                   ? onProceed
                   : currentFlow.get.action === "GOTO"
-                  ? handleClickHere
-                  : null
+                    ? handleClickHere
+                    : null
               }
-              className={`${
-                currentFlow.get.action
-              } leading-[1.2] text-center "text-[#E23636]" ${
-                currentFlow.get.action === "START"
-                  ? "text-[30px]"
-                  : "text-[30px]"
-              } ${
-                currentFlow.get.action === "END" ||
-                currentFlow.get.action === "START"
-                  ? "tracking-[0]"
-                  : "tracking-[-0.5px]"
-              } ${
-                currentFlow.get.action === "WAIT" ? "!tracking-[0.9px]" : ""
-              } `}
+              className="tracking-[0] leading-[1.2] text-[8cqw]"
+              // className={`${currentFlow.get.action
+              //   } leading-[1.2] text-center "text-[#E23636]" ${currentFlow.get.action === "START"
+              //     ? "text-[30px]"
+              //     : "text-[30px]"
+              //   } ${currentFlow.get.action === "END" ||
+              //     currentFlow.get.action === "START"
+              //     ? "tracking-[0]"
+              //     : "tracking-[-0.5px]"
+              //   } ${currentFlow.get.action === "WAIT" ? "!tracking-[0.9px]" : ""
+              //   } `}
               dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }}
             />
             {/* {currentFlow.get.action === "START" && (
@@ -294,31 +162,157 @@ const Prompt = ({
             )} */}
             {(currentFlow.get.action === "GOTO" ||
               currentFlow.get.action === "START") && (
-              <button
-                onClick={handleClickHere}
-                className='bg-[#E23636] text-white rounded-[50px] font-[700] text-[22px] px-8  mt-[5px]'
-              >
-                CLICK HERE
-              </button>
-            )}
+                <button
+                  onClick={handleClickHere}
+                  className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
+                  style={{ containerType: 'inline-size', resize: 'horizontal' }}
+                >
+                  <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
+                    CLICK HERE
+                  </span>
+                </button>
+              )}
             {currentFlow.get.action === "END" && (
               <div>
-                <a href='http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'>
-                  <button className='bg-[#cf463f] text-white rounded-[50px] font-[700] text-[18px] px-[20px] mt-[5px]'>
-                    PLAY GAME
-                  </button>
+                <a href='http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'
+                >
+                  <div
+                    className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
+                    style={{ containerType: 'inline-size', resize: 'horizontal' }}
+                  >
+                    <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
+                      PLAY GAME
+                    </span>
+                  </div>
                 </a>
-                <br></br>
                 <a
                   href={`http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
                 >
-                  <button className='lowercase text-[12px] tracking-[1.4px] text-black/50 font-[500]'>
-                    SKIP
-                  </button>
+                  <div
+                    className='mx-auto w-[80%] h-fit text-black/50 lowercase'
+                    style={{ containerType: 'inline-size', resize: 'horizontal' }}
+                  >
+                    <span className="text-[8cqw] block" style={{ fontFamily: 'inherit' }}>
+                      SKIP
+                    </span>
+                  </div>
                 </a>
               </div>
             )}
           </div>
+        </div>
+        {/* VIDEOS OF JOY */}
+        <div className={`promptVideos relative w-full h-full pointer-events-none 
+        row-start-2 row-span-2 
+        ${currentFlow.get.action === "END" ? "col-span-full" : "col-span-4 col-start-9"}`}>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-thinking absolute w-full opacity-0 
+            ${showJoy && currentFlow.get.action === "END"
+                ? "opacity-100 scale-[80%] -top-[15%]"
+                : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            ref={pointingRef}
+            // autoPlay
+            // loop
+            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
+              type='video/webm'
+            />
+          </video>
+          <video
+            muted
+            autoPlay
+            loop
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
+              ? "opacity-100"
+              : ""
+              }`}
+          >
+            <source
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
+              type='video/webm'
+            />
+          </video>
         </div>
       </div>
     </>

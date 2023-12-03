@@ -16,8 +16,6 @@ import Joy from "./Joy/Joy";
 import PopupsA from "./Popups/PopupsA";
 import PopupsB from "./Popups/PopupsB";
 import { getCookie, setCookie } from "cookies-next";
-import path from "path";
-import { usePathname } from "next/navigation";
 
 let hovered = null;
 let disableFunctionality = false;
@@ -130,10 +128,16 @@ const World = ({
     }
   }, []);
 
+
+
   /* Initialize Scene */
   useEffect(() => {
+    const canvasWrapper = document.getElementById('world1');
     if (!model3d && loaded) {
-      components.renderer.setSize(window.innerWidth, window.innerHeight);
+      components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
+      components.camera.aspect = 16 / 9;
+      components.camera.updateProjectionMatrix()
+      // components.renderer.setSize(window.innerWidth, window.innerHeight);
       components.camera.position.set(0, 20, 17);
       components.lights.directional.position.set(0, 11.19, 12.133);
       components.lights.directional.castShadow = true;
@@ -150,9 +154,7 @@ const World = ({
 
       onLoad();
 
-      document
-        .getElementById("world1")
-        .appendChild(components.renderer.domElement);
+      document.getElementById("world1").appendChild(components.renderer.domElement);
       window.addEventListener("resize", onWindowResize, false);
     }
   }, [model3d, loaded]);
@@ -277,25 +279,9 @@ const World = ({
         delay: 2,
       });
 
-      gsap.timeline().to("#clogo", 0.5, {
+      gsap.timeline().to(["#clogo", "#cicons", "#cchapter", "#cheader"], 0.5, {
         y: 0,
-        ease: Power3.easeInOut,
-        delay: 3.5,
-      });
-
-      gsap.timeline().to("#cicons", 0.5, {
-        y: 0,
-        ease: Power3.easeInOut,
-        delay: 3.5,
-      });
-
-      gsap.timeline().to("#cchapter", 0.5, {
         x: 0,
-        ease: Power3.easeInOut,
-        delay: 3.5,
-      });
-
-      gsap.timeline().to("#cheader", 0.5, {
         opacity: 1,
         ease: Power3.easeInOut,
         delay: 3.5,
@@ -353,7 +339,7 @@ const World = ({
   /* Apply click animation */
   useEffect(() => {
     bgAudioRef.current.play();
-    bgAudioRef.current.volume = 0.05;
+    bgAudioRef.current.volume = 0;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
 
@@ -503,7 +489,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-                -1
+              -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -524,9 +510,6 @@ const World = ({
           (c) => c.name === currentFlow.target
         );
         const joy = modelObjs.children.find((c) => c.name === currentFlow.joy);
-
-        console.log("modelObjs", modelObjs.children);
-        console.log("currentFlow.target", currentFlow.target);
 
         const onSelect = () => {
           disableFunctionality = true;
@@ -673,9 +656,9 @@ const World = ({
   };
 
   const onWindowResize = () => {
-    components.camera.aspect = window.innerWidth / window.innerHeight;
+    components.camera.aspect = canvasWrapper.clientWidth / canvasWrapper.clientHeight;
     components.camera.updateProjectionMatrix();
-    components.renderer.setSize(window.innerWidth, window.innerHeight);
+    components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
   };
 
   const onNext = () => {
@@ -699,65 +682,30 @@ const World = ({
   };
 
   const bgAudioRef = useRef(null);
-  const [bgPlaying, setBgPlaying] = useState(true);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
-  const handleMuteBg = () => {
-    if (bgPlaying) {
-      bgAudioRef.current.volume = 0;
-      setBgPlaying(false);
-    } else {
-      bgAudioRef.current.volume = 0.05;
-      setBgPlaying(true);
-    }
-  };
-
-  const pathname = usePathname();
-
   useEffect(() => {
-    if (pathname === "/") {
-      if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
-      if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
-    }
+    if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
+    if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
   }, [objSelected]);
-
   return (
-    <div id='worldcomp' className='overflow-hidden flex-shrink-0 origin-center'>
-      <audio ref={bgAudioRef} loop muted={!bgPlaying}>
-        <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
-      </audio>
-      <div
-        id='world1'
-        className={`overflow-hidden w-full h-[100vh] transition-all duration-[0.5s] ease-out ${
-          objSelected ? "blur-[50px]" : ""
-        }`}
-      >
-        <button
-          className='fixed top-8 left-8 w-fit audio-button'
-          onClick={handleMuteBg}
-        >
-          <img
-            src={`/assets/world1/popup-icons/${
-              bgPlaying ? "audio-icon" : "audio-mute"
-            }.webp`}
-            width='30'
-          />
-        </button>
+    <>
+      <div id='worldcomp' className='w-full relative aspect-video'>
+        <audio ref={bgAudioRef}>
+          <source src='/assets/bgAudio.wav' />
+        </audio>
         <Clouds
           title={title}
           animate={initialAnimate}
           delay={0.5}
           color={color}
         />
-        <Loader model3d={model3d} />
-        <Background background={background} />
         <Flats
           flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
           title={title}
           year={year}
           color={color}
         />
-
         <Prompt
           world={world}
           audioEnding={audioEnding}
@@ -767,37 +715,46 @@ const World = ({
           onClickInteractables={onClickObject}
         />
         <Joy />
+        <Loader model3d={model3d} />
+        <Background background={background} />
+        <div
+          id='world1'
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
+            }`}
+        >
+
+        </div>
+        {world === 1 || world == 3 || world === 5 ? (
+          <PopupsA
+            objSelected={objSelected}
+            contents={contents}
+            onClickwhiteButton={onClickwhiteButton}
+            activeVideo={activeVideo}
+            audio={audio}
+            onPrev={onPrev}
+            onNext={onNext}
+            handleStartVideo={handleStartVideo}
+            onDeselect={onDeselect}
+            onClickObject={onClickObject}
+            videoPlayed={videoPlayed}
+          />
+        ) : (
+          <PopupsB
+            objSelected={objSelected}
+            contents={contents}
+            onClickwhiteButton={onClickwhiteButton}
+            activeVideo={activeVideo}
+            audio={audio}
+            onPrev={onPrev}
+            onNext={onNext}
+            handleStartVideo={handleStartVideo}
+            onDeselect={onDeselect}
+            onClickObject={onClickObject}
+            videoPlayed={videoPlayed}
+          />
+        )}
       </div>
-      {world === 1 || world == 3 || world === 5 ? (
-        <PopupsA
-          objSelected={objSelected}
-          contents={contents}
-          onClickwhiteButton={onClickwhiteButton}
-          activeVideo={activeVideo}
-          audio={audio}
-          onPrev={onPrev}
-          onNext={onNext}
-          handleStartVideo={handleStartVideo}
-          onDeselect={onDeselect}
-          onClickObject={onClickObject}
-          videoPlayed={videoPlayed}
-        />
-      ) : (
-        <PopupsB
-          objSelected={objSelected}
-          contents={contents}
-          onClickwhiteButton={onClickwhiteButton}
-          activeVideo={activeVideo}
-          audio={audio}
-          onPrev={onPrev}
-          onNext={onNext}
-          handleStartVideo={handleStartVideo}
-          onDeselect={onDeselect}
-          onClickObject={onClickObject}
-          videoPlayed={videoPlayed}
-        />
-      )}
-    </div>
+    </>
   );
 };
 
