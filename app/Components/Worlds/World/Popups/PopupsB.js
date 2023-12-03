@@ -56,27 +56,6 @@ const PopupsA = (props) => {
     onDeselect();
   };
 
-  const audioClick = () => {
-    if (ref.current.volume === 1) {
-      setAudioIcon("mute");
-      ref.current.volume = 0;
-    } else {
-      setAudioIcon("icon");
-      ref.current.volume = 1;
-    }
-    // if (playing) {
-    //   setPlaying(false);
-    //   if (ref.current) {
-    //     ref.current.pause();
-    //   }
-    // } else {
-    //   setPlaying(true);
-    //   if (ref.current) {
-    //     ref.current.play();
-    //   }
-    // }
-  };
-
   return (
     <div
       className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"

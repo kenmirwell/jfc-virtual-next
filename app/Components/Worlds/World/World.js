@@ -681,6 +681,22 @@ const World = ({
     // }
   };
 
+  const [audioIcon, setAudioIcon] = useState("icon");
+
+  function toggleMute() {
+    const mediaElements = document.querySelectorAll('audio');
+
+    mediaElements.forEach((element) => {
+      if (element.muted) {
+        element.muted = false;
+        setAudioIcon("icon");
+      } else {
+        element.muted = true;
+        setAudioIcon("mute");
+      }
+    });
+  }
+
   const bgAudioRef = useRef(null);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
@@ -691,6 +707,15 @@ const World = ({
   return (
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
+        {model3d ? (
+          <button className='absolute top-[2%] left-[2%] z-[900] w-[3%]'
+            onClick={toggleMute}
+          >
+            <img
+              src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`}
+            />
+          </button>
+        ) : null}
         <audio ref={bgAudioRef}>
           <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
         </audio>
