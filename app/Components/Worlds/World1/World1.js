@@ -108,6 +108,7 @@ const World1 = () => {
           ch: ch["1978"],
           vi: vi["1978"],
         },
+        icons: ["/assets/logos/world1/jollibee.png"]
       },
       1979: {
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979-MAIN.webm",
@@ -136,6 +137,7 @@ const World1 = () => {
           ch: ch["1980"],
           vi: vi["1980"],
         },
+        icons: ["/assets/logos/world1/jollibee.png"]
       },
     },
     Empty003: {
@@ -152,6 +154,7 @@ const World1 = () => {
           ch: ch["1984"],
           vi: vi["1984"],
         },
+        icons: ["/assets/logos/world1/jollibee.png"]
       },
       1990: {
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1990-MAIN.webm?t=2023-12-01T06%3A52%3A23.536Z",
@@ -164,6 +167,7 @@ const World1 = () => {
           ch: ch["1990"],
           vi: vi["1990"],
         },
+        icons: ["/assets/logos/world1/jollibee.png"]
       },
       1993: {
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1993-MAIN.webm?t=2023-12-01T06%3A52%3A54.430Z",
@@ -192,6 +196,7 @@ const World1 = () => {
           ch: ch["1994"],
           vi: vi["1994"],
         },
+        icons: ["/assets/logos/world1/jollibee.png", "greenwich.png"]
       },
       1998: {
         audio:
@@ -222,6 +227,7 @@ const World1 = () => {
           ch: ch["2000"],
           vi: vi["2000"],
         },
+        icons: ["/assets/logos/world1/jollibee.png", "greenwich.png", "chowking.png"]
       },
       2001: {
         audio:
@@ -253,12 +259,18 @@ const World1 = () => {
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world1/elements/chapter.svg",
-        icons: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc.webp?t=2023-12-01T02%3A40%3A17.669Z",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw.webp?t=2023-12-01T02%3A40%3A23.731Z",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw-ck.webp?t=2023-12-01T02%3A40%3A28.903Z",
+        iconSet: [
+          // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc.webp?t=2023-12-01T02%3A40%3A17.669Z",
+          // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw.webp?t=2023-12-01T02%3A40%3A23.731Z",
+          // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw-ck.webp?t=2023-12-01T02%3A40%3A28.903Z",
+          ["/assets/logos/world1/jollibee.png"],
+          ["/assets/logos/world1/jollibee.png"],
+          ["/assets/logos/world1/jollibee.png"],
+          ["/assets/logos/world1/jollibee.png", "/assets/logos/world1/greenwich.png"],
+          ["/assets/logos/world1/jollibee.png", "/assets/logos/world1/greenwich.png", "/assets/logos/world1/chowking.png"]
         ],
       }}
+      iconSet
       contents={contents}
       flow={flow}
     />

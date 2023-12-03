@@ -234,7 +234,10 @@ const World2 = () => {
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world2/elements/chapter.svg",
-        icons: "/assets/world2/elements/icons.png",
+        // icons: "/assets/world2/elements/icons.png",
+        iconSet: [
+          ["/assets/logos/world1/yonhe-king.png"],
+        ]
       }}
       contents={contents}
       flow={flow}

@@ -47,9 +47,12 @@ const Flats = ({ flats, title, year, color }) => {
       >
         <div className="flex items-center w-fit h-[20%] gap-2 px-[1.5%] py-[1%] rounded-full 
         bg-white bg-opacity-80 backdrop-blur-sm drop-shadow-lg border border-white/20 mb-[2%]">
-          <img src="/assets/logos/world1/01Jollibee-Logo.png" alt="" className="w-auto h-full" />
+          {/* <img src="/assets/logos/world1/01Jollibee-Logo.png" alt="" className="w-auto h-full" />
           <img src="/assets/logos/world1/02Greenwich-Logo.png" alt="" className="w-auto h-full" />
-          <img src="/assets/logos/world1/03Chowking-Logo.png" alt="" className="w-auto h-full" />
+          <img src="/assets/logos/world1/03Chowking-Logo.png" alt="" className="w-auto h-full" /> */}
+           {flats.iconSet.map(icon => (
+              <img src={icon} alt="" className="w-auto h-full" />
+           ))}
         </div>
       </div>
     </div>

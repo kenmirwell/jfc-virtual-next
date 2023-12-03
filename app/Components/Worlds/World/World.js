@@ -64,6 +64,9 @@ const World = ({
   const [showJoy, setShowJoy] = useState(false);
   const [videoPlayed, setVideoPlayed] = useState(false);
 
+  const bgAudioRef = useRef(null);
+  const [flatIconsIndex, setFlatIconsIndex] = useState(0);
+
   const ref = useRef(false);
 
   /* Load all components */
@@ -509,6 +512,7 @@ const World = ({
         const target = modelObjs.children.find(
           (c) => c.name === currentFlow.target
         );
+
         const joy = modelObjs.children.find((c) => c.name === currentFlow.joy);
 
         const onSelect = () => {
@@ -592,6 +596,20 @@ const World = ({
   const onDeselect = () => {
     setShowJoy(true);
     disableFunctionality = false;
+
+    const target = modelObjs.children.find(
+      (c) => c.name === currentFlow.target
+    );
+    
+    Object.keys(contents).find((c, index) => {
+
+      if(c === target.name) {
+        setFlatIconsIndex(index + 1)
+      }
+    })
+
+    console.log("objSelected", objSelected)
+    console.log("target", target.name)
 
     const joys = modelObjs.children.filter(
       (obj) => obj.name.indexOf(objects.joy ? objects.joy : "Joy-") > -1
@@ -681,13 +699,12 @@ const World = ({
     // }
   };
 
-  const bgAudioRef = useRef(null);
-  const [flatIconsIndex, setFlatIconsIndex] = useState(0);
+  // useEffect(() => {
+  //   if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
+  //   if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
+  // }, [objSelected]);
 
-  useEffect(() => {
-    if (objSelected === "Empty001") setFlatIconsIndex((prev) => prev + 1);
-    if (objSelected === "Empty002") setFlatIconsIndex((prev) => prev + 1);
-  }, [objSelected]);
+  console.log("contents", Object.entries(contents).map(i => i))
   return (
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
@@ -701,7 +718,7 @@ const World = ({
           color={color}
         />
         <Flats
-          flats={{ ...flats, icons: flats.icons[flatIconsIndex] }}
+          flats={{ ...flats, iconSet: flats.iconSet[flatIconsIndex] }}
           title={title}
           year={year}
           color={color}
