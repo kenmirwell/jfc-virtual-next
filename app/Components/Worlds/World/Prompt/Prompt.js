@@ -109,7 +109,7 @@ const Prompt = ({
         <div
           id='promptc'
           className={`
-          w-full h-full relative bg-white/0 row-start-2
+          w-full h-full relative bg-white/0 row-start-2 mt-[20%]
           ${currentFlow.get.action === "END" ? "col-span-4 col-start-9 row-span-1" : "col-span-5 col-start-5 row-span-2"}
           `}
         >
@@ -164,7 +164,7 @@ const Prompt = ({
               currentFlow.get.action === "START") && (
                 <button
                   onClick={handleClickHere}
-                  className='bg-[#E23636] w-[80%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
+                  className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
                   style={{ containerType: 'inline-size', resize: 'horizontal' }}
                 >
                   <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
@@ -177,7 +177,7 @@ const Prompt = ({
                 <a href='http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'
                 >
                   <div
-                    className='mx-auto bg-[#E23636] w-[80%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
+                    className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
                     style={{ containerType: 'inline-size', resize: 'horizontal' }}
                   >
                     <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
