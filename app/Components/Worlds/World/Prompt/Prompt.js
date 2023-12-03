@@ -202,7 +202,7 @@ const Prompt = ({
           </div>
         </div>
         {/* VIDEOS OF JOY */}
-        <div className={`hidden promptVideos relative w-full h-full pointer-events-none 
+        <div className={`promptVideos relative w-full h-full pointer-events-none 
         row-start-2 row-span-2 
         ${currentFlow.get.action === "END" ? "col-span-full" : "col-span-4 col-start-9"}`}>
           <video
