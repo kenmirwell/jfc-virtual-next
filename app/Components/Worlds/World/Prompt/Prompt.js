@@ -129,7 +129,7 @@ const Prompt = ({
               }`
               }
               `}
-            style={{ containerType: 'inline-size', resize: 'horizontal' }}
+            style={{ containerType: 'inline-size' }}
           >
             <div
               onClick={
@@ -165,7 +165,7 @@ const Prompt = ({
                 <button
                   onClick={handleClickHere}
                   className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
-                  style={{ containerType: 'inline-size', resize: 'horizontal' }}
+                  style={{ containerType: 'inline-size' }}
                 >
                   <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
                     CLICK HERE
@@ -178,7 +178,7 @@ const Prompt = ({
                 >
                   <div
                     className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
-                    style={{ containerType: 'inline-size', resize: 'horizontal' }}
+                    style={{ containerType: 'inline-size' }}
                   >
                     <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
                       PLAY GAME
@@ -190,7 +190,7 @@ const Prompt = ({
                 >
                   <div
                     className='mx-auto w-[80%] h-fit text-black/50 lowercase'
-                    style={{ containerType: 'inline-size', resize: 'horizontal' }}
+                    style={{ containerType: 'inline-size' }}
                   >
                     <span className="text-[8cqw] block" style={{ fontFamily: 'inherit' }}>
                       SKIP
