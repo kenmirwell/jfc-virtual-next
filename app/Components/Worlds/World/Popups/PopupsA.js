@@ -9,11 +9,11 @@ const PopupsA = (props) => {
   const contents = props.contents;
   const objSelected = props.objSelected;
   const audio = props.audio;
+  const audioIcon = props.audioIcon;
   const onDeselect = props.onDeselect;
   const videoPlayed = props.videoPlayed;
   const ref = React.createRef();
   // const [playing, setPlaying] = useState(true);
-  const [audioIcon, setAudioIcon] = useState("icon");
   let curr;
 
   useEffect(() => {
@@ -157,7 +157,7 @@ const PopupsA = (props) => {
                 </div>
               </div>
               <div className="w-[65%] flex flex-col justify-between box-border">
-                <div className="w-full p-[6%] overflow-y-auto h-[88%] box-border"
+                <div className="w-full p-[6%] pl-[8%] overflow-y-auto h-[88%] box-border"
                   style={{ containerType: 'size' }}
                 >
                   <PopupYearcomponent />

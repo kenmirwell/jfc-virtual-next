@@ -9,11 +9,10 @@ const PopupsA = (props) => {
   const contents = props.contents;
   const objSelected = props.objSelected;
   const audio = props.audio;
+  const audioIcon = props.audioIcon;
   const onDeselect = props.onDeselect;
   const videoPlayed = props.videoPlayed;
   const ref = React.createRef();
-  const [playing, setPlaying] = useState(true);
-  const [audioIcon, setAudioIcon] = useState("icon");
   let curr;
 
   useEffect(() => {
@@ -209,7 +208,7 @@ const PopupsA = (props) => {
               </div>
 
 
-              <audio muted={!playing} className='hidden' controls ref={ref}>
+              <audio className='hidden' muted={audioIcon === "mute" ? true : false} controls ref={ref}>
                 <source src={curr.audio} />
               </audio>
             </>

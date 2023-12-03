@@ -762,6 +762,7 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             videoPlayed={videoPlayed}
+            audioIcon={audioIcon}
           />
         ) : (
           <PopupsB
@@ -776,6 +777,7 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             videoPlayed={videoPlayed}
+            audioIcon={audioIcon}
           />
         )}
       </div>
