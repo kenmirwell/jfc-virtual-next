@@ -164,7 +164,7 @@ const PopupsA = (props) => {
               </div>
               <div className='w-[65%] flex flex-col justify-between box-border'>
                 <div
-                  className='w-full p-[6%] pl-[8%] overflow-y-auto h-[88%] box-border'
+                  className='w-full p-[6%] pl-[7%] max-w-[93%] overflow-y-auto h-[88%] box-border'
                   style={{ containerType: "size" }}
                 >
                   <PopupYearcomponent />
