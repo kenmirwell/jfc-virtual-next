@@ -36,6 +36,7 @@ const World = ({
   flow,
   audioEnding,
   zoomMultiplier = 1,
+  lang,
 }) => {
   const [components, setComponents] = useState({
     renderer: null,
