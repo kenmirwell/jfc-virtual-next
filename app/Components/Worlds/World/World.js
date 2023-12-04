@@ -36,6 +36,7 @@ const World = ({
   flow,
   audioEnding,
   zoomMultiplier = 1,
+  lang
 }) => {
   const [components, setComponents] = useState({
     renderer: null,
@@ -128,11 +129,11 @@ const World = ({
   }, []);
 
   /* @TODO: Handle translation for cookie */
-  useEffect(() => {
-    if (!getCookie("lang")) {
-      setCookie("lang", "en");
-    }
-  }, []);
+//   useEffect(() => {
+//     if (!getCookie("lang")) {
+//       setCookie("lang", "en");
+//     }
+//   }, []);
 
   /* Initialize Scene */
   useEffect(() => {
@@ -821,6 +822,7 @@ const World = ({
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
+            lang={lang ? lang : "en"}
           />
         ) : (
           <PopupsB
@@ -836,6 +838,7 @@ const World = ({
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
+            lang={lang ? lang : "en"}
           />
         )}
       </div>

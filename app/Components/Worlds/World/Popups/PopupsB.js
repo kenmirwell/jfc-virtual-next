@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
 
 const PopupsA = (props) => {
-  const lang = getCookie("lang");
+//   const lang = getCookie("lang");
   const activeVideo = props.activeVideo;
   const contents = props.contents;
   const objSelected = props.objSelected;
@@ -35,7 +35,7 @@ const PopupsA = (props) => {
   curr = (() => {
     const y = Object.keys(documents)[activeVideo];
     let data = documents[y];
-    let content = data.contents[lang];
+    let content = data.contents[props.lang];
 
     return {
       ...data,

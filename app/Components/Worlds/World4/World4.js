@@ -3,7 +3,7 @@ import { en } from "./en";
 import { vi } from "./vi";
 import { ch } from "./ch";
 
-const World4 = () => {
+const World4 = ({ lang }) => {
   let flow = [
     // {
     //   step: 0,
@@ -210,6 +210,7 @@ const World4 = () => {
 
   return (
     <World
+      lang={lang}
       world={4}
       audioEnding={
         "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_END.mp3?t=2023-11-30T22%3A42%3A18.247Z"
