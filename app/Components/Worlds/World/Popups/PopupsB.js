@@ -182,7 +182,6 @@ const PopupsA = (props) => {
                             "active year-text text-[150cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full"
                           }
                         >
-                          {console.log("item with regex", item.replace(reg, ""))}
                           {item.replace(reg, "")}
                         </span>
                       </>

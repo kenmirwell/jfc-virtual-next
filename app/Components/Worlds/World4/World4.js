@@ -198,6 +198,7 @@ const World4 = ({ lang }) => {
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023%20YEAR.webm?t=2023-11-30T22%3A48%3A30.258Z",
         yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023_YEAR.png",
         photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2023/2023b-Actual-Size-1.png",
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2023/2023b-Actual-Size-2.png",
         ],
         contents: {
