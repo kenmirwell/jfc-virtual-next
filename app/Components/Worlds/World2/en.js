@@ -32,7 +32,7 @@ export const en = {
             </div>
             </div>
             <br/>
-            <p>Jollibee Group Foundation establishes the <strong>Farmer Entrepreneurship Program:</strong> which has helped transform hundreds of smallholder farmers into agro-entrepreneurs. To date, FEP Farmers have delivered over PHP 411M worth of produce, equivalent to 9.8m kilos of vegetables.</p>
+            <p>Jollibee Group Foundation established the <strong>Farmer Entrepreneurship Program:</strong> which has helped transform hundreds of smallholder farmers into agro-entrepreneurs. To date, FEP Farmers have delivered over PHP 411M worth of produce, equivalent to 9.8m kilos of vegetables.</p>
         `
     },
     "2010": {
