@@ -83,15 +83,3 @@ video {
     repeating-linear-gradient(90deg,#ffffff 0 10px,#0000 0 12px)
     /*10px white then 2px transparent -> repeat this!*/
 }
-
-/* @media screen and (orientation:portrait) {
-  body {
-    background: red;
-  }
-}
-
-@media screen and (orientation:landscape) {
-  body {
-    background: green;
-  }
-} */

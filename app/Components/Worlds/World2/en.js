@@ -24,6 +24,14 @@ export const en = {
         description: `
             <p><strong>Hong Zhuang Yuan</strong> joins the Jollibee Group. The brand is known for its special selection of Chinese congee, and has over 50 stores in China.</p>
             <br/>
+            <div className='flex flex-wrap mt-[2.5%]'>
+            <div
+              className='w-2/4 flex content-center items-center'
+            >
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2008/Screen%20Shot%202023-09-01%20at%206.12.11%20PM.jpg?t=2023-12-04T00%3A29%3A55.270Z" className='w-full p-[4px]' />
+            </div>
+            </div>
+            <br/>
             <p>Jollibee Group Foundation establishes the <strong>Farmer Entrepreneurship Program:</strong> which has helped transform hundreds of smallholder farmers into agro-entrepreneurs. To date, FEP Farmers have delivered over PHP 411M worth of produce, equivalent to 9.8m kilos of vegetables.</p>
         `
     },

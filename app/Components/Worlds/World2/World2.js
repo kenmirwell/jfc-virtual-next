@@ -226,7 +226,7 @@ const World2 = () => {
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008%20MAIN.webm?t=2023-12-01T07%3A03%3A08.493Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008%20YEAR.webm?t=2023-12-02T10%3A00%3A47.016Z",
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2008/Screen%20Shot%202023-09-01%20at%206.12.11%20PM.jpg?t=2023-12-04T00%3A29%3A55.270Z",
+          "",
         ],
         contents: {
           en: en["2008"],

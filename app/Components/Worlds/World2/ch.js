@@ -20,6 +20,13 @@ export const ch = {
         title: "支持国际商业和农业",
         description: `
             <p>宏状元加入快乐蜂集团。该品牌以精选的中国粥品而闻名,在中国拥有超过50家门店。</p>
+            <div className='flex flex-wrap mt-[2.5%]'>
+            <div
+              className='w-2/4 flex content-center items-center'
+            >
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2008/Screen%20Shot%202023-09-01%20at%206.12.11%20PM.jpg?t=2023-12-04T00%3A29%3A55.270Z" className='w-full p-[4px]' />
+            </div>
+            </div>
             <p>快乐蜂集团基金会设立了农民创业计划:帮助数百名小农转变为农业企业家。迄今为止,农民创业计划已交付了价值超过4.11亿比索的农产品,相当于980万公斤蔬菜。</p>
         `
     },

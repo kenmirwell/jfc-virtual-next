@@ -3,7 +3,17 @@ export const ch = {
         title: "财务支持和安全",
         description: `
             <p>快乐蜂集团成功发行优先永续资本和优先债务证券:这是自1997年首次公开募股以来首次动用资本。本次优先永续资本发行获得10倍超额认购,显示出对快乐蜂集团的坚定信心。</p>
+            <br/>
             <p>为了应对新冠疫情,快乐蜂集团拨款10亿比索为员工提供援助。</p>
+            <br/>
+            <div className='flex flex-wrap mt-[2.5%]'>
+            <div
+              className='w-2/4 flex content-center items-center'
+            >
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2020/2020-Actual-Size-Chapter-4.png" className='w-full p-[4px]' />
+            </div>
+            </div>
+            <br/>
             <p>快乐蜂集团为受影响的前线人员和贫困家庭提供了价值超过3.3亿比索的援助。</p>
         `
     },
