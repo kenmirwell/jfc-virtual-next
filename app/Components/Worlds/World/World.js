@@ -36,7 +36,7 @@ const World = ({
   flow,
   audioEnding,
   zoomMultiplier = 1,
-  lang
+  lang,
 }) => {
   const [components, setComponents] = useState({
     renderer: null,
@@ -129,11 +129,11 @@ const World = ({
   }, []);
 
   /* @TODO: Handle translation for cookie */
-//   useEffect(() => {
-//     if (!getCookie("lang")) {
-//       setCookie("lang", "en");
-//     }
-//   }, []);
+  //   useEffect(() => {
+  //     if (!getCookie("lang")) {
+  //       setCookie("lang", "en");
+  //     }
+  //   }, []);
 
   /* Initialize Scene */
   useEffect(() => {
@@ -349,7 +349,7 @@ const World = ({
   /* Apply click animation */
   useEffect(() => {
     bgAudioRef.current.play();
-    bgAudioRef.current.volume = 0.05;
+    bgAudioRef.current.volume = 0.03;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
       const light = modelObjs.children.find(
@@ -506,7 +506,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-              -1
+                -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -802,11 +802,15 @@ const World = ({
         />
         <Joy />
         <Loader model3d={model3d} value={loadPercentage} />
-        <Background background={background} backgroundPoster={backgroundPoster} />
+        <Background
+          background={background}
+          backgroundPoster={backgroundPoster}
+        />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
-            }`}
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
+            objSelected ? "blur-[50px]" : ""
+          }`}
         ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
