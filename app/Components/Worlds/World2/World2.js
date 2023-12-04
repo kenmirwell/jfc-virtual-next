@@ -118,6 +118,7 @@ const World2 = () => {
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004%20YEAR.webm?t=2023-12-02T09%3A55%3A56.876Z",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/Layer%201636.jpg",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/2004%20-%20JGF%20logo.jpg",
         ],
         contents: {
           en: en["2004"],

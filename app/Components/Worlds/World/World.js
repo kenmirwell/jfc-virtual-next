@@ -349,7 +349,6 @@ const World = ({
     bgAudioRef.current.volume = 0.05;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
-
       const light = modelObjs.children.find(
         (c) => c.name === currentFlow.light
       );

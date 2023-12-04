@@ -58,8 +58,9 @@ const PopupsA = (props) => {
 
   return (
     <div
-      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"
-        }`}
+      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${
+        objSelected ? "!opacity-100" : "pointer-events-none"
+      }`}
     >
       <div
         className={`w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`}
@@ -77,7 +78,8 @@ const PopupsA = (props) => {
             <source src={documents[k].bg} type='video/webm' />
           </video>
         ))}
-        <div className='details-modal-content 
+        <div
+          className='details-modal-content 
         absolute w-[90%] h-auto overflow-hidden aspect-video
         flex gap-5
         left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
@@ -86,36 +88,39 @@ const PopupsA = (props) => {
         >
           {videoPlayed && (
             <>
-              <div className="w-[35%] flex items-end pb-[2%]">
-                <div
-                  className={`button-rw-container mx-auto w-[70%]`}
-                >
+              <div className='w-[35%] flex items-end pb-[2%]'>
+                <div className={`button-rw-container mx-auto w-[70%]`}>
                   <div
-                    className={`rw-content-container relative flex items-center ${Object.keys(documents).length > 1
-                      ? "justify-between"
-                      : "justify-around"
-                      }`}
+                    className={`rw-content-container relative flex items-center ${
+                      Object.keys(documents).length > 1
+                        ? "justify-between"
+                        : "justify-around"
+                    }`}
                   >
                     {Object.keys(documents).map((item, i) => (
                       <button
                         key={`red-white-${i}`}
                         className={`red-white-container relative aspect-square w-[10%]`}
-                        style={{ containerType: 'size' }}
+                        style={{ containerType: "size" }}
                         onClick={() => props.onClickwhiteButton(i)}
                       >
                         {activeVideo === i ? (
                           <>
-                            <span className='absolute w-full red-button--big scale-[1.5] aspect-square
+                            <span
+                              className='absolute w-full red-button--big scale-[1.5] aspect-square
                               border border-white rounded-full
                               top-0 left-0
-                               ' ></span>
-                            <span className='absolute w-full red-button--small aspect-square
+                               '
+                            ></span>
+                            <span
+                              className='absolute w-full red-button--small aspect-square
                               border-2 border-white rounded-full
                               top-0 left-0
-                               ' ></span>
+                               '
+                            ></span>
                             <img
                               src='/assets/world1/popup-icons/circle-red.svg'
-                              className="absolute w-full top-0 left-0"
+                              className='absolute w-full top-0 left-0'
                             />
                             <span
                               className={
@@ -127,13 +132,15 @@ const PopupsA = (props) => {
                           </>
                         ) : (
                           <>
-                            <span className='absolute w-full scale-[1.5] aspect-square
+                            <span
+                              className='absolute w-full scale-[1.5] aspect-square
                               border border-white rounded-full
                               top-0 left-0
-                               ' ></span>
+                               '
+                            ></span>
                             <img
                               src='/assets/world1/popup-icons/circle-white.svg'
-                              className="absolute w-full top-0 left-0"
+                              className='absolute w-full top-0 left-0'
                             />
                             <span
                               className={
@@ -147,18 +154,18 @@ const PopupsA = (props) => {
                       </button>
                     ))}
                     {Object.keys(documents).length > 1 && (
-                      <div className="absolute w-[98%] h-[1px] dotted-line"></div>
+                      <div className='absolute w-[98%] h-[1px] dotted-line'></div>
                     )}
-
                   </div>
                   {/* {Object.keys(documents).length > 1 && (
                     <div className='dashline' />
                   )} */}
                 </div>
               </div>
-              <div className="w-[65%] flex flex-col justify-between box-border">
-                <div className="w-full p-[6%] pl-[8%] overflow-y-auto h-[88%] box-border"
-                  style={{ containerType: 'size' }}
+              <div className='w-[65%] flex flex-col justify-between box-border'>
+                <div
+                  className='w-full p-[6%] pl-[8%] overflow-y-auto h-[88%] box-border'
+                  style={{ containerType: "size" }}
                 >
                   <PopupYearcomponent />
 
@@ -171,11 +178,11 @@ const PopupsA = (props) => {
                   />
                   <div className='flex flex-wrap mt-[2.5%]'>
                     {curr.photos.map((img) => (
-                      <div key={`img_${img}`} className='w-2/4'>
-                        <img
-                          src={img}
-                          className='w-full p-[4px]'
-                        />
+                      <div
+                        key={`img_${img}`}
+                        className='w-2/4 flex content-center items-center'
+                      >
+                        <img src={img} className='w-full p-[4px]' />
                       </div>
                     ))}
                   </div>
@@ -183,13 +190,14 @@ const PopupsA = (props) => {
 
                 <div className='h-[10%] w-full button-lr-container flex gap-2 justify-end'>
                   <button
-                    className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"
-                      }`}
+                    className={`arrow-left ${
+                      activeVideo > 0 ? "" : "opacity-50"
+                    }`}
                     onClick={() => props.onPrev()}
                   >
                     <img
                       src='/assets/world1/popup-icons/arrow-left.svg'
-                      className="w-auto h-full"
+                      className='w-auto h-full'
                     />
                   </button>
                   <button
@@ -202,7 +210,7 @@ const PopupsA = (props) => {
                   >
                     <img
                       src='/assets/world1/popup-icons/arrow-right.svg'
-                      className="w-auto h-full"
+                      className='w-auto h-full'
                     />
                   </button>
                 </div>
@@ -222,8 +230,9 @@ const PopupsA = (props) => {
       </div>
       <div
         onClick={onExit}
-        className={`details-modal-overlay ${objSelected ? "" : "pointer-events-none"
-          }`}
+        className={`details-modal-overlay ${
+          objSelected ? "" : "pointer-events-none"
+        }`}
       />
     </div>
   );
