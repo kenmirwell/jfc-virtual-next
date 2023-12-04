@@ -68,7 +68,7 @@ const World = ({
   const bgAudioRef = useRef(null);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
-  const [loadPercentage ,setLoadPercentage] = useState(0)
+  const [loadPercentage, setLoadPercentage] = useState(0);
 
   const ref = useRef(false);
 
@@ -386,8 +386,6 @@ const World = ({
     dLoader.setDecoderConfig({ type: "js" });
     assetLoader.setDRACOLoader(dLoader);
 
-    
-
     assetLoader.load(
       model,
       async function (gltf) {
@@ -421,19 +419,19 @@ const World = ({
         components.scene.add(gltf.scene);
       },
       // undefined,
-      async function(xhr) {
-        if ( xhr.lengthComputable ) {
-		    console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-        setLoadPercentage(( xhr.loaded / xhr.total * 100 ) + '% loaded')
+      async function (xhr) {
+        if (xhr.lengthComputable) {
+          // console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+          setTimeout(() => {
+            setLoadPercentage((xhr.loaded / xhr.total) * 100);
+          }, 2000);
         }
-	    },
+      },
       function (error) {
         console.log(error);
       }
     );
   };
-
-  console.log("loadPercentage", loadPercentage)
 
   const animate = () => {
     window.requestAnimationFrame(animate);
@@ -802,7 +800,7 @@ const World = ({
           audioIcon={audioIcon}
         />
         <Joy />
-        <Loader model3d={model3d} />
+        <Loader model3d={model3d} value={loadPercentage} />
         <Background background={background} />
         <div
           id='world1'
