@@ -71,7 +71,7 @@ const Flats = ({ flats, title, year, color }) => {
         id='cicons'
         className='col-span-full row-start-3 flex w-full h-full items-end translate-y-[200px]'
       >
-        {flats.iconSet?.length > 0 && (
+        {flats?.iconSet?.length > 0 && (
           <div
             className='flex items-center w-fit h-[20%] gap-2 px-[1.5%] py-[1%] rounded-full 
           bg-white bg-opacity-80 backdrop-blur-sm drop-shadow-lg border border-white/20 mb-[2%]'
