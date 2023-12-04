@@ -31,6 +31,7 @@ const World = ({
   flats,
   model,
   background,
+  backgroundPoster,
   objects = {},
   flow,
   audioEnding,
@@ -504,7 +505,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-                -1
+              -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -800,12 +801,11 @@ const World = ({
         />
         <Joy />
         <Loader model3d={model3d} value={loadPercentage} />
-        <Background background={background} />
+        <Background background={background} backgroundPoster={backgroundPoster} />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
-            objSelected ? "blur-[50px]" : ""
-          }`}
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
+            }`}
         ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA

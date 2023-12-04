@@ -235,6 +235,7 @@ const World3 = () => {
       color='#06abcb'
       model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-03T19%3A45%3A24.538Z'
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
+      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/WORLD3_BG.webp'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world3/elements/chapter.svg",

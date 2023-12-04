@@ -46,7 +46,7 @@ const PopupsA = (props) => {
 
   const PopupYearcomponent = () => {
     return (
-      <video autoPlay loop muted width={240} className='w-[50%] aspect-year'>
+      <video autoPlay loop muted width={240} className='w-[50%] aspect-year' poster={curr.yearPoster}>
         <source src={curr.year} type='video/webm' />
       </video>
     );
@@ -58,9 +58,8 @@ const PopupsA = (props) => {
 
   return (
     <div
-      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${
-        objSelected ? "!opacity-100" : "pointer-events-none"
-      }`}
+      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"
+        }`}
     >
       <div
         className={`w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`}
@@ -73,6 +72,7 @@ const PopupsA = (props) => {
             autoPlay
             loop
             muted
+            backgroundPoster={documents[k].bgPoster}
             className={`${activeVideo !== i ? "video hidden" : "video"}`}
           >
             <source src={documents[k].bg} type='video/webm' />
@@ -91,11 +91,10 @@ const PopupsA = (props) => {
               <div className='w-[35%] flex items-end pb-[2%]'>
                 <div className={`button-rw-container mx-auto w-[70%]`}>
                   <div
-                    className={`rw-content-container relative flex items-center ${
-                      Object.keys(documents).length > 1
-                        ? "justify-between"
-                        : "justify-around"
-                    }`}
+                    className={`rw-content-container relative flex items-center ${Object.keys(documents).length > 1
+                      ? "justify-between"
+                      : "justify-around"
+                      }`}
                   >
                     {Object.keys(documents).map((item, i) => (
                       <button
@@ -190,9 +189,8 @@ const PopupsA = (props) => {
 
                 <div className='h-[10%] w-full button-lr-container flex gap-2 justify-end'>
                   <button
-                    className={`arrow-left ${
-                      activeVideo > 0 ? "" : "opacity-50"
-                    }`}
+                    className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"
+                      }`}
                     onClick={() => props.onPrev()}
                   >
                     <img
@@ -230,9 +228,8 @@ const PopupsA = (props) => {
       </div>
       <div
         onClick={onExit}
-        className={`details-modal-overlay ${
-          objSelected ? "" : "pointer-events-none"
-        }`}
+        className={`details-modal-overlay ${objSelected ? "" : "pointer-events-none"
+          }`}
       />
     </div>
   );

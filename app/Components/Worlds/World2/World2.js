@@ -248,6 +248,7 @@ const World2 = () => {
       color='#c79c1e'
       model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World2-Complete-NoJoy.glb?t=2023-12-01T09%3A47%3A40.553Z'
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/GLOWING%20BACKGROUND%202.webm'
+      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/WORLD2_BG.webp'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world2/elements/chapter.svg",

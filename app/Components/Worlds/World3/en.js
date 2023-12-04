@@ -19,7 +19,7 @@ export const en = {
     },
     "2015": {
         title: "Smashburger: Serving Better Burgers",
-        description: `<p><strong>Smashburger</strong> joins the Jollibee Group. Founded in Denver, Colorado, the brand was one of the pioneers of the better burger category, and today has over 240 locations worldwide serving their namesake smashburgers.</p>`
+        description: `<p><strong>Smashburger</strong> joins the Jollibee Group. Founded in Denver, Colorado, the brand was one of the pioneers of the better burger category, and today has over 240 locations worldwide serving its namesake smashburgers.</p>`
     },
     "2017": {
         title: "C-JOY: Jollibee and Cargill Partnership",
