@@ -227,13 +227,12 @@ const World3 = () => {
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world3/elements/chapter.svg",
         // icons: "/assets/world2/elements/icons.png",
-        iconSet:[
-          ["/assets/logos/world3/12Panda-Express-Logo.png"],
-          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png"],
-          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png", "/assets/logos/world3/14Rick-Bayless-Tortazo-Logo.png"],
-          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png", "/assets/logos/world3/14Rick-Bayless-Tortazo-Logo.png", "/assets/logos/world3/13Coffee-Bean-And-Tea-Leaf-Logo.png"],
-          ["/assets/logos/world3/12Panda-Express-Logo.png", "/assets/logos/world3/11TimHoWan-Logo.png", "/assets/logos/world3/14Rick-Bayless-Tortazo-Logo.png", "/assets/logos/world3/13Coffee-Bean-And-Tea-Leaf-Logo.png", "/assets/logos/world3/10Smashburger-Logo.png"],
-        ]
+        iconSet: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_9.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_10.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_12.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_14.webp",
+        ],
       }}
       contents={contents}
       flow={flow}

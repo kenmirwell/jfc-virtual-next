@@ -727,6 +727,8 @@ const World = ({
   useEffect(() => {
     const moveIndex = () => setFlatIconsIndex((prev) => prev + 1);
 
+    console.log(objSelected);
+
     if (pathname === "/") {
       if (objSelected === "Empty005") moveIndex();
       if (objSelected === "Empty001") moveIndex();
@@ -736,6 +738,20 @@ const World = ({
       if (objSelected === "FlagMain") moveIndex();
       if (objSelected === "CakeControl001") moveIndex();
       if (objSelected === "CongeeBldgController001") moveIndex();
+      if (objSelected === "Inasal") moveIndex();
+      if (objSelected === "BurgerController001") moveIndex();
+    }
+    if (pathname.includes("world3")) {
+      if (objSelected === "Burger") moveIndex();
+      if (objSelected === "CakeControl001") moveIndex();
+      if (objSelected === "CongeeBldgController001") moveIndex();
+      if (objSelected === "Inasal") moveIndex();
+      if (objSelected === "BurgerController001") moveIndex();
+    }
+    if (pathname.includes("world4")) {
+      if (objSelected === "FoodBowlController") moveIndex();
+      if (objSelected === "MilkteaBldgController") moveIndex();
+      if (objSelected === "JoyForTomoController") moveIndex();
       if (objSelected === "Inasal") moveIndex();
       if (objSelected === "BurgerController001") moveIndex();
     }
