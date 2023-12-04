@@ -13,7 +13,7 @@ export const en = {
   },
   1984: {
     title: "Reaching International Markets",
-    description: `<p>Jollibee Group opens its <strong>first international Jollibee store</strong> in <strong>Singapore</strong>. Although not successful at the time, Jollibee eventually re-entered the market in 2013 to huge fanfare. Jollibee now has over 15 stores in Singapore, and over 350 stores outside the Philippines.</p>`,
+    description: `<p>Jollibee Group opens its <strong>first international Jollibee store</strong> in <strong>Singapore</strong>. Although not successful at the time, Jollibee eventually re-entered the market in 2013 to huge fanfare. Jollibee now has over 15 stores in Singapore and over 350 stores outside the Philippines.</p>`,
   },
   1990: {
     title: "Celebrating 100 Stores",
