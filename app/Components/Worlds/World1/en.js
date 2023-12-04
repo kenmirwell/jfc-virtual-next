@@ -21,7 +21,7 @@ export const en = {
   },
   1993: {
     title: "Going Public",
-    description: `<p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9/share.</p>`,
+    description: `<p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9 per share.</p>`,
   },
   1994: {
     title: "Greenwich: The Philippines’ #1 Pizza Chain",
