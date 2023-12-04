@@ -71,6 +71,7 @@ const PopupsA = (props) => {
         {Object.keys(documents).map((k, i) => (
           props.isSafari ? (
             <img src={documents[k].bgPoster} alt=""
+              key={`video-${i}`}
               className={`${activeVideo !== i ? "video hidden" : "video"}`}
             />
           ) : (
