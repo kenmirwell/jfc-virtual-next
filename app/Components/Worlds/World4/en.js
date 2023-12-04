@@ -6,6 +6,14 @@ export const en = {
             <br/>
             <p>Jollibee Group provides over <strong>PHP 330 million worth of assistance</strong> for affected frontliners and underprivileged families.</p>
             <br/>
+            <div className='flex flex-wrap mt-[2.5%]'>
+            <div
+              className='w-2/4 flex content-center items-center'
+            >
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2020/2020-Actual-Size-Chapter-4.png" className='w-full p-[4px]' />
+            </div>
+            </div>
+            <br/>
             <p>Jollibee Group successfully issues <strong>senior perpetual capital and senior debt securities:</strong> the first time it tapped the capital since its initial public offering in 1993. The senior perpetual capital offering was oversubscribed by 10x, showing strong confidence in Jollibee Group.</p>
         `
     },
