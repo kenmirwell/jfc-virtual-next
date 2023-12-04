@@ -3,7 +3,9 @@ export const en = {
         title: "Bringing Joy in a Time of Uncertainty",
         description: `
             <p>In response to the COVID-19 pandemic, the Jollibee Group allocated <strong>PHP 1 Billion in assistance</strong> for employees.</p>
+            <br/>
             <p>Jollibee Group provides over <strong>PHP 330 million worth of assistance</strong> for affected frontliners and underprivileged families.</p>
+            <br/>
             <p>Jollibee Group successfully issues <strong>senior perpetual capital and senior debt securities:</strong> the first time it tapped the capital since its initial public offering in 1993. The senior perpetual capital offering was oversubscribed by 10x, showing strong confidence in Jollibee Group.</p>
         `
     },
@@ -15,7 +17,9 @@ export const en = {
         title: "Acquisition, Recognition, and Groundbreaking Achievements",
         description: `
             <p><strong>Milksha</strong> joins the Jollibee Group. With over 250 stores worldwide, Milksha serves hand-crafted tea beverages that use premium ingredients.</p>
+            <br/>
             <p>Jollibee Group is cited in Forbes’ inaugural list of the <strong>World’s Most Female-Friendly Companies</strong>—demonstrating the company’s dedication to supporting women and developing employees to their full potential regardless of gender, race, and religion.</p>
+            <br/>
             <p>Jollibee Group lists its <strong>first preferred shares offering</strong> in the Philippine Stock Exchange: a first for the Philippine food service industry.</p>
         `
     },
