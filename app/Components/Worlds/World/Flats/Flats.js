@@ -69,16 +69,13 @@ const Flats = ({ flats, title, year, color }) => {
       {/* ICONS */}
       <div
         id='cicons'
-        className='col-span-full row-start-3 flex w-full h-full items-end translate-y-[200px]'
+        className='col-span-full row-start-3 flex w-full h-full items-end translate-y-[200px] -mx-[3.5%]'
       >
         {flats?.iconSet?.length > 0 && (
           <div
-            className='flex items-center w-fit h-[20%] gap-2 px-[1.5%] py-[1%] rounded-full 
-          bg-white bg-opacity-80 backdrop-blur-sm drop-shadow-lg border border-white/20 mb-[2%]'
+            className='flex items-center w-fit h-[18%] lg:h-[20%] gap-2 px-[1.5%] py-[1%] rounded-full 
+          bg-white bg-opacity-80 backdrop-blur-sm drop-shadow-lg border border-white/20 mb-[1%]'
           >
-            {/* <img src="/assets/logos/world1/01Jollibee-Logo.png" alt="" className="w-auto h-full" />
-            <img src="/assets/logos/world1/02Greenwich-Logo.png" alt="" className="w-auto h-full" />
-            <img src="/assets/logos/world1/03Chowking-Logo.png" alt="" className="w-auto h-full" /> */}
             {flats?.iconSet?.map((icon) => (
               <img key={icon} src={icon} alt='' className='w-auto h-full' />
             ))}
