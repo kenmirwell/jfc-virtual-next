@@ -238,43 +238,56 @@ const Prompt = ({
           {isSafari ? (
             <>
 
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.gif?t=2023-12-04T12%3A34%3A11.981Z'
                 className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
                   }`}
               />
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif'
                 className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
                   }`}
               />
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.gif?t=2023-12-04T12%3A34%3A11.981Z'
                 className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
                   }`}
               />
-              <img ref={pointingRef} poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src={
+                  !path.includes("world4")
+                    ? "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.gif"
+                    : "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                }
+                className={`joy-thinking absolute w-full opacity-0 
+                  ${showJoy && currentFlow.get.action === "END"
+                    ? "opacity-100 scale-[80%] -top-[15%]"
+                    : ""
+                  }`}
+              />
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.gif'
                 className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
                   }`}
               />
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.gif'
                 className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
                   }`}
               />
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.gif'
                 className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
                   }`}
               />
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
-                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
-                  ? "opacity-100"
-                  : ""
-                  }`}
-              />
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+              <img
+                src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.gif'
                 className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
@@ -287,7 +300,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
                   }`}
               >
@@ -300,7 +313,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
                   }`}
               >
@@ -313,7 +326,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
                   }`}
               >
@@ -326,7 +339,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-thinking absolute w-full opacity-0 
         ${showJoy && currentFlow.get.action === "END"
                     ? "opacity-100 scale-[80%] -top-[15%]"
@@ -347,7 +360,7 @@ const Prompt = ({
                 ref={pointingRef}
                 // autoPlay
                 // loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
@@ -362,7 +375,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
@@ -377,7 +390,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
@@ -392,7 +405,7 @@ const Prompt = ({
                 muted
                 autoPlay
                 loop
-                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                poster=""
                 className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
                   ? "opacity-100"
                   : ""
