@@ -104,7 +104,9 @@ const World4 = () => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS1.mp3?t=2023-11-30T22%3A43%3A11.414Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20MAIN.webm?t=2023-11-30T22%3A44%3A42.596Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20YEAR.webm?t=2023-11-30T22%3A44%3A53.634Z",
-        photos: ["/assets/world4/popup-photos/2020B/2020B.png"],
+        photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2020/2020-Actual-Size-Chapter-4.png",
+        ],
         contents: {
           en: en["2020B"],
           //   "ch": ch["2020B"],
@@ -119,7 +121,9 @@ const World4 = () => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS2.mp3?t=2023-11-30T22%3A43%3A25.293Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021A%20MAIN.webm?t=2023-11-30T22%3A45%3A12.827Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021%20YEAR.webm?t=2023-11-30T22%3A45%3A04.157Z",
-        photos: ["/assets/world4/popup-photos/2021A/2021A.png"],
+        photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2021/2021-Actual-Size.png",
+        ],
         contents: {
           en: en["2021A"],
           //   "ch": ch["2021A"],
@@ -134,7 +138,9 @@ const World4 = () => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS3.mp3",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021B%20MAIN.webm?t=2023-11-30T22%3A45%3A36.068Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021%20YEAR.webm?t=2023-11-30T22%3A45%3A04.157Z",
-        photos: ["/assets/world4/popup-photos/2021B/2021B.png"],
+        photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2021/2021b-Actual-Size.png",
+        ],
         contents: {
           en: en["2021B"],
           //   "ch": ch["2021B"],
@@ -149,7 +155,9 @@ const World4 = () => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS4.mp3?t=2023-11-30T22%3A43%3A47.413Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022%20MAIN.webm?t=2023-11-30T22%3A47%3A23.281Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022%20YEAR.webm?t=2023-11-30T22%3A48%3A11.375Z",
-        photos: ["/assets/world4/popup-photos/2022/2022.png"],
+        photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2022/2022-Actual-Size.png?t=2023-12-04T00%3A34%3A28.931Z",
+        ],
         contents: {
           en: en["2022"],
           //   "ch": ch["2022"],
@@ -164,7 +172,9 @@ const World4 = () => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS5.mp3?t=2023-11-30T22%3A44%3A03.243Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023A%20MAIN.webm?t=2023-11-30T22%3A49%3A04.573Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023%20YEAR.webm?t=2023-11-30T22%3A48%3A30.258Z",
-        photos: ["/assets/world4/popup-photos/2023A/2023A.png"],
+        photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2023/2023a-Actual-Size.png",
+        ],
         contents: {
           en: en["2023A"],
           //   "ch": ch["2023A"],
@@ -174,7 +184,9 @@ const World4 = () => {
       "2023B": {
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023B%20MAIN.webm?t=2023-11-30T22%3A49%3A31.949Z",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023%20YEAR.webm?t=2023-11-30T22%3A48%3A30.258Z",
-        photos: ["/assets/world4/popup-photos/2023B/2023B.png"],
+        photos: [
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2023/2023b-Actual-Size-2.png",
+        ],
         contents: {
           en: en["2023B"],
           ch: ch["2023B"],
@@ -199,13 +211,26 @@ const World4 = () => {
         logo: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_Chapters_Logo.webp?t=2023-11-30T22%3A50%3A50.067Z",
         chapter: "/assets/world4/elements/chapter.svg",
         // icons:  "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_18.webp?t=2023-11-30T22%3A50%3A59.972Z",
-        iconSet:[
+        iconSet: [
           [],
           ["/assets/logos/world3/15Yoshinoya-Logo.png"],
-          ["/assets/logos/world3/15Yoshinoya-Logo.png", "/assets/logos/world3/16Milksha-Logo.png"],
-          ["/assets/logos/world3/15Yoshinoya-Logo.png", "/assets/logos/world3/16Milksha-Logo.png", "/assets/logos/world3/18Tiong-Bahru-Bakery-Logo.png", "/assets/logos/world3/17CMCR-Logo.png"],
-          ["/assets/logos/world3/15Yoshinoya-Logo.png", "/assets/logos/world3/16Milksha-Logo.png", "/assets/logos/world3/18Tiong-Bahru-Bakery-Logo.png", "/assets/logos/world3/17CMCR-Logo.png"],
-        ]
+          [
+            "/assets/logos/world3/15Yoshinoya-Logo.png",
+            "/assets/logos/world3/16Milksha-Logo.png",
+          ],
+          [
+            "/assets/logos/world3/15Yoshinoya-Logo.png",
+            "/assets/logos/world3/16Milksha-Logo.png",
+            "/assets/logos/world3/18Tiong-Bahru-Bakery-Logo.png",
+            "/assets/logos/world3/17CMCR-Logo.png",
+          ],
+          [
+            "/assets/logos/world3/15Yoshinoya-Logo.png",
+            "/assets/logos/world3/16Milksha-Logo.png",
+            "/assets/logos/world3/18Tiong-Bahru-Bakery-Logo.png",
+            "/assets/logos/world3/17CMCR-Logo.png",
+          ],
+        ],
       }}
       contents={contents}
       flow={flow}
