@@ -71,7 +71,7 @@ const PopupsA = (props) => {
             autoPlay
             loop
             muted
-            backgroundPoster={documents[k].bgPoster}
+            poster={documents[k].bgPoster}
             className={`${activeVideo !== i ? "video hidden" : "video"}`}
           >
             <source src={documents[k].bg} type='video/webm' />
