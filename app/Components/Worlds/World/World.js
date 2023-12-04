@@ -496,7 +496,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-              -1
+                -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -727,8 +727,6 @@ const World = ({
   useEffect(() => {
     const moveIndex = () => setFlatIconsIndex((prev) => prev + 1);
 
-    console.log(objSelected);
-
     if (pathname === "/") {
       if (objSelected === "Empty005") moveIndex();
       if (objSelected === "Empty001") moveIndex();
@@ -797,8 +795,9 @@ const World = ({
         <Background background={background} />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
-            }`}
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
+            objSelected ? "blur-[50px]" : ""
+          }`}
         ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
