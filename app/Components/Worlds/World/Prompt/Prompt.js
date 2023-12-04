@@ -12,6 +12,7 @@ const Prompt = ({
   onClickInteractables,
   audioEnding,
   audioIcon,
+  isSafari
 }) => {
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
@@ -74,7 +75,7 @@ const Prompt = ({
 
   useEffect(() => {
     if (!showJoy && world === 1 && currentFlow.get.action === "GOTO")
-      pointingRef.current.play();
+      isSafari ? null : pointingRef.current.play();
   }, [currentFlow]);
   const pathname = usePathname();
   const getGameLink = () => {
@@ -109,8 +110,8 @@ const Prompt = ({
       )}
       <div
         className={`z-50 absolute w-full h-full opacity-0 bg-black/50 transition-all duration-[1s] ease-in-out ${currentFlow.get.action === "END"
-            ? "opacity-100"
-            : "pointer-events-none"
+          ? "opacity-100"
+          : "pointer-events-none"
           }`}
       ></div>
 
@@ -234,126 +235,176 @@ const Prompt = ({
               : "col-span-4 col-start-9"
             }`}
         >
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-thinking absolute w-full opacity-0 
-            ${showJoy && currentFlow.get.action === "END"
-                ? "opacity-100 scale-[80%] -top-[15%]"
-                : ""
-              }`}
-          >
-            <source
-              src={
-                !path.includes("world4")
-                  ? "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm"
-                  : "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/joy/Joy-WavingLoop.webm"
-              }
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            ref={pointingRef}
-            // autoPlay
-            // loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
-                ? "opacity-100"
-                : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
-                ? "opacity-100"
-                : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
-                ? "opacity-100"
-                : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
-              type='video/webm'
-            />
-          </video>
-          <video
-            muted
-            autoPlay
-            loop
-            poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
-                ? "opacity-100"
-                : ""
-              }`}
-          >
-            <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
-              type='video/webm'
-            />
-          </video>
+          {isSafari ? (
+            <>
+
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
+                  }`}
+              />
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
+                  }`}
+              />
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
+                  }`}
+              />
+              <img ref={pointingRef} poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              />
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              />
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              />
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              />
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif" alt=""
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              />
+            </>
+          ) : (
+            <>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-thinking absolute w-full opacity-0 
+        ${showJoy && currentFlow.get.action === "END"
+                    ? "opacity-100 scale-[80%] -top-[15%]"
+                    : ""
+                  }`}
+              >
+                <source
+                  src={
+                    !path.includes("world4")
+                      ? "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm"
+                      : "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/joy/Joy-WavingLoop.webm"
+                  }
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                ref={pointingRef}
+                // autoPlay
+                // loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
+                  type='video/webm'
+                />
+              </video>
+              <video
+                muted
+                autoPlay
+                loop
+                poster="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.gif"
+                className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
+                  ? "opacity-100"
+                  : ""
+                  }`}
+              >
+                <source
+                  src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
+                  type='video/webm'
+                />
+              </video>
+            </>
+          )}
         </div>
       </div>
     </>

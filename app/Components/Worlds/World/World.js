@@ -128,10 +128,15 @@ const World = ({
   }, []);
 
   /* @TODO: Handle translation for cookie */
+  const [isSafari, setIsSafari] = useState(false);
+
   useEffect(() => {
     if (!getCookie("lang")) {
       setCookie("lang", "en");
     }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    setIsSafari(userAgent.indexOf('safari') !== -1 && userAgent.indexOf('chrome') === -1);
   }, []);
 
   /* Initialize Scene */
@@ -765,6 +770,7 @@ const World = ({
   }, [objSelected, pathname]);
 
   return (
+
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
@@ -798,6 +804,7 @@ const World = ({
           currentFlow={{ get: currentFlow, set: setCurrentFlow }}
           onClickInteractables={onClickObject}
           audioIcon={audioIcon}
+          isSafari={isSafari}
         />
         <Joy />
         <Loader model3d={model3d} value={loadPercentage} />
@@ -821,6 +828,7 @@ const World = ({
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
+            isSafari={isSafari}
           />
         ) : (
           <PopupsB
@@ -836,6 +844,7 @@ const World = ({
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
+            isSafari={isSafari}
           />
         )}
       </div>
