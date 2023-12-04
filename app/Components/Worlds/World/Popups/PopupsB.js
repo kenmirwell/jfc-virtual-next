@@ -14,6 +14,7 @@ const PopupsA = (props) => {
   const videoPlayed = props.videoPlayed;
   const ref = React.createRef();
   let curr;
+  const reg = /([A-Z || a-z])/g
 
   useEffect(() => {
     if (ref.current) {
@@ -181,7 +182,8 @@ const PopupsA = (props) => {
                             "active year-text text-[150cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full"
                           }
                         >
-                          {item}
+                          {console.log("item with regex", item.replace(reg, ""))}
+                          {item.replace(reg, "")}
                         </span>
                       </>
                     ) : (
@@ -201,7 +203,7 @@ const PopupsA = (props) => {
                             "year-text text-[75cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[120%]"
                           }
                         >
-                          {item}
+                          {item.replace(reg, "")}
                         </span>
                       </>
                     )}
