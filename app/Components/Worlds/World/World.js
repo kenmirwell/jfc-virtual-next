@@ -727,7 +727,7 @@ const World = ({
   useEffect(() => {
     const moveIndex = () => setFlatIconsIndex((prev) => prev + 1);
 
-    if (pathname === "/") {
+    if (!pathname.includes("world")) {
       if (objSelected === "Empty005") moveIndex();
       if (objSelected === "Empty001") moveIndex();
       if (objSelected === "Empty002") moveIndex();
