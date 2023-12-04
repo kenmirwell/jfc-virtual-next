@@ -129,11 +129,16 @@ const World = ({
   }, []);
 
   /* @TODO: Handle translation for cookie */
-  //   useEffect(() => {
-  //     if (!getCookie("lang")) {
-  //       setCookie("lang", "en");
-  //     }
-  //   }, []);
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    // if (!getCookie("lang")) {
+    //   setCookie("lang", "en");
+    // }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    setIsSafari(userAgent.indexOf('safari') !== -1 && userAgent.indexOf('chrome') === -1);
+  }, []);
 
   /* Initialize Scene */
   useEffect(() => {
@@ -506,7 +511,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-                -1
+              -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -766,6 +771,7 @@ const World = ({
   }, [objSelected, pathname]);
 
   return (
+
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
@@ -799,18 +805,15 @@ const World = ({
           currentFlow={{ get: currentFlow, set: setCurrentFlow }}
           onClickInteractables={onClickObject}
           audioIcon={audioIcon}
+          isSafari={isSafari}
         />
         <Joy />
         <Loader model3d={model3d} value={loadPercentage} />
-        <Background
-          background={background}
-          backgroundPoster={backgroundPoster}
-        />
+        <Background background={background} backgroundPoster={backgroundPoster} />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
-            objSelected ? "blur-[50px]" : ""
-          }`}
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
+            }`}
         ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
@@ -826,7 +829,7 @@ const World = ({
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
-            lang={lang ? lang : "en"}
+            isSafari={isSafari}
           />
         ) : (
           <PopupsB
@@ -842,7 +845,7 @@ const World = ({
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
-            lang={lang ? lang : "en"}
+            isSafari={isSafari}
           />
         )}
       </div>
