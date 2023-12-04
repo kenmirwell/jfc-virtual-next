@@ -131,9 +131,9 @@ const World = ({
   const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
-    if (!getCookie("lang")) {
-      setCookie("lang", "en");
-    }
+    // if (!getCookie("lang")) {
+    //   setCookie("lang", "en");
+    // }
 
     const userAgent = window.navigator.userAgent.toLowerCase();
     setIsSafari(userAgent.indexOf('safari') !== -1 && userAgent.indexOf('chrome') === -1);
