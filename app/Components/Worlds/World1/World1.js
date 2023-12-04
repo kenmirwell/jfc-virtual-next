@@ -264,22 +264,10 @@ const World1 = () => {
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world1/elements/chapter.svg",
         iconSet: [
-          // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc.webp?t=2023-12-01T02%3A40%3A17.669Z",
-          // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw.webp?t=2023-12-01T02%3A40%3A23.731Z",
-          // "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw-ck.webp?t=2023-12-01T02%3A40%3A28.903Z",
-          [null],
-          ["/assets/logos/world1/jollibee.png"],
-          ["/assets/logos/world1/jollibee.png"],
-          ["/assets/logos/world1/jollibee.png"],
-          [
-            "/assets/logos/world1/jollibee.png",
-            "/assets/logos/world1/greenwich.png",
-          ],
-          [
-            "/assets/logos/world1/jollibee.png",
-            "/assets/logos/world1/greenwich.png",
-            "/assets/logos/world1/chowking.png",
-          ],
+          null,
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc.webp?t=2023-12-01T02%3A40%3A17.669Z",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw.webp?t=2023-12-01T02%3A40%3A23.731Z",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw-ck.webp?t=2023-12-01T02%3A40%3A28.903Z",
         ],
       }}
       iconSet

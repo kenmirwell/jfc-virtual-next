@@ -16,6 +16,7 @@ import Joy from "./Joy/Joy";
 import PopupsA from "./Popups/PopupsA";
 import PopupsB from "./Popups/PopupsB";
 import { getCookie, setCookie } from "cookies-next";
+import { usePathname } from "next/navigation";
 
 let hovered = null;
 let disableFunctionality = false;
@@ -604,11 +605,11 @@ const World = ({
       (c) => c.name === currentFlow.target
     );
 
-    Object.keys(contents).find((c, index) => {
-      if (c === target.name) {
-        setFlatIconsIndex(index + 1);
-      }
-    });
+    // Object.keys(contents).find((c, index) => {
+    //   if (c === target.name) {
+    //     setFlatIconsIndex(index + 1);
+    //   }
+    // });
 
     const joys = modelObjs.children.filter(
       (obj) => obj.name.indexOf(objects.joy ? objects.joy : "Joy-") > -1
@@ -717,6 +718,20 @@ const World = ({
       }
     });
   }
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    console.log(pathname);
+    if (pathname === "/") {
+      if (objSelected === "Empty005") setFlatIconsIndex(flatIconsIndex + 1);
+      if (objSelected === "Empty001") setFlatIconsIndex(flatIconsIndex + 1);
+      if (objSelected === "Empty002") setFlatIconsIndex(flatIconsIndex + 1);
+    }
+
+    if (pathname.includes("world2")) {
+    }
+  }, [objSelected]);
 
   return (
     <>
