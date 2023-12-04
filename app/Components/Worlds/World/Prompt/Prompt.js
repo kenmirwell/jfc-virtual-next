@@ -12,7 +12,7 @@ const Prompt = ({
   currentFlow,
   onClickInteractables,
   audioEnding,
-  audioIcon
+  audioIcon,
 }) => {
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
@@ -92,27 +92,36 @@ const Prompt = ({
         />
       </audio>
       {isEnd && (
-        <audio autoPlay className='hidden' muted={audioIcon === "mute" ? true : false} controls>
+        <audio
+          autoPlay
+          className='hidden'
+          muted={audioIcon === "mute" ? true : false}
+          controls
+        >
           <source src={audioEnding} />
         </audio>
       )}
       <div
-        className={`z-50 absolute w-full h-full opacity-0 bg-black/50 transition-all duration-[1s] ease-in-out ${currentFlow.get.action === "END"
-          ? "opacity-100"
-          : "pointer-events-none"
-          }`}
+        className={`z-50 absolute w-full h-full opacity-0 bg-black/50 transition-all duration-[1s] ease-in-out ${
+          currentFlow.get.action === "END"
+            ? "opacity-100"
+            : "pointer-events-none"
+        }`}
       ></div>
 
       <div
         id='prompt'
         className={`z-[60] overflow-hidden  absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
       >
-
         <div
           id='promptc'
           className={`
           w-full h-full relative bg-white/0 row-start-2 mt-[20%]
-          ${currentFlow.get.action === "END" ? "col-span-4 col-start-9 row-span-1" : "col-span-5 col-start-5 row-span-2"}
+          ${
+            currentFlow.get.action === "END"
+              ? "col-span-4 col-start-9 row-span-1"
+              : "col-span-5 col-start-5 row-span-2"
+          }
           `}
         >
           <div
@@ -120,28 +129,29 @@ const Prompt = ({
             bg-opacity-80 backdrop-blur-[2px] drop-shadow-lg rounded-2xl
             absolute top-1/2 -translate-y-1/2 scale-[80%]
             
-            ${showJoy && currentFlow.get.prompt
+            ${
+              showJoy && currentFlow.get.prompt
                 ? "!opacity-[100] !translate-x-[0]"
                 : ""
-              } 
-              ${`${currentFlow.get.action === "GOTO" ||
+            } 
+              ${`${
+                currentFlow.get.action === "GOTO" ||
                 currentFlow.get.action === "WAIT"
-                ? "bg-white/70 speechArrow"
-                : "bg-white/70"
-              }`
-              }
+                  ? "bg-white/70 speechArrow"
+                  : "bg-white/70"
+              }`}
               `}
-            style={{ containerType: 'inline-size' }}
+            style={{ containerType: "inline-size" }}
           >
             <div
               onClick={
                 currentFlow.get.action === "START"
                   ? onProceed
                   : currentFlow.get.action === "GOTO"
-                    ? handleClickHere
-                    : null
+                  ? handleClickHere
+                  : null
               }
-              className="tracking-[0] leading-[1.2] text-[8cqw]"
+              className='tracking-[0] leading-[1.2] text-[8cqw]'
               // className={`${currentFlow.get.action
               //   } leading-[1.2] text-center "text-[#E23636]" ${currentFlow.get.action === "START"
               //     ? "text-[30px]"
@@ -164,25 +174,30 @@ const Prompt = ({
             )} */}
             {(currentFlow.get.action === "GOTO" ||
               currentFlow.get.action === "START") && (
-                <button
-                  onClick={handleClickHere}
-                  className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
-                  style={{ containerType: 'inline-size' }}
+              <button
+                onClick={handleClickHere}
+                className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
+                style={{ containerType: "inline-size" }}
+              >
+                <span
+                  className='text-[10cqw] block'
+                  style={{ fontFamily: "inherit" }}
                 >
-                  <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
-                    CLICK HERE
-                  </span>
-                </button>
-              )}
+                  CLICK HERE
+                </span>
+              </button>
+            )}
             {currentFlow.get.action === "END" && (
               <div>
-                <a href='http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'
-                >
+                <a href='http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/game/SmashAndMatch'>
                   <div
                     className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
-                    style={{ containerType: 'inline-size' }}
+                    style={{ containerType: "inline-size" }}
                   >
-                    <span className="text-[10cqw] block" style={{ fontFamily: 'inherit' }}>
+                    <span
+                      className='text-[10cqw] block'
+                      style={{ fontFamily: "inherit" }}
+                    >
                       PLAY GAME
                     </span>
                   </div>
@@ -192,9 +207,12 @@ const Prompt = ({
                 >
                   <div
                     className='mx-auto w-[80%] h-fit text-black/50 lowercase'
-                    style={{ containerType: 'inline-size' }}
+                    style={{ containerType: "inline-size" }}
                   >
-                    <span className="text-[8cqw] block" style={{ fontFamily: 'inherit' }}>
+                    <span
+                      className='text-[8cqw] block'
+                      style={{ fontFamily: "inherit" }}
+                    >
                       SKIP
                     </span>
                   </div>
@@ -204,15 +222,22 @@ const Prompt = ({
           </div>
         </div>
         {/* VIDEOS OF JOY */}
-        <div className={`promptVideos relative w-full h-full pointer-events-none 
+        <div
+          className={`promptVideos relative w-full h-full pointer-events-none 
         row-start-2 row-span-2 
-        ${currentFlow.get.action === "END" ? "col-span-full" : "col-span-4 col-start-9"}`}>
+        ${
+          currentFlow.get.action === "END"
+            ? "col-span-full"
+            : "col-span-4 col-start-9"
+        }`}
+        >
           <video
             muted
             autoPlay
             loop
-            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
-              }`}
+            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
@@ -223,8 +248,9 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
-              }`}
+            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
@@ -235,8 +261,9 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] ${showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
-              }`}
+            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
@@ -248,10 +275,11 @@ const Prompt = ({
             autoPlay
             loop
             className={`joy-thinking absolute w-full opacity-0 
-            ${showJoy && currentFlow.get.action === "END"
+            ${
+              showJoy && currentFlow.get.action === "END"
                 ? "opacity-100 scale-[80%] -top-[15%]"
                 : ""
-              }`}
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm'
@@ -263,10 +291,11 @@ const Prompt = ({
             ref={pointingRef}
             // autoPlay
             // loop
-            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 1 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-              }`}
+            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              !showJoy && world === 1 && currentFlow.get.action === "GOTO"
+                ? "opacity-100"
+                : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
@@ -277,10 +306,11 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 2 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-              }`}
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              !showJoy && world === 2 && currentFlow.get.action === "GOTO"
+                ? "opacity-100"
+                : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
@@ -291,10 +321,11 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 3 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-              }`}
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              !showJoy && world === 3 && currentFlow.get.action === "GOTO"
+                ? "opacity-100"
+                : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
@@ -305,10 +336,11 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] ${!showJoy && world === 4 && currentFlow.get.action === "GOTO"
-              ? "opacity-100"
-              : ""
-              }`}
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+              !showJoy && world === 4 && currentFlow.get.action === "GOTO"
+                ? "opacity-100"
+                : ""
+            }`}
           >
             <source
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'

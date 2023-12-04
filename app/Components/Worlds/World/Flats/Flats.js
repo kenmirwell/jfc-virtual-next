@@ -75,7 +75,7 @@ const Flats = ({ flats, title, year, color }) => {
           <img
             src={flats.iconSet}
             alt='company logos'
-            className='w-auto h-full'
+            className='w-auto h-full translate-x-[-88px] translate-y-[80px]'
           />
         )}
       </div>
