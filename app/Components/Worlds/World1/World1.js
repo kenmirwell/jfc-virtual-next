@@ -280,7 +280,7 @@ const World1 = () => {
       year='1978-2003'
       model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1.glb'
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/GLOWING%20BACKGROUND.webm'
-      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/WORLD1_BG.webp'
+      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/WORLD1_BG%20copy.png'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world1/elements/chapter.svg",
