@@ -816,10 +816,10 @@ const World = ({
             audio={audio}
             onPrev={onPrev}
             onNext={onNext}
-            // handleStartVideo={handleStartVideo}
+            handleStartVideo={handleStartVideo}
             onDeselect={onDeselect}
             onClickObject={onClickObject}
-            videoPlayed={videoPlayed}
+            // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
           />
         ) : (
@@ -831,10 +831,10 @@ const World = ({
             audio={audio}
             onPrev={onPrev}
             onNext={onNext}
-            // handleStartVideo={handleStartVideo}
+            handleStartVideo={handleStartVideo}
             onDeselect={onDeselect}
             onClickObject={onClickObject}
-            videoPlayed={videoPlayed}
+            // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
           />
         )}
