@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap, Power3 } from "gsap";
 
-import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 
 let timer;
@@ -291,7 +290,11 @@ const Prompt = ({
             }`}
           >
             <source
-              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm'
+              src={
+                !path.includes("world4")
+                  ? "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm"
+                  : "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/joy/Joy-WavingLoop.webm"
+              }
               type='video/webm'
             />
           </video>
