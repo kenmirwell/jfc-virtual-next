@@ -68,6 +68,8 @@ const World = ({
   const bgAudioRef = useRef(null);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
 
+  const [loadPercentage ,setLoadPercentage] = useState(0)
+
   const ref = useRef(false);
 
   /* Load all components */
@@ -384,6 +386,8 @@ const World = ({
     dLoader.setDecoderConfig({ type: "js" });
     assetLoader.setDRACOLoader(dLoader);
 
+    
+
     assetLoader.load(
       model,
       async function (gltf) {
@@ -416,12 +420,20 @@ const World = ({
 
         components.scene.add(gltf.scene);
       },
-      undefined,
+      // undefined,
+      async function(xhr) {
+        if ( xhr.lengthComputable ) {
+		    console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+        setLoadPercentage(( xhr.loaded / xhr.total * 100 ) + '% loaded')
+        }
+	    },
       function (error) {
         console.log(error);
       }
     );
   };
+
+  console.log("loadPercentage", loadPercentage)
 
   const animate = () => {
     window.requestAnimationFrame(animate);
