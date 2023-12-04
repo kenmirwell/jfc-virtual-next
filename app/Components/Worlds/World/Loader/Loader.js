@@ -7,9 +7,9 @@ const Loader = ({ model3d, value }) => {
     console.log(value);
   }, [value]);
 
-  if (model3d) {
-    return null;
-  }
+  // if (model3d) {
+  //   return null;
+  // }
   return (
     <ChakraProvider>
       <div
@@ -26,9 +26,13 @@ const Loader = ({ model3d, value }) => {
             />
           </video>
           <Progress
+            pos='absolute'
+            bottom='8%'
+            left='50%'
+            transform='translateX(-50%)'
             h='8px'
             borderRadius='20px'
-            w='80%'
+            w='60%'
             value={value}
             hasStripe
             colorScheme='red'

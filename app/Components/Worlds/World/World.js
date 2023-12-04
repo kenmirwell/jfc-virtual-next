@@ -67,8 +67,7 @@ const World = ({
 
   const bgAudioRef = useRef(null);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
-
-  const [loadPercentage, setLoadPercentage] = useState(0);
+  const [loadPercentage, setLoadPercentage] = useState(15);
 
   const ref = useRef(false);
 
