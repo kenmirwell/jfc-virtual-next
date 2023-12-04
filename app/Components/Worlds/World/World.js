@@ -828,6 +828,7 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
+            lang={lang ? lang : "en"}
             audioIcon={audioIcon}
             isSafari={isSafari}
           />
@@ -844,6 +845,7 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
+            lang={lang ? lang : "en"}
             audioIcon={audioIcon}
             isSafari={isSafari}
           />
