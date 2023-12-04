@@ -346,7 +346,7 @@ const World = ({
   /* Apply click animation */
   useEffect(() => {
     bgAudioRef.current.play();
-    bgAudioRef.current.volume = 0;
+    bgAudioRef.current.volume = 0.05;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
 
@@ -766,7 +766,7 @@ const World = ({
             <img src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`} />
           </button>
         ) : null}
-        <audio ref={bgAudioRef}>
+        <audio ref={bgAudioRef} loop>
           <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
         </audio>
         <Clouds
