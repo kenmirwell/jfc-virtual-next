@@ -85,146 +85,142 @@ const PopupsA = (props) => {
         pb-[1.5%]
         '
         >
-          {videoPlayed && (
-            <>
-              <div className='w-[65%] flex flex-col justify-between box-border'>
-                <div
-                  className={
-                    "w-full p-[6%] max-w-[78%] overflow-y-auto h-[88%] box-border"
-                  }
-                  style={{ containerType: "size" }}
-                >
-                  <PopupYearcomponent />
+          <div className='w-[65%] flex flex-col justify-between box-border'>
+            <div
+              className={
+                "w-full p-[6%] max-w-[78%] overflow-y-auto h-[88%] box-border"
+              }
+              style={{ containerType: "size" }}
+            >
+              <PopupYearcomponent />
 
-                  <h4 className='text-[8cqmin] leading-[1.1] mt-[2.5%] mb-[1.5%]'>
-                    {curr.title}
-                  </h4>
+              <h4 className='text-[8cqmin] leading-[1.1] mt-[2.5%] mb-[1.5%]'>
+                {curr.title}
+              </h4>
+              <div
+                className='desc-container text-[5cqmin] leading-[1.2]'
+                dangerouslySetInnerHTML={{ __html: curr.description }}
+              />
+              <div className='flex flex-wrap mt-[2.5%]'>
+                {curr.photos.map((img) => (
                   <div
-                    className='desc-container text-[5cqmin] leading-[1.2]'
-                    dangerouslySetInnerHTML={{ __html: curr.description }}
-                  />
-                  <div className='flex flex-wrap mt-[2.5%]'>
-                    {curr.photos.map((img) => (
-                      <div
-                        key={`img_${img}`}
-                        className='w-2/4 flex content-center items-center'
-                      >
-                        <img src={img} className='w-full p-[4px]' />
-                      </div>
-                    ))}
+                    key={`img_${img}`}
+                    className='w-2/4 flex content-center items-center'
+                  >
+                    <img src={img} className='w-full p-[4px]' />
                   </div>
-                </div>
-
-                <div className='h-[10%] w-full button-lr-container flex gap-2 px-[6%]'>
-                  <button
-                    className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"
-                      }`}
-                    onClick={() => props.onPrev()}
-                  >
-                    <img
-                      src='/assets/world1/popup-icons/arrow-left.svg'
-                      className='w-auto h-full'
-                    />
-                  </button>
-                  <button
-                    className={`arrow-right`}
-                    onClick={() =>
-                      activeVideo < Object.keys(documents).length - 1
-                        ? props.onNext()
-                        : onDeselect()
-                    }
-                  >
-                    <img
-                      src='/assets/world1/popup-icons/arrow-right.svg'
-                      className='w-auto h-full'
-                    />
-                  </button>
-                </div>
+                ))}
               </div>
-              <div className='w-[35%] flex items-end pb-[2%]'>
-                <div className={`button-rw-container mx-auto w-[70%]`}>
-                  <div
-                    className={`rw-content-container relative flex items-center ${Object.keys(documents).length > 1
-                      ? "justify-between"
-                      : "justify-around"
-                      }`}
+            </div>
+
+            <div className='h-[10%] w-full button-lr-container flex gap-2 px-[6%]'>
+              <button
+                className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"
+                  }`}
+                onClick={() => props.onPrev()}
+              >
+                <img
+                  src='/assets/world1/popup-icons/arrow-left.svg'
+                  className='w-auto h-full'
+                />
+              </button>
+              <button
+                className={`arrow-right`}
+                onClick={() =>
+                  activeVideo < Object.keys(documents).length - 1
+                    ? props.onNext()
+                    : onDeselect()
+                }
+              >
+                <img
+                  src='/assets/world1/popup-icons/arrow-right.svg'
+                  className='w-auto h-full'
+                />
+              </button>
+            </div>
+          </div>
+          <div className='w-[35%] flex items-end pb-[2%]'>
+            <div className={`button-rw-container mx-auto w-[70%]`}>
+              <div
+                className={`rw-content-container relative flex items-center ${Object.keys(documents).length > 1
+                  ? "justify-between"
+                  : "justify-around"
+                  }`}
+              >
+                {Object.keys(documents).map((item, i) => (
+                  <button
+                    key={`red-white-${i}`}
+                    className={`red-white-container relative aspect-square w-[10%]`}
+                    style={{ containerType: "size" }}
+                    onClick={() => props.onClickwhiteButton(i)}
                   >
-                    {Object.keys(documents).map((item, i) => (
-                      <button
-                        key={`red-white-${i}`}
-                        className={`red-white-container relative aspect-square w-[10%]`}
-                        style={{ containerType: "size" }}
-                        onClick={() => props.onClickwhiteButton(i)}
-                      >
-                        {activeVideo === i ? (
-                          <>
-                            <span
-                              className='absolute w-full red-button--big scale-[1.5] aspect-square
+                    {activeVideo === i ? (
+                      <>
+                        <span
+                          className='absolute w-full red-button--big scale-[1.5] aspect-square
                               border border-white rounded-full
                               top-0 left-0
                                '
-                            ></span>
-                            <span
-                              className='absolute w-full red-button--small aspect-square
+                        ></span>
+                        <span
+                          className='absolute w-full red-button--small aspect-square
                               border-2 border-white rounded-full
                               top-0 left-0
                                '
-                            ></span>
-                            <img
-                              src='/assets/world1/popup-icons/circle-red.svg'
-                              className='absolute w-full top-0 left-0'
-                            />
-                            <span
-                              className={
-                                "active year-text text-[150cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full"
-                              }
-                            >
-                              {item}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <span
-                              className='absolute w-full scale-[1.5] aspect-square
+                        ></span>
+                        <img
+                          src='/assets/world1/popup-icons/circle-red.svg'
+                          className='absolute w-full top-0 left-0'
+                        />
+                        <span
+                          className={
+                            "active year-text text-[150cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full"
+                          }
+                        >
+                          {item}
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span
+                          className='absolute w-full scale-[1.5] aspect-square
                               border border-white rounded-full
                               top-0 left-0
                                '
-                            ></span>
-                            <img
-                              src='/assets/world1/popup-icons/circle-white.svg'
-                              className='absolute w-full top-0 left-0'
-                            />
-                            <span
-                              className={
-                                "year-text text-[75cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[120%]"
-                              }
-                            >
-                              {item}
-                            </span>
-                          </>
-                        )}
-                      </button>
-                    ))}
-                    {Object.keys(documents).length > 1 && (
-                      <div className='absolute w-[98%] h-[1px] dotted-line'></div>
+                        ></span>
+                        <img
+                          src='/assets/world1/popup-icons/circle-white.svg'
+                          className='absolute w-full top-0 left-0'
+                        />
+                        <span
+                          className={
+                            "year-text text-[75cqmin] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[120%]"
+                          }
+                        >
+                          {item}
+                        </span>
+                      </>
                     )}
-                  </div>
-                  {/* {Object.keys(documents).length > 1 && (
+                  </button>
+                ))}
+                {Object.keys(documents).length > 1 && (
+                  <div className='absolute w-[98%] h-[1px] dotted-line'></div>
+                )}
+              </div>
+              {/* {Object.keys(documents).length > 1 && (
                     <div className='dashline' />
                   )} */}
-                </div>
-              </div>
+            </div>
+          </div>
 
-              <audio
-                className='hidden'
-                muted={audioIcon === "mute" ? true : false}
-                controls
-                ref={ref}
-              >
-                <source src={curr.audio} />
-              </audio>
-            </>
-          )}
+          <audio
+            className='hidden'
+            muted={audioIcon === "mute" ? true : false}
+            controls
+            ref={ref}
+          >
+            <source src={curr.audio} />
+          </audio>
         </div>
       </div>
       <div
