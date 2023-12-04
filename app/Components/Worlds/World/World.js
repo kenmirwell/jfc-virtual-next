@@ -36,7 +36,7 @@ const World = ({
   flow,
   audioEnding,
   zoomMultiplier = 1,
-  lang
+  lang,
 }) => {
   const [components, setComponents] = useState({
     renderer: null,
@@ -129,11 +129,16 @@ const World = ({
   }, []);
 
   /* @TODO: Handle translation for cookie */
-//   useEffect(() => {
-//     if (!getCookie("lang")) {
-//       setCookie("lang", "en");
-//     }
-//   }, []);
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    // if (!getCookie("lang")) {
+    //   setCookie("lang", "en");
+    // }
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    setIsSafari(userAgent.indexOf('safari') !== -1 && userAgent.indexOf('chrome') === -1);
+  }, []);
 
   /* Initialize Scene */
   useEffect(() => {
@@ -349,7 +354,7 @@ const World = ({
   /* Apply click animation */
   useEffect(() => {
     bgAudioRef.current.play();
-    bgAudioRef.current.volume = 0.05;
+    bgAudioRef.current.volume = 0.03;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
       const light = modelObjs.children.find(
@@ -766,6 +771,7 @@ const World = ({
   }, [objSelected, pathname]);
 
   return (
+
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
@@ -799,6 +805,7 @@ const World = ({
           currentFlow={{ get: currentFlow, set: setCurrentFlow }}
           onClickInteractables={onClickObject}
           audioIcon={audioIcon}
+          isSafari={isSafari}
         />
         <Joy />
         <Loader model3d={model3d} value={loadPercentage} />
@@ -821,8 +828,9 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
-            audioIcon={audioIcon}
             lang={lang ? lang : "en"}
+            audioIcon={audioIcon}
+            isSafari={isSafari}
           />
         ) : (
           <PopupsB
@@ -837,8 +845,9 @@ const World = ({
             onDeselect={onDeselect}
             onClickObject={onClickObject}
             // videoPlayed={videoPlayed}
-            audioIcon={audioIcon}
             lang={lang ? lang : "en"}
+            audioIcon={audioIcon}
+            isSafari={isSafari}
           />
         )}
       </div>

@@ -28,7 +28,7 @@ export const en = {
     "2018": {
         title: "Tim Ho Wan and Panda Express",
         description: `
-            <p>Michelin-starred <strong>Tim Ho Wan</strong>, through an investment in the Titan Dining Fund, joins the Jollibee Group. Originating in Hong Kong, Tim Ho Wan is famous for its pork buns and a wide variety of dimsum dishes.</p>
+            <p>Michelin-starred <strong>Tim Ho Wan</strong>, through an investment in the Titan Dining Fund, joins the Jollibee Group. Originating in Hong Kong, Tim Ho Wan is famous for its pork buns and a wide variety of dim sum dishes.</p>
             <br/>
             <p><strong>Panda Express Philippines</strong> joins the Jollibee Group through a joint venture, opening its first store in SM Megamall in 2019. It is the largest Asian dining concept in America, and now has over 15 stores in the Philippines and growing.</p>
             <br/>

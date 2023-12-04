@@ -45,9 +45,13 @@ const PopupsA = (props) => {
 
   const PopupYearcomponent = () => {
     return (
-      <video autoPlay loop muted width={240} className='w-[50%] aspect-year' poster={curr.yearPoster}>
-        <source src={curr.year} type='video/webm' />
-      </video>
+      props.isSafari ? (
+        <img src={curr.yearPoster} alt="" width={240} className='w-[50%] aspect-yearImage' />
+      ) : (
+        <video autoPlay loop muted poster={curr.yearPoster} width={240} className='w-[50%] aspect-year'>
+          <source src={curr.year} type='video/webm' />
+        </video>
+      )
     );
   };
 
@@ -65,17 +69,24 @@ const PopupsA = (props) => {
       >
         {/* VIDEO BACKGROUND */}
         {Object.keys(documents).map((k, i) => (
-          <video
-            onPlay={props.handleStartVideo}
-            key={`video-${i}`}
-            autoPlay
-            loop
-            muted
-            poster={documents[k].bgPoster}
-            className={`${activeVideo !== i ? "video hidden" : "video"}`}
-          >
-            <source src={documents[k].bg} type='video/webm' />
-          </video>
+          props.isSafari ? (
+            <img src={documents[k].bgPoster} alt=""
+              key={`video-${i}`}
+              className={`${activeVideo !== i ? "video hidden" : "video"}`}
+            />
+          ) : (
+            <video
+              onPlay={props.handleStartVideo}
+              key={`video-${i}`}
+              autoPlay
+              loop
+              muted
+              poster={documents[k].bgPoster}
+              className={`${activeVideo !== i ? "video hidden" : "video"}`}
+            >
+              <source src={documents[k].bg} type='video/webm' />
+            </video>
+          )
         ))}
         <div
           className='details-modal-content 
