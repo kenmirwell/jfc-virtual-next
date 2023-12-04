@@ -131,15 +131,16 @@ const World = ({
     }
   }, []);
 
-
-
   /* Initialize Scene */
   useEffect(() => {
-    const canvasWrapper = document.getElementById('world1');
+    const canvasWrapper = document.getElementById("world1");
     if (!model3d && loaded) {
-      components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
+      components.renderer.setSize(
+        canvasWrapper.clientWidth,
+        canvasWrapper.clientHeight
+      );
       components.camera.aspect = 16 / 9;
-      components.camera.updateProjectionMatrix()
+      components.camera.updateProjectionMatrix();
       // components.renderer.setSize(window.innerWidth, window.innerHeight);
       components.camera.position.set(0, 20, 17);
       components.lights.directional.position.set(0, 11.19, 12.133);
@@ -157,7 +158,9 @@ const World = ({
 
       onLoad();
 
-      document.getElementById("world1").appendChild(components.renderer.domElement);
+      document
+        .getElementById("world1")
+        .appendChild(components.renderer.domElement);
       window.addEventListener("resize", onWindowResize, false);
     }
   }, [model3d, loaded]);
@@ -492,7 +495,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-              -1
+                -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -600,16 +603,12 @@ const World = ({
     const target = modelObjs.children.find(
       (c) => c.name === currentFlow.target
     );
-    
+
     Object.keys(contents).find((c, index) => {
-
-      if(c === target.name) {
-        setFlatIconsIndex(index + 1)
+      if (c === target.name) {
+        setFlatIconsIndex(index + 1);
       }
-    })
-
-    console.log("objSelected", objSelected)
-    console.log("target", target.name)
+    });
 
     const joys = modelObjs.children.filter(
       (obj) => obj.name.indexOf(objects.joy ? objects.joy : "Joy-") > -1
@@ -674,9 +673,13 @@ const World = ({
   };
 
   const onWindowResize = () => {
-    components.camera.aspect = canvasWrapper.clientWidth / canvasWrapper.clientHeight;
+    components.camera.aspect =
+      canvasWrapper.clientWidth / canvasWrapper.clientHeight;
     components.camera.updateProjectionMatrix();
-    components.renderer.setSize(canvasWrapper.clientWidth, canvasWrapper.clientHeight);
+    components.renderer.setSize(
+      canvasWrapper.clientWidth,
+      canvasWrapper.clientHeight
+    );
   };
 
   const onNext = () => {
@@ -702,7 +705,7 @@ const World = ({
   const [audioIcon, setAudioIcon] = useState("icon");
 
   function toggleMute() {
-    const mediaElements = document.querySelectorAll('audio');
+    const mediaElements = document.querySelectorAll("audio");
 
     mediaElements.forEach((element) => {
       if (element.muted) {
@@ -715,17 +718,15 @@ const World = ({
     });
   }
 
-  console.log("contents", Object.entries(contents).map(i => i))
   return (
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
-          <button className='absolute top-[2%] left-[2%] z-[900] w-[3%]'
+          <button
+            className='absolute top-[2%] left-[2%] z-[900] w-[3%]'
             onClick={toggleMute}
           >
-            <img
-              src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`}
-            />
+            <img src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`} />
           </button>
         ) : null}
         <audio ref={bgAudioRef}>
@@ -756,11 +757,10 @@ const World = ({
         <Background background={background} />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
-            }`}
-        >
-
-        </div>
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
+            objSelected ? "blur-[50px]" : ""
+          }`}
+        ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
             objSelected={objSelected}
