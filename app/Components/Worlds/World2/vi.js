@@ -20,6 +20,13 @@ export const vi = {
         title: "Hỗ trợ kinh doanh và nông nghiệp quốc tế",
         description: `
             <p>Hong Zhuang Yuan gia nhập Tập đoàn Jollibee. Thương hiệu này được biết đến với sự lựa chọn đặc biệt của món cháo Trung Quốc và có hơn 50 cửa hàng ở Trung Quốc.</p></br >
+            <div className='flex flex-wrap mt-[2.5%]'>
+            <div
+              className='w-2/4 flex content-center items-center'
+            >
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2008/Screen%20Shot%202023-09-01%20at%206.12.11%20PM.jpg?t=2023-12-04T00%3A29%3A55.270Z" className='w-full p-[4px]' />
+            </div>
+            </div>
             <p>Quỹ Tập đoàn Jollibee thành lập Chương trình Doanh nhân Nông dân: chương trình này đã giúp hàng trăm nông dân sản xuất nhỏ trở thành doanh nhân nông nghiệp. Cho đến nay, chương trình Nông dân FEP đã mang lại lượng nông sản trị giá hơn 411 triệu PHP, tương đương với 9,8 triệu kg rau.</p>
         `
     },

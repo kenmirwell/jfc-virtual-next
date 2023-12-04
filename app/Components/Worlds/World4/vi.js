@@ -3,7 +3,17 @@ export const vi = {
         title: "Hỗ trợ tài chính và Bảo mật",
         description: `
             <p>Tập đoàn Jollibee phát hành thành công trái phiếu cao cấp và chứng khoán khoản nợ cao cấp: lần đầu tiên tập đoàn khai thác vốn kể từ đợt phát hành cổ phiếu lần đầu ra công chúng vào năm 1997. Đợt chào bán trái phiếu cao cấp đã được đăng ký vượt mức gấp 10 lần, cho thấy niềm tin mạnh mẽ vào Tập đoàn Jollibee.</p>
+            <br/>
             <p>Để đối phó với đại dịch COVID-19, Tập đoàn Jollibee đã phân bổ 1 tỷ PHP để hỗ trợ cho nhân viên.</p>
+            <br/>
+            <div className='flex flex-wrap mt-[2.5%]'>
+            <div
+              className='w-2/4 flex content-center items-center'
+            >
+              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2020/2020-Actual-Size-Chapter-4.png" className='w-full p-[4px]' />
+            </div>
+            </div>
+            <br/>
             <p>Tập đoàn Jollibee cung cấp khoản hỗ trợ trị giá hơn 330 triệu PHP cho những người ở tuyến đầu bị ảnh hưởng và các gia đình có hoàn cảnh khó khăn.</p>
         `
     },
