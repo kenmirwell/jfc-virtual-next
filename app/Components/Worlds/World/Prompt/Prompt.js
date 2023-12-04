@@ -12,6 +12,7 @@ const Prompt = ({
   currentFlow,
   onClickInteractables,
   audioEnding,
+  audioIcon
 }) => {
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
@@ -83,6 +84,7 @@ const Prompt = ({
         onPlay={() => setHasPlayed(true)}
         ref={soundRef}
         className='hidden'
+        muted={audioIcon === "mute" ? true : false}
         controls
       >
         <source
@@ -90,7 +92,7 @@ const Prompt = ({
         />
       </audio>
       {isEnd && (
-        <audio autoPlay className='hidden' controls>
+        <audio autoPlay className='hidden' muted={audioIcon === "mute" ? true : false} controls>
           <source src={audioEnding} />
         </audio>
       )}

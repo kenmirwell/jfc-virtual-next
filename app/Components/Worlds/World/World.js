@@ -600,10 +600,10 @@ const World = ({
     const target = modelObjs.children.find(
       (c) => c.name === currentFlow.target
     );
-    
+
     Object.keys(contents).find((c, index) => {
 
-      if(c === target.name) {
+      if (c === target.name) {
         setFlatIconsIndex(index + 1)
       }
     })
@@ -720,7 +720,7 @@ const World = ({
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
-          <button className='absolute top-[2%] left-[2%] z-[900] w-[3%]'
+          <button className='absolute top-[1.5%] left-[0.8%] z-[1000] w-[3%]'
             onClick={toggleMute}
           >
             <img
@@ -750,6 +750,7 @@ const World = ({
           flow={flow}
           currentFlow={{ get: currentFlow, set: setCurrentFlow }}
           onClickInteractables={onClickObject}
+          audioIcon={audioIcon}
         />
         <Joy />
         <Loader model3d={model3d} />
