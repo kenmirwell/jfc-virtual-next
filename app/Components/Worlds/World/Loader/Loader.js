@@ -17,7 +17,7 @@ const Loader = ({ model3d, value }) => {
       flex items-center justify-center'
       >
         <VStack>
-          <video autoPlay loop muted className='w-auto h-[80%]'>
+          <video autoPlay loop muted className='w-auto h-[60%]'>
             <source
               src={
                 "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm"
