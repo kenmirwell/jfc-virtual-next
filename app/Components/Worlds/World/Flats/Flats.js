@@ -69,7 +69,7 @@ const Flats = ({ flats, title, year, color }) => {
       {/* ICONS */}
       <div
         id='cicons'
-        className='col-span-full row-start-3 flex w-full h-full items-end translate-y-[200px]'
+        className='col-span-full row-start-3 flex w-full h-full items-end translate-y-[200px] -mx-[3.5%]'
       >
         {flats.iconSet && (
           <img

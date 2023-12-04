@@ -611,6 +611,9 @@ const World = ({
     //   }
     // });
 
+    // console.log("objSelected", objSelected);
+    // console.log("target", target.name);
+
     const joys = modelObjs.children.filter(
       (obj) => obj.name.indexOf(objects.joy ? objects.joy : "Joy-") > -1
     );
@@ -771,6 +774,7 @@ const World = ({
           flow={flow}
           currentFlow={{ get: currentFlow, set: setCurrentFlow }}
           onClickInteractables={onClickObject}
+          audioIcon={audioIcon}
         />
         <Joy />
         <Loader model3d={model3d} />
