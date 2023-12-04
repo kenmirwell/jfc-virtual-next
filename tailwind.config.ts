@@ -19,6 +19,7 @@ const config: Config = {
       },
       aspectRatio: {
         'year': '319 / 170',
+        'yearImage': '353 / 126',
       },
     },
   },

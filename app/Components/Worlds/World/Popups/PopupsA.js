@@ -47,7 +47,7 @@ const PopupsA = (props) => {
   const PopupYearcomponent = () => {
     return (
       props.isSafari ? (
-        <img src={curr.yearPoster} alt="" width={240} className='w-[50%] aspect-year' />
+        <img src={curr.yearPoster} alt="" width={240} className='w-[50%] aspect-yearImage' />
       ) : (
         <video autoPlay loop muted poster={curr.yearPoster} width={240} className='w-[50%] aspect-year'>
           <source src={curr.year} type='video/webm' />
