@@ -116,7 +116,7 @@ const Prompt = ({
         <div
           id='promptc'
           className={`
-          w-full h-full relative bg-white/0 row-start-2 mt-[20%]
+          w-full h-full relative bg-white/0 row-start-2 mt-[20%] left-[15%]
           ${
             currentFlow.get.action === "END"
               ? "col-span-4 col-start-9 row-span-1"
@@ -235,7 +235,7 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-idle absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               showJoy && currentFlow.get.action === "WAIT" ? "opacity-100" : ""
             }`}
           >
@@ -248,7 +248,7 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-wave absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               showJoy && currentFlow.get.action === "START" ? "opacity-100" : ""
             }`}
           >
@@ -261,7 +261,7 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               showJoy && currentFlow.get.action === "GOTO" ? "opacity-100" : ""
             }`}
           >
@@ -291,7 +291,7 @@ const Prompt = ({
             ref={pointingRef}
             // autoPlay
             // loop
-            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-pointing absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               !showJoy && world === 1 && currentFlow.get.action === "GOTO"
                 ? "opacity-100"
                 : ""
@@ -306,7 +306,7 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               !showJoy && world === 2 && currentFlow.get.action === "GOTO"
                 ? "opacity-100"
                 : ""
@@ -321,7 +321,7 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               !showJoy && world === 3 && currentFlow.get.action === "GOTO"
                 ? "opacity-100"
                 : ""
@@ -336,7 +336,7 @@ const Prompt = ({
             muted
             autoPlay
             loop
-            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[20%] ${
+            className={`joy-thinking absolute w-full opacity-0 scale-[2] top-[70%] left-[15%] ${
               !showJoy && world === 4 && currentFlow.get.action === "GOTO"
                 ? "opacity-100"
                 : ""
