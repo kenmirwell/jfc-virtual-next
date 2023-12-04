@@ -29,14 +29,14 @@ export const en = {
     },
     "2011A": {
         title: "Establishing Happy Bee Foods",
-        description: `<p>Jollibee Group builds the Jollibee Foods Processing Facility (Happy Bee Foods) in China. The Happy Bee Foods Commissary serves Jollibee Group's brands in China.</p>`
+        description: `<p>Jollibee Group builds the <strong>Jollibee Foods Processing Facility (Happy Bee Foods)</strong> in China. The Happy Bee Foods Commissary serves Jollibee Group's brands in China.</p>`
     },
     "2011B": {
         title: "Burger King: Home of the Whopper",
-        description: `<p>Burger King Philippines joins the Jollibee Group. Now with over 120 stores and growing, the brand is known for its line of Whoppers.</p>`
+        description: `<p><strong>Burger King</strong> Philippines joins the Jollibee Group. Now with over 120 stores and growing, the brand is known for its line of Whoppers.</p>`
     },
     "2012": {
         title: "Highlands Coffee: Vietnam’s #1 Coffee Chain",
-        description: `<p>Highlands Coffee joins the Jollibee Group. It is Vietnam's #1 coffee chain, with over 700 stores in Vietnam and the Philippines.</p>`
+        description: `<p><strong>Highlands Coffee</strong> joins the Jollibee Group. It is Vietnam's #1 coffee chain, with over 700 stores in Vietnam and the Philippines.</p>`
     },
 }
