@@ -819,7 +819,7 @@ const World = ({
             handleStartVideo={handleStartVideo}
             onDeselect={onDeselect}
             onClickObject={onClickObject}
-            videoPlayed={videoPlayed}
+            // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
           />
         ) : (
@@ -834,7 +834,7 @@ const World = ({
             handleStartVideo={handleStartVideo}
             onDeselect={onDeselect}
             onClickObject={onClickObject}
-            videoPlayed={videoPlayed}
+            // videoPlayed={videoPlayed}
             audioIcon={audioIcon}
           />
         )}

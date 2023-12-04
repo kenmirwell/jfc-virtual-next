@@ -7,17 +7,18 @@ const Loader = ({ model3d, value }) => {
     console.log(value);
   }, [value]);
 
-  if (model3d) {
-    return null;
-  }
+  // if (model3d) {
+  //   return null;
+  // }
   return (
+
     <ChakraProvider>
       <div
         className='z-10 absolute overflow-hidden pointer-events-none w-full aspect-video transition-all duration-[0.5s] ease-out 
       flex items-center justify-center'
       >
-        <VStack>
-          <video autoPlay loop muted className='w-auto h-[60%]'>
+        <VStack className="w-auto h-[60%]">
+          <video autoPlay loop muted className='w-auto h-full'>
             <source
               src={
                 "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm"
@@ -40,6 +41,7 @@ const Loader = ({ model3d, value }) => {
         </VStack>
       </div>
     </ChakraProvider>
+
   );
 };
 
