@@ -16,7 +16,10 @@ const config: Config = {
       screens: {
         md: { max: "1024px" },
         xl: { max: "1280px" }
-      }
+      },
+      aspectRatio: {
+        'year': '319 / 170',
+      },
     },
   },
   plugins: [],

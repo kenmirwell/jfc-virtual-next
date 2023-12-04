@@ -45,7 +45,7 @@ const PopupsA = (props) => {
 
   const PopupYearcomponent = () => {
     return (
-      <video autoPlay loop muted width={240} className='md:!w-[150px]'>
+      <video autoPlay loop muted width={240} className='w-[50%] aspect-year'>
         <source src={curr.year} type='video/webm' />
       </video>
     );

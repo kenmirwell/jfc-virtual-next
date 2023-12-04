@@ -496,7 +496,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-                -1
+              -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -762,7 +762,7 @@ const World = ({
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
           <button
-            className='absolute top-[2%] left-[2%] z-[900] w-[3%]'
+            className='absolute top-[1.5%] left-[0.8%] z-[1000] w-[3%]'
             onClick={toggleMute}
           >
             <img src={`/assets/world1/popup-icons/audio-${audioIcon}.webp`} />
@@ -797,9 +797,8 @@ const World = ({
         <Background background={background} />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
-            objSelected ? "blur-[50px]" : ""
-          }`}
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
+            }`}
         ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
