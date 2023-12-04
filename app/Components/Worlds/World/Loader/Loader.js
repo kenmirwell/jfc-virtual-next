@@ -7,9 +7,9 @@ const Loader = ({ model3d, value }) => {
     console.log(value);
   }, [value]);
 
-  // if (model3d) {
-  //   return null;
-  // }
+  if (model3d) {
+    return null;
+  }
   return (
     <ChakraProvider>
       <div
