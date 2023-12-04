@@ -114,7 +114,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS1.mp3?t=2023-12-03T02%3A27%3A42.995Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2013%20MAIN.webm?t=2023-12-03T02%3A36%3A00.370Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2013.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2013%20YEAR.webm?t=2023-12-03T02%3A37%3A22.691Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2013_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2013/2013-ACTUAL-SIZE.png",
         ],
@@ -131,7 +133,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS2.mp3?t=2023-12-03T02%3A27%3A53.455Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2014%20MAIN.webm?t=2023-12-03T02%3A36%3A07.649Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2014.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2014%20YEAR.webm?t=2023-12-03T02%3A37%3A29.870Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2014_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2014/2014-ACTUAL-SIZE.png?t=2023-12-04T07%3A55%3A49.757Z",
         ],
@@ -148,7 +152,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS3.mp3?t=2023-12-03T02%3A28%3A04.381Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2015%20MAIN.webm?t=2023-12-03T02%3A36%3A22.103Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2015.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2015%20YEAR.webm?t=2023-12-03T02%3A37%3A35.375Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2015_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2015/2015-ACTUAL-SIZE.png",
         ],
@@ -162,7 +168,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS3B.mp3?t=2023-12-03T02%3A28%3A10.908Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2017%20MAIN.webm?t=2023-12-03T02%3A36%3A30.036Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2017.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2017%20YEAR.webm?t=2023-12-03T02%3A37%3A43.146Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2017_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2017/2017-Actual-Size.png?t=2023-12-04T07%3A56%3A19.304Z",
         ],
@@ -179,7 +187,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS4.mp3?t=2023-12-03T02%3A28%3A17.898Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2018%20MAIN.webm?t=2023-12-03T02%3A36%3A38.183Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2018.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2018%20YEAR.webm?t=2023-12-03T02%3A37%3A48.890Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2018_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2018/2018-Actual-Size.png?t=2023-12-04T07%3A56%3A32.720Z",
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2018/2018-Actual-Size_2.png?t=2023-12-04T07%3A56%3A39.498Z",
@@ -197,7 +207,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS5.mp3?t=2023-12-03T02%3A28%3A25.172Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2019%20MAIN.webm?t=2023-12-03T02%3A36%3A46.519Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2019.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2019%20YEAR.webm?t=2023-12-03T02%3A37%3A54.950Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2019_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2019/2019-Actual-Size.png?t=2023-12-04T07%3A56%3A50.094Z",
         ],
@@ -211,7 +223,9 @@ const World3 = () => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/MP3/JFC_VO_W3_MS5B.mp3?t=2023-12-03T02%3A31%3A12.955Zwav",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2020%20MAIN.webm?t=2023-12-03T02%3A36%3A55.629Z",
+        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2020.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2020%20YEAR.webm?t=2023-12-03T02%3A37%3A12.453Z",
+        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popups/2020_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/popup%20assets/2020/Up%20Scaled/2020-Up-Scaled.png",
         ],
@@ -235,7 +249,7 @@ const World3 = () => {
       color='#06abcb'
       model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-03T19%3A45%3A24.538Z'
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
-      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/WORLD3_BG.webp'
+      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/WORLD3_BG%20copy.png'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world3/elements/chapter.svg",
