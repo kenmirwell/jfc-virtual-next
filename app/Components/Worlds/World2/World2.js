@@ -252,29 +252,12 @@ const World2 = () => {
         chapter: "/assets/world2/elements/chapter.svg",
         // icons: "/assets/world2/elements/icons.png",
         iconSet: [
-          ["/assets/logos/world2/yonhe-king.png"],
-          [
-            "/assets/logos/world2/yonhe-king.png",
-            "/assets/logos/world2/red-ribbon.png",
-          ],
-          [
-            "/assets/logos/world2/yonhe-king.png",
-            "/assets/logos/world2/red-ribbon.png",
-            "/assets/logos/world2/HongZhuangYuan.png",
-          ],
-          [
-            "/assets/logos/world2/yonhe-king.png",
-            "/assets/logos/world2/red-ribbon.png",
-            "/assets/logos/world2/HongZhuangYuan.png",
-            "/assets/logos/world2/mang-inasal.png",
-          ],
-          [
-            "/assets/logos/world2/yonhe-king.png",
-            "/assets/logos/world2/red-ribbon.png",
-            "/assets/logos/world2/HongZhuangYuan.png",
-            "/assets/logos/world2/mang-inasal.png",
-            "/assets/logos/world2/burger-king.png",
-          ],
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/assets/jfc-gw-ck.webp?t=2023-12-01T02%3A40%3A28.903Z",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_4.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_5.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_6.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_7.webp",
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_9.webp",
         ],
       }}
       contents={contents}
