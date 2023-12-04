@@ -186,29 +186,22 @@ const PopupsA = (props) => {
             </div>
 
             <div className='h-[10%] w-full button-lr-container flex gap-2 justify-end'>
-              <button
-                className={`arrow-left ${activeVideo > 0 ? "" : "opacity-50"
+
+              <img
+                className={`cursor-pointer arrow-left w-auto h-full ${activeVideo > 0 ? "" : "opacity-50"
                   }`}
                 onClick={() => props.onPrev()}
-              >
-                <img
-                  src='/assets/world1/popup-icons/arrow-left.svg'
-                  className='w-auto h-full'
-                />
-              </button>
-              <button
-                className={`arrow-right`}
+                src='/assets/world1/popup-icons/arrow-left.svg'
+              />
+              <img
+                className={`cursor-pointer arrow-right w-auto h-full`}
                 onClick={() =>
                   activeVideo < Object.keys(documents).length - 1
                     ? props.onNext()
                     : onDeselect()
                 }
-              >
-                <img
-                  src='/assets/world1/popup-icons/arrow-right.svg'
-                  className='w-auto h-full'
-                />
-              </button>
+                src='/assets/world1/popup-icons/arrow-right.svg'
+              />
             </div>
           </div>
 
