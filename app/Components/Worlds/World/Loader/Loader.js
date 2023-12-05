@@ -7,9 +7,9 @@ const Loader = ({ model3d, value }) => {
     console.log(value);
   }, [value]);
 
-  if (model3d) {
-    return null;
-  }
+  // if (model3d) {
+  //   return null;
+  // }
   return (
     <ChakraProvider>
       <div
@@ -18,7 +18,10 @@ const Loader = ({ model3d, value }) => {
       >
         <VStack className='w-auto h-[60%]'>
           <video loop autoPlay muted>
-            <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm' />
+            <source
+              type='video/webm'
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm'
+            />
             <img
               src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
               alt='loading icon'
