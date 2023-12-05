@@ -2,9 +2,9 @@
 import { Progress, ChakraProvider, Image } from "@chakra-ui/react";
 
 const Loader = ({ model3d, value, isSafari }) => {
-  // if (model3d) {
-  //   return null;
-  // }
+  if (model3d) {
+    return null;
+  }
   return (
     <ChakraProvider>
       <div
