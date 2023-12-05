@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap, Power3 } from "gsap";
 
 import { usePathname } from "next/navigation";
+import config from "../../../../utils";
 
 let timer;
 const Prompt = ({
@@ -84,6 +85,8 @@ const Prompt = ({
     if (pathname.includes("world3")) return "game/TriviaKing";
     if (pathname.includes("worl4")) return "photobooth";
   };
+
+  const joyUrl = `${config.apiURL}/World1/joy/`;
 
   return (
     <>
@@ -305,10 +308,7 @@ const Prompt = ({
                   poster=''
                   className={`joy-idle absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
-                  <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
-                    type='video/webm'
-                  />
+                  <source src={`${joyUrl}Joy-Idle-v2.webm`} type='video/webm' />
                 </video>
               )}
               {showJoy && currentFlow.get.action === "START" && (
@@ -319,10 +319,7 @@ const Prompt = ({
                   poster=''
                   className={`joy-wave absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
-                  <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Waving.webm?t=2023-12-01T03%3A40%3A56.076Z'
-                    type='video/webm'
-                  />
+                  <source src={`${joyUrl}Joy-Waving.webm`} type='video/webm' />
                 </video>
               )}
               {showJoy && currentFlow.get.action === "GOTO" && (
@@ -333,10 +330,7 @@ const Prompt = ({
                   poster=''
                   className={`joy-point absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
-                  <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.webm?t=2023-12-01T02%3A47%3A29.340Z'
-                    type='video/webm'
-                  />
+                  <source src={`${joyUrl}Joy-Idle-v2.webm`} type='video/webm' />
                 </video>
               )}
               {showJoy && currentFlow.get.action === "END" && (
@@ -350,8 +344,8 @@ const Prompt = ({
                   <source
                     src={
                       !path.includes("world4")
-                        ? "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Thinking.webm"
-                        : "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/joy/Joy-WavingLoop.webm"
+                        ? `${joyUrl}Joy-Thinking.webm`
+                        : `${joyUrl}Joy-WavingLoop.webm`
                     }
                     type='video/webm'
                   />
@@ -367,7 +361,7 @@ const Prompt = ({
                   className={`joy-pointing absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
                   <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Pointing.webm'
+                    src={`${joyUrl}Joy-Pointing.webm`}
                     type='video/webm'
                   />
                 </video>
@@ -381,7 +375,7 @@ const Prompt = ({
                   className={`joy-thinking absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
                   <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-WavePeek.webm'
+                    src={`${joyUrl}Joy-WavePeek.webm`}
                     type='video/webm'
                   />
                 </video>
@@ -395,7 +389,7 @@ const Prompt = ({
                   className={`joy-thinking absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
                   <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-PointLetsGo.webm'
+                    src={`${joyUrl}Joy-PointLetsGo.webm`}
                     type='video/webm'
                   />
                 </video>
@@ -408,10 +402,7 @@ const Prompt = ({
                   poster=''
                   className={`joy-thinking absolute w-full scale-[2] top-[70%] left-[15%]`}
                 >
-                  <source
-                    src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-LetsGo.webm'
-                    type='video/webm'
-                  />
+                  <source src={`${joyUrl}Joy-LetsGo.webm`} type='video/webm' />
                 </video>
               )}
             </>

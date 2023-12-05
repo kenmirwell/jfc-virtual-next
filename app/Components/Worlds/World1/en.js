@@ -1,6 +1,6 @@
 export const en = {
   1978: {
-    title: "Jollibee Food Corporation is born",
+    title: "Jollibee Foods Corporation is born",
     description: `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao.</p>`,
   },
   1979: {
@@ -32,8 +32,8 @@ export const en = {
     description: `<p>Jollibee Group opens its <strong>first-ever store in North America</strong> with Jollibee Daly City in California, USA. Jollibee Group's North American presence is now composed of six brands (Jollibee, Chowking, Red Ribbon, Smashburger, and The Coffee Bean and Tea Leaf) with over 550 stores.</p>`,
   },
   2000: {
-    title: "Chowking: The Philippines’ #1 Chinese Quick Serving Restaurant",
-    description: `<p><strong>Chowking</strong> joins the Jollibee Group. It is now the Philippines&apos; leading Chinese quick-service Restaurant, with over 560 stores nationwide.</p>`,
+    title: "Chowking: The Philippines’ #1 Chinese quick-service Restaurant",
+    description: `<p><strong>Chowking</strong> joins the Jollibee Group. It is now the Philippines&apos; leading Chinese Quick Service Restaurant, with over 560 stores nationwide.</p>`,
   },
   2001: {
     title: "Welcome to the Jollibee Plaza",

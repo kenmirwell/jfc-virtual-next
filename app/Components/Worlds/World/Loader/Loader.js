@@ -25,8 +25,7 @@ const Loader = ({ model3d, value, isSafari }) => {
           <Image
             src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
             alt='loading icon'
-            className='w-auto h-full'
-            boxSize={{ base: "150px", md: "300px" }}
+            boxSize={{ base: "160px", md: "240px", lg: "320px" }}
           />
         )}
         <Progress
