@@ -2,9 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
+import { usePathname } from "next/navigation";
+import { Noto_Sans_SC, Be_Vietnam_Pro } from "next/font/google";
+const noto = Noto_Sans_SC({ subsets: ["latin"] });
+const viet = Be_Vietnam_Pro({ weight: "400", subsets: ["latin"] });
 
 const PopupsA = (props) => {
-//   const lang = getCookie("lang");
+  //   const lang = getCookie("lang");
   const activeVideo = props.activeVideo;
   const contents = props.contents;
   const objSelected = props.objSelected;
@@ -15,6 +19,8 @@ const PopupsA = (props) => {
   const ref = React.createRef();
   // const [playing, setPlaying] = useState(true);
   let curr;
+
+  const pathname = usePathname();
 
   useEffect(() => {
     if (ref.current) {
@@ -45,14 +51,24 @@ const PopupsA = (props) => {
   })();
 
   const PopupYearcomponent = () => {
-    return (
-      props.isSafari ? (
-        <img src={curr.yearPoster} alt="" width={240} className='w-[50%] aspect-yearImage' />
-      ) : (
-        <video autoPlay loop muted poster={curr.yearPoster} width={240} className='w-[50%] aspect-year'>
-          <source src={curr.year} type='video/webm' />
-        </video>
-      )
+    return props.isSafari ? (
+      <img
+        src={curr.yearPoster}
+        alt=''
+        width={240}
+        className='w-[50%] aspect-yearImage'
+      />
+    ) : (
+      <video
+        autoPlay
+        loop
+        muted
+        poster={curr.yearPoster}
+        width={240}
+        className='w-[50%] aspect-year'
+      >
+        <source src={curr.year} type='video/webm' />
+      </video>
     );
   };
 
@@ -62,16 +78,20 @@ const PopupsA = (props) => {
 
   return (
     <div
-      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${objSelected ? "!opacity-100" : "pointer-events-none"
-        }`}
+      className={`z-[999] backdrop-blur-lg details-modal-container relative w-full h-full bg-[#0f172a]/80 transition-all duration-[0.5s] ease-in-out ${
+        objSelected ? "!opacity-100" : "pointer-events-none"
+      }`}
     >
       <div
         className={`w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`}
       >
         {/* VIDEO BACKGROUND */}
-        {Object.keys(documents).map((k, i) => (
+        {Object.keys(documents).map((k, i) =>
           props.isSafari ? (
-            <img src={documents[k].bgPoster} alt="" key={`video-${i}`}
+            <img
+              src={documents[k].bgPoster}
+              alt=''
+              key={`video-${i}`}
               className={`${activeVideo !== i ? "video hidden" : "video"}`}
             />
           ) : (
@@ -87,7 +107,7 @@ const PopupsA = (props) => {
               <source src={documents[k].bg} type='video/webm' />
             </video>
           )
-        ))}
+        )}
         <div
           className='details-modal-content 
         absolute w-[90%] h-auto overflow-hidden aspect-video
@@ -99,10 +119,11 @@ const PopupsA = (props) => {
           <div className='w-[35%] flex items-end pb-[2%]'>
             <div className={`button-rw-container mx-auto w-[70%]`}>
               <div
-                className={`rw-content-container relative flex items-center ${Object.keys(documents).length > 1
-                  ? "justify-between"
-                  : "justify-around"
-                  }`}
+                className={`rw-content-container relative flex items-center ${
+                  Object.keys(documents).length > 1
+                    ? "justify-between"
+                    : "justify-around"
+                }`}
               >
                 {Object.keys(documents).map((item, i) => (
                   <button
@@ -180,7 +201,14 @@ const PopupsA = (props) => {
                 {curr.title}
               </h4>
               <div
-                className='desc-container text-[5cqmin] leading-[1.2]'
+                className={
+                  "desc-container text-[5cqmin] leading-[1.2]" +
+                  pathname.includes("ch")
+                    ? noto.className
+                    : pathname.includes("vi")
+                    ? viet.className
+                    : ""
+                }
                 dangerouslySetInnerHTML={{ __html: curr.description }}
               />
               <div className='flex flex-wrap mt-[2.5%]'>
@@ -196,10 +224,10 @@ const PopupsA = (props) => {
             </div>
 
             <div className='h-[10%] w-full button-lr-container flex gap-2 justify-end'>
-
               <img
-                className={`cursor-pointer arrow-left w-auto h-full ${activeVideo > 0 ? "" : "opacity-50"
-                  }`}
+                className={`cursor-pointer arrow-left w-auto h-full ${
+                  activeVideo > 0 ? "" : "opacity-50"
+                }`}
                 onClick={() => props.onPrev()}
                 src='/assets/world1/popup-icons/arrow-left.svg'
               />
@@ -227,8 +255,9 @@ const PopupsA = (props) => {
       </div>
       <div
         onClick={onExit}
-        className={`details-modal-overlay ${objSelected ? "" : "pointer-events-none"
-          }`}
+        className={`details-modal-overlay ${
+          objSelected ? "" : "pointer-events-none"
+        }`}
       />
     </div>
   );
