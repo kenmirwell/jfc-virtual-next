@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && aws s3 sync out/ s3://jfc-virtual-tour"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
