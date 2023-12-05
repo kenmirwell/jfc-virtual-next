@@ -762,10 +762,8 @@ const World = ({
     }
     if (pathname.includes("world3")) {
       if (objSelected === "Burger") moveIndex();
-      if (objSelected === "CakeControl001") moveIndex();
-      if (objSelected === "CongeeBldgController001") moveIndex();
-      if (objSelected === "Inasal") moveIndex();
-      if (objSelected === "BurgerController001") moveIndex();
+      if (objSelected === "Dumplings") moveIndex();
+      if (objSelected === "CoffeeBeans") moveIndex();
     }
     if (pathname.includes("world4")) {
       if (objSelected === "FoodBowlController") moveIndex();
