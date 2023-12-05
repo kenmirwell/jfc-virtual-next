@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { getCookie } from "cookies-next";
+import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Noto_Sans_TC, Be_Vietnam_Pro } from "next/font/google";
-const noto = Noto_Sans_TC({ subsets: ["latin"] });
-const viet = Be_Vietnam_Pro({ weight: "400", subsets: ["latin"] });
+import "@fontsource-variable/noto-sans-sc";
+import "@fontsource/be-vietnam-pro";
 
 const PopupsA = (props) => {
   //   const lang = getCookie("lang");
@@ -21,6 +19,11 @@ const PopupsA = (props) => {
   let curr;
 
   const pathname = usePathname();
+
+  const getFontFam = () => {
+    if (pathname.includes("ch")) return "Noto Sans SC Variable, sans-serif";
+    if (pathname.includes("vi")) return "Be Vietnam Pro, sans-serif";
+  };
 
   useEffect(() => {
     if (ref.current) {
@@ -193,7 +196,11 @@ const PopupsA = (props) => {
           <div className='w-[65%] flex flex-col justify-between box-border'>
             <div
               className='w-full p-[6%] pl-[7%] max-w-[93%] overflow-y-auto h-[88%] box-border'
-              style={{ containerType: "size" }}
+              // style={{ containerType: "size" }}
+              style={{
+                fontFamily: getFontFam(),
+                containerType: "size",
+              }}
             >
               <PopupYearcomponent />
 
@@ -201,14 +208,7 @@ const PopupsA = (props) => {
                 {curr.title}
               </h4>
               <div
-                className={
-                  "desc-container text-[5cqmin] leading-[1.2]" +
-                  pathname.includes("ch")
-                    ? noto.className
-                    : pathname.includes("vi")
-                    ? viet.className
-                    : ""
-                }
+                className={"desc-container text-[5cqmin] leading-[1.2]"}
                 dangerouslySetInnerHTML={{ __html: curr.description }}
               />
               <div className='flex flex-wrap mt-[2.5%]'>

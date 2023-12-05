@@ -1,62 +1,63 @@
 @import "fonts/base.scss";
 
 span {
-    font-family: "vag-round-bold";
+  // font-family: "vag-round-bold";
 }
 
 h4 {
-    font-family: "vag-round-bold";
-    font-size: 20px;
-    color: #c72a1d;
+  // font-family: "vag-round-bold";
+  font-size: 20px;
+  color: #c72a1d;
 }
 
 p {
-    font-family: "vag-round-bold";
-    color: #3f3f3f;
-    
-    strong {
-        color: #cf463f
-    }
+  // font-family: "vag-round-bold";
+  color: #3f3f3f;
+
+  strong {
+    color: #cf463f;
+  }
 }
 
 #promptc {
-    p {
-        font-family: "vag-round-bold";
-        color: #3f3f3f;
+  p {
+    // font-family: "vag-round-bold";
+    color: #3f3f3f;
 
-        strong {
-            color: #cf463f
-        }
+    strong {
+      color: #cf463f;
     }
+  }
 }
 
 .h-b {
-    font-family: "vag-round-bold";
+  // font-family: "vag-round-bold";
 
-    p::after, h2::after {
-        content: attr(data-text);
-        position: absolute;
-        z-index: -1; 
-        left: 0;
-        right: 0;
+  p::after,
+  h2::after {
+    content: attr(data-text);
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
 
-        /* visible stroke is 10px because of alignment */
-        -webkit-text-stroke: 7px #00bbdc;
-    
-        /* is sized relative to h1 */
-        font-size: 1em; 
-    }
+    /* visible stroke is 10px because of alignment */
+    -webkit-text-stroke: 7px #00bbdc;
+
+    /* is sized relative to h1 */
+    font-size: 1em;
+  }
 }
 
 .headline-single::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    z-index: -1;
-  
-    /* visible stroke is 10px because of alignment */
-    -webkit-text-stroke: 5px #00bbdc;
-  
-    /* is sized relative to h1 */
-    font-size: 1em;
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  z-index: -1;
+
+  /* visible stroke is 10px because of alignment */
+  -webkit-text-stroke: 5px #00bbdc;
+
+  /* is sized relative to h1 */
+  font-size: 1em;
 }

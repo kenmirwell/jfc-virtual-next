@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { getCookie } from "cookies-next";
-import { Noto_Sans_SC, Be_Vietnam_Pro } from "next/font/google";
-const noto = Noto_Sans_SC({ subsets: ["latin"] });
-const viet = Be_Vietnam_Pro({ weight: "400", subsets: ["latin"] });
+import React, { useEffect } from "react";
+
+import "@fontsource-variable/noto-sans-sc";
+import "@fontsource/be-vietnam-pro";
+import { usePathname } from "next/navigation";
 
 const PopupsA = (props) => {
   //   const lang = getCookie("lang");
@@ -18,6 +18,13 @@ const PopupsA = (props) => {
   const ref = React.createRef();
   let curr;
   const reg = /([A-Z || a-z])/g;
+
+  const pathname = usePathname();
+
+  const getFontFam = () => {
+    if (pathname.includes("ch")) return "Noto Sans SC Variable, sans-serif";
+    if (pathname.includes("vi")) return "Be Vietnam Pro, sans-serif";
+  };
 
   useEffect(() => {
     if (ref.current) {
@@ -118,7 +125,10 @@ const PopupsA = (props) => {
               className={
                 "w-full p-[6%] max-w-[78%] overflow-y-auto h-[88%] box-border"
               }
-              style={{ containerType: "size" }}
+              style={{
+                fontFamily: getFontFam(),
+                containerType: "size",
+              }}
             >
               <PopupYearcomponent />
 
@@ -126,14 +136,7 @@ const PopupsA = (props) => {
                 {curr.title}
               </h4>
               <div
-                className={
-                  "desc-container text-[5cqmin] leading-[1.2]" +
-                  pathname.includes("ch")
-                    ? noto.className
-                    : pathname.includes("vi")
-                    ? viet.className
-                    : ""
-                }
+                className={"desc-container text-[5cqmin] leading-[1.2]"}
                 dangerouslySetInnerHTML={{ __html: curr.description }}
               />
               <div className='flex flex-wrap mt-[2.5%]'>
