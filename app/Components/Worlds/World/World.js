@@ -813,7 +813,7 @@ const World = ({
           isSafari={isSafari}
         />
         <Joy />
-        <Loader model3d={model3d} value={loadPercentage} />
+        <Loader isSafari={isSafari} model3d={model3d} value={loadPercentage} />
         <Background
           background={background}
           backgroundPoster={backgroundPoster}
