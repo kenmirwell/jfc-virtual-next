@@ -1,6 +1,6 @@
 export const en = {
   1978: {
-    title: "Jollibee Food Corporation is born",
+    title: "Jollibee Foods Corporation is born",
     description: `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao.</p>`,
   },
   1979: {
