@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
 import { usePathname } from "next/navigation";
-import { Noto_Sans_SC, Be_Vietnam_Pro } from "next/font/google";
-const noto = Noto_Sans_SC({ subsets: ["latin"] });
+import { Noto_Sans_TC, Be_Vietnam_Pro } from "next/font/google";
+const noto = Noto_Sans_TC({ subsets: ["latin"] });
 const viet = Be_Vietnam_Pro({ weight: "400", subsets: ["latin"] });
 
 const PopupsA = (props) => {
