@@ -432,7 +432,7 @@ const World = ({
           // console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
           setTimeout(() => {
             setLoadPercentage((xhr.loaded / xhr.total) * 100);
-          }, 2000);
+          }, 500);
         }
       },
       function (error) {
