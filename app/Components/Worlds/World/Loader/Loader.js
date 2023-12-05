@@ -11,14 +11,21 @@ const Loader = ({ model3d, value }) => {
     return null;
   }
   return (
-
     <ChakraProvider>
       <div
         className='z-10 absolute overflow-hidden pointer-events-none w-full aspect-video transition-all duration-[0.5s] ease-out 
       flex items-center justify-center'
       >
-        <VStack className="w-auto h-[60%]">
-          <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png" alt="" className="w-auto h-full" />
+        <VStack className='w-auto h-[60%]'>
+          <video loop autoPlay muted>
+            <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm' />
+            <img
+              src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
+              alt='loading icon'
+              className='w-auto h-full'
+            />
+          </video>
+
           <Progress
             pos='absolute'
             bottom='8%'
@@ -34,7 +41,6 @@ const Loader = ({ model3d, value }) => {
         </VStack>
       </div>
     </ChakraProvider>
-
   );
 };
 

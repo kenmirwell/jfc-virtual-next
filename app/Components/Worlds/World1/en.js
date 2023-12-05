@@ -29,11 +29,11 @@ export const en = {
   },
   1998: {
     title: "Entering North America Markets",
-    description: `<p>Jollibee Group opens its <strong>first-ever store in North America</strong> with Jollibee Daly City in California, USA. Jollibee Group's North America presence is now composed of six brands (Jollibee, Chowking, Red Ribbon, Smashburger, and The Coffee Bean and Tea Leaf) with over 550 stores.</p>`,
+    description: `<p>Jollibee Group opens its <strong>first-ever store in North America</strong> with Jollibee Daly City in California, USA. Jollibee Group's North American presence is now composed of six brands (Jollibee, Chowking, Red Ribbon, Smashburger, and The Coffee Bean and Tea Leaf) with over 550 stores.</p>`,
   },
   2000: {
     title: "Chowking: The Philippines’ #1 Chinese Quick Serving Restaurant",
-    description: `<p><strong>Chowking</strong> joins the Jollibee Group. It is now the Philippines&apos; leading Chinese Quick Service Restaurant, with over 560 stores nationwide.</p>`,
+    description: `<p><strong>Chowking</strong> joins the Jollibee Group. It is now the Philippines&apos; leading Chinese quick-service Restaurant, with over 560 stores nationwide.</p>`,
   },
   2001: {
     title: "Welcome to the Jollibee Plaza",
