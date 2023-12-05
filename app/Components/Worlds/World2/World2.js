@@ -41,7 +41,7 @@ const World2 = ({ lang }) => {
         "<p>Let's go to the<br /><strong>Red Ribbon Building</strong></p>",
       end: "EXIT",
       zoomOffset: {
-        y: 1.7,
+        y: -1,
       },
     },
     {
