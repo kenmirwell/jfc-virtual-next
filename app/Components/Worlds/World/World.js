@@ -137,7 +137,9 @@ const World = ({
     // }
 
     const userAgent = window.navigator.userAgent.toLowerCase();
-    setIsSafari(userAgent.indexOf('safari') !== -1 && userAgent.indexOf('chrome') === -1);
+    setIsSafari(
+      userAgent.indexOf("safari") !== -1 && userAgent.indexOf("chrome") === -1
+    );
   }, []);
 
   /* Initialize Scene */
@@ -511,7 +513,7 @@ const World = ({
             } else if (
               objects[i].object.parent.parent.parent &&
               raycasted.indexOf(objects[i].object.parent.parent.parent.name) >
-              -1
+                -1
             ) {
               setTransition(objects[i].object.parent.parent.parent);
             }
@@ -742,7 +744,11 @@ const World = ({
   useEffect(() => {
     const moveIndex = () => setFlatIconsIndex((prev) => prev + 1);
 
-    if (!pathname.includes("world")) {
+    if (
+      !pathname.includes("2") &&
+      !pathname.includes("3") &&
+      !pathname.includes("4")
+    ) {
       if (objSelected === "Empty005") moveIndex();
       if (objSelected === "Empty001") moveIndex();
       if (objSelected === "Empty002") moveIndex();
@@ -771,7 +777,6 @@ const World = ({
   }, [objSelected, pathname]);
 
   return (
-
     <>
       <div id='worldcomp' className='w-full relative aspect-video'>
         {model3d ? (
@@ -809,11 +814,15 @@ const World = ({
         />
         <Joy />
         <Loader model3d={model3d} value={loadPercentage} />
-        <Background background={background} backgroundPoster={backgroundPoster} />
+        <Background
+          background={background}
+          backgroundPoster={backgroundPoster}
+        />
         <div
           id='world1'
-          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${objSelected ? "blur-[50px]" : ""
-            }`}
+          className={`absolute overflow-hidden w-full aspect-video transition-all duration-[0.5s] ease-out ${
+            objSelected ? "blur-[50px]" : ""
+          }`}
         ></div>
         {world === 1 || world == 3 || world === 5 ? (
           <PopupsA
