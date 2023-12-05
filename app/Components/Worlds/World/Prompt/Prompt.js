@@ -257,7 +257,7 @@ const Prompt = ({
               {showJoy && currentFlow.get.action === "GOTO" && (
                 <img
                   src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/joy/Joy-Idle-v2.gif?t=2023-12-04T12%3A34%3A11.981Z'
-                  className={`joy-point absolute w-full opacity-0 scale-[2] top-[70%] left-[15%]`}
+                  className={`joy-point absolute w-full scale-[2] top-[70%] left-[15%]`}
                 />
               )}
               {showJoy && currentFlow.get.action === "END" && (
