@@ -1,10 +1,10 @@
 "use client";
-import { Progress, ChakraProvider } from "@chakra-ui/react";
+import { Progress, ChakraProvider, Image } from "@chakra-ui/react";
 
 const Loader = ({ model3d, value, isSafari }) => {
-  if (model3d) {
-    return null;
-  }
+  // if (model3d) {
+  //   return null;
+  // }
   return (
     <ChakraProvider>
       <div
@@ -22,10 +22,11 @@ const Loader = ({ model3d, value, isSafari }) => {
             <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm' />
           </video>
         ) : (
-          <img
+          <Image
             src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
             alt='loading icon'
             className='w-auto h-full'
+            boxSize={{ base: "150px", md: "300px" }}
           />
         )}
         <Progress
