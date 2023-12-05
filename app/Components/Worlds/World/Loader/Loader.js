@@ -1,12 +1,7 @@
 "use client";
 import { VStack, Progress, ChakraProvider } from "@chakra-ui/react";
-import { useEffect } from "react";
 
 const Loader = ({ model3d, value }) => {
-  useEffect(() => {
-    console.log(value);
-  }, [value]);
-
   if (model3d) {
     return null;
   }
