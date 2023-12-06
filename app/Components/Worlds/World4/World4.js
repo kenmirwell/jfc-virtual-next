@@ -110,8 +110,8 @@ const World4 = ({ lang }) => {
         photos: [""],
         contents: {
           en: en["2020B"],
-          //   "ch": ch["2020B"],
-          //   "vi": vi["2020B"]
+          ch: ch["2020B"],
+          vi: vi["2020B"],
         },
       },
     },
@@ -131,8 +131,8 @@ const World4 = ({ lang }) => {
         ],
         contents: {
           en: en["2021A"],
-          //   "ch": ch["2021A"],
-          //   "vi": vi["2021A"]
+          ch: ch["2021A"],
+          vi: vi["2021A"],
         },
       },
     },
@@ -152,8 +152,8 @@ const World4 = ({ lang }) => {
         ],
         contents: {
           en: en["2021B"],
-          //   "ch": ch["2021B"],
-          //   "vi": vi["2021B"]
+          ch: ch["2021B"],
+          vi: vi["2021B"],
         },
       },
     },
@@ -173,8 +173,8 @@ const World4 = ({ lang }) => {
         ],
         contents: {
           en: en["2022"],
-          //   "ch": ch["2022"],
-          //   "vi": vi["2022"]
+          ch: ch["2022"],
+          vi: vi["2022"],
         },
       },
     },
@@ -194,8 +194,8 @@ const World4 = ({ lang }) => {
         ],
         contents: {
           en: en["2023A"],
-          //   "ch": ch["2023A"],
-          //   "vi": vi["2023A"]
+          ch: ch["2023A"],
+          vi: vi["2023A"],
         },
       },
 
@@ -215,7 +215,7 @@ const World4 = ({ lang }) => {
         contents: {
           en: en["2023B"],
           ch: ch["2023B"],
-          //   "vi": vi["2023B"]
+          vi: vi["2023B"],
         },
       },
     },
