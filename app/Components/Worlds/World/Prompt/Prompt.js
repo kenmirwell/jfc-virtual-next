@@ -339,13 +339,13 @@ const Prompt = ({
                   autoPlay
                   loop
                   poster=''
-                  className={`joy-thinking absolute w-full`}
+                  className={`joy-thinking absolute w-full scale-[.8]`}
                 >
                   <source
                     src={
                       !path.includes("world4")
                         ? `${joyUrl}Joy-Thinking.webm`
-                        : `${joyUrl}Joy-WavingLoop.webm`
+                        : `${joyUrl}Joy-Waving.webm`
                     }
                     type='video/webm'
                   />
