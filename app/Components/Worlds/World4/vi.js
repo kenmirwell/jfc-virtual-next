@@ -38,7 +38,7 @@ export const vi = {
     description: `<p>Tập đoàn Jollibee ra mắt Joy For Tomorrow, chương trình nghị sự bền vững. Dựa trên ba trụ cột chính là Thực phẩm, Con người, Hành tinh và mười lĩnh vực trọng tâm, Joy for Tomorrow thể hiện cam kết của Tập đoàn Jollibee trong việc mang lại niềm vui ăn uống cho mọi người hôm nay và ngày mai.</p>`,
   },
   "2023B": {
-    title: "",
+    title: "Phát triển danh mục đầu tư của chúng tôi",
     description: `<p>Tiong Bahru Bakery và Common Man Coffee Roasters gia nhập Tập đoàn Jollibee thông qua liên doanh. Cả hai thương hiệu đều đến từ Singapore và nổi tiếng với các món bánh chất lượng cao và cà phê đặc sản.</p>`,
   },
 };
