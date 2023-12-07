@@ -1,4 +1,4 @@
-const Flats = ({ flats, title, year, color }) => {
+const Flats = ({ flats, title, year, color, subtitle }) => {
   return (
     <div
       className={`flats pointer-events-none z-[40] px-[4%] absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
@@ -20,6 +20,15 @@ const Flats = ({ flats, title, year, color }) => {
             className='uppercase text-white leading-none font-[700] w-full'
             style={{ fontSize: "20cqmin" }}
           >
+            <span
+              style={{
+                WebkitTextStroke: `.5cqmin ${color ? color : "#00bbdc"}`,
+                fontSize: "15cqmin",
+              }}
+              className={`relative headline-single block`}
+            >
+              {subtitle}
+            </span>
             {title.split(" ").map((w, wi) => (
               <span className='flex justify-center' key={`headline_word_${wi}`}>
                 {w.split("").map((t, i) => (

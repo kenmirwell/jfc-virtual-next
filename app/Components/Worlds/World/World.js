@@ -37,6 +37,7 @@ const World = ({
   audioEnding,
   zoomMultiplier = 1,
   lang,
+  subtitle,
 }) => {
   const [components, setComponents] = useState({
     renderer: null,
@@ -793,12 +794,14 @@ const World = ({
           animate={initialAnimate}
           delay={0.5}
           color={color}
+          subtitle={subtitle}
         />
         <Flats
           flats={{ ...flats, iconSet: flats.iconSet[flatIconsIndex] }}
           title={title}
           year={year}
           color={color}
+          subtitle={subtitle}
         />
         <Prompt
           world={world}
