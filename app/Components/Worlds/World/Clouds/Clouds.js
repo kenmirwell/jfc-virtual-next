@@ -120,7 +120,7 @@ const Clouds = ({ title, delay, animate, color, subtitle }) => {
           className='uppercase text-white leading-none font-[700]'
           style={{ fontSize: "30cqmin" }}
         >
-          {subtitle.split(" ").map((index) => (
+          {subtitle?.split(" ").map((index) => (
             <span
               className='flex justify-center'
               key={`headline_word_${index}`}
