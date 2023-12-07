@@ -2,7 +2,7 @@ export const en = {
   2013: {
     title: "Dream Come True: Largest Asian Restaurant Company",
     description: `
-            <p>Jollibee Group achieves its vision to become the <strong>largest restaurant company in Asia.</strong></p>
+            <p>Jollibee Group achieves its vision to become the <strong>largest ASIAN restaurant.</strong></p>
             <br/>
             <p>Jollibee Group inaugurates <strong>JWS Logistics:</strong> one of the largest automated QSR logistics facilities in the Philippines.</p>
         `,

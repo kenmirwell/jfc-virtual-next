@@ -1,8 +1,9 @@
 export const en = {
+  // After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming the world's largest Asian restaurant company.
   2004: {
-    title: "The Dream: Asia’s #1 Restaurant Company",
+    title: "The Dream: To Be the Largest Asian Restaurant Company",
     description: `
-            <p>After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming <strong>Asia’s #1 restaurant company.</strong></p>
+            <p>After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming <strong>the world's largest Asian restaurant company.</strong></p>
             <br/>
             <p>In line with its vision, Jollibee Group acquires its first international brand: Yonghe King. Today, the chain has over 420 stores in China, and is loved for its freshly ground soy milk and minced pork rice.</p>
             <br/>
