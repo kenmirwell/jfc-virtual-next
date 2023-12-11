@@ -113,7 +113,7 @@ const PopupsA = (props) => {
         )}
         <div
           className='details-modal-content 
-        absolute w-[90%] h-auto overflow-hidden aspect-video
+        absolute w-[90%] h-auto aspect-video
         flex gap-5
         left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
         pb-[1.5%]
@@ -232,7 +232,7 @@ const PopupsA = (props) => {
                 src='/assets/world1/popup-icons/arrow-left.svg'
               />
               <img
-                className={`cursor-pointer arrow-right w-auto h-full`}
+                className={`cursor-pointer arrow-right w-auto h-full animate-arrow arrow-glow`}
                 onClick={() =>
                   activeVideo < Object.keys(documents).length - 1
                     ? props.onNext()
