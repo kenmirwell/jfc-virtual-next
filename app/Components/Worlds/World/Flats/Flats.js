@@ -1,4 +1,20 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 const Flats = ({ flats, title, year, color, subtitle }) => {
+  const pathname = usePathname();
+
+  const getFontSize = () => {
+    if (
+      pathname.includes("2") ||
+      pathname.includes("3") ||
+      pathname.includes("4")
+    )
+      return "18cqmin";
+    return "20cqmin";
+  };
+
   return (
     <div
       className={`flats pointer-events-none z-[40] px-[4%] absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
@@ -18,12 +34,12 @@ const Flats = ({ flats, title, year, color, subtitle }) => {
           <h1
             id='mheader'
             className='uppercase text-white leading-none font-[700] w-full'
-            style={{ fontSize: "20cqmin" }}
+            style={{ fontSize: getFontSize() }}
           >
             <span
               style={{
                 WebkitTextStroke: `.5cqmin ${color ? color : "#00bbdc"}`,
-                fontSize: "15cqmin",
+                fontSize: "12cqmin",
               }}
               className={`relative headline-single block`}
             >
