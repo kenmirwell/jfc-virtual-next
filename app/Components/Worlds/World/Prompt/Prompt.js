@@ -339,7 +339,7 @@ const Prompt = ({
                   autoPlay
                   loop
                   poster=''
-                  className={`joy-thinking absolute w-full scale-[.8]`}
+                  className={`joy-thinking absolute w-full scale-[.8] translate-y-[-2%]`}
                 >
                   <source
                     src={
