@@ -72,6 +72,7 @@ const World = ({
   const bgAudioRef = useRef(null);
   const [flatIconsIndex, setFlatIconsIndex] = useState(0);
   const [loadPercentage, setLoadPercentage] = useState(0);
+  const pathname = usePathname();
 
   const ref = useRef(false);
 
@@ -385,7 +386,7 @@ const World = ({
         }
       }
     }
-  }, [currentFlow]);
+  }, [currentFlow, pathname]);
 
   const onLoad = () => {
     const assetLoader = new GLTFLoader();
@@ -740,8 +741,6 @@ const World = ({
       }
     });
   }
-
-  const pathname = usePathname();
 
   useEffect(() => {
     const moveIndex = () => setFlatIconsIndex((prev) => prev + 1);
