@@ -223,6 +223,9 @@ const World4 = ({ lang }) => {
 
   return (
     <World
+      bgm={
+        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLD4_BGM.mp3?t=2023-12-11T03%3A21%3A07.888Z"
+      }
       lang={lang}
       world={4}
       audioEnding={

@@ -115,9 +115,11 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS1.mp3?t=2023-12-01T06%3A35%3A58.803Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004%20MAIN.webm?t=2023-12-01T07%3A02%3A13.339Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004%20YEAR.webm?t=2023-12-02T09%3A55%3A56.876Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/Layer%201636.jpg",
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/2004%20-%20JGF%20logo.jpg",
@@ -135,9 +137,11 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS2.mp3?t=2023-12-01T06%3A36%3A08.967Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005%20MAIN.webm?t=2023-12-01T07%3A02%3A22.214Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005%20YEAR.webm?t=2023-12-02T09%3A58%3A18.370Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2005/Screen%20Shot%202023-09-01%20at%205.48.59%20PM.jpg",
         ],
@@ -151,9 +155,11 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS2B.mp3?t=2023-12-01T06%3A36%3A18.609Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006%20MAIN.webm?t=2023-12-01T07%3A02%3A28.934Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006%20YEAR.webm?t=2023-12-02T09%3A58%3A25.804Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2006/JWS.jpg?t=2023-12-04T00%3A29%3A46.492Z",
         ],
@@ -170,9 +176,11 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS4.mp3?t=2023-12-01T06%3A36%3A31.438Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010%20MAIN.webm?t=2023-12-01T07%3A02%3A36.323Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010%20YEAR.webm?t=2023-12-02T09%3A58%3A35.386Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2010/Layer%202048.jpg?t=2023-12-04T00%3A30%3A07.302Z",
         ],
@@ -186,9 +194,11 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS4B.mp3?t=2023-12-01T06%3A36%3A43.474Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011A%20MAIN.webm?t=2023-12-01T07%3A02%3A44.325Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011A.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011A.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011%20YEAR.webm?t=2023-12-02T09%3A59%3A23.813Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2011/happy%20bee%20foods.jpg",
         ],
@@ -205,9 +215,11 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS5.mp3?t=2023-12-01T06%3A36%3A51.781Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011B%20MAIN.webm?t=2023-12-01T07%3A02%3A51.275Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011B.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011B.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011%20YEAR.webm?t=2023-12-02T09%3A59%3A23.813Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2011/2011B/Screen%20Shot%202023-09-01%20at%206.58.47%20PM.jpg?t=2023-12-04T00%3A31%3A40.843Z",
         ],
@@ -219,9 +231,11 @@ const World2 = ({ lang }) => {
       },
       2012: {
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012%20MAIN.webm?t=2023-12-01T07%3A02%3A58.807Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012%20YEAR.webm?t=2023-12-02T10%3A00%3A32.628Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012_YEAR.png",
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012_YEAR.png",
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2012/Layer%201598.jpg?t=2023-12-04T00%3A31%3A52.644Z",
         ],
@@ -238,12 +252,12 @@ const World2 = ({ lang }) => {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_MS3.mp3?t=2023-12-01T06%3A37%3A06.221Z",
         bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008%20MAIN.webm?t=2023-12-01T07%3A03%3A08.493Z",
-        bgPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008.png",
+        bgPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008.png",
         year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008%20YEAR.webm?t=2023-12-02T10%3A00%3A47.016Z",
-        yearPoster: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008_YEAR.png",
-        photos: [
-          "",
-        ],
+        yearPoster:
+          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008_YEAR.png",
+        photos: [""],
         contents: {
           en: en["2008"],
           ch: ch["2008"],
@@ -255,6 +269,9 @@ const World2 = ({ lang }) => {
 
   return (
     <World
+      bgm={
+        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/WORLD2_BGM.mp3"
+      }
       lang={lang}
       world={2}
       audioEnding={

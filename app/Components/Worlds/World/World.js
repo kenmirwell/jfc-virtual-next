@@ -38,6 +38,7 @@ const World = ({
   zoomMultiplier = 1,
   lang,
   subtitle,
+  bgm,
 }) => {
   const [components, setComponents] = useState({
     renderer: null,
@@ -787,7 +788,7 @@ const World = ({
           </button>
         ) : null}
         <audio ref={bgAudioRef} loop>
-          <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLDS_BGM.mp3' />
+          <source src={bgm} />
         </audio>
         <Clouds
           title={title}
