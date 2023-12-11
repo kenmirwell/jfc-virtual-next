@@ -141,5 +141,5 @@ video {
 } */
 
 .arrow-glow {
-  filter: drop-shadow(0 0 16px #fffee8) drop-shadow(0 0 24px #ffea95);
+  /* filter: drop-shadow(0 0 16px #fffee8) drop-shadow(0 0 24px #ffea95); */
 }
