@@ -358,7 +358,7 @@ const World = ({
   /* Apply click animation */
   useEffect(() => {
     bgAudioRef.current.play();
-    bgAudioRef.current.volume = 0.03;
+    bgAudioRef.current.volume = 0.05;
     if (currentFlow.action === "GOTO") {
       document.addEventListener("click", onClickObject);
       const light = modelObjs.children.find(
