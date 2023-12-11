@@ -23,12 +23,14 @@ const config: Config = {
       },
       keyframes: {
         arrow: {
-          "0%": { transform: "translateX(0) scaleX(.9)" },
-          "50%": { transform: "translateX(-2.4%) scaleX(1)" },
-          "100%": { transform: "translateX(2.4%) scaleX(.9)" },
+          "0%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(4%)" },
+          "50%": { transform: "translateX(0)" },
+          "75%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(4%)" },
         },
       },
-      animation: { arrow: "arrow 1s linear 0s infinite alternate" },
+      animation: { arrow: "arrow 3s linear 0s infinite alternate" },
     },
   },
   plugins: [],
