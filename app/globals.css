@@ -139,3 +139,8 @@ video {
     background: green;
   }
 } */
+
+.arrow-glow {
+  filter: drop-shadow(0 0 16px rgba(255, 254, 232, 0.66))
+    drop-shadow(0 0 24px #fff3e5);
+}
