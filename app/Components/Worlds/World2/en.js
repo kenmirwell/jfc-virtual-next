@@ -5,7 +5,7 @@ export const en = {
     description: `
             <p>After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming <strong>the world's largest Asian restaurant company.</strong></p>
             <br/>
-            <p>In line with its vision, Jollibee Group acquires its first international brand: Yonghe King. Today, the chain has over 420 stores in China, and is loved for its freshly ground soy milk and minced pork rice.</p>
+            <p>In line with its vision, Jollibee Group acquires its first international brand: <strong>Yonghe King.</strong> Today, the chain has over 420 stores in China, and is loved for its freshly ground soy milk and minced pork rice.</p>
             <br/>
             <p>Jollibee Group opens <strong>Zenith Foods Corporation</strong> in Canlubang, Laguna. At the time, it was one of the largest commissaries in the Philippines and Asia.</p>
             <br/>
