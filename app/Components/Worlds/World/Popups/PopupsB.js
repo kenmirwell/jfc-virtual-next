@@ -160,15 +160,17 @@ const PopupsA = (props) => {
                 src='/assets/world1/popup-icons/arrow-left.svg'
               />
 
-              <img
-                className={`cursor-pointer arrow-right w-auto h-full animate-arrow arrow-glow`}
-                src='/assets/world1/popup-icons/arrow-right.svg'
-                onClick={() =>
-                  activeVideo < Object.keys(documents).length - 1
-                    ? props.onNext()
-                    : onDeselect()
-                }
-              />
+              <div className='arr-container'>
+                <img
+                  className={`cursor-pointer arrow-right w-auto h-full`}
+                  src='/assets/world1/popup-icons/arrow-right.svg'
+                  onClick={() =>
+                    activeVideo < Object.keys(documents).length - 1
+                      ? props.onNext()
+                      : onDeselect()
+                  }
+                />
+              </div>
             </div>
           </div>
           <div className='w-[35%] flex items-end pb-[2%]'>

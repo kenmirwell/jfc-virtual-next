@@ -235,7 +235,7 @@ const PopupsA = (props) => {
 
               <div className='arr-container'>
                 <img
-                  className={`cursor-pointer arrow-right w-auto h-full arrow-glow`}
+                  className={`cursor-pointer arrow-right w-auto h-full`}
                   onClick={() =>
                     activeVideo < Object.keys(documents).length - 1
                       ? props.onNext()
