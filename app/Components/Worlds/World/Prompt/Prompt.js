@@ -38,6 +38,8 @@ const Prompt = ({
 
   const [hasPlayed, setHasPlayed] = useState(false);
 
+  const promptRef = useRef(null);
+
   const onProceed = () => {
     currentFlow.set(flow.find((f) => f.step === currentFlow.get.step + 1));
 
@@ -87,6 +89,11 @@ const Prompt = ({
   };
 
   const joyUrl = `${config.apiURL}/World1/joy/`;
+
+  useEffect(() => {
+    if (currentFlow?.get.prompt)
+      promptRef.current.innerHTML = currentFlow.get.prompt;
+  }, [currentFlow?.get.prompt]);
 
   return (
     <>
@@ -172,7 +179,8 @@ const Prompt = ({
               //     : "tracking-[-0.5px]"
               //   } ${currentFlow.get.action === "WAIT" ? "!tracking-[0.9px]" : ""
               //   } `}
-              dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }}
+              // dangerouslySetInnerHTML={{ __html: currentFlow.get.prompt }}
+              ref={promptRef}
             />
             {/* {currentFlow.get.action === "START" && (
               <button

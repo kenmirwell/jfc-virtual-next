@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import "@fontsource-variable/noto-sans-sc";
 import "@fontsource/be-vietnam-pro";
@@ -19,6 +19,8 @@ const PopupsA = (props) => {
   let curr;
   const reg = /([A-Z || a-z])/g;
 
+  const contentRef = useRef(null);
+
   const pathname = usePathname();
 
   const getFontFam = () => {
@@ -33,6 +35,7 @@ const PopupsA = (props) => {
           ref.current.load();
           ref.current.play();
         }
+        contentRef.current.innerHTML = curr.description;
       } else {
         ref.current.pause();
         ref.current.currentTime = 0;
@@ -137,7 +140,8 @@ const PopupsA = (props) => {
               </h4>
               <div
                 className={"desc-container text-[5cqmin] leading-[1.2]"}
-                dangerouslySetInnerHTML={{ __html: curr.description }}
+                // dangerouslySetInnerHTML={{ __html: curr.description }}
+                ref={contentRef}
               />
               <div className='flex flex-wrap mt-[2.5%]'>
                 {curr.photos.map((img) => (
