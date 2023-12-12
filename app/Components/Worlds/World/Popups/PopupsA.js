@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import "@fontsource-variable/noto-sans-sc";
 import "@fontsource/be-vietnam-pro";
+import { Box } from "@chakra-ui/react";
 
 const PopupsA = (props) => {
   //   const lang = getCookie("lang");
@@ -231,15 +232,18 @@ const PopupsA = (props) => {
                 onClick={() => props.onPrev()}
                 src='/assets/world1/popup-icons/arrow-left.svg'
               />
-              <img
-                className={`cursor-pointer arrow-right w-auto h-full animate-arrow arrow-glow`}
-                onClick={() =>
-                  activeVideo < Object.keys(documents).length - 1
-                    ? props.onNext()
-                    : onDeselect()
-                }
-                src='/assets/world1/popup-icons/arrow-right.svg'
-              />
+
+              <div className='arr-container'>
+                <img
+                  className={`cursor-pointer arrow-right w-auto h-full arrow-glow`}
+                  onClick={() =>
+                    activeVideo < Object.keys(documents).length - 1
+                      ? props.onNext()
+                      : onDeselect()
+                  }
+                  src='/assets/world1/popup-icons/arrow-right.svg'
+                />
+              </div>
             </div>
           </div>
 

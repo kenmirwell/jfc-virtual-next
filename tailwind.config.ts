@@ -28,7 +28,10 @@ const config: Config = {
           "100%": { transform: "translateX(10%)" },
         },
       },
-      animation: { arrow: "arrow 2s linear 0s infinite alternate" },
+      animation: {
+        arrow: "arrow 2s linear 1s infinite alternate",
+        container: "arrow 2s linear 0s infinite alternate",
+      },
     },
   },
   plugins: [],
