@@ -142,7 +142,7 @@ video {
 
 .arrow-right,
 .arr-container {
-  animation: arrow 2s linear 0s infinite alternate;
+  /* animation: arrow 2s linear 0s infinite alternate; */
 }
 
 .arr-container {
@@ -173,22 +173,18 @@ video {
   top: -30%;
   left: 0;
   rotate: 25deg;
-  animation: shine 4s linear 0s infinite;
+  animation: shine 3s linear 1.5s infinite forwards;
 }
 
 @keyframes shine {
   0%,
   50% {
     transform: translateX(-2vw);
-    opacity: 0.3;
-  }
-  90% {
-    transform: translateX(3vw);
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(4vw);
-    opacity: 0;
+    transform: translateX(6vw);
+    opacity: 1;
   }
 }
 
