@@ -140,8 +140,9 @@ video {
   }
 } */
 
-.arrow-glow {
-  /* filter: drop-shadow(0 0 16px #fffee8) drop-shadow(0 0 24px #ffea95); */
+.arrow-right,
+.arr-container {
+  animation: arrow 2s linear 0s infinite alternate;
 }
 
 .arr-container {
@@ -156,7 +157,6 @@ video {
     0% 75%
   );
   overflow: hidden;
-  /* background-color: red; */
 }
 
 .arr-container::after {
@@ -173,7 +173,7 @@ video {
   top: -30%;
   left: 0;
   rotate: 25deg;
-  animation: shine 3s linear 0s infinite;
+  animation: shine 4s linear 0s infinite;
 }
 
 @keyframes shine {
@@ -189,5 +189,15 @@ video {
   100% {
     transform: translateX(4vw);
     opacity: 0;
+  }
+}
+
+@keyframes arrow {
+  0%,
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10%);
   }
 }
