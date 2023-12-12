@@ -140,11 +140,6 @@ video {
   }
 } */
 
-.arrow-right,
-.arr-container {
-  /* animation: arrow 2s linear 0s infinite alternate; */
-}
-
 .arr-container {
   position: relative;
   clip-path: polygon(
@@ -157,6 +152,7 @@ video {
     0% 75%
   );
   overflow: hidden;
+  animation: arrow 2.4s linear 0s infinite alternate;
 }
 
 .arr-container::after {
@@ -173,7 +169,7 @@ video {
   top: -30%;
   left: 0;
   rotate: 25deg;
-  animation: shine 3s linear 1.5s infinite forwards;
+  animation: shine 3s linear 1s infinite;
 }
 
 @keyframes shine {
