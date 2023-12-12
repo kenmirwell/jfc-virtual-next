@@ -11,10 +11,10 @@ const Flats = ({ flats, title, year, color, subtitle }) => {
       pathname.includes("3") ||
       pathname.includes("4")
     )
-      return "18cqmin";
-    return "20cqmin";
+      return "20cqmin";
+    return "16cqmin";
   };
-
+  console.log(getFontSize());
   return (
     <div
       className={`flats pointer-events-none z-[40] px-[4%] absolute w-full h-full transition-all duration-[1s] ease-in-out grid grid-cols-12 grid-rows-3`}
