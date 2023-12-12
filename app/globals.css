@@ -168,6 +168,7 @@ video {
   );
   top: -30%;
   left: 0;
+  opacity: 0;
   rotate: 25deg;
   animation: shine 3s linear 1s infinite;
 }
