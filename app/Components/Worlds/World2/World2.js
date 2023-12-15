@@ -112,6 +112,7 @@ const World2 = ({ lang }) => {
 
   const { apiURL } = config;
   const mainURLs = `${apiURL}/World2/popups`;
+  const photosURL = `${apiURL}/World2/popup+assets`;
 
   let contents = {
     FlagMain: {
@@ -125,8 +126,8 @@ const World2 = ({ lang }) => {
         //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004_YEAR.png",
         yearPoster: `${mainURLs}/2004_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/Layer%201636.jpg",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/2004%20-%20JGF%20logo.jpg",
+          `${photosURL}/2004/Layer+1636.jpg`,
+          `${photosURL}/2004/2004+-+JGF+logo.jpg`,
         ],
         contents: {
           en: en["2004"],
@@ -145,7 +146,7 @@ const World2 = ({ lang }) => {
         year: `${mainURLs}/2005+YEAR.webm`,
         yearPoster: `${mainURLs}/2005_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2005/Screen%20Shot%202023-09-01%20at%205.48.59%20PM.jpg",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2005/Screen+Shot+2023-09-01+at+5.48.59+PM.jpg",
         ],
         contents: {
           en: en["2005"],
@@ -161,7 +162,7 @@ const World2 = ({ lang }) => {
         year: `${mainURLs}/2006+YEAR.webm`,
         yearPoster: `${mainURLs}/2006_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2006/JWS.jpg?t=2023-12-04T00%3A29%3A46.492Z",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2006/JWS.jpg",
         ],
         contents: {
           en: en["2006"],
@@ -180,7 +181,7 @@ const World2 = ({ lang }) => {
         year: `${mainURLs}/2010+YEAR.webm`,
         yearPoster: `${mainURLs}/2010_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2010/Layer%202048.jpg?t=2023-12-04T00%3A30%3A07.302Z",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2010/Layer+2048.jpg",
         ],
         contents: {
           en: en["2010"],
@@ -196,7 +197,7 @@ const World2 = ({ lang }) => {
         year: `${mainURLs}/2011+YEAR.webm`,
         yearPoster: `${mainURLs}/2011_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2011/happy%20bee%20foods.jpg",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2011/happy+bee+foods.jpg",
         ],
         contents: {
           en: en["2011A"],
@@ -215,7 +216,7 @@ const World2 = ({ lang }) => {
         year: `${mainURLs}/2011+YEAR.webm`,
         yearPoster: `${mainURLs}/2011_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2011/2011B/Screen%20Shot%202023-09-01%20at%206.58.47%20PM.jpg?t=2023-12-04T00%3A31%3A40.843Z",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2011/2011B/Screen+Shot+2023-09-01+at+6.58.47+PM.jpg",
         ],
         contents: {
           en: en["2011B"],
@@ -229,7 +230,7 @@ const World2 = ({ lang }) => {
         year: `${mainURLs}/2012+YEAR.webm`,
         yearPoster: `${mainURLs}/2012_YEAR.png`,
         photos: [
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2012/Layer%201598.jpg?t=2023-12-04T00%3A31%3A52.644Z",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2012/Layer+1598.jpg",
         ],
         contents: {
           en: en["2012"],
