@@ -95,15 +95,18 @@ const World1 = ({ lang }) => {
 
   const { apiURL } = config;
   const yearsURL = `${apiURL}/World1/popup+years`;
+  const mainsURL = `${apiURL}/World1/popups`;
 
   let contents = {
     Empty005: {
       1978: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS1.mp3?t=2023-12-01T02%3A41%3A52.498Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978-MAIN.webm",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978.png",
+        bg: `${mainsURL}/1978-MAIN.webm`,
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978-MAIN.webm",
+        bgPoster: `${mainsURL}/1978.png`,
+        // bgPoster:
+        //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1978.png",
         year: `${yearsURL}/1978-YEAR.webm`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1978-YEAR.webm?t=2023-12-01T06%3A44%3A00.282Z",
         yearPoster:
@@ -120,9 +123,9 @@ const World1 = ({ lang }) => {
         icons: ["/assets/logos/world1/jollibee.png"],
       },
       1979: {
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979-MAIN.webm",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979.png",
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1979-MAIN.webm",
+        bg: `${mainsURL}/1979-MAIN.webm`,
+        bgPoster: `${mainsURL}/1979.png`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1979-YEAR.webm?t=2023-12-01T06%3A47%3A03.831Z",
         year: `${yearsURL}/1979-YEAR.webm`,
         yearPoster:
@@ -141,9 +144,9 @@ const World1 = ({ lang }) => {
       1980: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS2.mp3?t=2023-12-01T02%3A42%3A18.404Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980-MAIN.webm?t=2023-12-01T06%3A47%3A56.576Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980.png",
+        bg: `${mainsURL}/1980-MAIN.webm`,
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1980-MAIN.webm?t=2023-12-01T06%3A47%3A56.576Z",
+        bgPoster: `${mainsURL}/1980.png`,
         year: `${yearsURL}/1980-YEAR.webm`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1980-YEAR.webm?t=2023-12-01T06%3A48%3A03.837Z",
         yearPoster:
@@ -163,9 +166,9 @@ const World1 = ({ lang }) => {
       1984: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS3.mp3?t=2023-12-01T02%3A42%3A29.897Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1984-MAIN.webm",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1984.png",
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1984-MAIN.webm",
+        bg: `${mainsURL}/1984-MAIN.webm`,
+        bgPoster: `${mainsURL}/1984.png`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1984-YEAR.webm?t=2023-12-01T06%3A50%3A43.770Z",
         year: `${yearsURL}/1984-YEAR.webm`,
         yearPoster:
@@ -181,9 +184,9 @@ const World1 = ({ lang }) => {
         icons: ["/assets/logos/world1/jollibee.png"],
       },
       1990: {
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1990-MAIN.webm?t=2023-12-01T06%3A52%3A23.536Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1990.png",
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1990-MAIN.webm?t=2023-12-01T06%3A52%3A23.536Z",
+        bg: `${mainsURL}/1990-MAIN.webm`,
+        bgPoster: `${mainsURL}/1990.png`,
         year: `${yearsURL}/1990-YEAR.webm`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1990-YEAR.webm?t=2023-12-01T06%3A52%3A30.088Z",
         yearPoster:
@@ -199,9 +202,9 @@ const World1 = ({ lang }) => {
         icons: ["/assets/logos/world1/jollibee.png"],
       },
       1993: {
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1993-MAIN.webm?t=2023-12-01T06%3A52%3A54.430Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1993.png",
+        bg: `${mainsURL}/1993-MAIN.webm`,
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1993-MAIN.webm?t=2023-12-01T06%3A52%3A54.430Z",
+        bgPoster: `${mainsURL}/1993.png`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1993-YEAR.webm?t=2023-12-01T06%3A53%3A01.260Z",
         year: `${yearsURL}/1993-YEAR.webm`,
         yearPoster:
@@ -220,9 +223,9 @@ const World1 = ({ lang }) => {
       1994: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS4.mp3?t=2023-12-01T02%3A42%3A37.009Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1994-MAIN.webm?t=2023-12-01T06%3A54%3A13.728Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1994.png",
+        bg: `${mainsURL}/1994-MAIN.webm`,
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1994-MAIN.webm?t=2023-12-01T06%3A54%3A13.728Z",
+        bgPoster: `${mainsURL}/1994.png`,
         year: `${yearsURL}/1994-YEAR.webm`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1994-YEAR.webm?t=2023-12-01T06%3A54%3A23.018Z",
         yearPoster:
@@ -240,9 +243,9 @@ const World1 = ({ lang }) => {
       1998: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS4B.mp3?t=2023-12-01T02%3A42%3A53.870Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1998-MAIN.webm?t=2023-12-01T06%3A54%3A44.667Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1998.png",
+        bg: `${mainsURL}/1998-MAIN.webm`,
+        // bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/1998-MAIN.webm?t=2023-12-01T06%3A54%3A44.667Z",
+        bgPoster: `${mainsURL}/1998.png`,
         year: `${yearsURL}/1998-YEAR.webm`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/1998-YEAR.webm?t=2023-12-01T06%3A55%3A28.541Z",
         yearPoster:
@@ -261,9 +264,8 @@ const World1 = ({ lang }) => {
       2000: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS5.mp3?t=2023-12-01T02%3A42%3A59.299Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2000-MAIN.webm?t=2023-12-01T06%3A54%3A58.570Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2000.png",
+        bg: `${mainsURL}/2000-MAIN.webm`,
+        bgPoster: `${mainsURL}/2000.png`,
         year: `${yearsURL}/2000-YEAR.webm`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/2000-YEAR.webm?t=2023-12-01T06%3A55%3A36.457Z",
         yearPoster:
@@ -285,9 +287,8 @@ const World1 = ({ lang }) => {
       2001: {
         audio:
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_MS5B.mp3?t=2023-12-01T02%3A43%3A05.270Z",
-        bg: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2001-MAIN.webm?t=2023-12-01T06%3A55%3A06.666Z",
-        bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popups/2001.png",
+        bg: `${mainsURL}/2001-MAIN.webm`,
+        bgPoster: `${mainsURL}/2001.png`,
         // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/popup%20years/2001-YEAR.webm?t=2023-12-01T06%3A55%3A43.016Z",
         year: `${yearsURL}/2001-YEAR.webm`,
         yearPoster:
