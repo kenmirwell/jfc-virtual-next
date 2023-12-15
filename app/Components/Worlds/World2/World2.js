@@ -260,14 +260,11 @@ const World2 = ({ lang }) => {
 
   return (
     <World
-      // bgm={
-      //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/WORLD2_BGM.mp3"
-      // }
       bgm={`${config.apiURL}/World2/WORLD2_BGM.mp3`}
       lang={lang}
       world={2}
       audioEnding={
-        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/MP3/JFC_VO_W2_GAME2.mp3?t=2023-12-01T06%3A37%3A15.663Z"
+        "https://d1bh4bdsrj0ehq.cloudfront.net/World2/MP3/JFC_VO_W2_GAME2.mp3"
       }
       title='Dreaming Bigger'
       year='2004-2012'
