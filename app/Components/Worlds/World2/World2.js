@@ -121,8 +121,9 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2004+MAIN.webm`,
         bgPoster: `${mainURLs}/2004.png`,
         year: `${mainURLs}/2004+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004_YEAR.png",
+        // yearPoster:
+        //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2004_YEAR.png",
+        yearPoster: `${mainURLs}/2004_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/Layer%201636.jpg",
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2004/2004%20-%20JGF%20logo.jpg",
@@ -142,8 +143,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2005+MAIN.webm`,
         bgPoster: `${mainURLs}/2005.png`,
         year: `${mainURLs}/2005+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2005_YEAR.png",
+        yearPoster: `${mainURLs}/2005_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2005/Screen%20Shot%202023-09-01%20at%205.48.59%20PM.jpg",
         ],
@@ -159,8 +159,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2006+MAIN.webm`,
         bgPoster: `${mainURLs}/2006.png`,
         year: `${mainURLs}/2006+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2006_YEAR.png",
+        yearPoster: `${mainURLs}/2006_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2006/JWS.jpg?t=2023-12-04T00%3A29%3A46.492Z",
         ],
@@ -179,8 +178,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2010+MAIN.webm`,
         bgPoster: `${mainURLs}/2010.png`,
         year: `${mainURLs}/2010+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2010_YEAR.png",
+        yearPoster: `${mainURLs}/2010_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2010/Layer%202048.jpg?t=2023-12-04T00%3A30%3A07.302Z",
         ],
@@ -196,8 +194,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2011A+MAIN.webm`,
         bgPoster: `${mainURLs}/2011A.png`,
         year: `${mainURLs}/2011+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011_YEAR.png",
+        yearPoster: `${mainURLs}/2011_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2011/happy%20bee%20foods.jpg",
         ],
@@ -216,8 +213,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2011B+MAIN.webm`,
         bgPoster: `${mainURLs}/2011B.png`,
         year: `${mainURLs}/2011+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2011_YEAR.png",
+        yearPoster: `${mainURLs}/2011_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2011/2011B/Screen%20Shot%202023-09-01%20at%206.58.47%20PM.jpg?t=2023-12-04T00%3A31%3A40.843Z",
         ],
@@ -231,8 +227,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2012+MAIN.webm`,
         bgPoster: `${mainURLs}/2012.png`,
         year: `${mainURLs}/2012+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2012_YEAR.png",
+        yearPoster: `${mainURLs}/2012_YEAR.png`,
         photos: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2012/Layer%201598.jpg?t=2023-12-04T00%3A31%3A52.644Z",
         ],
@@ -251,8 +246,7 @@ const World2 = ({ lang }) => {
         bg: `${mainURLs}/2008+MAIN.webm`,
         bgPoster: `${mainURLs}/2008.png`,
         year: `${mainURLs}/2008+YEAR.webm`,
-        yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popups/2008_YEAR.png",
+        yearPoster: `${mainURLs}/2008_YEAR.png`,
         photos: [""],
         contents: {
           en: en["2008"],
