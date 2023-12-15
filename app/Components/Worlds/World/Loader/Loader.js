@@ -1,4 +1,5 @@
 "use client";
+import config from "@/app/utils";
 import { Progress, ChakraProvider, Image } from "@chakra-ui/react";
 
 const Loader = ({ model3d, value, isSafari }) => {
@@ -16,14 +17,16 @@ const Loader = ({ model3d, value, isSafari }) => {
             autoPlay
             muted
             loop
-            poster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
+            // poster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
+            poster={`${config.apiURL}/Worlds/Loading-icon.png`}
             className='h-full max-w-[40%]'
           >
-            <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm' />
+            {/* <source src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).webm' /> */}
+            <source src={`${config.apiURL}/Worlds/Loading-vid.webm`} />
           </video>
         ) : (
           <Image
-            src='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/Jollibee_Loading_Icon%20(1).png'
+            src={`${config.apiURL}/Worlds/Loading-icon.png`}
             alt='loading icon'
             // boxSize={{ base: "160px", md: "240px", lg: "320px" }}
             transform={{
