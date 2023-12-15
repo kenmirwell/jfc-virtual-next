@@ -258,9 +258,6 @@ const World3 = ({ lang }) => {
 
   return (
     <World
-      // bgm={
-      //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/WORLD3_BGM.mp3"
-      // }
       bgm={`${config.apiURL}/World3/WORLD3_BGM.mp3`}
       lang={lang}
       world={3}
@@ -270,10 +267,10 @@ const World3 = ({ lang }) => {
       title='Going Global'
       year='2013-2020'
       color='#06abcb'
-      // model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-03T19%3A45%3A24.538Z'
       model={`${config.apiURL}/Worlds/World3-Complete-NoJoy.glb`}
-      background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
-      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/WORLD3_BG%20copy.png'
+      background={`${apiURL}/World3/GLOWING+BACKGROUND+3.webm`}
+      // background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
+      backgroundPoster={`${apiURL}/World3/WORLD3_BG+copy.png`}
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world3/elements/chapter.svg",
