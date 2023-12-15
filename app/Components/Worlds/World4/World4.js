@@ -229,25 +229,21 @@ const World4 = ({ lang }) => {
   return (
     <World
       bgm={`${config.apiURL}/World4/WORLD4_BGM.mp3`}
-      // bgm={
-      //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLD4_BGM.mp3?t=2023-12-11T03%3A21%3A07.888Z"
-      // }
       lang={lang}
       world={4}
       audioEnding={
-        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_END.mp3?t=2023-11-30T22%3A42%3A18.247Z"
+        "https://d1bh4bdsrj0ehq.cloudfront.net/World4/MP3/JFC_VO_W4_END.mp3"
       }
       title='New Frontier'
       year='2021-2023'
       color='#df4637'
-      // model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World4-Complete-NoJoy.glb?t=2023-12-01T11%3A57%3A52.582Z'
       model={`${config.apiURL}/Worlds/World4-Complete-NoJoy.glb`}
-      background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/GLOWING%20BACKGROUND%204.webm'
-      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/WORLD4_BG%20copy.png'
+      background='https://d1bh4bdsrj0ehq.cloudfront.net/World4/GLOWING+BACKGROUND+4.webm'
+      backgroundPoster='https://d1bh4bdsrj0ehq.cloudfront.net/World4/WORLD4_BG+copy.png'
       flats={{
         logo: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_Chapters_Logo.webp?t=2023-11-30T22%3A50%3A50.067Z",
         chapter: "/assets/world4/elements/chapter.svg",
-        // icons:  "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_18.webp?t=2023-11-30T22%3A50%3A59.972Z",
+
         iconSet: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_14.webp",
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_15.webp",
