@@ -270,9 +270,10 @@ const World2 = ({ lang }) => {
 
   return (
     <World
-      bgm={
-        "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/WORLD2_BGM.mp3"
-      }
+      // bgm={
+      //   "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/WORLD2_BGM.mp3"
+      // }
+      bgm={`${config.apiURL}/World2/WORLD2_BGM.mp3`}
       lang={lang}
       world={2}
       audioEnding={
