@@ -298,8 +298,10 @@ const World1 = ({ lang }) => {
       subtitle='JFC UNIVERSE:'
       year='1978-2003'
       model={`${config.apiURL}/Worlds/world1.glb`}
-      background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/GLOWING%20BACKGROUND.webm'
-      backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/WORLD1_BG%20copy.png'
+      background={`${config.apiURL}/World1/GLOWING+BACKGROUND.webm`}
+      // background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/GLOWING%20BACKGROUND.webm'
+      backgroundPoster={`${config.apiURL}/World1/WORLD1_BG+copy.png`}
+      // backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/WORLD1_BG%20copy.png'
       flats={{
         logo: "/assets/world1/elements/logo.png",
         chapter: "/assets/world1/elements/chapter.svg",
