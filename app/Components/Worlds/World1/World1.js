@@ -2,6 +2,7 @@ import World from "../World/World";
 import { en } from "./en";
 import { vi } from "./vi";
 import { ch } from "./ch";
+import config from "@/app/utils";
 
 const World1 = ({ lang }) => {
   let flow = [
@@ -303,7 +304,8 @@ const World1 = ({ lang }) => {
       title='Humble Beginnings'
       subtitle='JFC UNIVERSE:'
       year='1978-2003'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1.glb'
+      // model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/world1.glb'
+      model={`${config.apiURL}/Worlds/world1.glb`}
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/GLOWING%20BACKGROUND.webm'
       backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/WORLD1_BG%20copy.png'
       flats={{

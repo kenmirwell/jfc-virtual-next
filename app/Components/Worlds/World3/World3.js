@@ -2,6 +2,7 @@ import World from "../World/World";
 import { en } from "./en";
 import { vi } from "./vi";
 import { ch } from "./ch";
+import config from "../../../utils";
 
 const World3 = ({ lang }) => {
   let flow = [
@@ -265,7 +266,8 @@ const World3 = ({ lang }) => {
       title='Going Global'
       year='2013-2020'
       color='#06abcb'
-      model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-03T19%3A45%3A24.538Z'
+      // model='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/Worlds/World3-Complete-NoJoy.glb?t=2023-12-03T19%3A45%3A24.538Z'
+      model={`${config.apiURL}/Worlds/World3-Complete-NoJoy.glb`}
       background='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/GLOWING%20BACKGROUND%203.webm'
       backgroundPoster='https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/WORLD3_BG%20copy.png'
       flats={{
