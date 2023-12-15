@@ -107,11 +107,11 @@ const World4 = ({ lang }) => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS1.mp3?t=2023-11-30T22%3A43%3A11.414Z",
         bg: `${mainsURL}/2020+MAIN.webm`,
         bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020B.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2020B.png",
         year: `${mainsURL}/2020+YEAR.webm`,
-        // year: "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020%20YEAR.webm?t=2023-11-30T22%3A44%3A53.634Z",
+        // year: "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2020%20YEAR.webm?t=2023-11-30T22%3A44%3A53.634Z",
         yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2020_YEAR.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2020_YEAR.png",
         photos: [""],
         contents: {
           en: en["2020B"],
@@ -127,10 +127,10 @@ const World4 = ({ lang }) => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS2.mp3?t=2023-11-30T22%3A43%3A25.293Z",
         bg: `${mainsURL}/2021A+MAIN.webm`,
         bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021A.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2021A.png",
         year: `${mainsURL}/2021+YEAR.webm`,
         yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021_YEAR.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2021_YEAR.png",
         photos: [
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2021/2021-Actual-Size.png",
         ],
@@ -148,10 +148,10 @@ const World4 = ({ lang }) => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS3.mp3",
         bg: `${mainsURL}/2021B+MAIN.webm`,
         bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021B.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2021B.png",
         year: `${mainsURL}/2021+YEAR.webm`,
         yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2021_YEAR.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2021_YEAR.png",
         photos: [
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2021/2021b-Actual-Size.png",
         ],
@@ -169,10 +169,10 @@ const World4 = ({ lang }) => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS4.mp3?t=2023-11-30T22%3A43%3A47.413Z",
         bg: `${mainsURL}/2022+MAIN.webm`,
         bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2022.png",
         year: `${mainsURL}/2022+YEAR.webm`,
         yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2022_YEAR.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2022_YEAR.png",
         photos: [
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2022/2022-Actual-Size.png?t=2023-12-04T00%3A34%3A28.931Z",
         ],
@@ -190,10 +190,10 @@ const World4 = ({ lang }) => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS5.mp3?t=2023-11-30T22%3A44%3A03.243Z",
         bg: `${mainsURL}/2023A+MAIN.webm`,
         bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023A.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2023A.png",
         year: `${mainsURL}/2023+YEAR.webm`,
         yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023_YEAR.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2023_YEAR.png",
         photos: [
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2023/2023a-Actual-Size.png",
         ],
@@ -209,10 +209,10 @@ const World4 = ({ lang }) => {
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/MP3/JFC_VO_W4_MS5B.mp3?t=2023-12-05T00%3A47%3A57.111Z",
         bg: `${mainsURL}/2023B+MAIN.webm`,
         bgPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023B.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2023B.png",
         year: `${mainsURL}/2023+YEAR.webm`,
         yearPoster:
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popups/2023_YEAR.png",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2023_YEAR.png",
         photos: [
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2023/2023b-Actual-Size-1.png",
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2023/2023b-Actual-Size-2.png",
