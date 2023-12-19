@@ -295,7 +295,7 @@ const World1 = ({ lang }) => {
         "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world1%20assets/audio/JFC_VO_W1_GAME1.mp3?t=2023-12-01T02%3A42%3A02.021Z"
       }
       title='Humble Beginnings'
-      subtitle='JFC UNIVERSE:'
+      // subtitle='JFC UNIVERSE:'
       year='1978-2003'
       model={`${config.apiURL}/Worlds/world1.glb`}
       background={`${config.apiURL}/World1/GLOWING+BACKGROUND.webm`}

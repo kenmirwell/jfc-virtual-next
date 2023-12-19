@@ -6,13 +6,13 @@ const Flats = ({ flats, title, year, color, subtitle }) => {
   const pathname = usePathname();
 
   const getFontSize = () => {
-    if (
-      pathname.includes("2") ||
-      pathname.includes("3") ||
-      pathname.includes("4")
-    )
-      return "20cqmin";
-    return "16cqmin";
+    // if (
+    //   pathname.includes("2") ||
+    //   pathname.includes("3") ||
+    //   pathname.includes("4")
+    // )
+    return "20cqmin";
+    // return "16cqmin";
   };
 
   return (
