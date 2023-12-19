@@ -174,7 +174,7 @@ const World4 = ({ lang }) => {
         yearPoster:
           "https://d1bh4bdsrj0ehq.cloudfront.net/World4/popups/2022_YEAR.png",
         photos: [
-          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2022/2022-Actual-Size.png?t=2023-12-04T00%3A34%3A28.931Z",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2022/2022-Actual-Size.png",
         ],
         contents: {
           en: en["2022"],
