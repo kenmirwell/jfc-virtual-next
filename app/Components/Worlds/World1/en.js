@@ -1,7 +1,18 @@
 export const en = {
   1978: {
     title: "Jollibee Foods Corporation is born",
-    description: `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao. With the gradually growing demands of the business, Jollibee establishes its first standalone commissary in Judge Jimenez St., Quezon City, Philippines: the precursor to Jollibee Group's commissary network today.</p>`,
+    // description: `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao. With the gradually growing demands of the business, Jollibee establishes its first standalone commissary in Judge Jimenez St., Quezon City, Philippines: the precursor to Jollibee Group's commissary network today.</p>`,
+    description: `
+    <p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao.</p>
+    <br />
+    <div class="flex flex-row container mx-auto">
+        <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1978/1978_1.png" class="p-4 w-[50%]" />
+        <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1978/1978_2.png" class="p-4 w-[50%]" />
+    </div>
+    <br />
+    <p>With the gradually growing demands of the business, Jollibee establishes its first standalone commissary in Judge Jimenez St., Quezon City, Philippines: the precursor to Jollibee Group's commissary network today.</p>
+    
+`,
   },
   1979: {
     title: "Beginning of Jollibee’s Franchising Journey",
@@ -21,11 +32,25 @@ export const en = {
   },
   1993: {
     title: "Going Public",
-    description: `<p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9 per share. Jollibee Group moves to Jollibee Center: now the headquarters of Jollibee Worldwide Services.</p>`,
+    // description: `<p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9 per share. Jollibee Group moves to Jollibee Center: now the headquarters of Jollibee Worldwide Services.</p>`,
+    description: `
+   <p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9 per share.</p>
+<br/>
+  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1993/1993.png" className='w-full p-[4px]' />
+<br/>
+<p>Jollibee Group moves to Jollibee Center: now the headquarters of Jollibee Worldwide Services.</p>
+`,
   },
   1994: {
     title: "Greenwich: The Philippines’ #1 Pizza Chain",
-    description: `<p>Jollibee Group makes its <strong>first acquisition with Greenwich</strong>. It is now the Philippines’ #1 Pizza Chain in terms of store network and market share. Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>`,
+    // description: `<p>Jollibee Group makes its <strong>first acquisition with Greenwich</strong>. It is now the Philippines’ #1 Pizza Chain in terms of store network and market share. Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>`,
+    description: `
+    <p>Jollibee Group makes its <strong>first acquisition with Greenwich</strong>. It is now the Philippines’ #1 Pizza Chain in terms of store network and market share. Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>
+<br/>
+  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1994/1994.png" className='w-full p-[4px]' />
+<br/>
+<p>Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>
+`,
   },
   1998: {
     title: "Entering North America Markets",
