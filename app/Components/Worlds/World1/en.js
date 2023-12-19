@@ -1,7 +1,7 @@
 export const en = {
   1978: {
     title: "Jollibee Foods Corporation is born",
-    description: `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao.</p>`,
+    description: `<p><strong>Jollibee Foods Corporation</strong> (also known as Jollibee Group) is born with a single brand: Jollibee. The first-ever Jollibee store is located in Quezon, Cubao. With the gradually growing demands of the business, Jollibee establishes its first standalone commissary in Judge Jimenez St., Quezon City, Philippines: the precursor to Jollibee Group's commissary network today.</p>`,
   },
   1979: {
     title: "Beginning of Jollibee’s Franchising Journey",
@@ -21,7 +21,7 @@ export const en = {
   },
   1993: {
     title: "Going Public",
-    description: `<p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9 per share.</p>`,
+    description: `<p>Jollibee Group lists on the <strong>Philippine Stock Exchange</strong>, with an initial offering of PHP 9 per share. Jollibee Group moves to Jollibee Center: now the headquarters of Jollibee Worldwide Services.</p>`,
   },
   1994: {
     title: "Greenwich: The Philippines’ #1 Pizza Chain",
