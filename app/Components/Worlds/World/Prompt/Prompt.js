@@ -223,7 +223,7 @@ const Prompt = ({
                     >
                       {!path.includes("world4")
                         ? "PLAY GAME"
-                        : "Visit our Photobooth!"}
+                        : "Visit our Photobooth"}
                     </Box>
                   </div>
                 </a>
