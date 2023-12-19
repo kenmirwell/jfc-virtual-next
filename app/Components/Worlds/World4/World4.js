@@ -93,7 +93,7 @@ const World4 = ({ lang }) => {
     {
       step: 10,
       action: "END",
-      prompt: "<p>Thank you for visiting JFC Universe!</p>",
+      prompt: "<p>Thank you for visiting <br/> JFC Universe!</p>",
     },
   ];
 
