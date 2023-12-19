@@ -1,5 +1,6 @@
 "use client";
 
+import { Box, Text } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 
 const Flats = ({ flats, title, year, color, subtitle }) => {
@@ -28,15 +29,17 @@ const Flats = ({ flats, title, year, color, subtitle }) => {
         />
         <div
           id='cheader'
-          className='textContainer w-full h-full text-center -mt-[10%] opacity-0'
-          style={{ containerType: "size" }}
+          className='textContainer w-full h-full text-center -mt-[10%] opacity-0 container-size'
+          // style={{ containerType: "size" }}
         >
-          <h1
+          <Box
+            as='h1'
             id='mheader'
             className='uppercase text-white leading-none font-[700] w-full'
-            style={{ fontSize: getFontSize() }}
+            // style={{ fontSize: getFontSize() }}
+            fontSize={"20cqmin"}
           >
-            <span
+            {/* <span
               style={{
                 WebkitTextStroke: `.5cqmin ${color ? color : "#00bbdc"}`,
                 fontSize: "12cqmin",
@@ -44,7 +47,7 @@ const Flats = ({ flats, title, year, color, subtitle }) => {
               className={`relative headline-single block`}
             >
               {subtitle}
-            </span>
+            </span> */}
             {title.split(" ").map((w, wi) => (
               <span className='flex justify-center' key={`headline_word_${wi}`}>
                 {w.split("").map((t, i) => (
@@ -52,35 +55,40 @@ const Flats = ({ flats, title, year, color, subtitle }) => {
                     key={`word_ltr_${wi}_${i}`}
                     className={`relative headline-single block`}
                   >
-                    <span
-                      className='absolute left-0 right-0'
-                      style={{
-                        WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
-                      }}
+                    <Box
+                      as='span'
+                      className='absolute left-0 right-0 text-stroke'
+                      color={color ? color : "#00bbdc"}
+                      // style={{
+                      //   WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
+                      // }}
                     >
                       {t}
-                    </span>
+                    </Box>
                     <span className='relative'>{t}</span>
                   </span>
                 ))}
               </span>
             ))}
-          </h1>
-          <p
+          </Box>
+          <Text
             data-text={year}
             className='text-[40px] uppercase text-white w-full'
-            style={{ fontSize: "15cqmin" }}
+            // style={{ fontSize: "15cqmin" }}
+            fontSize='15cqmin'
           >
-            <span
-              className='stroke-text absolute left-0 right-0'
-              style={{
-                WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
-              }}
+            <Box
+              as='span'
+              className='stroke-text absolute left-0 right-0 text-stroke'
+              color={color ? color : "#00bbdc"}
+              // style={{
+              //   WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
+              // }}
             >
               {year}
-            </span>
+            </Box>
             <span className='fill-text relative'>{year}</span>
-          </p>
+          </Text>
         </div>
       </div>
       {/* CHAPTER */}

@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import "@fontsource-variable/noto-sans-sc";
 import "@fontsource/be-vietnam-pro";
 import { usePathname } from "next/navigation";
+import { Box } from "@chakra-ui/react";
 
 const PopupsA = (props) => {
   //   const lang = getCookie("lang");
@@ -124,14 +125,15 @@ const PopupsA = (props) => {
         '
         >
           <div className='w-[65%] flex flex-col justify-between box-border'>
-            <div
+            <Box
               className={
-                "w-full p-[6%] max-w-[78%] overflow-y-auto h-[88%] box-border"
+                "w-full p-[6%] max-w-[78%] overflow-y-auto h-[88%] box-border container-size"
               }
-              style={{
-                fontFamily: getFontFam(),
-                containerType: "size",
-              }}
+              fontFamily={getFontFam()}
+              // style={{
+              //   fontFamily: getFontFam(),
+              //   containerType: "size",
+              // }}
             >
               <PopupYearcomponent />
 
@@ -153,7 +155,7 @@ const PopupsA = (props) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </Box>
 
             <div className='h-[10%] w-full button-lr-container flex gap-2 px-[6%]'>
               <img
@@ -189,8 +191,8 @@ const PopupsA = (props) => {
                 {Object.keys(documents).map((item, i) => (
                   <button
                     key={`red-white-${i}`}
-                    className={`red-white-container relative aspect-square w-[10%]`}
-                    style={{ containerType: "size" }}
+                    className={`red-white-container relative aspect-square w-[10%] container-size`}
+                    // style={{ containerType: "size" }}
                     onClick={() => props.onClickwhiteButton(i)}
                   >
                     {activeVideo === i ? (

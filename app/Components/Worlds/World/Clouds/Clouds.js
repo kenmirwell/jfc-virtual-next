@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { gsap, Power3 } from "gsap";
+import { Box } from "@chakra-ui/react";
 
 const clouds = [
   {
@@ -112,37 +113,43 @@ const Clouds = ({ title, delay, animate, color, subtitle }) => {
       ))}
       <div
         id='text'
-        className='textContainer w-2/4 h-2/4 pointer-events-none absolute text-center flex items-center justify-center top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]'
-        style={{ containerType: "size" }}
+        className='container-size textContainer w-2/4 h-2/4 pointer-events-none absolute text-center flex items-center justify-center top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]'
+        // style={{ containerType: "size" }}
       >
-        <h1
+        <Box
+          as='h1'
           id='mtitle'
           className='uppercase text-white leading-none font-[700]'
-          style={{ fontSize: "30cqmin" }}
+          // style={{ fontSize: "30cqmin" }}
+          fontSize='30cqmin'
         >
           {subtitle?.split(" ").map((index) => (
-            <span
+            <Box
+              as='span'
               className='flex justify-center'
               key={`headline_word_${index}`}
-              style={{ fontSize: "15cqmin" }}
+              // style={{ fontSize: "15cqmin" }}
+              fontSize='15cqmin'
             >
               {index.split("").map((t, i) => (
                 <span
                   key={`word_ltr_${i}`}
                   className={`relative headline-single block scale-0 lt${i}`}
                 >
-                  <span
-                    className='absolute left-0 right-0'
-                    style={{
-                      WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
-                    }}
+                  <Box
+                    as='span'
+                    className='absolute left-0 right-0 text-stroke'
+                    color={color ? color : "#00bbdc"}
+                    // style={{
+                    //   WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
+                    // }}
                   >
                     {t}
-                  </span>
+                  </Box>
                   <span className='relative'>{t}</span>
                 </span>
               ))}
-            </span>
+            </Box>
           ))}
 
           {headline.split(" ").map((index) => (
@@ -155,20 +162,22 @@ const Clouds = ({ title, delay, animate, color, subtitle }) => {
                   key={`word_ltr_${i}`}
                   className={`relative headline-single block scale-0 lt${i}`}
                 >
-                  <span
-                    className='absolute left-0 right-0'
-                    style={{
-                      WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
-                    }}
+                  <Box
+                    as='span'
+                    className='absolute left-0 right-0 text-stroke'
+                    color={color ? color : "#00bbdc"}
+                    // style={{
+                    //   WebkitTextStroke: `2cqmin ${color ? color : "#00bbdc"}`,
+                    // }}
                   >
                     {t}
-                  </span>
+                  </Box>
                   <span className='relative'>{t}</span>
                 </span>
               ))}
             </span>
           ))}
-        </h1>
+        </Box>
       </div>
     </div>
   );

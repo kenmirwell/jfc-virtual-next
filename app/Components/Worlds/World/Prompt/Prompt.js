@@ -3,6 +3,7 @@ import { gsap, Power3 } from "gsap";
 
 import { usePathname } from "next/navigation";
 import config from "../../../../utils";
+import { Box } from "@chakra-ui/react";
 
 let timer;
 const Prompt = ({
@@ -140,7 +141,7 @@ const Prompt = ({
           `}
         >
           <div
-            className={`cursor-pointer p-[5%] w-full h-fit opacity-0 ease-in-out text-center
+            className={`container-inline cursor-pointer p-[5%] w-full h-fit opacity-0 ease-in-out text-center
             bg-opacity-80 backdrop-blur-[2px] drop-shadow-lg rounded-2xl
             absolute top-1/2 -translate-y-1/2 scale-[80%]
             
@@ -156,7 +157,7 @@ const Prompt = ({
                   : "bg-white/70"
               }`}
               `}
-            style={{ containerType: "inline-size" }}
+            // style={{ containerType: "inline-size" }}
           >
             <div
               onClick={
@@ -192,15 +193,17 @@ const Prompt = ({
               currentFlow.get.action === "START") && (
               <button
                 onClick={handleClickHere}
-                className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
-                style={{ containerType: "inline-size" }}
+                className='bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%] container-inline'
+                // style={{ containerType: "inline-size" }}
               >
-                <span
+                <Box
+                  as='span'
                   className='text-[10cqw] block'
-                  style={{ fontFamily: "inherit" }}
+                  // style={{ fontFamily: "inherit" }}
+                  fontFamily='inherit'
                 >
                   CLICK HERE
-                </span>
+                </Box>
               </button>
             )}
             {currentFlow.get.action === "END" && (
@@ -209,30 +212,34 @@ const Prompt = ({
                   href={`http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/${getGameLink()}`}
                 >
                   <div
-                    className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%]'
-                    style={{ containerType: "inline-size" }}
+                    className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%] container-inline'
+                    // style={{ containerType: "inline-size" }}
                   >
-                    <span
+                    <Box
+                      as='span'
                       className='text-[10cqw] block'
-                      style={{ fontFamily: "inherit" }}
+                      // style={{ fontFamily: "inherit" }}
+                      fontFamily='inherit'
                     >
                       PLAY GAME
-                    </span>
+                    </Box>
                   </div>
                 </a>
                 <a
                   href={`http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
                 >
                   <div
-                    className='mx-auto w-[80%] h-fit text-black/50 lowercase'
-                    style={{ containerType: "inline-size" }}
+                    className='mx-auto w-[80%] h-fit text-black/50 lowercase container-inline'
+                    // style={{ containerType: "inline-size" }}
                   >
-                    <span
+                    <Box
+                      as='span'
                       className='text-[8cqw] block'
-                      style={{ fontFamily: "inherit" }}
+                      // style={{ fontFamily: "inherit" }}
+                      fontFamily='inherit'
                     >
                       SKIP
-                    </span>
+                    </Box>
                   </div>
                 </a>
               </div>

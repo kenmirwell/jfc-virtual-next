@@ -194,3 +194,14 @@ video {
     transform: translateX(10%);
   }
 }
+
+.container-size {
+  container-type: size;
+}
+.container-inline {
+  container-type: inline-size;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2cqmin;
+}
