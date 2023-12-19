@@ -8,7 +8,7 @@ export const en = {
     description: `<p>Jollibee begins its franchising Journey, opening its <strong>first official franchised store</strong> with Jollibee EDSA Central. Today, more than half of all JFC Brands&apos; stores globally are franchise-owned: a testament to the enduring partnership between JFC and its franchisees around the globe.</p>`,
   },
   1980: {
-    title: "Introducing The Face Of Jollibee",
+    title: "Introducing the face of Jollibee",
     description: `<p>The iconic Jollibee mascot, then named <strong>“Jolly Bee”</strong> is introduced for the first time at the Virra Mall store opening. The second Jollibee mascot, <strong>Mr. YUM</strong>, would be introduced next year.</p>`,
   },
   1984: {

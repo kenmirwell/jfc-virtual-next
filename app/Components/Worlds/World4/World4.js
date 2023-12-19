@@ -19,7 +19,7 @@ const World4 = ({ lang }) => {
       target: "ShieldController",
       joy: "Joy-Pointing001",
       light: "Light-Rays-Shield",
-      prompt: "<p>Let's go to the<br /><strong>Health Icon</strong></p>",
+      prompt: "<p>Let's go to the<br /><strong>Hologram</strong></p>",
       end: "EXIT",
       zoomOffset: {
         y: 0.5,
@@ -70,7 +70,7 @@ const World4 = ({ lang }) => {
       target: "TrophyController",
       joy: "Joy-Pointing004",
       light: "Light-Rays-Trophy",
-      prompt: "<p>Let's go to the<br /><strong>Statue</strong></p>",
+      prompt: "<p>Let's go to the<br /><strong>Award Statue</strong></p>",
       end: "EXIT",
       width: 370,
     },

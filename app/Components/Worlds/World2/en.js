@@ -1,7 +1,7 @@
 export const en = {
   // After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming the world's largest Asian restaurant company.
   2004: {
-    title: "The Dream: To Be the Largest Asian Restaurant Company",
+    title: "The Dream: to be the Largest Asian Restaurant Company",
     description: `
             <p>After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming <strong>the world's largest Asian restaurant company.</strong></p>
             <br/>
@@ -29,7 +29,7 @@ export const en = {
             <div
               className='w-2/4 flex content-center items-center'
             >
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/popup%20assets/2008/Screen%20Shot%202023-09-01%20at%206.12.11%20PM.jpg?t=2023-12-04T00%3A29%3A55.270Z" className='w-full p-[4px]' />
+              <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2008/Screen+Shot+2023-09-01+at+6.12.11+PM.jpg" className='w-full p-[4px]' />
             </div>
             </div>
             <br/>

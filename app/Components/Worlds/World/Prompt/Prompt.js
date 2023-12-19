@@ -221,7 +221,9 @@ const Prompt = ({
                       // style={{ fontFamily: "inherit" }}
                       fontFamily='inherit'
                     >
-                      PLAY GAME
+                      {!path.includes("world4")
+                        ? "PLAY GAME"
+                        : "Visit our Photobooth!"}
                     </Box>
                   </div>
                 </a>
