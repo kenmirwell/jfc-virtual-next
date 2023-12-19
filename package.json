@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "set \"INLINE_RUNTIME_CHUNK=false\" && next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "next build && aws s3 sync out/ s3://jfc-virtual-tour"
