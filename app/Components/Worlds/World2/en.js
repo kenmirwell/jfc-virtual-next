@@ -1,7 +1,7 @@
 export const en = {
   // After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming the world's largest Asian restaurant company.
   2004: {
-    title: "The Dream: to be the Largest Asian Restaurant Company",
+    title: "The Dream: To be the Largest Asian Restaurant Company",
     description: `
             <p>After achieving a strong foothold in the Philippines, the Jollibee Group sets its sights on becoming <strong>the world's largest Asian restaurant company.</strong></p>
             <br/>
