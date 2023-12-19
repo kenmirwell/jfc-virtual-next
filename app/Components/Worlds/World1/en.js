@@ -25,7 +25,7 @@ export const en = {
   },
   1994: {
     title: "Greenwich: The Philippines’ #1 Pizza Chain",
-    description: `<p>Jollibee Group makes its <strong>first acquisition with Greenwich</strong>. It is now the Philippines’ #1 Pizza Chain in terms of store network and market share.</p>`,
+    description: `<p>Jollibee Group makes its <strong>first acquisition with Greenwich</strong>. It is now the Philippines’ #1 Pizza Chain in terms of store network and market share. Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>`,
   },
   1998: {
     title: "Entering North America Markets",
