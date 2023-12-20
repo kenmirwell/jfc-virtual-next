@@ -40,7 +40,8 @@ export const ch = {
 <br/>
   <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1994/1994.png" className='w-full p-[4px]' />
 <br/>
-<p>Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>
+<p>重返中东
+快乐蜂集团在中东开设了第一家商店，快乐蜂科威特店。尽管几年后退出市场，快乐蜂后来又重返中东，目前已遍布中东地区所有国家。</p>
 `,
   },
   1998: {
