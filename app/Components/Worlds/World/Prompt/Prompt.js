@@ -228,7 +228,11 @@ const Prompt = ({
                   </div>
                 </a>
                 <a
-                  href={`http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`}
+                  href={
+                    !path.includes("world4")
+                      ? `http://ec2-18-143-60-83.ap-southeast-1.compute.amazonaws.com/world-selector?next=${getNextWorld()}`
+                      : "http://jfcmilestones.com/thankyou"
+                  }
                 >
                   <div
                     className='mx-auto w-[80%] h-fit text-black/50 lowercase container-inline'
