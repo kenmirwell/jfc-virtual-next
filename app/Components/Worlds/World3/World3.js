@@ -277,9 +277,9 @@ const World3 = ({ lang }) => {
         // icons: "/assets/world2/elements/icons.png",
         iconSet: [
           "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world2%20assets/assets/JFC_WCHAPTER_2_LOGO_9.webp",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_10.webp",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_12.webp",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world3%20assets/assets/JFC_WCHAPTER_3_LOGO_14.webp",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World3/flatIcons/JFC_WCHAPTER_3_LOGO_10.webp",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World3/flatIcons/JFC_WCHAPTER_3_LOGO_12.webp",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World3/flatIcons/JFC_WCHAPTER_3_LOGO_14.webp",
         ],
       }}
       contents={contents}
