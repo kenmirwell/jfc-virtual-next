@@ -83,7 +83,12 @@ const Prompt = ({
   }, [currentFlow]);
   const pathname = usePathname();
   const getGameLink = () => {
-    if (!pathname.includes("world")) return "game/SmashAndMatch";
+    if (
+      !pathname.includes("world2") ||
+      !pathname.includes("world3") ||
+      !pathname.includes("world4")
+    )
+      return "game/SmashAndMatch";
     if (pathname.includes("world2")) return "game/ExpressRecall";
     if (pathname.includes("world3")) return "game/TriviaKing";
     if (pathname.includes("world4")) return "page/photobooth";
