@@ -49,6 +49,7 @@ export const en = {
 <br/>
   <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1994/1994.png" className='w-full p-[4px]' />
 <br/>
+<h4 class='text-[8cqmin] leading-[1.1] mb-[2.5%] mb-[1.5%]'>Return to the Middle East</h4>
 <p>Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>
 `,
   },
