@@ -24,11 +24,24 @@ export const ch = {
   },
   1993: {
     title: "快乐蜂成功IPO(首次公开募股)",
-    description: `<p>快乐蜂集团在菲律宾证券交易所上市,首次发行价为每股9菲律宾比索。</p>`,
+    description: `
+    <p>快乐蜂集团在菲律宾证券交易所上市,首次发行价为每股9菲律宾比索。</p>
+ <br/>
+   <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1993/1993.png" className='w-full p-[4px]' />
+ <br/>
+ <p>快乐蜂集团迁至快乐蜂中心：现为快乐蜂全球服务总部。</p>
+ `,
   },
   1994: {
     title: "格林威治:菲律宾排名第一的披萨连锁店",
-    description: `<p>快乐蜂集团进行首次收购,对象是格林威治。就商店网络和市场份额而言,它现在是菲律宾排名第一的披萨连锁店。</p>`,
+    // description: `<p>快乐蜂集团进行首次收购,对象是格林威治。就商店网络和市场份额而言,它现在是菲律宾排名第一的披萨连锁店。</p>`,
+    description: `
+    <p>快乐蜂集团进行首次收购,对象是格林威治。就商店网络和市场份额而言,它现在是菲律宾排名第一的披萨连锁店。</p>
+<br/>
+  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1994/1994.png" className='w-full p-[4px]' />
+<br/>
+<p>Jollibee Group opens its first store in the Middle East with Jollibee Kuwait. Despite leaving the market after a few years, Jollibee later returned to the Middle East and is now present in all countries in the Middle East Region.</p>
+`,
   },
   1998: {
     title: "进入北美等地",
