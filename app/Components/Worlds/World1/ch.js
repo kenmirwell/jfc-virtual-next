@@ -1,7 +1,10 @@
 export const ch = {
   1978: {
     title: "快乐蜂食品公司于",
-    description: `<p><strong>快乐蜂食品公司</strong> (也称为快乐蜂集团)创立之初为一个单一品牌:快乐蜂。第一家快乐蜂商店位于奎松市库宝区。</p>`,
+    description: `<p><strong>快乐蜂食品公司</strong> (也称为快乐蜂集团)创立之初为一个单一品牌:快乐蜂。第一家快乐蜂商店位于奎松市库宝区。</p>  <br/>  <div class="flex flex-row container mx-auto">
+    <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1978/1978_1.png" class="p-4 w-[50%]" />
+    <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1978/1978_2.png" class="p-4 w-[50%]" />
+</div><br/><p>随着业务需求的逐渐增长，快乐蜂在菲律宾奎松市Judge Jimenez街建立了第一个独立小卖部：这是如今快乐蜂集团小卖部网络的前身。</p>`,
   },
   1979: {
     title: "第一次特许经营之旅",
