@@ -64,9 +64,9 @@ const Prompt = ({
   const path = usePathname();
 
   const getNextWorld = () => {
-    if (path === "/") return 2;
     if (path.includes("world2")) return 3;
     if (path.includes("world3")) return 4;
+    return 2;
   };
 
   const [isEnd, setIsEnd] = useState(false);
