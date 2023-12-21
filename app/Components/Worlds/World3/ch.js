@@ -19,7 +19,7 @@ export const ch = {
   },
   2015: {
     title: "Smashburger:更佳汉堡类别的先锋",
-    description: `<p>Smashburger加入快乐蜂集团。该品牌成立于科罗拉多州丹佛市,是优质汉堡类别的先锋之一,如今在全球拥有逾240家门店,供应同名汉堡。</p>`,
+    description: `<p><strong>Smashburger</strong>加入快乐蜂集团。该品牌成立于科罗拉多州丹佛市,是优质汉堡类别的先锋之一,如今在全球拥有逾240家门店,供应同名汉堡。</p>`,
   },
   2017: {
     title: "C-JOY:菲律宾家禽加工厂",
