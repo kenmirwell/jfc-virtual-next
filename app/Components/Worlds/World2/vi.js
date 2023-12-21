@@ -19,31 +19,32 @@ export const vi = {
   2008: {
     title: "Hỗ trợ kinh doanh và nông nghiệp quốc tế",
     description: `
-            <p>Hong Zhuang Yuan gia nhập Tập đoàn Jollibee. Thương hiệu này được biết đến với sự lựa chọn đặc biệt của món cháo Trung Quốc và có hơn 50 cửa hàng ở Trung Quốc.</p></br >
-            <div className='flex flex-wrap mt-[2.5%]'>
+            <p><strong>Hong Zhuang Yuan</strong> gia nhập Tập đoàn Jollibee. Thương hiệu này được biết đến với sự lựa chọn đặc biệt của món cháo Trung Quốc và có hơn 50 cửa hàng ở Trung Quốc.</p></br >
+            <div class='flex flex-wrap my-[2.5%]'>
             <div
               className='w-2/4 flex content-center items-center'
             >
               <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2008/Screen+Shot+2023-09-01+at+6.12.11+PM.jpg" className='w-full p-[4px]' />
             </div>
             </div>
+            <br/>
             <p>Quỹ Tập đoàn Jollibee thành lập Chương trình Doanh nhân Nông dân: chương trình này đã giúp hàng trăm nông dân sản xuất nhỏ trở thành doanh nhân nông nghiệp. Cho đến nay, chương trình Nông dân FEP đã mang lại lượng nông sản trị giá hơn 411 triệu PHP, tương đương với 9,8 triệu kg rau.</p>
         `,
   },
   2010: {
     title: "Mang Inasal: Nhà hàng phục vụ nhanh hàng đầu Philippines",
-    description: `<p>Mang Inasal gia nhập Tập đoàn Jollibee. Ngày nay, đây là chuỗi QSR Filipino hàng đầu của Philippines, với hơn 570 cửa hàng trên khắp Philippines phục vụ món gà nướng Inasal chuyên nghiệp đặc trưng.</p>`,
+    description: `<p><strong>Mang Inasal</strong> gia nhập Tập đoàn Jollibee. Ngày nay, đây là chuỗi QSR Filipino hàng đầu của Philippines, với hơn 570 cửa hàng trên khắp Philippines phục vụ món gà nướng Inasal chuyên nghiệp đặc trưng.</p>`,
   },
   "2011A": {
     title: "Thành lập Happy Bee Foods",
-    description: `<p>Tập đoàn Jollibee xây dựng Cơ sở chế biến thực phẩm Jollibee (Happy Bee Foods) tại Trung Quốc. Cửa hàng Thực phẩm Happy Bee cung cấp sản phẩm đến từ các thương hiệu của Tập đoàn Jollibee tại Trung Quốc.</p>`,
+    description: `<p>Tập đoàn Jollibee xây dựng Cơ sở chế biến thực phẩm Jollibee <strong>(Happy Bee Foods)</strong> tại Trung Quốc. Cửa hàng Thực phẩm Happy Bee cung cấp sản phẩm đến từ các thương hiệu của Tập đoàn Jollibee tại Trung Quốc.</p>`,
   },
   "2011B": {
     title: "Burger King: Nơi khởi nguồn của Burger Whopper",
-    description: `<p>Burger King Philippines gia nhập Tập đoàn Jollibee. Hiện nay với hơn 120 cửa hàng và đang ngày càng phát triển, thương hiệu này được biết đến với dòng sản phẩm Burger Whoppers.</p>`,
+    description: `<p><strong>Burger King</strong> Philippines gia nhập Tập đoàn Jollibee. Hiện nay với hơn 120 cửa hàng và đang ngày càng phát triển, thương hiệu này được biết đến với dòng sản phẩm Burger Whoppers.</p>`,
   },
   2012: {
     title: "Highlands Coffee: Chuỗi cà phê số 1 Việt Nam",
-    description: `<p>Highlands Coffee gia nhập Tập đoàn Jollibee. Đây là chuỗi cà phê số 1 Việt Nam với hơn 600 cửa hàng tại Việt Nam và Philippines.</p>`,
+    description: `<p><strong>Highlands Coffee</strong> gia nhập Tập đoàn Jollibee. Đây là chuỗi cà phê số 1 Việt Nam với hơn 600 cửa hàng tại Việt Nam và Philippines.</p>`,
   },
 };
