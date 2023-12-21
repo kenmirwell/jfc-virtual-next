@@ -37,7 +37,7 @@ export const ch = {
   },
   2010: {
     title: "Mang Inasal:领先的菲律宾快餐餐厅",
-    description: `<p>Mang Inasal加入快乐蜂集团。如今,它是菲律宾领先的菲律宾QSR连锁店,在菲律宾各地拥有逾570家店,供应招牌专业烤鸡Inasal。</p>`,
+    description: `<p><strong>Mang Inasal</strong>加入快乐蜂集团。如今,它是菲律宾领先的菲律宾QSR连锁店,在菲律宾各地拥有逾570家店,供应招牌专业烤鸡Inasal。</p>`,
   },
   "2011A": {
     title: "创办快乐蜂食品",
