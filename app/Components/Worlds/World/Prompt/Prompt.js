@@ -84,8 +84,8 @@ const Prompt = ({
   const pathname = usePathname();
   const getGameLink = () => {
     if (
-      !pathname.includes("world2") ||
-      !pathname.includes("world3") ||
+      !pathname.includes("world2") &&
+      !pathname.includes("world3") &&
       !pathname.includes("world4")
     )
       return "game/SmashAndMatch";
