@@ -2,9 +2,9 @@ export const vi = {
   2004: {
     title: "The Dream: Công ty kinh doanh mảng nhà hàng số 1 Châu Á",
     description: `
-            <p>Sau khi có được chỗ đứng vững chắc tại Philippines, Tập đoàn Jollibee đặt mục tiêu trở thành Công ty kinh doanh mảng nhà hàng số 1 Châu Á.</p>
-            <p>Cùng với tầm nhìn của mình, Tập đoàn Jollibee mua lại thương hiệu quốc tế đầu tiên: <strong>Yonghe King.</strong> Ngày nay, chuỗi nhà hàng này có hơn 420 cửa hàng ở Trung Quốc và được yêu thích nhờ món đồ uống sữa đậu nành xay tươi ngon và cơm thịt lợn bằm.</p>
-            <p>Tập đoàn Jollibee mở Tập đoàn Thực phẩm Zenith ở Canlubang, Laguna. Vào thời điểm đó, đây là một trong những công ty lương thực lớn nhất ở Philippines và Châu Á.</p>
+            <p>Sau khi có được chỗ đứng vững chắc tại Philippines, Tập đoàn Jollibee đặt mục tiêu trở thành Công ty kinh doanh mảng nhà hàng số 1 Châu Á.</p><br/>
+            <p>Cùng với tầm nhìn của mình, Tập đoàn Jollibee mua lại thương hiệu quốc tế đầu tiên: <strong>Yonghe King.</strong> Ngày nay, chuỗi nhà hàng này có hơn 420 cửa hàng ở Trung Quốc và được yêu thích nhờ món đồ uống sữa đậu nành xay tươi ngon và cơm thịt lợn bằm.</p><br/>
+            <p>Tập đoàn Jollibee mở Tập đoàn Thực phẩm Zenith ở Canlubang, Laguna. Vào thời điểm đó, đây là một trong những công ty lương thực lớn nhất ở Philippines và Châu Á.</p><br/>
             <p>Nhận thức được trách nhiệm cộng đồng, Tập đoàn Jollibee đã thành lập Quỹ Jollibee, ngày nay được gọi là Quỹ Tập đoàn Jollibee (JGF).</p>
         `,
   },
