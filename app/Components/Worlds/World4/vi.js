@@ -19,13 +19,13 @@ export const vi = {
   },
   "2021A": {
     title: "Yoshinoya: Cơm trộn đặc trưng của Nhật Bản",
-    description: `<p>Yoshinoya Philippines gia nhập Tập đoàn Jollibee thông qua liên doanh. Thương hiệu này là bước đột phá đầu tiên của Tập đoàn Jollibee vào lĩnh vực Ẩm thực Nhật Bản và được biết đến với món Cơm thịt bò Gyudon đặc trưng.</p>`,
+    description: `<p><strong>Yoshinoya Philippines</strong> gia nhập Tập đoàn Jollibee thông qua liên doanh. Thương hiệu này là bước đột phá đầu tiên của Tập đoàn Jollibee vào lĩnh vực Ẩm thực Nhật Bản và được biết đến với món Cơm thịt bò Gyudon đặc trưng.</p>`,
   },
   "2021B": {
     title: "Milksha: Đồ uống trà pha thủ công",
     description: `
-        <p>Milksha gia nhập Tập đoàn Jollibee. Với hơn 250 cửa hàng trên toàn thế giới, Milksha phục vụ đồ uống trà pha thủ công sử dụng nguyên liệu cao cấp.</p>
-        <p>Tập đoàn Jollibee được vinh danh trong danh sách đầu tiên của Forbes về các công ty thân thiện với phụ nữ nhất thế giới—thể hiện sự cống hiến của công ty trong việc hỗ trợ phụ nữ và phát triển nhân viên phát huy hết tiềm năng của họ bất kể giới tính, chủng tộc và tôn giáo.</p>
+        <p><strong>Milksha</strong> gia nhập Tập đoàn Jollibee. Với hơn 250 cửa hàng trên toàn thế giới, Milksha phục vụ đồ uống trà pha thủ công sử dụng nguyên liệu cao cấp.</p><br/>
+        <p>Tập đoàn Jollibee được vinh danh trong danh sách đầu tiên của Forbes về các công ty thân thiện với phụ nữ nhất thế giới—thể hiện sự cống hiến của công ty trong việc hỗ trợ phụ nữ và phát triển nhân viên phát huy hết tiềm năng của họ bất kể giới tính, chủng tộc và tôn giáo.</p><br/>
         <p>Tập đoàn Jollibee niêm yết đợt chào bán cổ phiếu ưu đãi đầu tiên tại Sở giao dịch chứng khoán Philippine: đợt chào bán cổ phiếu ưu đãi đầu tiên dành cho ngành dịch vụ thực phẩm Philippine.</p>
         `,
   },
@@ -35,10 +35,10 @@ export const vi = {
   },
   "2023A": {
     title: "Hỗ trợ sự bền vững với Joy for Tomorrow",
-    description: `<p>Tập đoàn Jollibee ra mắt Joy For Tomorrow, chương trình nghị sự bền vững. Dựa trên ba trụ cột chính là Thực phẩm, Con người, Hành tinh và mười lĩnh vực trọng tâm, Joy for Tomorrow thể hiện cam kết của Tập đoàn Jollibee trong việc mang lại niềm vui ăn uống cho mọi người hôm nay và ngày mai.</p>`,
+    description: `<p>Tập đoàn Jollibee ra mắt Joy For Tomorrow, chương trình nghị sự bền vững. Dựa trên ba trụ cột chính là Thực phẩm, Con người, Hành tinh và mười lĩnh vực trọng tâm, <strong>Joy for Tomorrow</strong> thể hiện cam kết của Tập đoàn Jollibee trong việc mang lại niềm vui ăn uống cho mọi người hôm nay và ngày mai.</p>`,
   },
   "2023B": {
     title: "Phát triển danh mục đầu tư của chúng tôi",
-    description: `<p>Tiong Bahru Bakery và Common Man Coffee Roasters gia nhập Tập đoàn Jollibee thông qua liên doanh. Cả hai thương hiệu đều đến từ Singapore và nổi tiếng với các món bánh chất lượng cao và cà phê đặc sản.</p>`,
+    description: `<p><strong>Tiong Bahru Bakery</strong> và Common Man Coffee Roasters gia nhập Tập đoàn Jollibee thông qua liên doanh. Cả hai thương hiệu đều đến từ Singapore và nổi tiếng với các món bánh chất lượng cao và cà phê đặc sản.</p>`,
   },
 };
