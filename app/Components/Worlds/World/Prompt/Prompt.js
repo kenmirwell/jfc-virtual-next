@@ -46,7 +46,13 @@ const Prompt = ({
 
     // PLAY ONCE
 
-    if (!hasPlayed && path === "/") soundRef.current.play();
+    if (
+      !hasPlayed &&
+      !path.includes("world2") &&
+      !path.includes("world3") &&
+      !path.includes("world4")
+    )
+      soundRef.current.play();
   };
 
   const handleClickHere = () => {
