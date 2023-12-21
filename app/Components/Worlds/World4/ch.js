@@ -39,6 +39,6 @@ export const ch = {
   },
   "2023B": {
     title: "扩大我们的投资组合",
-    description: `<p>Tiong Bahru Bakery和Common Man Coffee Roasters通过合资企业的方式成功加入快乐蜂集团。这两个品牌都来自新加坡，以高品质烘焙食品和精品咖啡著称。</p>`,
+    description: `<p><strong>Tiong Bahru Bakery</strong>和<strong>Common Man Coffee Roasters</strong>通过合资企业的方式成功加入快乐蜂集团。这两个品牌都来自新加坡，以高品质烘焙食品和精品咖啡著称。</p>`,
   },
 };
