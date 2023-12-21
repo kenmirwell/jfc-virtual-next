@@ -13,7 +13,7 @@ export const vi = {
   },
   1980: {
     title: "Mascot của Jollibee",
-    description: `<p>Jollibee Mascot mang tính biểu tượng, sau đó được đặt tên là “Jolly Bee” được giới thiệu lần đầu tiên tại buổi khai trương cửa hàng Virra Mall. Linh vật thứ hai của Jollibee, Mr. YUM, sẽ được giới thiệu vào năm tới.</p>`,
+    description: `<p>Jollibee Mascot mang tính biểu tượng, sau đó được đặt tên là <strong>“Jolly Bee”</strong> được giới thiệu lần đầu tiên tại buổi khai trương cửa hàng Virra Mall. Linh vật thứ hai của Jollibee, <strong>Mr. YUM</strong>, sẽ được giới thiệu vào năm tới.</p>`,
   },
   1984: {
     title: "Vươn tới thị trường quốc tế",
@@ -25,11 +25,23 @@ export const vi = {
   },
   1993: {
     title: "Jollibee IPO thành công (Chào bán lần đầu trên thị trường)",
-    description: `<p>Tập đoàn Jollibee niêm yết trên Sở giao dịch chứng khoán Philippines, với giá chào bán ban đầu là 9 PHP/cổ phiếu.</p>`,
+    // description: `<p>Tập đoàn Jollibee niêm yết trên Sở giao dịch chứng khoán Philippines, với giá chào bán ban đầu là 9 PHP/cổ phiếu.</p>`,
+    description: `
+   <p>Tập đoàn Jollibee niêm yết trên Sở giao dịch chứng khoán Philippines, với giá chào bán ban đầu là 9 PHP/cổ phiếu.</p>
+<br/>
+  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1993/1993.png" className='w-full p-[4px]' />`,
   },
   1994: {
     title: "Greenwich: Chuỗi Pizza số 1 Philippine",
-    description: `<p>Tập đoàn Jollibee thực hiện thương vụ mua lại Greenwich đầu tiên. Hiện nay là Chuỗi Pizza số 1 Philippines về mạng lưới cửa hàng và thị phần.</p>`,
+    // description: `<p>Tập đoàn Jollibee thực hiện thương vụ mua lại Greenwich đầu tiên. Hiện nay là Chuỗi Pizza số 1 Philippines về mạng lưới cửa hàng và thị phần.</p>`,
+    description: `
+    <p>Tập đoàn Jollibee thực hiện thương vụ mua lại Greenwich đầu tiên. Hiện nay là Chuỗi Pizza số 1 Philippines về mạng lưới cửa hàng và thị phần.</p>
+<br/>
+  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1994/1994.png" className='w-full p-[4px]' />
+<br/>
+<h4 class='text-[8cqmin] leading-[1.1] mb-[2.5%] mb-[1.5%]'>Trở lại Trung Đông</h4>
+<p> Tập đoàn Jollibee mở cửa hàng đầu tiên tại Trung Đông với Jollibee Kuwait. Dù rời bỏ thị trường này vài năm sau đó nhưng Jollibee sau đó đã quay trở lại và hiện có mặt ở tất cả các nước trong khu vực Trung Đông.</p>
+`,
   },
   1998: {
     title: "Tham gia thị trường Bắc Mỹ và các thị trường khác",
@@ -37,10 +49,10 @@ export const vi = {
   },
   2000: {
     title: "Chowking: Nhà hàng phục vụ nhanh Trung Quốc thuộc top đầu cả nước",
-    description: `<p>Chowking gia nhập Tập đoàn Jollibee. Chowking hiện là Nhà hàng Dịch vụ nhanh Trung Quốc hàng đầu Philippines, với hơn 560 cửa hàng trên toàn quốc.</p>`,
+    description: `<p><strong>Chowking</strong> gia nhập Tập đoàn Jollibee. Chowking hiện là Nhà hàng Dịch vụ nhanh Trung Quốc hàng đầu Philippines, với hơn 560 cửa hàng trên toàn quốc.</p>`,
   },
   2001: {
     title: "Bước tiến tới trung tâm thương mại lớn",
-    description: `<p>Tập đoàn Jollibee chuyển đến Jollibee Plaza, ban đầu triển khai hoạt động tại 8 tầng trong tòa nhà trung tâm thương mại.</p>`,
+    description: `<p>Tập đoàn Jollibee chuyển đến <strong>Jollibee Plaza</strong>, ban đầu triển khai hoạt động tại 8 tầng trong tòa nhà trung tâm thương mại.</p>`,
   },
 };
