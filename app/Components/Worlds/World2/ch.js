@@ -27,7 +27,9 @@ export const ch = {
             <div
               className='w-2/4 flex content-center items-center'
             >
+            <br/>
               <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World2/popup+assets/2008/Screen+Shot+2023-09-01+at+6.12.11+PM.jpg" className='w-full p-[4px]' />
+              <br/>
             </div>
             </div>
             <p>快乐蜂集团基金会设立了农民创业计划:帮助数百名小农转变为农业企业家。迄今为止,农民创业计划已交付了价值超过4.11亿比索的农产品,相当于980万公斤蔬菜。</p>
