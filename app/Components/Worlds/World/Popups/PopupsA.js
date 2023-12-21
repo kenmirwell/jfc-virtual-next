@@ -230,7 +230,7 @@ const PopupsA = (props) => {
 
             <div className='h-[10%] w-full button-lr-container flex gap-2 justify-end'>
               <img
-                className={`cursor-pointer arrow-left w-auto h-full ${
+                className={`cursor-pointer arrow-left h-[4.4vw] max-h-[80px] w-auto ${
                   activeVideo > 0 ? "" : "opacity-50"
                 }`}
                 onClick={() => props.onPrev()}
