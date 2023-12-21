@@ -40,8 +40,8 @@ export const ch = {
 <br/>
   <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1994/1994.png" className='w-full p-[4px]' />
 <br/>
-<p>重返中东
-快乐蜂集团在中东开设了第一家商店，快乐蜂科威特店。尽管几年后退出市场，快乐蜂后来又重返中东，目前已遍布中东地区所有国家。</p>
+<h4 class='text-[8cqmin] leading-[1.1] mb-[2.5%] mb-[1.5%]'>重返中东</h4>
+<p>快乐蜂集团在中东开设了第一家商店，快乐蜂科威特店。尽管几年后退出市场，快乐蜂后来又重返中东，目前已遍布中东地区所有国家。</p>
 `,
   },
   1998: {
