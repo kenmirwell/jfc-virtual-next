@@ -29,7 +29,9 @@ export const vi = {
     description: `
    <p>Tập đoàn Jollibee niêm yết trên Sở giao dịch chứng khoán Philippines, với giá chào bán ban đầu là 9 PHP/cổ phiếu.</p>
 <br/>
-  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1993/1993.png" className='w-full p-[4px]' />`,
+  <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World1/popup+assets/1993/1993.png" className='w-full p-[4px]' /><br/>
+  <p>Tập đoàn chuyển về Jollibee Center: hiện tại trụ sở chính là Jollibee Worldwide Services.</p>
+  `,
   },
   1994: {
     title: "Greenwich: Chuỗi Pizza số 1 Philippine",
