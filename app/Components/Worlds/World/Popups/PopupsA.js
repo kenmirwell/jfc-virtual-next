@@ -237,9 +237,9 @@ const PopupsA = (props) => {
                 src='/assets/world1/popup-icons/arrow-left.svg'
               />
 
-              <div className='arr-container'>
+              <div className='arr-container h-[4.4vw]'>
                 <img
-                  className={`cursor-pointer arrow-right w-auto h-[100%]`}
+                  className={`cursor-pointer arrow-right w-auto h-full`}
                   onClick={() =>
                     activeVideo < Object.keys(documents).length - 1
                       ? props.onNext()
