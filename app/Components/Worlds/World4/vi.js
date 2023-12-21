@@ -10,7 +10,7 @@ export const vi = {
             <div
               className='w-2/4 flex content-center items-center'
             >
-              <img src="https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/popup%20assets/2020/2020-Actual-Size-Chapter-4.png" className='w-full p-[4px]' />
+              <img src="https://d1bh4bdsrj0ehq.cloudfront.net/World4/assets/2020/2020-Actual-Size-Chapter-4.png" className='w-full p-[4px]' />
             </div>
             </div>
             <br/>
