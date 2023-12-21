@@ -246,9 +246,9 @@ const World4 = ({ lang }) => {
 
         iconSet: [
           "https://d1bh4bdsrj0ehq.cloudfront.net/World3/flatIcons/JFC_WCHAPTER_3_LOGO_14.webp",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_15.webp",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_16.webp",
-          "https://frdmqigbelepsdgiecdr.supabase.co/storage/v1/object/public/world4%20assets/assets/JFC_WCHAPTER_4_LOGO_18.webp",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/flatIcons/JFC_WCHAPTER_4_LOGO_15.webp",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/flatIcons/JFC_WCHAPTER_4_LOGO_16.webp",
+          "https://d1bh4bdsrj0ehq.cloudfront.net/World4/flatIcons/JFC_WCHAPTER_4_LOGO_18.webp",
         ],
       }}
       contents={contents}
