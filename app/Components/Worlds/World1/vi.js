@@ -13,7 +13,7 @@ export const vi = {
   },
   1980: {
     title: "Mascot của Jollibee",
-    description: `<p>Jollibee Mascot mang tính biểu tượng, sau đó được đặt tên là “Jolly Bee” được giới thiệu lần đầu tiên tại buổi khai trương cửa hàng Vera Mall. Linh vật thứ hai của Jollibee, Mr. YUM, sẽ được giới thiệu vào năm tới.</p>`,
+    description: `<p>Jollibee Mascot mang tính biểu tượng, sau đó được đặt tên là “Jolly Bee” được giới thiệu lần đầu tiên tại buổi khai trương cửa hàng Virra Mall. Linh vật thứ hai của Jollibee, Mr. YUM, sẽ được giới thiệu vào năm tới.</p>`,
   },
   1984: {
     title: "Vươn tới thị trường quốc tế",
