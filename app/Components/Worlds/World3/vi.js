@@ -28,7 +28,7 @@ export const vi = {
     title: "Ẩm Thực Châu Á Cao Cấp: Tim Ho Wan & Panda Express",
     description: `
             <p><strong>Tim Ho Wan</strong>, ngôi sao Michelin, thông qua khoản đầu tư vào Titan Dining Fund, gia nhập Tập đoàn Jollibee. Có nguồn gốc từ Hong Kong, Tim Ho Wan nổi tiếng với món bánh bao thịt heo và các món dimsum đa dạng.</p><br/>
-            <p><strong>Panda Express</strong> Philippines gia nhập Tập đoàn Jollibee thông qua liên doanh, mở cửa hàng đầu tiên tại SM Megamall vào năm 2019. Đây là mô hình nhà hàng ăn châu Á lớn nhất ở Mỹ và hiện có hơn 15 cửa hàng ở Philippines và đang phát triển.</p><br/>
+            <p><strong>Panda Express Philippines</strong> gia nhập Tập đoàn Jollibee thông qua liên doanh, mở cửa hàng đầu tiên tại SM Megamall vào năm 2019. Đây là mô hình nhà hàng ăn châu Á lớn nhất ở Mỹ và hiện có hơn 15 cửa hàng ở Philippines và đang phát triển.</p><br/>
             <p>Tập đoàn Jollibee mở Văn phòng Công ty Davao.</p><br/>
             <p>Tập đoàn Jollibee mở cửa hàng đầu tiên ở châu Âu với <strong>Jollibee Milan</strong>. Nằm gần Duomo, buổi khai trương đã được chào đón bởi hàng dài khách hàng - hiện tượng luôn phổ biến mỗi khi Jollibee khai trương mới.</p>
         `,

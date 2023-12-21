@@ -2,9 +2,8 @@ export const en = {
   "2020B": {
     title: "Bringing Joy in a Time of Uncertainty",
     description: `
+    <p>Jollibee Group successfully issues <strong>senior perpetual capital and senior debt securities:</strong> the first time it tapped the capital since its initial public offering in 1993. The senior perpetual capital offering was oversubscribed by 10x, showing strong confidence in Jollibee Group.</p><br/>
             <p>In response to the COVID-19 pandemic, the Jollibee Group allocated <strong>PHP 1 Billion in assistance</strong> for employees.</p>
-            <br/>
-            <p>Jollibee Group provides over <strong>PHP 330 million worth of assistance</strong> for affected frontliners and underprivileged families.</p>
             <br/>
             <div className='flex flex-wrap mt-[2.5%]'>
             <div
@@ -14,7 +13,7 @@ export const en = {
             </div>
             </div>
             <br/>
-            <p>Jollibee Group successfully issues <strong>senior perpetual capital and senior debt securities:</strong> the first time it tapped the capital since its initial public offering in 1993. The senior perpetual capital offering was oversubscribed by 10x, showing strong confidence in Jollibee Group.</p>
+            <p>Jollibee Group provides over <strong>PHP 330 million worth of assistance</strong> for affected frontliners and underprivileged families.</p>
         `,
   },
   "2021A": {
