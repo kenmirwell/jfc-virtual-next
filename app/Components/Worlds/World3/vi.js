@@ -18,7 +18,7 @@ export const vi = {
   },
   2015: {
     title: "Smashburger: Tiên phong cho dòng bánh burger ngon hơn",
-    description: `<p>Smashburger gia nhập Tập đoàn Jollibee. Được thành lập tại Denver, Colorado, thương hiệu này là một trong những thương hiệu tiên phong trong danh mục burger ngon hơn và ngày nay có hơn 240 địa điểm trên toàn thế giới phục vụ Smashburger.</p>`,
+    description: `<p><strong>Smashburger</strong> gia nhập Tập đoàn Jollibee. Được thành lập tại Denver, Colorado, thương hiệu này là một trong những thương hiệu tiên phong trong danh mục burger ngon hơn và ngày nay có hơn 240 địa điểm trên toàn thế giới phục vụ Smashburger.</p>`,
   },
   2017: {
     title: "C-JOY: Nhà máy chế biến thịt gia cầm Philippine",
