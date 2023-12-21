@@ -39,6 +39,6 @@ export const vi = {
   },
   "2023B": {
     title: "Phát triển danh mục đầu tư của chúng tôi",
-    description: `<p><strong>Tiong Bahru Bakery</strong> và Common Man Coffee Roasters gia nhập Tập đoàn Jollibee thông qua liên doanh. Cả hai thương hiệu đều đến từ Singapore và nổi tiếng với các món bánh chất lượng cao và cà phê đặc sản.</p>`,
+    description: `<p><strong>Tiong Bahru Bakery</strong> và <strong>Common Man Coffee Roasters</strong> gia nhập Tập đoàn Jollibee thông qua liên doanh. Cả hai thương hiệu đều đến từ Singapore và nổi tiếng với các món bánh chất lượng cao và cà phê đặc sản.</p>`,
   },
 };
