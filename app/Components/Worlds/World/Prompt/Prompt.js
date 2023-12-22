@@ -16,6 +16,11 @@ const Prompt = ({
   audioIcon,
   isSafari,
 }) => {
+  const [pointingCount, setPointingCount] = useState(0);
+  const pointingRef = useRef(null);
+
+  const modal = document.querySelector(".details-modal-content");
+
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
       gsap.timeline().to("#prompt", 0.5, {
@@ -81,10 +86,13 @@ const Prompt = ({
     if (currentFlow.get.action === "END") setIsEnd(true);
   }, [currentFlow.get.action]);
 
-  const pointingRef = useRef(null);
-
   useEffect(() => {
-    if (!showJoy && world === 1 && currentFlow.get.action === "GOTO") {
+    if (
+      !showJoy &&
+      world === 1 &&
+      currentFlow.get.action === "GOTO" &&
+      !modal
+    ) {
       isSafari ? null : pointingRef.current.play();
     }
   }, [currentFlow]);
@@ -108,15 +116,14 @@ const Prompt = ({
       promptRef.current.innerHTML = currentFlow.get.prompt;
   }, [currentFlow?.get.prompt]);
 
-  const [pointingCount, setPointingCount] = useState(0);
   const handlePointEnd = () => {
     setPointingCount(pointingCount + 1);
     console.log(pointingCount);
-    if (pointingCount >= 1) {
+    if (pointingCount >= 1 && modal) {
       // pointingRef.current.load();
       pointingRef.current.pause();
       setPointingCount(0);
-    } else {
+    } else if (!modal) {
       pointingRef.current.play();
     }
     // pointingRef.current.load();
