@@ -21,17 +21,12 @@ const config: Config = {
         year: "319 / 170",
         yearImage: "353 / 126",
       },
-      // keyframes: {
-      //   arrow: {
-      //     "0%": { transform: "translateX(0)" },
-      //     "50%": { transform: "translateX(0%)" },
-      //     "100%": { transform: "translateX(10%)" },
-      //   },
-      // },
-      // animation: {
-      //   arrow: "arrow 2s linear 1s infinite alternate",
-      //   container: "arrow 2s linear 0s infinite alternate",
-      // },
+      keyframes: {
+        arrow: {
+          "0%, 50%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(.4vw)" },
+        },
+      },
     },
   },
   plugins: [],

@@ -166,7 +166,7 @@ const PopupsA = (props) => {
                 src='/assets/world1/popup-icons/arrow-left.svg'
               />
 
-              <div className='arr-container h-[4.4vw] max-h-[80px]'>
+              <div className='arr-container h-[4.4vw] max-h-[80px] animate-[arrow_1.5s_linear_infinite_alternate]'>
                 <img
                   className={`cursor-pointer arrow-right w-auto h-full`}
                   src='/assets/world1/popup-icons/arrow-right.svg'
