@@ -84,8 +84,9 @@ const Prompt = ({
   const pointingRef = useRef(null);
 
   useEffect(() => {
-    if (!showJoy && world === 1 && currentFlow.get.action === "GOTO")
+    if (!showJoy && world === 1 && currentFlow.get.action === "GOTO") {
       isSafari ? null : pointingRef.current.play();
+    }
   }, [currentFlow]);
   const pathname = usePathname();
   const getGameLink = () => {
@@ -106,6 +107,20 @@ const Prompt = ({
     if (currentFlow?.get.prompt)
       promptRef.current.innerHTML = currentFlow.get.prompt;
   }, [currentFlow?.get.prompt]);
+
+  const [pointingCount, setPointingCount] = useState(0);
+  const handlePointEnd = () => {
+    setPointingCount(pointingCount + 1);
+    console.log(pointingCount);
+    if (pointingCount >= 1) {
+      // pointingRef.current.load();
+      pointingRef.current.pause();
+      setPointingCount(0);
+    } else {
+      pointingRef.current.play();
+    }
+    // pointingRef.current.load();
+  };
 
   return (
     <>
@@ -383,6 +398,10 @@ const Prompt = ({
                 <video
                   muted
                   ref={pointingRef}
+                  onPlay={() => {
+                    pointingRef.current.playbackRate = 1.4;
+                  }}
+                  onEnded={handlePointEnd}
                   // autoPlay
                   // loop
                   poster=''
