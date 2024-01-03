@@ -241,7 +241,9 @@ const Prompt = ({
             )}
             {currentFlow.get.action === "END" && (
               <div>
-                <a href={`http://jfcmilestones.com/${getGameLink()}`}>
+                <a
+                  href={`https://milestones.jollibeegroup.com/${getGameLink()}`}
+                >
                   <div
                     className='mx-auto bg-[#E23636] w-[70%] h-fit text-white rounded-full font-[700] px-[8%] py-[1%]  mt-[3%] container-inline'
                     // style={{ containerType: "inline-size" }}
@@ -261,8 +263,8 @@ const Prompt = ({
                 <a
                   href={
                     !path.includes("world4")
-                      ? `http://jfcmilestones.com/world-selector?next=${getNextWorld()}`
-                      : "http://jfcmilestones.com/thankyou"
+                      ? `https://milestones.jollibeegroup.com/world-selector?next=${getNextWorld()}`
+                      : "http://milestones.jollibeegroup.com/thankyou"
                   }
                 >
                   <div
