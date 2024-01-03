@@ -19,7 +19,16 @@ const Prompt = ({
   const [pointingCount, setPointingCount] = useState(0);
   const pointingRef = useRef(null);
 
-  const modal = document.querySelector(".details-modal-content");
+  // const [modal, setModal] = useState(null);
+
+  // useEffect(() => {
+  //   if (window) setModal(document.querySelector(".details-modal-content"));
+  // }, []);
+
+  const modal =
+    typeof window !== "undefined"
+      ? document.querySelector(".details-modal-content")
+      : null;
 
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
