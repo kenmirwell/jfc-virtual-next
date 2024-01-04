@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 import { gsap, Power3 } from "gsap";
 
@@ -29,6 +30,7 @@ const Prompt = ({
     typeof window !== "undefined"
       ? document.querySelector(".details-modal-content")
       : null;
+  // const modal = document.querySelector(".details-modal-content");
 
   useEffect(() => {
     if (showJoy && !currentFlow.get.action) {
